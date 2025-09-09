@@ -1,0 +1,7 @@
+Hello {{name}},
+
+you have been added to the "{{orgName}}" organization.
+
+Best Regards,
+
+Your FlowRabbit Team

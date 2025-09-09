@@ -1,0 +1,7 @@
+Dear {{name}}
+
+here is your link:
+
+https://studio.flowrabbit.ai/#/reset_password3.html?id={{passwordRestKey}}
+
+If you have further issues please contact us.
