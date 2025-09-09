@@ -1,0 +1,11 @@
+Hello {{email}},
+
+
+you have been invited to join "{{orgName}}"" workspace at https://flowrabbit.ai.
+
+Please visit the link below to create an account:
+
+https://apps.flowrabbit.ai/#/create_account.html?invite={{inviteKey}}
+
+Best Regards,
+Your FlowRabbit Team

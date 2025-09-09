@@ -1,0 +1,108 @@
+version: "3.9"
+
+services:
+  traefik:
+    image: traefik:v3.0
+    command:
+      # Providers
+      - "--providers.docker=true"
+      - "--api.dashboard=true"
+
+      # Entrypoints
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+
+      # Redirect all HTTP -> HTTPS
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+
+      # ACME / Let's Encrypt
+      - "--certificatesresolvers.myresolver.acme.email=support@flowrabbit.ai"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.myresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+
+      # Request certs at startup (not just on first request)
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--entrypoints.websecure.http.tls.certresolver=myresolver"
+      - "--entrypoints.websecure.http.tls.domains[0].main=docs-os.flowrabbit.ai"
+
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+  mongo:
+    restart: always
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./mongo-data:/data/db        # pth for the data to be stored and kept on your host machine is on the left side of the ":"
+  backend:
+    restart: always
+    container_name: backend
+    image: flowrabbit/backend:latest
+    volumes:
+      - ./app-data:/app-data
+    environment:
+      - FLR_HTTP_HOST=http://frontend:8082   # this is the URL included in the mails, e.g. password resets
+      - FLR_CLIENT_API_KEY=123cjMKJcm234?sfsdf
+      - FLR_HTTP_PORT=8080  # This is the port the backend will use
+      - FLR_MONGO_DB_NAME=quantux  # the database / collection name in mongodb
+      - FLR_MONGO_TABLE_PREFIX=quantux  # table / document prefix in mongodb
+      - FLR_MONGO_CONNECTION_STRING=mongodb://mongo:27017 # this assumes your mongodb container will be called "quant-ux-mongo" in the docker-compose file
+      - FLR_MAIL_USER=mail_admin@example.com        # this should be your smtp email user
+      - FLR_MAIL_PASSWORD=sTr0ngPa55w0Rd        # this should be your smtp email password
+      - FLR_MAIL_HOST=mail.example.com        # this should be your smtp host address
+      - FLR_JWT_PASSWORD=some-long-string-of-mix-case-chars-and-nums        # you should change this to a real JWT secret
+      - FLR_IMAGE_FOLDER_USER=/app-data/qux-images        # this folder should mapped in the volume
+      - FLR_IMAGE_FOLDER_APPS=/app-data/qux-image-apps        # this folder should mapped in the volume
+      - TZ=America/Chicago        # change to your timezone
+      - FLR_AUTH_SERVICE=qux
+      - FLR_KEYCLOAK_SERVER= # just the keycloak host & port
+      - FLR_KEYCLOAK_REALM=
+      - FLR_USER_ALLOW_SIGNUP=true # set the false to not allow users to signup
+      - FLR_USER_ALLOWED_DOMAINS=* # comma separated list of domains, e.g. 'my-server.com' or '*' for all
+    depends_on:
+      - mongo
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-os.rule=Host(`api-os.flowrabbit.ai`)"
+      - "traefik.http.routers.api-os.entrypoints=websecure"
+      - "traefik.http.routers.api-os.tls.certresolver=myresolver"
+      - "traefik.http.services.api-os.loadbalancer.server.port=8080"
+  # qux-fe:
+  #   restart: always
+  #   container_name: quant-ux-frontend
+  #   image: klausenschaefersinho/quant-ux
+  #   environment:
+  #     - FLR_PROXY_URL=http://quant-ux-backend:8080        # this is the path the front end uses to talk tot he backend
+  #     - FLR_AUTH=qux
+  #     - FLR_KEYCLOAK_REALM=
+  #     - FLR_KEYCLOAK_CLIENT=
+  #     - FLR_KEYCLOAK_URL=
+  #     - FLR_WS_URL=ws://127.0.0.1:8086        # change to where the websocket server is deployed for external access
+  #   links:
+  #     - mongo
+  #     - qux-be
+  #   ports:
+  #     - 8082:8082        # change the left side port if your host machine already has 8082 in use
+  #   depends_on:
+  #     - qux-be
+
+  # Networks
+  # qux-ws:
+  #   restart: always
+  #   container_name: quant-ux-websocket-server
+  #   image: klausenschaefersinho/quant-ux-websocket
+  #   environment:
+  #     - FLR_SERVER=http://quant-ux-backend:8080/
+  #     - FLR_SERVER_PORT=8086
+  #   ports:
+  #     - 8086:8086
+  #   links:
+  #     - qux-be
+  #   depends_on:
+  #     - qux-be

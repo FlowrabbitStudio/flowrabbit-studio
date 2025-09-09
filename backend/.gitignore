@@ -1,0 +1,12 @@
+/target/
+/logs/
+/.vertx/
+/file-uploads/
+/test/
+.idea
+.kamal/1password.secret
+.kamal/docker_registry.secret
+/build
+/.idea
+/test/*
+flowrabbit-backend.iml
