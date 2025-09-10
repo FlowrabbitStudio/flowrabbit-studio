@@ -121,6 +121,7 @@ public class BaseTestCase {
 			conf.put(Config.VERSION_FOLDER, "test/versions");
 			conf.put(Config.CLIENT_API_KEY, clientAPIKeyValue);
 			conf.put(Config.DB_ENCRYPTION_KEY, "testdbkey");
+			conf.put("debug", true);
 
 			//conf.put(Config.APP_SECRET_KEY, "sadi234sd123c");
 		} catch (IOException e) {

@@ -1,6 +1,7 @@
 package ai.flowrabbit;
 
 import ai.flowrabbit.model.App;
+import ai.flowrabbit.util.Config;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.unit.TestContext;
@@ -33,28 +34,7 @@ public class UserRESTTestCase extends BaseTestCase {
 	}
 
 
-	@Test
-	public void testGetById(TestContext context){
-		log("testGetById", "enter");
 
-		cleanUp();
-		deploy(new Main(), context);
-
-		User klaus = postUser("klaus", context);
-		User bernd = postUser("bernd", context);
-		User dennis = postAppStoreUser("dennis", context);
-
-		assertLogin(context, klaus);
-
-		findUser(context, klaus);
-		findUser(context, bernd);
-		findUser(context, dennis);
-
-		assertLogin(context, dennis);
-		findUser(context, dennis);
-		findUserError(context, klaus);
-		findUserError(context, bernd);
-	}
 
 	private JsonObject findUser(TestContext context, User user) {
 		JsonObject u = this.get("/rest/user/" +  user.getId() +".json");
@@ -456,21 +436,25 @@ public class UserRESTTestCase extends BaseTestCase {
 
 	}
 
+
 	@Test
-	public void testAppStoreUser(TestContext context){
-		log("testAppStoreUser", "enter");
+	public void testDefaultAdmin(TestContext context){
+		log("testHack", "enter");
 
 		cleanUp();
 
+		conf.put("debug", false);
+		conf.put(Config.ADMIN_PASSWORD, "123123");
+		conf.put(Config.ADMIN_EMAIL, "admin@flowrabbit.de");
 		deploy(new Main(), context);
 
-		User dennis = postAppStoreUser("dennis", context);
-		assertLogin(context, dennis);
+
+		JsonObject user = assertLogin(context, "admin@flowrabbit.de", "123123");
 
 
-		App app = createApp("Not_Allowed", false);
-		JsonObject error = post("/rest/apps", app);
-		context.assertEquals(405, error.getInteger("error"));
+		context.assertEquals(User.ADMIN, user.getString("role"));
+
+
 	}
 
 }

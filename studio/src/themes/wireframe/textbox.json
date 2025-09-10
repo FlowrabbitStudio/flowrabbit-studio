@@ -1,0 +1,152 @@
+[
+	{
+		"id": "TextBox",
+		"type": "TextBox",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "AAAFormInput",
+		"name": "Input (Text)",
+		"sidebar": true,
+		"x": 0,
+		"y": 0,
+		"w": "@form-width",
+		"h": "@form-height",
+		"z": 0,
+		"props": {
+			"label": "Enter a value",
+			"placeholder": true
+		},
+		"has": {
+			"label": true,
+			"backgroundColor": true,
+			"border": true,
+			"editable": true,
+			"onclick": true,
+			"padding": true
+		},
+		"style": {
+			"fontSize": "@font-size-s",
+			"fontFamily": "@font-family",
+			"textAlign": "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"background": "@form-background",
+			"color": "@form-color",
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+			"paddingBottom": "@form-padding-vertical",
+			"paddingTop": "@form-padding-vertical",
+			"paddingLeft": "@form-padding-horizontal",
+			"paddingRight": "@form-padding-horizontal",
+			"boxShadow": "@box-shadow-s"
+		},
+		"focus": {
+			"borderWidth": "@border-width:focus",
+			"borderColor": "@form-border-color:focus",
+			"background": "@form-background:focus",
+			"color": "@form-color:focus"
+		},
+		"hover": {
+			"borderColor": "@form-border-color:hover",
+			"background": "@form-background:hover",
+			"color": "@form-color:hover"
+		},
+		"error": {
+			"borderColor": "@form-border-color:error",
+			"background": "@form-background:error",
+			"color": "@form-color:error"
+		}
+	},
+	{
+		"id": "TextBoxInt",
+		"type": "TextBox",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "FormInput",
+		"name": "Input (Numeric)",
+		"_extends": "TextBox",
+		"z": 0,
+		"props": {
+			"label": "Enter a number",
+			"placeholder": true,
+			"validation": {
+				"type": "int"
+			}
+		}
+	},
+	{
+		"id": "TextBoxEmail",
+		"type": "TextBox",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "FormInput",
+		"name": "Email",
+		"_extends": "TextBox",
+		"z": 0,
+		"props": {
+			"label": "Enter an email",
+			"placeholder": true,
+			"validation": {
+				"type": "email"
+			}
+		}
+	},
+	{
+		"id": "PasswordBox2",
+		"type": "Password",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "AFormInput",
+		"_extends": "TextBox",
+		"name": "Password",
+		"z": 0,
+		"props": {
+			"label": "",
+			"cleartext": true,
+			"cleartextHideLabel": "Hide",
+			"cleartextShowLabel": "Show"
+		},
+		"has": {
+			"label": true,
+			"backgroundColor": true,
+			"border": true,
+			"editable": true,
+			"onclick": true,
+			"padding": true
+		},
+		"style": {}
+	},
+	{
+		"id": "TextArea",
+		"type": "TextArea",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "AFormInput",
+		"_extends": "TextBox",
+		"name": "Text Area",
+		"z": 0,
+		"x": 0,
+		"y": 0,
+		"w": "@form-width",
+		"h": "@box-height-l",
+		"props": {
+			"label": "Enter a value"
+		},
+		"has": {
+			"label": true,
+			"backgroundColor": true,
+			"border": true,
+			"editable": true,
+			"onclick": true,
+			"padding": true
+		},
+		"style": {
+			"paddingBottom": "@form-padding-horizontal",
+			"paddingTop": "@form-padding-horizontal",
+			"paddingLeft": "@form-padding-horizontal",
+			"paddingRight": "@form-padding-horizontal"
+		}
+	}
+]

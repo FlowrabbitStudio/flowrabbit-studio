@@ -1,0 +1,32 @@
+[
+    {
+        "id" : "UploadCamera",
+        "type" : "Camera",
+        "category" : "Advanced",
+        "subcategory" : "XBox",
+        "_type" : "Widget",
+        "name" : "Camera",
+        "_extends": "PrimaryButton",
+        "x" : 0,
+        "y" : 0,
+		"w": "@box-height-m",
+		"h": "@box-width-m",
+        "z" : 0,
+        "props" : {
+            "label" : ""
+        },
+        "has" : {
+           "hasIcon": true,
+           "backgroundColor" : true,
+           "border" : true,
+           "padding" : true
+        },
+        "actions":{},
+        "style" : { 
+            "icon": "mdi-camera",
+            "borderRadius" : "@border-radius-round",
+            "background": "@button-primary-background",
+            "color": "@button-primary-color"
+        }
+    }
+]

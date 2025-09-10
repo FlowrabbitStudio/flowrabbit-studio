@@ -1,0 +1,25 @@
+[ 
+ 	{
+		"id" : "WireframeMobileSelect",
+		"type" : "MobileDropDown",
+		"name" : "Modal Select",
+		"subcategory" : "FormPopUpSelect",
+		"category" : "Form",
+		"_type" : "Widget",
+		"_extends": "DropDown",
+	    "props" : {
+	        "options" : ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6", "Option 7", "Option 8"]    
+	    },
+	     "has" : {
+	    	 "onclick" : true,
+		     "border" : true,
+		     "backgroundColor" : true,
+		     "data" : true,
+		     "padding":true,
+		     "label":true
+	     },
+	     "style" : {
+			"popupBackDrop": "@form-popup-backgrop"
+	     }
+	}
+]

@@ -1,0 +1,97 @@
+[
+    {
+        "id": "OpenAI",
+        "name": "OpenAI - GPT",
+        "type": "Rest",
+        "category": "Logic",
+        "subcategory": "ABox",
+        "_type": "Widget",
+        "x": 0,
+        "y": 0,
+        "w": 160,
+        "h": 72,
+        "props": {
+            "title": "OpenAI - GPT",
+            "template": {
+                "title": "OpenAI - GPT",
+                "rest": {
+                    "method": "POST",
+                    "url": "https://api.openai.com/v1/chat/completions",
+                    "token": "${secrets.openAI}",
+                    "authType": "Bearer",
+                    "vars": {
+                    },
+                    "input": {
+                        "type": "JSON",
+                        "template": "{\"model\":\"@{model}\",\"messages\":[{\"role\":\"user\",\"content\":\"@{prompt}\"}],\"temperature\":0.7}"
+                    },
+                    "output": {
+                        "databinding": "abc",
+                        "template": "",
+                        "type": "JSON",
+                        "hints": []
+                    },
+                    "headers": []
+                },
+                "elements": [
+                    {
+                        "id": "prompt",
+                        "label": "Your prompt",
+                        "type": "TextArea",
+                        "placeholder": "Enter your prompt"
+                    },
+                    {
+                        "id": "model",
+                        "label": "GPT Model",
+                        "type": "DropDown",
+                        "options": [
+                            {
+                                "value": "gpt-3.5-turbo",
+                                "label": "ChatGPT (GTP-3.5-Turbo)"
+                            },
+                            {
+                                "value": "gpt-4",
+                                "label": "GPT-4"
+                            },
+                            {
+                                "value": "gpt-4-1106-preview",
+                                "label": "GPT-4-Turbo"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rest": {
+                "vars": {
+                    "model": "gpt-3.5-turbo"
+                },
+                "method": "POST",
+                "url": "https://api.openai.com/v1/chat/completions",
+                "token": "",
+                "authType": "Bearer",
+                "input": {
+                    "type": "JSON",
+                    "fileDataBinding": "",
+                    "template": "{}"
+                },
+                "output": {
+                    "databinding": "",
+                    "path": "choices[0].message.content",
+                    "template": "",
+                    "type": "JSON",
+                    "hints": {}
+                },
+                "headers": []
+            }
+        },
+        "has": {
+            "rest": true
+        },
+        "style": {
+            "background": "#777",
+            "iconSize": 0.7,
+            "icon": "mdi mdi-robot-outline ",
+            "logo": "OpenAI"
+        }
+    }
+]

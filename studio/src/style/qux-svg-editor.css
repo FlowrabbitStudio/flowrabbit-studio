@@ -1,0 +1,143 @@
+.qux-svg-editor_cursor_crosshair, 
+.qux-svg-editor_cursor_crosshair .qux-svg-editor-joint{
+    cursor: crosshair;
+}
+
+.qux-svg-editor_cursor_move{
+    cursor: move;
+}
+
+.qux-svg-editor-joint{
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.qux-svg-editor-joint-selected{
+    fill: #49C0F0;
+}
+
+.qux-svg-editor_cursor_move .qux-svg-editor-joint{
+    cursor: move;
+}
+
+.qux-svg-editor-splitpoint{
+    stroke-width: 1;
+    stroke: #333;
+    fill: #333;
+    cursor: pointer;
+}
+
+.qux-svg-editor-bezier{
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.qux-svg-editor-bezier-x1X {
+    stroke: #000;
+    fill: rgba(0, 0, 0, 0.652);
+}
+
+.qux-svg-editor-bezier-debug {
+    stroke: #e849f0;
+    fill: #fff;
+}
+
+.qux-svg-editor-beziee-line-debug {
+    stroke: #e849f04f;
+    stroke-width: 3;
+}
+
+.qux-svg-editor-bezier:hover{
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: #49C0F0;
+    cursor: pointer;
+}
+
+
+.qux-svg-editor-bezier-selected{
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: #49C0F0;
+    cursor: move;
+}
+
+.qux-svg-editor-resize-handler {
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.qux-svg-editor-resize-handler.East {
+    cursor: ew-resize;
+}
+
+.qux-svg-editor-resize-handler.West {
+    cursor: ew-resize;
+}
+
+.qux-svg-editor-resize-handler.North {
+    cursor: ns-resize;
+}
+
+.qux-svg-editor-resize-handler.South {
+    cursor: ns-resize;
+}
+
+.qux-svg-editor-resize-handler.LeftUp {
+    cursor: nw-resize;
+}
+
+.qux-svg-editor-resize-handler.LeftDown {
+    cursor: sw-resize;
+}
+
+.qux-svg-editor-resize-handler.RightUp {
+    cursor: ne-resize;
+}
+
+.qux-svg-editor-resize-handler.RighDown {
+    cursor: se-resize;
+}
+
+.qux-svg-snapp-line-x {
+    stroke: #92c500;
+}
+
+.qux-svg-snapp-line-y {
+    stroke: #92c500;
+}
+
+.qux-svg-editor-bounding {
+    stroke-width: 1;
+    stroke: #49C0F0;
+    fill: rgba(0, 0, 0, 0.0);
+}
+
+.qux-svg-editor-click-line{
+    cursor: pointer;
+    stroke: #be49f000;
+    stroke-width: 10;
+}
+
+.qux-svg-editor-no-bbox .qux-svg-editor-resize-handler{
+    stroke: transparent;
+}
+
+.qux-svg-editor-no-bbox .qux-svg-editor-resize-handler,
+.qux-svg-editor-no-bbox .qux-svg-editor-bounding{
+    stroke: transparent;
+    fill: transparent;
+}
+
+
+.qux-svg-editor-select-box{
+    stroke-width: 1;
+    stroke: #49C0F0;
+	fill:rgba(73,192,240,0.3);
+}

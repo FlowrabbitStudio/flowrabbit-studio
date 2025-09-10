@@ -1,0 +1,280 @@
+{
+    "_id" : "6712df5b77a3d5719c091603",
+    "version" : 2,
+    "publicType" : "forbidden",
+    "name" : "Template Updates",
+    "description" : "",
+    "screenSize" : {
+      "w" : 376,
+      "h" : 808
+    },
+    "type" : "smartphone",
+    "screens" : {
+      "s10000_64234" : {
+        "x" : 1494,
+        "y" : 1061,
+        "h" : 808,
+        "w" : 376,
+        "name" : "Screen",
+        "type" : "Screen",
+        "style" : {
+          "background" : "@screen-background"
+        },
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "has" : {
+          "image" : true
+        },
+        "props" : {
+          "start" : true
+        },
+        "children" : [ "w10012_72655", "w10014_14099", "w10018_47891", "w10019_55343" ],
+        "id" : "s10000_64234"
+      }
+    },
+    "widgets" : {
+      "w10012_72655" : {
+        "id" : "w10012_72655",
+        "type" : "Button",
+        "name" : "ButtonMaster",
+        "sidebar" : true,
+        "x" : 1574,
+        "y" : 1133,
+        "w" : 96,
+        "h" : 32,
+        "z" : 1,
+        "props" : {
+          "label" : "Click Me"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : { },
+        "hover" : { },
+        "qssSource" : "PrimaryButton",
+        "created" : 1729291109115,
+        "template" : "tw10013_66613",
+        "isRootTemplate" : true,
+        "modified" : 1729291111467
+      },
+      "w10014_14099" : {
+        "id" : "w10014_14099",
+        "type" : "Button",
+        "name" : "ButtonCopy",
+        "sidebar" : true,
+        "x" : 1574,
+        "y" : 1197,
+        "w" : 96,
+        "h" : 32,
+        "z" : 2,
+        "props" : {
+          "label" : "Click Me"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : { },
+        "hover" : { },
+        "qssSource" : "PrimaryButton",
+        "created" : 1729291114387,
+        "template" : "tw10013_66613",
+        "modified" : 1729291118001,
+        "copyOf" : "w10012_72655"
+      },
+      "w10018_47891" : {
+        "id" : "w10018_47891",
+        "name" : "BoxMaster",
+        "w" : 96,
+        "h" : 56,
+        "x" : 1574,
+        "y" : 1269,
+        "z" : 3,
+        "template" : "tw10016_88781",
+        "type" : "Button",
+        "props" : {
+          "label" : ""
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "style" : { },
+        "isRootTemplate" : true,
+        "created" : 1729291405483,
+        "modified" : 1729291414137
+      },
+      "w10019_55343" : {
+        "id" : "w10019_55343",
+        "name" : "BoxCopy",
+        "w" : 96,
+        "h" : 56,
+        "x" : 1550,
+        "y" : 1357,
+        "z" : 4,
+        "template" : "tw10016_88781",
+        "type" : "Button",
+        "props" : {
+          "label" : ""
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "style" : { },
+        "created" : 1729291406952
+      }
+    },
+    "lines" : { },
+    "groups" : { },
+    "templates" : {
+      "tw10013_66613" : {
+        "id" : "tw10013_66613",
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-primary-background",
+          "color" : "@button-primary-color",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-primary-border-color",
+          "borderBottomColor" : "@button-primary-border-color",
+          "borderRightColor" : "@button-primary-border-color",
+          "borderLeftColor" : "@button-primary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-primary-background:hover",
+          "color" : "@button-primary-color:hover",
+          "borderTopColor" : "@button-primary-border-color:hover",
+          "borderBottomColor" : "@button-primary-border-color:hover",
+          "borderRightColor" : "@button-primary-border-color:hover",
+          "borderLeftColor" : "@button-primary-border-color:hover"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "props" : {
+          "label" : "Click Me"
+        },
+        "w" : 96,
+        "h" : 32,
+        "z" : 1,
+        "x" : 0,
+        "y" : 0,
+        "templateType" : "Widget",
+        "type" : "Button",
+        "visible" : true,
+        "name" : "ButtonMaster",
+        "modified" : 1729291111465,
+        "created" : 1729291111465
+      },
+      "tw10016_88781" : {
+        "id" : "tw10016_88781",
+        "style" : {
+          "fontSize" : 14,
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "textAlign" : "left",
+          "letterSpacing" : 0,
+          "lineHeight" : 1.4,
+          "color" : "#ffffff",
+          "borderTopRightRadius" : 0,
+          "borderTopLeftRadius" : 0,
+          "borderBottomRightRadius" : 0,
+          "borderBottomLeftRadius" : 0,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#c71f1f",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "textShadow" : null
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "props" : {
+          "label" : ""
+        },
+        "w" : 96,
+        "h" : 56,
+        "z" : 3,
+        "x" : 0,
+        "y" : 0,
+        "templateType" : "Widget",
+        "type" : "Button",
+        "visible" : true,
+        "name" : "BoxMaster",
+        "modified" : 1729291414137,
+        "created" : 1729291270446
+      }
+    },
+    "designtokens" : { },
+    "schema" : { },
+    "data" : { },
+    "lastUUID" : 10020,
+    "lastUpdate" : 1729291496432,
+    "created" : 1729290075630,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Flowrabbit.ai",
+    "screenCount" : 1,
+    "widgetCount" : 4,
+    "isDirty" : true,
+    "lastCategory" : "WireFrame",
+    "id" : "6712df5b77a3d5719c091603"
+  }

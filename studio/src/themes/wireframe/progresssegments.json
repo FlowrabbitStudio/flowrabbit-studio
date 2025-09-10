@@ -1,0 +1,35 @@
+[ {
+	"id" : "WireFrameProgressSegments",
+	"type" : "ProgressSegments",
+	"name" : "Progress Steps",
+	"category" : "Advanced",
+	"subcategory" : "FormSpecial",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xl",
+	"h": "@box-height-xxs",
+	"z" : 0,
+	"props" : {
+		"value" : 1,
+        "max": 5,
+        "gap": 8
+	},
+	"has" : {
+		"onclick" : true,
+		"border" : true
+	},
+	"style" : {
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+
+		"background": "@background-passive",
+		"foreground": "@background-passive",
+        "activeBackground": "@background-active",
+        "activeBorderColor": "@background-active"
+	}
+} ]

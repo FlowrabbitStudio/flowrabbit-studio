@@ -1,0 +1,303 @@
+.MatcWidgetTypeRest {
+	position: absolute;
+	width:100%;
+	height: 100%;
+	outline: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.MatcWidgetTypeRestLogo{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 60%;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.MatcWidgetTypeRestLogo.Make-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/make-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.Xano{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/xano.svg");
+}
+
+.MatcWidgetTypeRestLogo.Xano-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/xano-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.Make{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/make.svg");
+}
+
+.MatcWidgetTypeRestLogo.OpenAI-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/openai-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.OpenAI{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/openai.svg");
+}
+
+.MatcWidgetTypeRestLogo.Webhook {
+	height: var(--rest-icon-height);
+    background-image: url("../logos/webhook.svg");
+}
+
+.MatcWidgetTypeRestLogo.webhook-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/airtable-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.Airtable{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/airtable.svg");
+}
+
+.MatcWidgetTypeRestLogo.Airtable-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/airtable-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-text{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-text.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-text-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-text-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.script{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/script.svg");
+}
+
+.MatcWidgetTypeRestLogo.script-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/script-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-image{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-image.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-image-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-image-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-text-speech{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-text-speech.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-text-speech-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-text-speech-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-speech-text{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-speech-text.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-video{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-video.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-speech-text-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-speech-text-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-video-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-video-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-ionos{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-ionos.svg");
+}
+
+.MatcWidgetTypeRestLogo.doc-ionos{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/docs-ionos-search.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-agent{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-agent.svg");
+}
+
+
+.MatcWidgetTypeRestLogo.download{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/download.svg");
+}
+
+.MatcWidgetTypeRestLogo.download-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/download-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.copy-clipboard{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/copy-clipboard.svg");
+}
+
+.MatcWidgetTypeRestLogo.copy-clipboard-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/copy-clipboard-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.ai-ionos-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/ai-ionos-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.prompt-builder{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/prompt-builder.svg");
+}
+
+.MatcWidgetTypeRestLogo.prompt-builder-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/prompt-builder-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.api{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/api.svg");
+}
+
+.MatcWidgetTypeRestLogo.api-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/api-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.or-logic{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/or-logic.svg");
+}
+
+.MatcWidgetTypeRestLogo.and-logic{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/and-logic.svg");
+}
+
+.MatcWidgetTypeRestLogo.text-doc-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/texttodoc-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.text-doc{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/texttodoc.svg");
+}
+
+.MatcWidgetTypeRestLogo.or-logic-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/or-logic-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.and-logic-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/and-logic-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.pdf-parser{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/pdf-parser.svg");
+}
+
+.MatcWidgetTypeRestLogo.pdf-parser-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/pdf-parser-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.Rows {
+	height: var(--rest-icon-height);
+    background-image: url("../logos/rows.svg");
+}
+
+.MatcWidgetTypeRestLogo.local-storage {
+	height: var(--rest-icon-height);
+    background-image: url("../logos/local-storage.svg");
+}
+
+.MatcWidgetTypeRestLogo.local-storage-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/local-storage-icon.svg");
+}
+
+.MatcWidgetTypeRestLogo.parse-json{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/json-parser.svg");
+}
+
+.MatcWidgetTypeRestLogo.parse-json-icon{
+	height: var(--rest-icon-height);
+    background-image: url("../logos/json-parser.svg");
+}
+
+
+.MatcWidgetTypeRest .mdi {
+	color:#777;
+	position: absolute;
+	line-height: 1;
+	top:0%;
+	left:var(--rest-icon-height);
+	transform: translateX(-var(--rest-icon-height));
+    background: -webkit-linear-gradient(#092955, #04152c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.MatcWidgetTypeRest .MatcWidgetTypeRestLabel{
+	position: absolute;
+    width: max-content;
+	text-align: center;
+	top:100%;
+	outline: none;
+	color:#cecece;
+	font-size: 1var(--rest-icon-height);
+	padding: 4px;
+	display: block;
+	font-weight: 600;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+}
+
+.MatcLight .MatcWidgetTypeRest .MatcWidgetTypeRestLabel{
+	color:#555;
+}
+
+.MatcWidgetTypeUploadPreview{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: left;
+	outline: none;
+	border-style: solid;
+	background-size: 100% 100%;
+}
+
+.MatcWidgetTypeUploadPreview.MatcWidgetTypeUploadPreviewImage{
+	background-size: 100%;
+	background-repeat: no-repeat;
+}

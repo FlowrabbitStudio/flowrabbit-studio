@@ -1,0 +1,85 @@
+.MatcPreviewDialog {
+    width: 1000px;
+    height: 300px;
+}
+
+.MatcPreviewDialogCntr{
+    height: 100%;
+    width: 100%;
+}
+
+.MatcPreviewDialogIframe {
+    height: 100%;
+    width: 100%;
+}
+
+.MatcPreviewDialogHandle {
+    width: 16px;
+    height: 16px;
+    background: RED;
+    POSITION: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.MatcPreviewDebugger {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+}
+
+.MatcPreviewDebuggerIcon {
+    height: 48px;
+    width: 48px;
+    position: fixed;
+    font-size: 28px;
+    bottom: 24px;
+    left: 24px;
+    background: var(--primary-color);
+    color:#fff;
+    z-index: 90000001;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.MatcPreviewDebuggerIcon:hover {
+    background: var(--primary-color-hover);
+}
+
+.MatcPreviewDebuggerContent {
+    height: calc(100% - 48px);
+    width: 300px;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    top: 24px;
+    background: #f7f7f7;
+    z-index: 90000001;
+    border-radius: 12px;
+    overflow: auto;
+
+    cursor: default;
+}
+
+.MatcPreviewDebuggerContent .MatcPreviewDebuggerContentHeader {
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    background: var(--dialog-title-background);
+    font-size: var(--dialog-title-size);
+    font-weight: var(--dialog-title-weight);
+    color: var(--dialog-title-color);
+    border-bottom: var(--dialog-title-border);
+    font-size: 14px;    
+}
+
+.MatcPreviewDebuggerContent .MatcPreviewDebuggerContentHeader .mdi{
+   cursor: pointer;    
+}
+
+.MatcPreviewDebuggerContent .MatcPreviewDebuggerContentBody {
+    padding: 16px;
+}

@@ -1,0 +1,62 @@
+[
+    {
+        "id" : "SingleContainer",
+        "type" : "Box",
+        "category" : "Container",
+        "subcategory" : "A",
+        "_type" : "Widget",
+        "name" : "Container",
+        "x" : 0,
+        "y" : 0,
+        "w" : "$80%",
+        "h" : 400,
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : { 
+            "fontFamily" : "@font-family",
+            "borderColor": "@form-border-color",
+            "borderRadius": 0,
+			"borderWidth": 0,
+			"borderStyle": "solid",
+            "background" : "@background-passive",
+            "boxShadow": "none",
+            "wrapOnMobile":true
+        }
+    },
+    {
+        "id" : "ColumnContainer",
+        "type" : "ColumnContainer",
+        "category" : "Container",
+        "subcategory" : "B",
+        "_type" : "Widget",
+        "name" : "Columns",
+        "x" : 0,
+        "y" : 0,
+        "w" : "$80%",
+        "h" : 400,
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : { 
+            "fontFamily" : "@font-family",
+            "borderColor": "@form-border-color",
+            "borderRadius": 0,
+			"borderWidth": 0,
+			"borderStyle": "solid",
+            "background" : "@background-passive",
+            "boxShadow": "none",
+            "gap": 32,
+            "cols": 2,
+            "wrapOnMobile":true
+        }
+    }
+]

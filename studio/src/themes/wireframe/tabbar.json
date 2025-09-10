@@ -1,0 +1,64 @@
+[
+	{
+		"id": "TabBar",
+		"type": "TabBar",
+		"_type": "Widget",
+		"category": "Advanced",
+		"subcategory": "AButtons",
+		"name": "TabBar",
+		"x": 0,
+        "y": 0,
+        "w": "@box-width-xxl",
+        "h": "@box-height-s",
+        "z": 0,
+		"props": {
+			"type": "Top",
+			"navigation": [
+				{"id": 1, "label": "Tab 1", "icon": "", "to": "", "selected": true},
+				{"id": 2, "label": "Tab 2", "icon": "", "to": ""},
+				{"id": 3, "label": "Tab 3", "icon": "", "to": ""}
+			]
+		},
+		"has": {
+			"backgroundColor": true,
+            "border": true,
+			"onclick": true,
+			"label": true,
+			"padding": true
+		},
+		"style": {
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+		
+			"paddingBottom": 8,
+			"paddingTop": 8,
+			"paddingLeft": 16,
+			"paddingRight": 16,
+
+			"borderTopWidth" : 0,
+            "borderBottomWidth" : 1,
+            "borderRightWidth" : 0,
+            "borderLeftWidth" : 0,
+			"borderColor": "@label-color",
+			"borderStyle": "solid",
+
+			"background": "none",
+            "color": "@label-color",
+
+			"gap": -1,
+			"itemGap": 4,
+            "align": "left"
+		},
+		"hover": {
+            "borderBottomColor" : "@button-primary-border-color",
+			"color": "@button-primary-border-color"
+		},
+		"active": {
+            "borderBottomColor" : "@button-primary-border-color",
+            "color": "@button-primary-border-color"
+		}
+	}
+]

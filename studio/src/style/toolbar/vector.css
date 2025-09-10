@@ -1,0 +1,61 @@
+.MatcCreateVectorBtn .MatcToolbarPopUp{
+    background: #fff;
+    width: 160px;
+    top:-48px
+}
+
+.MatcCreateVectorBtn.MatcToolbarDropDownButton{
+    margin: 0;
+    padding: 0px;
+    position: relative;
+}
+
+.MatcCreateVectorBtn .MatcToolbarPopUpArrowCntr .MatcToolbarPopUpArrow {
+    left: auto;
+    right: -10px;
+}
+
+.MatcCreateVectorBtn .MatcToolbarPopUpArrowCntr {
+    top: 56px;
+    left: auto;
+    right: 100%;
+}
+
+.MatcCreateVectorBtn ul li:hover{
+    width: 100%;
+    padding: 4;
+}
+
+.MatcCreateVectorBtn ul li:hover{
+    background: #333;
+    color: #fff;
+}
+
+.MatcVectorStrokeProps {
+
+}
+
+.MatcVectorStrokePropsPopup {
+    width: 320px;
+    min-height: 52px;
+}
+
+.MatcVectorStrokePropsPopup h3 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.MatcVectorStrokePropsPopupBig {
+    height: 300px;
+}
+
+.MatcVectorStrokePropsPopup .MatcToolbarPopUpSection {
+    padding: 16px 8px;
+    margin: 0px;
+}
+
+
+
+.MatcVectorStrokePropsPopup .MatcSegmentButton .MatcButton {
+    font-size: 14px;
+}

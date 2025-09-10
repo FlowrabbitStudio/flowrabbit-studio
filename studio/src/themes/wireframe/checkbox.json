@@ -1,0 +1,86 @@
+[
+	{
+		"id": "CheckBox",
+		"type": "CheckBox",
+		"name": "CheckBox",
+		"category": "Form",
+		"subcategory": "FormCheckBox",
+		"_type": "Widget",
+		"x": 0,
+		"y": 0,
+        "w": "@form-height",
+        "h": "@form-height",
+		"z": 0,
+		"props": {
+			"checked": true
+		},
+		"has": {
+			"onclick": true,
+			"border": true,
+			"data": true,
+			"backgroundColor": true
+		},
+		"style": {			
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+			"background": "@form-background",
+			"color": "@form-color",
+			"colorButton": "@background-active",
+			"boxShadow": "@box-shadow-s"
+		},
+		"checked": {
+			"background": "@form-background"
+		},
+		"error": {
+			"borderColor": "@form-border-color:error",
+			"background": "@form-background:error",
+			"colorButton": "@form-border-color:error"
+		}
+	},
+	{
+		"id": "LabeledCheckBox",
+		"type": "LabeledCheckBox",
+		"name": "CheckBox (Label)",
+		"category": "Form",
+		"subcategory": "FormCheckBox",
+		"_extends": "CheckBox",
+		"_type": "Widget",
+		"x": 0,
+		"y": 0,
+        "w": 96,
+        "h": "@form-height",
+		"z": 0,
+		"props": {
+			"checked": true,
+			"label": "Label",
+			"gap": 12
+		},
+		"has": {
+			"label": true,
+			"onclick": true,
+			"border": true,
+			"data": true
+		},
+		"style": {	
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "left",
+			"letterSpacing": "@letterSpacin",
+			"lineHeight": "@lineHeight",
+			"padding": 0,	
+			"textShadow": null,
+			"verticalAlign": "middle",
+			"borderColor": "@form-border-color",
+	        "boxHeight": 24,
+			"boxShadow": "@box-shadow-s"
+		},
+		"error": {
+			"borderColor": "@form-border-color:error",
+			"background": "@form-background:error",
+			"color": "@form-color:error",
+			"colorButton": "@form-border-color:error"		
+		}
+	}
+]

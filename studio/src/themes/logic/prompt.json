@@ -1,0 +1,36 @@
+[
+    {
+        "id": "PromptBuilder",
+        "name": "PromptBuilder",
+        "type": "PromptBuilder",
+        "category": "Logic",
+        "subcategory": "ABox",
+        "_type": "Widget",
+        "x": 0,
+        "y": 0,
+        "w": 160,
+        "h": 72,
+        "props": {
+            "rest": {
+                "token": "",
+                "assistant": "",
+                "input": {
+                    "databinding": "",
+                    "prompt": ""
+                },
+                "output": {
+                    "databinding": "",
+                    "path": ""
+                }
+            }
+        },
+        "has": {
+            "rest": true
+        },
+        "style": {
+            "background": "#777",
+            "iconSize": 0.6,
+            "icon": "mdi mdi-file-document-outline"
+        }
+    }
+]

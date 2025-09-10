@@ -1,0 +1,63 @@
+.qux-datagrid{
+    border:0px solid #333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    &.qux-table-fixed {
+        display: flex;
+        flex-direction: column;
+
+        .qux-table-header {
+
+        }
+
+        .qux-table-body {
+            overflow: auto;
+            flex-grow: 1;
+        }
+    }
+
+    table {
+        width: 100%;
+        height: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        .qux-table-action{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .qux-table-action:hover{
+            text-decoration: none;
+        }
+
+        .qux-table-action-hover{
+            opacity: 0;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        td, th {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            white-space: nowrap; /* Add this line */
+            vertical-align: middle !important;
+            box-sizing: border-box;
+        }
+
+        tr:hover .qux-table-action-hover{
+            opacity: 1;
+        }
+
+        .qux-table-action-cntr{
+            text-align: right;
+        }
+    }
+
+    
+}

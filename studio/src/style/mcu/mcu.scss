@@ -1,0 +1,231 @@
+.MCU {
+
+    .section {
+        padding: 2rem 3rem;
+    }
+
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 24px;
+    } 
+
+    .MCUTopBar {
+        display: flex;
+        gap:16px;
+        justify-content: space-between;
+
+        .VommondCheckBoxLabel {
+            font-size: 12px;
+        }
+
+        .VommondCheckBox {
+            height: 12px;
+            width: 12px;
+        }
+ 
+    
+        .MatcListSearchWarpper {
+            flex-grow: 1;
+            margin: 0px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .MCUHourSliderCntr {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .MCUHourSlider {
+            width: 200px;
+        }
+    }
+
+  
+
+    .MCUDomainCntr {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding:32px;
+
+        max-height: 500px;
+        overflow: auto;
+
+        a{
+            display: inline-block;
+            padding: 4px 8px;
+            background: #3787f2;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 10px;
+
+            .value {
+                background: #fff;
+                color: #3787f2;
+                border-radius: 8px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+    }
+    .MCUWeekPicker{
+        .mdi {
+            cursor: pointer;
+        }
+    }
+    ::-webkit-datetime-edit { border: 1px solid transparent; }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .MCU {
+
+        .section {
+            padding: 8px;
+        }
+
+        .card {
+            padding: 0px;
+
+            .card-content {
+                padding: 8px;
+            }
+        }
+    }
+}
+
+
+.MatcListSearchCntr{
+	text-align: right;
+	width: 240px;
+
+	.MatcSearchForm {
+		display: inline-block;
+		border-bottom: 1px solid transparent;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;		
+	}
+
+    .mdi {
+        cursor: pointer;
+    }
+
+
+	.MatcQIcon{
+		display: inline-flex;
+		cursor: pointer;
+	}
+
+	input{
+		width: 0px;
+		opacity:0;
+		transition: all 0.3s;
+		margin-right: 10px;
+		border:0px;
+		padding:3px;
+		background: none;
+   }
+
+}
+
+.MatcListSearchVisible{
+	.MatcSearchForm{
+		border-bottom: 1px solid #ccc;
+	}
+	input{
+		width: 200px;
+		opacity:1;
+	}
+}
+
+.MatcMCUDialog, .MatcMCUPanel {
+    table {
+        width: 100%;
+        
+   
+
+        td {
+            padding-bottom: 4px;
+        }
+
+        .MatcMCUTableMax {
+            width: 100%;
+        }
+
+        .MatcMCUTableAction {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            width: 40px;
+            align-items: center;
+            height: 38px;
+            justify-content: flex-end;
+
+            .MatcButton {
+                padding: 3px;
+                width: 32px;
+                text-align: center;
+                justify-content: center;
+                height: 100%;
+            }
+
+            .MatcButtonRed {
+               opacity: 0;
+            }
+        }
+
+        tr:hover .MatcButtonRed {
+            opacity: 1;
+        }
+    }
+
+    .MatcMCUDialogTeam {
+        height: 500px;
+        overflow: scroll;
+    }
+}
+
+.MCULogs {
+	font-size: 12px;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    > div {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .MCULogsMatch {
+            background: yellow;
+        }
+    }
+}
+
+.MCUForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .MatcGapM {
+        gap: 48px;
+    }
+}
+
+
+.MCUAction {
+    cursor: pointer;
+}

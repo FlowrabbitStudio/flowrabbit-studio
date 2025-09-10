@@ -1,0 +1,165 @@
+{
+    "id": "Card",
+    "type": "Group",
+    "_type": "Group",
+    "name": "Card",
+    "category": "Resources",
+    "subcategory": "Templates",
+    "children": [
+      {
+        "id": "Card",
+        "type": "Box",
+        "name": "Container",
+        "sidebar": true,
+        "x": 0,
+        "y": 0,
+        "w": 270,
+        "h": 259,
+        "props": {},
+        "has": {
+          "backgroundColor": true,
+          "border": true
+        },
+        "actions": {},
+        "style": {
+          "fontSize": "@font-size-m",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "fontFamily": "@font-family",
+          "background": "#ffffff",
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": 16,
+          "borderTopLeftRadius": 16,
+          "borderBottomRightRadius": 16,
+          "borderBottomLeftRadius": 16,
+          "borderTopColor": "#e7e7e7",
+          "borderBottomColor": "#e7e7e7",
+          "borderRightColor": "#e7e7e7",
+          "borderLeftColor": "#e7e7e7",
+          "boxShadow": {
+            "v": 1,
+            "h": 0,
+            "b": 2,
+            "s": 0,
+            "c": "rgba(156, 156, 156, 0.16)"
+          }
+        },
+        "qssSource": "Box",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Image",
+        "type": "UploadPreview",
+        "name": "Data Image",
+        "x": 18,
+        "y": 17,
+        "w": 234,
+        "h": 152,
+        "props": {},
+        "has": {
+          "backgroundColor": true,
+          "onclick": true,
+          "border": true
+        },
+        "actions": {},
+        "style": {
+          "background": "#fafafa",
+          "backgroundImage": null,
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": 12,
+          "borderTopLeftRadius": 12,
+          "borderBottomRightRadius": 12,
+          "borderBottomLeftRadius": 12,
+          "borderTopColor": "@form-border-color",
+          "borderBottomColor": "@form-border-color",
+          "borderRightColor": "@form-border-color",
+          "borderLeftColor": "@form-border-color",
+          "borderTopStyle": "solid",
+          "borderBottomStyle": "solid",
+          "borderRightStyle": "solid",
+          "borderLeftStyle": "solid"
+        },
+        "qssSource": "UploadPreview",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Title",
+        "type": "Label",
+        "name": "Title",
+        "x": 18,
+        "y": 185,
+        "w": 234,
+        "h": 14,
+        "props": {
+          "label": "Title"
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": "18",
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "@label-color",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "@label-font-weight-bold",
+          "verticalAlign": "middle"
+        },
+        "qssSource": "Headline2",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Description",
+        "type": "Label",
+        "name": "Description",
+        "x": 18,
+        "y": 212,
+        "w": 234,
+        "h": 29,
+        "props": {
+          "label": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": 12,
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "@label-color",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "",
+          "verticalAlign": "top"
+        },
+        "qssSource": "Headline2",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      }
+    ]
+  }

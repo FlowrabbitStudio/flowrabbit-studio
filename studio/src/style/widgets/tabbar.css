@@ -1,0 +1,33 @@
+.MatcWidgetTypeTabBar{
+    position: absolute;
+	width:100%;
+	height: 100%;
+	outline: none;
+    border: 0px solid transparent;
+}
+
+.MatcWidgetTypeTabBar .MatcWidgetTypeTabBarCntr {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.MatcWidgetTypeTabBar.Side .MatcWidgetTypeTabBarCntr{
+	flex-direction: column;
+}
+
+.MatcWidgetTypeTabBarIcon{
+	line-height: 1;
+}
+
+.MatcWidgetTypeTabBarItem {
+    display: flex;
+    align-items: center;
+	cursor: pointer;
+	gap: 40px;
+}
+
+
+.MatcWidgetTypeTabBarPlaceholder {
+	flex-grow: 1;
+}

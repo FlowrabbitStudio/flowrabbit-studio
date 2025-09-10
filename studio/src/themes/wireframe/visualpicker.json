@@ -1,0 +1,59 @@
+[
+    {
+        "id": "VisualPicker",
+        "type": "VisualPicker",
+        "_type": "Widget",
+        "name": "Visual Picker",
+        "category": "Advanced",
+        "subcategory": "XFormButton",
+        "x" : 0,
+        "y" : 0,
+        "w": "@box-width-l",
+        "h": "@box-height-l",
+        "z" : 0,
+        "props" : {
+          "label": "Pick"
+        },
+        "has" : {
+          "data":true,
+          "backgroundColor" : true,
+          "onclick" : true,
+          "label" : true,
+          "border":true
+        },
+        "style" : {
+          "fontSize": "@font-size-m",
+          "fontFamily": "@font-family",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "background": "@form-background",
+          "color": "@form-color",
+          "borderRadius": "@border-radius",
+          "borderWidth": "@border-width",
+          "borderStyle": "solid",
+          "borderColor": "@form-border-color",
+
+    
+          "boxShadow": {
+            "v": 0,
+            "h": 0,
+            "b": 0,
+            "s": 0,
+            "i": false,
+            "c": "rgba(0,0,0,0.16)",
+            "custom": true
+          },
+
+          "icon": "mdi-card-account-details",
+          "iconSize": 48,
+          "iconColor": "@background-active",
+          "popColor": "@color-active",
+          "popBackground": "@background-active",
+          "popIconSize": "60",
+          "popIcon": "mdi-check"
+        },
+        "hover": {
+        }
+    }
+]

@@ -1,0 +1,77 @@
+
+.MatcTreeIcon {
+    cursor: pointer;
+}
+
+.MatcTreeItemLabel {
+   padding: 0;
+}
+
+label{
+    margin: 0;
+}
+
+.MatcTreeItemInput{
+    flex-grow: 1;
+}
+.MatcTreeHeader{
+    font-weight: 700;
+}
+
+.MatcFormRow .MatcToolbarDropDownButton {
+    width: auto;
+}
+
+input.MatcTreeItemInput {
+    border: 1px solid transparent;
+    background: none;
+    width: auto;
+    padding: 2px;
+
+    &:focus {
+        border: 1px solid $input_border_focus;
+    }
+}
+
+.MatcTreeItemNav {    
+    width: 100px;
+    flex-grow: unset;
+    overflow: hidden;
+
+    padding-left: 8px ;
+
+    .MatcToolbarDropDownButton{
+        padding: 0px;
+        height: auto;
+        width: 100px;
+
+        .MatcToolbarDropDownButtonLabel{
+            color: $main_color;
+            text-decoration: underline;
+            font-size: 12px;
+        }
+    
+        .MatcToolbarDropDownButtonCntr{
+            display: flex;
+            align-items: center;
+
+        }
+    }
+}
+.MatcTreeIcon{
+    line-height: 1;
+}
+
+.MatcTreeItemAdd{
+    color: $main_color;
+    text-decoration: underline;
+    cursor: pointer;
+
+    .MatcTreeTypeIcon{
+       
+    }
+
+    .MatcTreeTypeIcon.mdi {
+        opacity: 1;
+    }
+}

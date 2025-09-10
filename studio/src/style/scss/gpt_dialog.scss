@@ -1,0 +1,154 @@
+
+@import '../variables.scss';
+
+.MatcDialog.MatchImportDialog.MatchImportOpenAIDialog {
+
+    height: 640px;  
+
+    &.MatchImportOpenAIDialogMobile{
+      width: 720px;
+    }
+
+    &.MatchImportOpenAIDialogDesktop{
+      width: 940px; // 520
+
+      .MatchImportDialogPreviewCntr {
+        width: 520px;
+      }
+    }
+
+    .MatcToolbarTabs a {
+        border-bottom: 2px solid transparent;
+    
+        &.MatcToolbarTabActive {
+          border-bottom-width: 2px;
+          border-bottom: 2px solid $main_color;
+        }
+    }
+
+    .MatcToolbarTabsBig {
+      margin-bottom: 20px;
+    }
+      
+    .MatchImportOpenAIDialogWarn {
+        padding: 16px;
+        background: #f9ed8371;
+        border: 1px solid #f9ed83;
+        border-radius: 4px;
+    }
+
+    .MatchImportOpenAIDialogWaiting {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+
+      .MatcHintCntr {
+        width: 80%;
+      }
+
+      .MatcHint {
+        width: 100%;
+        color: $text_color_passive;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .MatchImportDialogProgressCntr {
+        display: block;
+        width: 100%;
+        height: 10px;
+        overflow: hidden;
+        
+      }
+    
+      .MatchImportDialogProgress {
+        height: 100%;
+        width: 100%;
+        background: $main_color;
+        border-radius: 16px;
+  
+        animation-name: aiRunning;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      .MatchImportOpenAIDialogHint {
+        border-radius: 4px;
+        padding: 32px;
+        background: #d6e5f86c;
+        border: 1px solid #d6e5f8;
+        width: 100%;
+
+  
+        h1 {
+          font-size: 16px;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 32px;
+        }
+
+        p {
+          font-style: italic;
+          margin-top: 16px;
+        }
+      }
+    }
+  
+    textarea.form-control {
+      height: 100%;
+      width: 320px;
+    }
+  
+    .VommondRadioBoxList > div {
+      display: flex;
+      flex-direction: column;
+  
+      .VommondRadioBoxListItem {
+        width: auto;
+      }
+    }
+    
+}
+
+
+.MatchImportDialogPreviewCntr {
+      width: 300px;
+      border: transparent 1px dashed;
+      position: relative;
+      flex-shrink: 0;
+      height: 100%;
+      border: 1px solid hsl(0deg, 0%, 86%);
+  
+      .MatcHintCenter {
+        color: $text_color_passive;
+        position: absolute;
+        width: 60%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s all;
+        font-size: 24px;
+        text-align: center;
+      }
+
+         
+    .MatchImportOpenAIDialogSimulator {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+
+      position: absolute;
+    }
+
+}
+  
+@keyframes aiRunning {
+  0%   {width: 1%;}
+  100% {width: 100%}
+}
+  

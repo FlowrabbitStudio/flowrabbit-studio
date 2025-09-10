@@ -1,0 +1,30 @@
+[
+    {
+        "id": "UploadFile",
+        "type": "Upload",
+        "category": "Image",
+        "subcategory": "XBoxCamera",
+        "_type": "Widget",
+        "name": "Upload",
+        "_extends": "TextBox",
+        "z": 0,
+        "props": {
+            "label": "Choose File",
+            "fileTypes": "All",
+            "maxFileSize": -1,
+            "maxFilesAllowed": 1
+        },
+        "has": {
+            "data": true,
+            "onclick": true,
+            "backgroundColor": true,
+            "border": true,
+            "label": true,
+            "padding": true
+        },
+        "actions": {},
+        "style": {
+            "verticalAlign": "middle"
+        }
+    }
+]

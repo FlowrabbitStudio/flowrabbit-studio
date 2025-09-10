@@ -1,0 +1,107 @@
+<template>
+    <ZoomDialog ref="dialog">
+        <div class=" MatcDialog MatcSurveyDialog MatcPadding">
+            
+       
+                <div class="form-group">
+                    <label>Email</label>
+                    <div>
+                        {{user.email}}
+                    </div>      
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <div>
+                        {{user.name ? user.name : '?????'}} {{user.lastname ? user.lastname : '???????'}}
+                    </div>      
+                </div>
+
+                <div class="form-group">
+                    <label>Paid Until</label>
+                    <div>
+                        <input class="form-control" type="date" v-model="paidUntilDate" />
+                    </div>               
+                </div>
+
+                <div class="form-group">
+                    <label>Blocked</label>
+                    <div>
+                        <CheckBox :value="isBlocked" @change="isBlocked = !isBlocked" label="Blocked" /> 
+                    </div>               
+                </div>
+
+
+                <div class="MatcButtonBar MatcMarginTopXXL">
+                    <div class="MatcButton" @click="updateUser">Save</div>
+                    <div class="MatcLinkButton" @click="close">Close</div>
+                </div>
+ 
+        </div>
+          
+ 
+     
+    </ZoomDialog>
+</template>
+<style lang="scss">
+ 
+</style>
+<script>
+import Logger from 'common/Logger'
+import ZoomDialog from 'common/ZoomDialog'
+import Services from "services/Services"
+import AdminService from './AdminService'
+import lang from 'dojo/_base/lang'
+import CheckBox from 'common/CheckBox'
+export default {
+    name: 'UserDialog',
+    mixins:[],
+    props: [''],
+    data: function () {
+        return {
+            user: {},
+            paidUntilDate: '',
+            isBlocked: false
+        }
+    },
+    components: {
+      'ZoomDialog': ZoomDialog,
+      'CheckBox': CheckBox
+    },
+    computed: {
+    },
+    methods: {
+        async updateUser () {
+            const paidUntil = Date.parse(this.paidUntilDate);
+            await this.adminService.updateUser(this.user.id, {
+                paidUntil: paidUntil,
+                status: this.isBlocked ? 'blocked' : 'active'
+            })
+            if (this.saveCallback) {
+                this.saveCallback()
+            }
+            this.close()
+        },
+       
+        close () {
+            this.$refs.dialog.close()
+        },
+        show (user, e, saveCallback) {
+            this.$refs.dialog.show(e.target)
+            this.user = lang.clone(user)
+            const date = new Date(user.paidUntil)
+            const year = date.getFullYear()
+            const month = `0${date.getMonth() + 1}`.slice(-2)
+            const day = `0${date.getDate()}`.slice(-2)
+            this.paidUntilDate = `${year}-${month}-${day}`;
+            this.isBlocked = this.user.status === 'blocked'
+            this.saveCallback = saveCallback
+        }
+    },
+    mounted () {
+      this.logger = new Logger('UserDialog')
+      this.adminService = new AdminService()
+      this.adminService.setToken(Services.getUserService().getToken())
+    }
+}
+</script>

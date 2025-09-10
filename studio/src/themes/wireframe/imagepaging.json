@@ -1,0 +1,38 @@
+[
+	{
+		"id": "WireFrameImagePaging",
+		"type": "ImagePaging",
+		"name": "Image Paging",
+		"category": "Image",
+		"subcategory": "FormImageX",
+		"_type": "Widget",
+		"x": 0,
+		"y": 0,
+		"w": "@box-width-l",
+		"h": "@box-height-xxs",
+		"z": 0,
+		"props": {
+			"value": 1,
+			"max": 5,
+			"gap": 8
+		},
+		"has": {
+			"onclick": true
+		},
+		"style": {
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"borderRadius": "@border-radius-round",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@background-passive",
+			"padding": 0,
+			"background": "@background-passive",
+			"activeBackground": "@background-active",
+			"activeBorderColor": "@background-active"
+		}
+	}
+]

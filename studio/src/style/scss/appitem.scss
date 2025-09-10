@@ -1,0 +1,131 @@
+@import "../vars.css";
+@import "style/variables.scss";
+
+.gradient-background {
+  background: linear-gradient(206deg, #ffffff, #f1f1f1, #ffffff);
+  background-size: 180% 180%;
+  animation: gradient-animation 0.3s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.MatcAppListItem {
+  margin-right: 18px;
+  border: 1px solid #ededed;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: none;
+  width: 220px;
+}
+
+.MatcAppListItem:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.MatcPreviewWrapper {
+  position: relative;
+  height: 200px;
+}
+
+.loading-indicator,
+.error-indicator {
+  text-align: center;
+  padding: 20px;
+}
+
+.MatcListItemFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: var(--primary-color-light);
+  border-top: 1px solid #ddd;
+}
+
+.MatcListItemDescription {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+}
+
+.MatcListItemDescription .MatcQIcon {
+  justify-content: end;
+}
+
+.MatcListItemEdited {
+  font-size: 10px;
+  color: #888;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MatcListItemHidden {
+  opacity: 0;
+}
+
+.MatcListItemAnimated {
+  transition: opacity 0.3s ease-in;
+}
+
+.app-item-menu {
+  .dropdown {
+    position: relative;
+    font-size: 14px;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-options {
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 120px;
+    text-align: center;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -100%);
+  }
+
+  .menu-options .danger {
+    color: var(--danger-color-dark);
+  }
+
+  .menu-options .divider {
+    margin: 4px 0;
+    border-bottom: 1px solid var(--form-border);
+  }
+
+  .menu-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--form-color);
+  }
+
+  .menu-options button:hover {
+    background: #f9f9f9;
+  }
+}

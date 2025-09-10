@@ -1,0 +1,48 @@
+[
+    {
+		"id": "DownloadButton",
+		"type": "DownloadButton",
+		"_type": "Widget",
+		"category": "Buttons",
+		"subcategory": "AButtons",
+		"name": "Download Button",
+        "sidebar": true,
+		"x": 0,
+        "y": 0,
+        "w": "@box-width-l",
+        "h": "@form-height",
+        "z": 0,
+		"props": {
+			"label": "Download",
+			"srcfile": "https://example.com/file.pdf"
+		},
+		"has": {
+			"backgroundColor": true,
+            "border": true,
+			"onclick": true,
+			"label": true,
+			"padding": true,
+            "data": true
+		},
+		"style": {
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"textAlign" : "center",
+			"verticalAlign" : "middle",
+			"padding": 0,	
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@button-primary-border-color",
+			"background": "@button-primary-background",
+			"color": "@button-primary-color"
+		},
+		"hover": {
+			"borderColor": "@button-primary-border-color:hover",
+			"background": "@button-primary-background:hover",
+			"color": "@button-primary-color:hover"	
+		}
+	}
+]

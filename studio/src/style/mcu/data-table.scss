@@ -1,0 +1,165 @@
+.mact-data-table {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid rgb(229, 234, 239);
+    }
+
+    th {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgb(42, 53, 71);
+      cursor: pointer;
+      position: relative;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    td {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgb(42, 53, 71);
+
+      &:last-child {
+        text-align: center;
+        width: 60px;
+      }
+
+      .cell-bubble {
+        display: inline-block;
+        margin-right: 8px;
+        background: #d6e5f8;
+        border-radius: 8px;
+        padding: 2px 8px;
+        font-size: 12px;
+      }
+    }
+
+    td.red span {
+      background: rgb(231, 127, 127);
+      color: #fff;
+      border-radius: 3px;
+      padding: 2px;
+    }
+
+    td.green span {
+      background: rgb(127, 231, 137);
+      border-radius: 3px;
+      color: #fff;
+      padding: 2px;
+    }
+
+    td.action {
+      padding-left: 2px;
+      padding-right: 16px;
+    }
+
+    .sort-icon {
+      margin-left: 8px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    .action-icons {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+
+      .mdi {
+        cursor: pointer;
+        font-size: 16px;
+        color: #666;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: #0056b3;
+        }
+      }
+      .mdi-delete {
+        color: var(--danger-color);
+      }
+    }
+  }
+
+  .mact-data-table-loading {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    color: #999;
+  }
+
+  .token span {
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Ensures that the overflowing text is hidden */
+    text-overflow: ellipsis; /* Adds the "..." at the end */
+    width: 200px;
+    display: block;
+    -webkit-text-security: disc;
+  }
+}
+
+.mact-data-table-selectable {
+  .data-table-row:hover {
+    background-color: #d6e5f85b;
+    cursor: pointer;
+  }
+}
+
+.mact-data-table-paging-cntr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+
+  .mdi {
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 10px;
+    &:hover {
+      color: #0056b3;
+    }
+  }
+
+  input {
+    width: 36px;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 8px;
+
+    &:focus {
+      border-color: #0056b3;
+      outline: none;
+    }
+  }
+
+  select {
+    width: 128px;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 8px;
+  }
+
+  select:active {
+    outline: none;
+  }
+}

@@ -1,0 +1,128 @@
+@import '../variables.scss';
+
+.MatcThemeDialog{
+    width: 560px;
+    height: 660px;
+}
+
+
+.MatcThemeConfig{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .MatcToolbarTabs{
+        margin-bottom: $spacing-l;
+    }
+
+    .MatcThemeConfigThemeCntr {
+        overflow: auto;
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .MatcThemeConfigTheme {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px;
+            align-items: center;            
+            border: 1px solid $input_border;
+            border-radius: 3px;
+
+            &:hover {
+                border: 1px solid $input_border_hover;
+            }
+        }
+
+
+    }
+
+    .MatcThemeConfigVars {
+        overflow: auto;
+        flex-grow: 1;
+
+        .MatcThemeConfigVarsRow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        table {
+           
+            border-collapse: collapse;
+            width: 100%;
+
+            td, th {
+                padding: 4px 0px;
+              
+            }
+
+            .MatcThemeConfigVarsRowSep{          
+    
+                td {      
+                    padding: 8px;
+                }
+            }
+
+            .MatcToolbarColorIndicator {
+                border: 1px solid $input_border_focus;
+            }
+
+            .MatcToolbarDropDownButton {
+                width: 100%;
+                border: 1px solid transparent;
+                padding: 6px 10px;
+                height: auto;
+                border-radius: $input_border_radius;
+                &:hover {
+                    border: 1px solid $input_border_focus;
+                }
+            }
+
+            .MatcToolbarDropDownButtonCntr {
+                display: flex;
+                align-items: center;
+                height: 20px;
+
+                .MatcToolbarItemIcon {
+                    flex-grow: 1;
+                    height: 100%;
+                    overflow: hidden;
+                    color: #fff;
+
+                    .MatcToolbarDropDownButtonLabel {
+                        width: 100%;
+                        max-width: 60px;
+                        height: 20px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        display: block;
+                        text-overflow: ellipsis
+                    }
+                }
+            }
+
+            input {
+                border-color: transparent;
+                padding: 6px 10px;
+
+                &:hover{
+                    border-color: $input_border_focus;
+                    border-style: solid;
+                }
+
+                &:focus{
+                    border-color: $input_border_focus;
+                }
+
+            }
+        }
+
+        .mdi {
+            font-size: 18px;
+            vertical-align: middle;
+        }
+    }
+}

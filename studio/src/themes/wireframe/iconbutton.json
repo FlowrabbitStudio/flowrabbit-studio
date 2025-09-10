@@ -1,0 +1,24 @@
+[ {
+	"id" : "IconButton",
+	"type" : "IconButton",
+	"_type" : "Widget",
+	"category" : "Icon",
+	"subcategory" : "XFormButton",
+	"name" : "Icon Button",
+	"_extends" : "Box",
+	"w" : 100,
+	"props" : {
+		"label" : "Click Me"
+	},
+	"has" : {
+		"onclick" : true,
+		"label" : true,
+		"padding" : true
+	},
+	"style" : {
+		"textAlign" : "center",
+        "verticalAlign" : "middle",
+        "icon": "mdi mdi-heart",
+		"iconMargin": 8
+	}
+} ]

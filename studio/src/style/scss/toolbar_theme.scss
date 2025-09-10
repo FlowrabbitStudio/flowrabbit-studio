@@ -1,0 +1,29 @@
+.MatcThemeList {
+
+    .MatcToolbarItem.MatcToolbarColor {
+        display: flex;
+        align-items: center;
+    }
+
+    .MatcToolbarSectionLabel {
+        margin-top: 8px;
+    }
+
+    .MatcDesignTokenListSectionContent .MatcToolbarDropDownButton {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+    }
+
+   
+}
+
+.MatcDesignTokenListPopup.MatcToolbarPopUp li.MatchFont {
+    width: 100%;
+}
+
+.MatcDesignTokenListPopupSectionFonts.MatcDesignTokenListPopupSection {
+    max-height: 320px;
+    padding: 0px 0px;
+    overflow: auto;
+}

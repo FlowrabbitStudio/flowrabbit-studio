@@ -1,0 +1,202 @@
+[ {
+	"id" : "Table",
+	"type" : "Table",
+	"name" : "Table",
+	 "_type" : "Widget",
+	 "sidebar": true,
+	"x" : 0,
+	"y" : 0,
+	"w" : 320,
+	"h" : 160,
+	"category" : "Table",
+	"subcategory" : "ATable",
+	"z" : 0,
+	"props" : {
+		"data": [
+			["Klaus","Huber","2"], 
+            ["Vincent","Vega","3"], 
+			["Mia","Wallace","1"], 
+			["Pedro","Oliveira","3"]
+		],
+		"columns": [
+			{
+				"label": "Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Last Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Orders",
+				"width": 80,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			}
+		],
+		"widths": [
+			120,
+			120,
+			80
+		],
+		"borderStyle" : "HLines"
+	},
+	"has" : {
+		"onclick" : true,
+	    "label" : true
+	},
+	"style" : {
+
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius-none",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@table-border-color",	
+
+		"paddingBottom": 12,
+		"paddingTop": 12,
+		"paddingLeft": 8,
+		"paddingRight": 8,
+
+		"headerFontWeight" : "800",
+		"headerBackground" : "@table-header-background",
+		"headerColor" : "@table-header-color",
+
+		"evenRowBackground": "@form-background",
+		"evenRowColor": "@form-color",
+
+		"headerSticky": true,
+		"checkBox": false,
+		"checkBoxHookColor": "@background-active",
+		"checkBoxBackground": "@form-background",
+		"checkBoxBorderColor": "@form-border-color",
+		"checkBoxBorderRadius": "@border-radius",
+		"checkBoxBorderWidth": 1
+	}
+},{
+	"id" : "CellTable",
+	"type" : "Table",
+	"name" : "Table",
+	 "_type" : "Widget",
+	 "_extends": "Table",
+	 "sidebar": true,
+	"x" : 0,
+	"y" : 0,
+	"w" : 320,
+	"h" : 160,
+	"category" : "Table",
+	"subcategory" : "BTable",
+	"z" : 0,
+	"props" : {
+		"data": [
+			["Klaus","Huber","2"], 
+            ["Vincent","Vega","3"], 
+			["Mia","Wallace","1"], 
+			["Pedro","Oliveira","3"]
+		],
+		"columns": [
+			{
+				"label": "Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Last Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Orders",
+				"width": 80,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			}
+		],
+		"widths": [
+			120,
+			120,
+			80
+		],
+		"borderStyle" : "Cell"
+	}, 
+	"style": {
+		"checkBox": false,
+		"headerBackground" : "@table-border-color",
+		"headerColor" : "@table-header-color"
+	}
+},
+{
+	"id" : "CheckBoxTable",
+	"type" : "Table",
+	"name" : "Selectable Table",
+	 "_type" : "Widget",
+	 "_extends": "Table",
+	"x" : 0,
+	"y" : 0,
+	"w" : 320,
+	"h" : 160,
+	"category" : "Table",
+	"subcategory" : "CTable",
+	"z" : 0,
+	"props" : {
+		"data": [
+			["Klaus","Huber","2"], 
+            ["Vincent","Vega","3"], 
+			["Mia","Wallace","1"], 
+			["Pedro","Oliveira","3"]
+		],
+		"columns": [
+			{
+				"label": "Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Last Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			},
+			{
+				"label": "Orders",
+				"width": 80,
+				"isEditable": false,
+				"isSortable": true,
+				"isSearchable": true
+			}
+		],
+		"widths": [
+			120,
+			120,
+			80
+		],
+		"borderStyle" : "HLines"
+	}, 
+	"style": {
+		"checkBox": true
+	}
+}
+]

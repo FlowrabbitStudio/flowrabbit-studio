@@ -1,0 +1,405 @@
+{
+    "id": "teamcard",
+    "type": "Group",
+    "_type": "Group",
+    "name": "Team Card",
+    "category": "Resources",
+    "subcategory": "Templates",
+    "children": [
+      {
+        "id": "Card0",
+        "type": "Box",
+        "name": "Container",
+        "sidebar": true,
+        "x": 0,
+        "y": 0,
+        "w": 396,
+        "h": 398,
+        "props": {},
+        "has": {
+          "backgroundColor": true,
+          "border": true
+        },
+        "actions": {},
+        "style": {
+          "fontSize": "@font-size-m",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "fontFamily": "@font-family",
+          "background": "#ffffff",
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": 16,
+          "borderTopLeftRadius": 16,
+          "borderBottomRightRadius": 16,
+          "borderBottomLeftRadius": 16,
+          "borderTopColor": "#e7e7e7",
+          "borderBottomColor": "#e7e7e7",
+          "borderRightColor": "#e7e7e7",
+          "borderLeftColor": "#e7e7e7",
+          "boxShadow": {
+            "v": 1,
+            "h": 0,
+            "b": 2,
+            "s": 0,
+            "c": "rgba(156, 156, 156, 0.16)"
+          }
+        },
+        "qssSource": "Box",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card1",
+        "type": "Label",
+        "name": "Title",
+        "x": 23,
+        "y": 20,
+        "w": 351,
+        "h": 22,
+        "props": {
+          "label": "Team Members\r\n"
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": "18",
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "@label-color",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "@label-font-weight-bold",
+          "verticalAlign": "middle"
+        },
+        "qssSource": "Headline2",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card2",
+        "type": "Label",
+        "name": "Description",
+        "x": 23,
+        "y": 51,
+        "w": 351,
+        "h": 15,
+        "props": {
+          "label": "Invite your team members to collaborate.\r\n"
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": 12,
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "#7d7d7d",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "",
+          "verticalAlign": "top"
+        },
+        "qssSource": "Headline2",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card3",
+        "type": "Repeater",
+        "name": "List",
+        "x": 22,
+        "y": 79,
+        "w": 352,
+        "h": 295,
+        "props": {
+          "data": [],
+          "auto": true,
+          "layout": "rows",
+          "distanceX": -1,
+          "distanceY": 8,
+          "resize": {
+            "right": false,
+            "up": false,
+            "left": false,
+            "down": false,
+            "fixedHorizontal": false,
+            "fixedVertical": true
+          }
+        },
+        "isContainer": true,
+        "has": {
+          "backgroundColor": true,
+          "border": true
+        },
+        "style": {
+          "fontSize": "@font-size-m",
+          "fontFamily": "@font-family",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "background": null,
+          "borderTopWidth": 0,
+          "borderBottomWidth": 0,
+          "borderRightWidth": 0,
+          "borderLeftWidth": 0,
+          "borderTopRightRadius": 8,
+          "borderTopLeftRadius": 8,
+          "borderBottomRightRadius": 8,
+          "borderBottomLeftRadius": 8,
+          "borderTopColor": "@form-border-color",
+          "borderBottomColor": "@form-border-color",
+          "borderRightColor": "@form-border-color",
+          "borderLeftColor": "@form-border-color",
+          "borderTopStyle": "solid",
+          "borderBottomStyle": "solid",
+          "borderRightStyle": "solid",
+          "borderLeftStyle": "solid"
+        },
+        "qssSource": "WireFrameRepeater",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card4",
+        "type": "Box",
+        "name": "Container 1",
+        "sidebar": true,
+        "x": 22,
+        "y": 79,
+        "w": 352,
+        "h": 65,
+        "props": {},
+        "has": {
+          "backgroundColor": true,
+          "border": true
+        },
+        "actions": {},
+        "style": {
+          "fontSize": "@font-size-m",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "fontFamily": "@font-family",
+          "background": "@panel-background",
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": "@border-radius",
+          "borderTopLeftRadius": "@border-radius",
+          "borderBottomRightRadius": "@border-radius",
+          "borderBottomLeftRadius": "@border-radius",
+          "borderTopColor": "@panel-border-color",
+          "borderBottomColor": "@panel-border-color",
+          "borderRightColor": "@panel-border-color",
+          "borderLeftColor": "@panel-border-color"
+        },
+        "qssSource": "Box",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card5",
+        "type": "UploadPreview",
+        "name": "Data Image",
+        "x": 41,
+        "y": 94,
+        "w": 35,
+        "h": 35,
+        "props": {},
+        "has": {
+          "backgroundColor": true,
+          "onclick": true,
+          "border": true
+        },
+        "actions": {},
+        "style": {
+          "background": "#fafafa",
+          "backgroundImage": null,
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": 250,
+          "borderTopLeftRadius": 250,
+          "borderBottomRightRadius": 250,
+          "borderBottomLeftRadius": 250,
+          "borderTopColor": "@form-border-color",
+          "borderBottomColor": "@form-border-color",
+          "borderRightColor": "@form-border-color",
+          "borderLeftColor": "@form-border-color",
+          "borderTopStyle": "solid",
+          "borderBottomStyle": "solid",
+          "borderRightStyle": "solid",
+          "borderLeftStyle": "solid"
+        },
+        "qssSource": "UploadPreview",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card6",
+        "type": "Label",
+        "name": "Headline 3",
+        "x": 88,
+        "y": 94,
+        "w": 187,
+        "h": 17,
+        "props": {
+          "label": "Owner Name"
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": 12,
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "@label-color",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "@label-font-weight-bold",
+          "verticalAlign": "middle"
+        },
+        "qssSource": "Headline3",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card7",
+        "type": "Label",
+        "name": "Headline",
+        "x": 88,
+        "y": 111,
+        "w": 187,
+        "h": 22,
+        "props": {
+          "label": "Owner email"
+        },
+        "has": {
+          "label": true,
+          "padding": true,
+          "advancedText": true
+        },
+        "style": {
+          "fontSize": 10,
+          "fontFamily": "@font-family",
+          "letterSpacing": "@letterSpacin",
+          "lineHeight": "@lineHeight",
+          "color": "#7d7d7d",
+          "textShadow": null,
+          "textAlign": "left",
+          "fontWeight": "",
+          "verticalAlign": "middle"
+        },
+        "qssSource": "Headline3",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      },
+      {
+        "id": "Card8",
+        "type": "DropDown",
+        "name": "DropDown",
+        "x": 287,
+        "y": 101,
+        "w": 76,
+        "h": 23,
+        "props": {
+          "options": [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+          ]
+        },
+        "has": {
+          "onclick": true,
+          "border": true,
+          "backgroundColor": true,
+          "data": true,
+          "padding": true,
+          "label": true
+        },
+        "style": {
+          "fontSize": 10,
+          "fontFamily": "@font-family",
+          "textAlign": "left",
+          "letterSpacing": "@letterSpacing",
+          "lineHeight": "@lineHeight",
+          "background": "@form-background",
+          "color": "@form-color",
+          "popupBorderColor": "@form-popup-border-color",
+          "popupBorderWidth": "@form-popup-border-width",
+          "popupColor": "@form-popup-color",
+          "popupBackground": "@form-popup-background",
+          "popupShadow": "@box-shadow-s",
+          "selectedOptionBackground": "#f4f4f5",
+          "borderTopWidth": "@border-width",
+          "borderBottomWidth": "@border-width",
+          "borderRightWidth": "@border-width",
+          "borderLeftWidth": "@border-width",
+          "borderTopRightRadius": "@border-radius",
+          "borderTopLeftRadius": "@border-radius",
+          "borderBottomRightRadius": "@border-radius",
+          "borderBottomLeftRadius": "@border-radius",
+          "paddingTop": "@form-padding-horizontal",
+          "paddingBottom": "@form-padding-horizontal",
+          "paddingLeft": "@form-padding-horizontal",
+          "paddingRight": "@form-padding-horizontal",
+          "borderTopColor": "@form-border-color",
+          "borderBottomColor": "@form-border-color",
+          "borderRightColor": "@form-border-color",
+          "borderLeftColor": "@form-border-color",
+          "borderTopStyle": "solid",
+          "borderBottomStyle": "solid",
+          "borderRightStyle": "solid",
+          "borderLeftStyle": "solid"
+        },
+        "hover": {
+          "background": "#f4f4f5"
+        },
+        "error": {
+          "background": "@form-background:error",
+          "color": "@form-color:error",
+          "borderTopColor": "@form-border-color:error",
+          "borderBottomColor": "@form-border-color:error",
+          "borderRightColor": "@form-border-color:error",
+          "borderLeftColor": "@form-border-color:error"
+        },
+        "qssSource": "DropDown",
+        "p": "d",
+        "_type": "Widget",
+        "z": null,
+        "template": null
+      }
+    ]
+  }

@@ -1,0 +1,167 @@
+[
+	{
+		"id": "PrimaryButton",
+		"type": "Button",
+		"_type": "Widget",
+		"category": "Buttons",
+		"subcategory": "AButtons",
+		"name": "Primary",
+		"sidebar": true,
+		"x": 0,
+		"y": 0,
+		"w": 115,
+		"h": "@form-height",
+		"z": 0,
+		"props": {
+			"label": "CONTAINED",
+			"loadingText": "",
+			"loadingAnimation": "loading"
+		},
+		"has": {
+			"backgroundColor": true,
+			"border": true,
+			"onclick": true,
+			"label": true,
+			"padding": true
+		},
+		"style": {
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"fontWeight": "@label-font-weight-bold",
+			"textAlign": "center",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"verticalAlign": "middle",
+			"padding": 0,
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@button-primary-border-color",
+			"background": "@button-primary-background",
+			"color": "@button-primary-color",
+			"boxShadow": "@box-shadow-s"
+		},
+		"hover": {
+			"borderColor": "@button-primary-border-color:hover",
+			"background": "@button-primary-background:hover",
+			"color": "@button-primary-color:hover"
+		}
+	},
+	{
+		"id": "SecondayButton",
+		"type": "Button",
+		"_type": "Widget",
+		"category": "Buttons",
+		"subcategory": "AButtons",
+		"name": "Secondary",
+		"sidebar": true,
+		"_extends": "PrimaryButton",
+		"w": 115,
+		"h": "@form-height",
+		"props": {
+			"label": "OUTLINED",
+			"loadingText": "",
+			"loadingAnimation": "loading"
+		},
+		"has": {
+			"onclick": true,
+			"label": true,
+			"padding": true
+		},
+		"style": {
+			"borderColor": "@button-secundary-border-color",
+			"background": "@button-secundary-background",
+			"color": "@button-secundary-color"
+		},
+		"hover": {
+			"borderColor": "@button-secundary-border-color:hover",
+			"background": "@button-secundary-background:hover",
+			"color": "@button-secundary-color:hover"
+		}
+	},
+	{
+		"id": "DangerButton",
+		"type": "Button",
+		"_type": "Widget",
+		"category": "Buttons",
+		"subcategory": "ACButtons",
+		"name": "Danger",
+		"_extends": "PrimaryButton",
+		"props": {
+			"label": "DANGER",
+			"loadingText": "",
+			"loadingAnimation": "loading"
+		},
+		"has": {
+			"onclick": true,
+			"label": true,
+			"padding": true
+		},
+		"style": {
+			"borderColor": "@button-danger-border-color",
+			"background": "@button-danger-background",
+			"color": "@button-danger-color"
+		},
+		"hover": {
+			"borderColor": "@button-danger-border-color:hover",
+			"background": "@button-danger-background:hover",
+			"color": "@button-danger-color:hover"
+		}
+	},
+	{
+		"id": "PassiveButton",
+		"type": "Button",
+		"_type": "Widget",
+		"category": "Buttons",
+		"subcategory": "ACButtons",
+		"name": "Passive",
+		"_extends": "PrimaryButton",
+		"props": {
+			"label": "PASSIVE",
+			"loadingText": "",
+			"loadingAnimation": "loading"
+		},
+		"has": {
+			"onclick": true,
+			"label": true,
+			"padding": true
+		},
+		"style": {
+			"borderColor": "@button-passive-border-color",
+			"background": "@button-passive-background",
+			"color": "@button-passive-color"
+		},
+		"hover": {
+			"borderColor": "@button-passive-border-color:hover",
+			"background": "@button-passive-background:hover",
+			"color": "@button-passive-color:hover"
+		}
+	},
+	{
+		"id": "ImageToggleButton",
+		"type": "ToggleButton",
+		"_type": "Widget",
+		"category": "Image",
+		"subcategory": "FormImage",
+		"name": "Image Toggle",
+		"_extends": "PrimaryButton",
+		"w": "@box-height-l",
+		"h": "@box-width-m",
+		"props": {
+			"isImageToggle": true,
+			"label": "",
+			"active": false,
+			"loadingText": ""
+		},
+		"has": {
+			"backgroundImage": true,
+			"onclick": true
+		},
+		"style": {
+			"color": "@button-secundary-color",
+			"borderColor": "@button-secundary-border-color",
+			"borderWidth": "@border-width-none",
+			"background": null
+		}
+	}	
+]

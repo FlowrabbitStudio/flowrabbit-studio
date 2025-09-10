@@ -1,0 +1,31 @@
+[
+	{
+		"id" : "Image",
+		"type" : "Image",
+		"category" : "Image",
+		"subcategory" : "FormImage",
+		"_type" : "Widget",
+		"name" : "Image",
+		"sidebar": true,
+		"x" : 0,
+		"y" : 0,
+		"w": "@box-width-xl",
+		"h": "@box-height-l",
+		"z" : 0,
+		"props" : {},
+		"has" : {
+		   "onclick" : true,
+		   "backgroundImage" : true,
+		   "borderRadius" : true
+		},
+		"actions":{},
+		"style" : {
+		   "borderRadius": 20,
+		   "borderWidth": 1,
+		   "borderStyle": "solid",
+		   "borderColor": "@form-border-color",	
+		   "backgroundImage" : null,
+		   "background": "#fafafa"
+		}
+	}
+]

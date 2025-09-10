@@ -1,0 +1,169 @@
+@import '../vars.css';
+
+.MatcToolbarTableSettings {
+    width: 1200px;
+    height: 640px;
+}
+
+.MatcToolbarTableSettingsCntr {
+    height: 580px;
+    margin-top: 10px;
+}
+
+.MatcToolbarTableSettings .MatcDialogTable {
+    height: 580px;
+}
+
+.MatcToolbarTableSettings .MatcDataTable {
+    height: 580px;
+}
+
+.MatcToolbarTableSettings .MatcDialogTableSmall {
+    height: 500px;
+}
+
+.MatcToolbarTableSettings .MatcDataTable .MatcToolbarTableBody {
+    height: 100%;
+}
+
+.MatcToolbarTableSettings .MatcToolbarItem.MatcToolbarColor{
+    padding: 0px;
+    margin: 0px;
+    height: unset;
+    vertical-align: middle;
+}
+
+.MatcToolbarTableSettings .MatcFormRow .MatcToolbarColorIndicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: 0px;
+}
+
+.MatcToolbarTableSettings .MatcFormRow{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.MatcFormRowDND{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+}
+
+.MatcFormRowDND .mdi{
+    margin-left: -5px;
+    margin-top: 2px;
+    font-size: 18px;
+    cursor: ns-resize;
+    line-height: 1;
+}
+
+.MatcFormRowDND input {
+
+}
+
+.MatcFormRowDNDHover {
+	background: rgba(0, 0, 0, 0.1)
+}
+
+.MatcFormRowDNDSelect {
+	opacity: 0.1;
+}
+
+
+.MatcToolbarTableSettings label {
+    font-size: 14px;
+    font-weight: 400;
+    display: inline;
+    vertical-align: middle;
+}
+
+
+.MatcToolbarTableSettings input.form-control{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.MatcToolbarTableSettings input.form-control.form-control-xs{
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.MatcToolbarTableSettings .VommondCheckBoxLabel{
+    font-size: 14px;
+}
+
+
+.MatcDialogTable td.MatcFormRowRemoveCntr,
+.MatcDialogTable .MatcFormRowRemoveCntr,
+.MatcToolbarTableSettings .MatcFormRowRemoveCntr {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.MatcDialogTable td.MatcFormRowRemove,
+.MatcDialogTable .MatcFormRowRemove,
+.MatcToolbarTableSettings .MatcFormRowRemove {
+    opacity: 0.5;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 40px;
+    height: 100%;
+}
+.MatcDialogTable .MatcFormRowRemove span,
+.MatcToolbarTableSettings .MatcFormRowRemove span{
+    cursor: pointer;
+    line-height: 1;
+}
+
+.MatcDialogTable .MatcFormRowRemove span:hover,
+.MatcToolbarTableSettings .MatcFormRowRemove span:hover{
+    color: var(--danger-color)
+}
+
+.MatcDialogTable tr:hover .MatcFormRowRemove,
+.MatcToolbarTableSettings .MatcFormRow:hover .MatcFormRowRemove {
+    opacity: 1
+}
+
+
+
+.MatcToolbarTableSettings .MatcFormRow .MatcToolbarDropDownButton{
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.MatcToolbarTableSettings .MatcToolbarTableSettingsTable{
+    width: 100%;
+    font-size: 14px;
+
+}
+
+.MatcToolbarTableSettings .MatcToolbarTableSettingsTable th{
+    font-weight: 400;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+
+
+
+.MatcToolbarTableSettings .MatcFormRow > td{
+    padding-bottom: 10px;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.MatcDataTable {
+    width: 100%;
+}

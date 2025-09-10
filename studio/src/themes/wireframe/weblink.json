@@ -1,0 +1,39 @@
+[
+	{
+		 "id" : "WebLink",
+		 "type" : "WebLink",
+		 "_type" : "Widget",
+		 "category" : "Form",
+		 "subcategory" : "XxForm",
+		 "name" : "Web Link",
+         "_extends": "Label",
+		 "x" : 0,
+	    "y" : 0,
+	    "w" : 150,
+	    "h" : 30,
+	    "z" : 0,
+	    "props" : {
+	       "label" : "https://flowrabbit.ai"
+	    },
+	    "has" : {    
+	       "label" : true      
+	    },
+	    "style" : {    
+            "fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"background": "transparent",
+            "color": "@label-color",
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width-none",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+			"padding":0    
+        },
+        "hover": {
+            "color": "@label-color:hover"
+        }
+	}
+]

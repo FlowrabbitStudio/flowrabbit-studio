@@ -1,0 +1,99 @@
+.MatcSidebar{
+	position: fixed;
+    width: 285px;
+    height: calc(100% - 40px);
+    padding-bottom: 0px;
+    z-index: 91001;
+    top: 40px;
+    left: 0;
+    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.MatcSidebarSelector {
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--property-tab-background);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.MatcSidebarSelector a{
+    color: var(--property-tab-color);
+    font-size: 12px;
+    height: 100%;
+    padding: 8px 8px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.MatcSidebarSelector a:hover {
+    background: var(--toolbar-dropdown-hover-back);
+}
+
+.MatcSidebarSelector .MatcQIcon {
+    padding: 16px 0px;
+    flex-grow: 1;
+    cursor: pointer;
+    height: 100%;
+}
+
+.MatcSidebarSelector .MatcQIcon:hover {
+    background: var(--toolbar-dropdown-hover-back);
+}
+
+.MatcSidebarSelector a.selected{
+    opacity: 1;
+    color: var(--property-tab-selected-color);
+    background: var(--property-tab-selected-background);
+}
+
+.MatcSidebarListContainer {
+    flex-grow: 1;
+    overflow: auto;
+    z-index: 1;
+}
+
+.MatcSidebarListContainer .MatcSidebarListHeader{
+	height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.MatcSidebarListContainer .MatcSidebarListHeader .mdi{
+	cursor: pointer;
+}
+
+.MatcLight .MatcSidebarListContainer .MatcSidebarListHeader {
+    border-bottom: 1px solid #ddd;
+}
+
+.MatcSidebarListContainer .MatcSidebarList {
+	display: flex;
+	flex-direction: column;
+    overflow: auto;
+	flex-grow: 1;
+	padding: 16px;
+	padding-top: 8px;
+    text-align: center;
+}

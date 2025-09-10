@@ -1,0 +1,102 @@
+.MatcTeamDialogContent .MatcTeamCheckbox {
+    width: 48%;
+    font-size: 14px;
+    height: 32px;
+}
+
+.MatcTeamDialogContent .MatcError {
+    height: 32px;
+}
+
+.MatcTeamDialogList {
+    max-height: 400px;
+    overflow: auto;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.MatcTeamDialogList .VommondCheckBoxWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.MatcTeamDialogList .VommondCheckBox{
+    flex-shrink: 0;
+}
+
+.MatcTeamDialogList .VommondCheckBoxLabel {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    white-space: nowrap;
+}
+
+
+
+.MatcTeamDialog{
+	width: 600px;
+	min-height: 200px;
+	background: #fff;
+	text-align: left;
+	font-size: 16px;
+	color:#333;
+	background: #fff;
+	padding: 40px 40px 50px;
+	border-radius: 7px;
+}
+
+.MatcTeamDialogEdit{
+	width: 600px;
+}
+
+.MatcTeamDialog .container{
+	padding: 0px;
+}
+
+.MatcTeamDialog .MatcUserImageCntr{
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	display: inline-block;
+	border-radius:50px;
+	background: rgba(0, 153, 204, 1);
+
+}
+
+.MatcTeamDialog .MatcUserImageCntr.MatcUserImageCntrTrans{
+	background: none;
+}
+
+.MatcTeamDialog .MatcUserImageNone{
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	color:#fff;
+	font-size: 60px;
+	background: #3787f2;
+	position: relative;
+}
+
+.MatcTeamDialog .MatcTeamItem{
+	height: 100px;
+	width: 100px;
+}
+
+.MatcTeamDialog .MatcUserAdd{
+	height: 100px;
+	width: 100px;
+	font-size: 70px;
+	background: rgba(0, 153, 204, 1);
+	overflow: hidden;
+	text-align: center;
+	color:#fff;
+ 	font-size: 90px;
+}
+
+.MatcTeamDialog .MatcUserImageCntr:HOVER{
+	box-shadow:none;
+}

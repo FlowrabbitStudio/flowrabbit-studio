@@ -1,0 +1,152 @@
+
+.MatcDark .MatcToobarPropertiesSection {    
+ 	background: var(--toolbar-leftsidebar-dark);
+}
+
+.MatcDark .MatcToobarPropertiesSection input,
+.MatcDark .MatcToobarPropertiesSection textarea{
+    border: 1px solid var(--border-color-dark);
+}
+
+.MatcDark .MatcToobarPropertiesSection input:hover,
+.MatcDark .MatcToobarPropertiesSection input:focus,
+.MatcDark .MatcToobarPropertiesSection textarea:hover,
+.MatcDark .MatcToobarPropertiesSection textarea:focus{
+    border: 1px solid #555;
+}
+
+.MatcDialog .MatcToolbarTabs a {
+	color: #333;
+}
+
+.MatcDialog .MatcToolbarTabs a.MatcToolbarTabDisabled, 
+.MatcDialog .MatcToolbarTabs a.MatcToolbarTabDisabled:hover{
+	color: #777;
+    cursor: auto;
+}
+
+.MatcDark .MatcBoxBorder .MatcToolbarTabs a.MatcToolbarTabActive {
+    border-bottom-color: #3787f2;
+    color: #fff;
+}
+
+.MatcDark .MatcToolbar .MatcToolbarDropDownButton li:HOVER,
+.MatcDark .MatcToolbarDropDownButtonPopup li:hover{
+    background: #cecece;
+}
+
+.MatcDark .MatcToobarRow.MatcToobarSubSection{
+	border-top: 1px solid var(--border-color-dark);
+}
+
+.MatcDark .MatcToolbarLayerToolbar .leftside{
+	background-color: var(--toolbar-leftsidebar-dark);
+}
+
+.MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseSection, .MatcToolbarDenseTopSection {
+	background-color: var(--toolbar-leftsidebar-dark);
+    border: 1px solid #535353;
+}
+
+
+.MatcDark .MatcToolbarLayerToolbar .MatcToolbarItem.category-badge
+{
+	color: #fff;
+}
+.MatcDark .MatcToobarPropertiesSection .MatcToolbarSectionTitle {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+	color: #fff;
+    border-top: var(--border-color-dark);
+}
+
+.MatcDark .MatcToolbarItemSelected {
+	background-color: rgba(255, 255, 255, 0.15);
+ }
+
+ .MatcDark .MatcToolbarTop{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+ }
+
+ .MatcDark .MatcToobarPropertiesSectionRightSidebar {
+    border: 1px solid rgba(255, 255, 255, 0.15)
+ }
+
+ .MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseSection, 
+ .MatcDark .MatcToolbarDenseTopSection .MatcToolbarItem:hover {
+    background-color: #000;
+ }
+ 
+ .MatcDark .MatcSidebarListContainer{
+	border: 1px solid #535353;
+}
+
+.MatcDark .MatcCreateBtnElementList .MatcCreateBtnElement {
+	border: 1px solid var(--border-color-dark);
+    background-color: #202427;
+}
+
+.MatcDark .MatcCreateCatTitle {
+	border-bottom: 1px solid #494949;
+}
+
+.MatcDark .MatcCreateBtnElementList .MatcCreateBtnElementLogic {
+	border: 1px solid var(--border-color-dark);
+    background-color: #202427;
+}
+
+.MatcDark .MatcCreateBtnElementLabel {
+	color: #fff;
+}
+
+.MatcDark .category-badge {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+.MatcDark .category-badge:hover {
+    background: var(--primary-color);
+	color: white;
+}
+
+.MatcDark .category-badge.active {
+    background: var(--primary-color);
+	color: white;
+}
+
+.MatcDark .category-header-badge {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.MatcDark .category-header-badge:hover {
+    background: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+.MatcDark .category-header-badge.active {
+    background: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+.MatcDark .MatcSidebarList .MatcCreateSearchContainer input{
+    background: #1a1c1c;
+}
+
+.MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseSection, 
+.MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseTopSection {
+	background-color: #000;	
+	border: 1px solid rgba(255, 255, 255, 0.30);
+ }
+
+ .MatcDark .MatcCreateCatTitle .MatcCreateCatTitlelabel{	
+    color: #fff;
+}
+
+.MatcDark .MatcCreateBtnElementLogicCntr,
+.MatcDark .MatcCreateBtnElementLogicCntr span.mdi {
+    color: white;
+}
+
+.MatcDark .MatcSidebarHeader {
+    background: #252a30;
+}

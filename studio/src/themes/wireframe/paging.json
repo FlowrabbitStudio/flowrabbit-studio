@@ -1,0 +1,56 @@
+[
+  {
+    "id": "WireFramePaging",
+    "type": "Paging",
+    "name": "Paging",
+    "subcategory": "FormImageX",
+    "category": "Advanced",
+    "_type": "Widget",
+    "x": 0,
+    "y": 0,
+    "w": "@form-width",
+    "h": 24,
+    "z": 0,
+    "props": {
+      "max": 10,
+      "maxVisisble": 10,
+      "selected": 1,
+      "iconBack": "mdi mdi-chevron-left",
+      "iconNext": "mdi mdi-chevron-right",
+      "justifyContent": "center"
+    },
+    "has": {
+      "onclick": true,
+      "border": true,
+      "label": true,
+      "backgroundColor": true,
+      "data": true,
+      "padding": false
+    },
+    "style": {
+      "fontSize": "@font-size-s",
+      "fontFamily": "@font-family",
+      "letterSpacing": "@letterSpacing",
+      "lineHeight": "@lineHeight",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "borderRadius": "@border-radius-round",
+      "borderWidth": "0",
+      "borderStyle": "solid",
+      "padding": "@spacing-xs",
+      "background": "@background-passive",
+      "borderColor": "@background-passive",
+      "color": "@form-color"
+    },
+    "active": {
+      "background": "@background-active",
+      "borderColor": "@background-active",
+      "color": "@form-background"
+    },
+    "hover": {
+      "background": "@background-active",
+      "borderColor": "@background-active",
+      "color": "@form-background"
+    }
+  }
+]

@@ -1,0 +1,39 @@
+[
+{
+	"id" : "WireFrameHamburger",
+	"type" : "DropDown",
+	"name" : "Hamburger Menu",
+	 "subcategory" : "Menu",
+	"category" : "Menu",
+	"_extends": "DropDown",
+	"_type" : "Widget",
+	"sidebar": true,
+	"x" : 0,
+    "y" : 0,
+	"w": "@box-width-xs",
+	"h": "@box-height-xs",
+    "z" : 0,
+    "props" : {
+        "options" : ["Option 1", "Option 2", "Option 3"],
+	     "hidetext" : true,
+		 "icon" : "mdi mdi-menu",
+		 "hasIcon": true
+     },
+     "has" : {
+    	 "onclick" : true,
+	     "border" : false,
+	     "backgroundColor" : true,
+	     "data" : true,
+	     "padding":true,
+		 "label":true,
+		 "icon": true
+     },
+     "style" : { 
+    	 "borderRadius" : 0,
+         "borderWidth" : 0,
+		 "borderColor": "@form-border-color",	
+         "background" : "@form-background",	
+         "color":"@form-color"     
+     }
+	}	
+]

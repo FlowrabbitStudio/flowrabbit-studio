@@ -1,0 +1,86 @@
+
+ /****************************************************
+ * Toolbar Edit Mode Section
+ ****************************************************/
+
+ .MatcToolbarEditMode {
+	transition: none;
+	display: flex;
+	align-items: center;
+	height: 40px;
+}
+	
+.MatcToolbarEditMode .MatcToolbarEditModeCntr {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius:  var(--border-radius-xl);
+	transition: none;
+	height: 28px;
+}
+
+.MatcToolbarEditMode .MatcToolbarEditModeCntr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.MatcToolbarEditMode .MatcToolbarEditModeHighlight {
+	position: absolute;
+	background: var(--sidebar-selected);
+	height: 100%;
+	width: 50%;
+	top: 0px;
+	left: 0px;
+	border-radius:  var(--border-radius-xl);
+	z-index: 1;
+}
+
+.MatcToolbarEditModeAnimated .MatcToolbarEditModeHighlight {
+	transition: all 0.2s;
+}
+
+
+.MatcToolbarEditMode a.MatcToolbarEditModeItem {
+	transition: none;
+	font-size: 14px;
+	display: inline-block;
+	height: auto;
+	transition: all 0.2s;
+	border: 1px solid transparent;
+	border-radius: 0px;
+	z-index: 2;
+	width: 88px;
+	padding: 0px;
+	color: #fff;
+	text-align: center;
+}
+
+.MatcToolbarEditMode a.MatcToolbarEditModeItem:hover{
+	background: none;
+}
+
+.MatcToolbarEditMode a.MatcToolbarEditModeActive {
+	color: #0d2236;	
+}
+
+.MatcToolbarEditMode a.MatcToolbarEditModeActive:hover {
+	color: #0d2236;
+	background: none;
+}	
+
+.MatcToolbarEditMode a.MatcToolbarEditModeItem.XS {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.MatcToobarPropertiesSection .MatcToolbarEditMode a.MatcToolbarEditModeItem{
+	color:var(--primary-color-dark);
+	font-size: 12px;
+}
+
+.MatcToobarPropertiesSection .MatcToolbarEditMode a.MatcToolbarEditModeActive{	
+	color: #2a3547;
+}

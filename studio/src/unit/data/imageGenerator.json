@@ -1,0 +1,334 @@
+{
+    "_id" : "647f9f0ef745331eb7812357",
+    "version" : 2,
+    "publicType" : "forbidden",
+    "name" : "Image Generator",
+    "description" : "",
+    "screenSize" : {
+      "w" : 376,
+      "h" : 808
+    },
+    "type" : "smartphone",
+    "screens" : {
+      "s10000_9137" : {
+        "x" : 1624,
+        "y" : 1107,
+        "h" : 808,
+        "w" : 376,
+        "name" : "Screen",
+        "type" : "Screen",
+        "style" : {
+          "background" : "#ffffff"
+        },
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "has" : {
+          "image" : true
+        },
+        "props" : {
+          "start" : true
+        },
+        "children" : [ "w10001_15650", "w10002_59857", "w10005_86309" ],
+        "id" : "s10000_9137"
+      }
+    },
+    "widgets" : {
+      "w10001_15650" : {
+        "id" : "w10001_15650",
+        "type" : "TextArea",
+        "name" : "Text Area",
+        "x" : 1648,
+        "y" : 1131,
+        "w" : 320,
+        "h" : 144,
+        "z" : 1,
+        "props" : {
+          "label" : "Enter a value",
+          "databinding" : {
+            "default" : "prompt"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "color" : "#333333",
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "borderTopRightRadius" : 3,
+          "borderTopLeftRadius" : 3,
+          "borderBottomRightRadius" : 3,
+          "borderBottomLeftRadius" : 3,
+          "borderTopWidth" : 1,
+          "borderBottomWidth" : 1,
+          "borderRightWidth" : 1,
+          "borderLeftWidth" : 1,
+          "fontSize" : 18,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#ffffff",
+          "paddingTop" : 5,
+          "paddingBottom" : 5,
+          "paddingLeft" : 5,
+          "paddingRight" : 5,
+          "textAlign" : "left"
+        },
+        "created" : 1686085415645,
+        "modified" : 1686086210859
+      },
+      "w10002_59857" : {
+        "id" : "w10002_59857",
+        "type" : "Button",
+        "name" : "Button",
+        "x" : 1872,
+        "y" : 1291,
+        "w" : 96,
+        "h" : 40,
+        "z" : 2,
+        "props" : {
+          "label" : "Click Me"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "borderTopRightRadius" : 3,
+          "borderTopLeftRadius" : 3,
+          "borderBottomRightRadius" : 3,
+          "borderBottomLeftRadius" : 3,
+          "borderTopWidth" : 1,
+          "borderBottomWidth" : 1,
+          "borderRightWidth" : 1,
+          "borderLeftWidth" : 1,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#333333",
+          "fontSize" : 14,
+          "textAlign" : "center",
+          "letterSpacing" : 0,
+          "lineHeight" : 1,
+          "color" : "#ffffff",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "verticalAlign" : "middle"
+        },
+        "created" : 1686085446427
+      },
+      "w10003_46405" : {
+        "id" : "w10003_46405",
+        "name" : "Rest",
+        "type" : "Rest",
+        "x" : 2153,
+        "y" : 1181,
+        "w" : 77,
+        "h" : 79,
+        "props" : {
+          "rest" : {
+            "method" : "POST",
+            "url" : "https://api.openai.com/v1/chat/completions",
+            "token" : "${secrets.openAI}",
+            "authType" : "Bearer",
+            "input" : {
+              "type" : "JSON",
+              "fileDataBinding" : "",
+              "template" : "{\n     \"model\": \"gpt-3.5-turbo\",\n     \"messages\": [\n         {\n             \"role\": \"user\", \n             \"content\": \"You are a funny language model. Answer the following question in a funny way. The question is: ${prompt}\"\n             \n         }],\n     \"temperature\": 0.7\n   }"
+            },
+            "output" : {
+              "databinding" : "Rest",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : { },
+              "path" : "choices[0].message.content"
+            },
+            "headers" : [ ]
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777"
+        },
+        "z" : 3,
+        "created" : 1686085451964,
+        "modified" : 1686681772041
+      },
+      "w10005_86309" : {
+        "id" : "w10005_86309",
+        "type" : "TextArea",
+        "name" : "Text Area 1",
+        "x" : 1648,
+        "y" : 1387,
+        "w" : 320,
+        "h" : 144,
+        "z" : 4,
+        "props" : {
+          "label" : "Enter a value",
+          "databinding" : {
+            "default" : "Rest"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "color" : "#333333",
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "borderTopRightRadius" : 3,
+          "borderTopLeftRadius" : 3,
+          "borderBottomRightRadius" : 3,
+          "borderBottomLeftRadius" : 3,
+          "borderTopWidth" : 1,
+          "borderBottomWidth" : 1,
+          "borderRightWidth" : 1,
+          "borderLeftWidth" : 1,
+          "fontSize" : 18,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#ffffff",
+          "paddingTop" : 5,
+          "paddingBottom" : 5,
+          "paddingLeft" : 5,
+          "paddingRight" : 5,
+          "textAlign" : "left"
+        },
+        "created" : 1686677402410,
+        "modified" : 1686677412829,
+        "copyOf" : "w10001_15650"
+      },
+      "w10014_1331" : {
+        "id" : "w10014_1331",
+        "name" : "OpenAI",
+        "type" : "Rest",
+        "x" : 2287,
+        "y" : 1311,
+        "w" : 64,
+        "h" : 72,
+        "props" : {
+          "template" : {
+            "title" : "OpenAI - GPT",
+            "rest" : {
+              "method" : "POST",
+              "url" : "https://api.openai.com/v1/chat/completions",
+              "token" : "${token}",
+              "authType" : "Bearer",
+              "vars" : {
+                "prompt" : "This is cool",
+                "xxx" : "X"
+              },
+              "input" : {
+                "type" : "JSON",
+                "template" : "{\"model\":\"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\"${prompt}\"}],\"temperature\":0.7}"
+              },
+              "output" : {
+                "databinding" : "abc",
+                "template" : "",
+                "type" : "JSON",
+                "hints" : [ ]
+              },
+              "headers" : [ ]
+            },
+            "elements" : [ {
+              "id" : "token",
+              "label" : "API Key",
+              "type" : "Combo",
+              "placeholder" : "Enter your token or secret"
+            }, {
+              "id" : "prompt",
+              "label" : "Your prompt",
+              "type" : "TextArea",
+              "placeholder" : "Enter your prompt"
+            } ]
+          },
+          "rest" : {
+            "method" : "POST",
+            "url" : "https://api.openai.com/v1/chat/completions",
+            "token" : "${secrets.openAI}",
+            "authType" : "Bearer",
+            "vars" : {
+              "token" : "${secrets.openAI}",
+              "prompt" : "Tell me a joke about ${data} zdfsdf"
+            },
+            "input" : {
+              "type" : "JSON",
+              "template" : "{\"model\":\"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\"Tell me a joke about ${data}\"}],\"temperature\":0.7}"
+            },
+            "output" : {
+              "databinding" : "OpenAI",
+              "path" : "choices[0].message.content",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : { }
+            },
+            "headers" : [ ]
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777",
+          "iconSize" : 0.7,
+          "icon" : "mdi mdi-robot-outline "
+        },
+        "z" : 5,
+        "created" : 1686687635435,
+        "modified" : 1686687857808
+      }
+    },
+    "lines" : {
+      "l10004_81186" : {
+        "id" : "l10004_81186",
+        "from" : "w10002_59857",
+        "to" : "w10003_46405",
+        "points" : [ ],
+        "event" : "click"
+      }
+    },
+    "groups" : { },
+    "templates" : { },
+    "designtokens" : { },
+    "lastUUID" : 10015,
+    "lastUpdate" : 1686687857813,
+    "created" : 1686085390261,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Quant-UX.com",
+    "screenCount" : 1,
+    "widgetCount" : 5,
+    "isDirty" : true,
+    "lastCategory" : "WireFrame",
+    "id" : "647f9f0ef745331eb7812357"
+  }

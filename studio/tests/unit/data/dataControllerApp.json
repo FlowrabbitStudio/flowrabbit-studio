@@ -1,0 +1,1560 @@
+{
+    "_id" : "6679a4ab861cae7b0990d870",
+    "version" : 2,
+    "publicType" : "public",
+    "name" : "FLow",
+    "description" : "",
+    "screenSize" : {
+      "w" : 376,
+      "h" : 808
+    },
+    "type" : "smartphone",
+    "screens" : {
+      "s10000_69403" : {
+        "id" : "s10000_69403",
+        "type" : "Screen",
+        "name" : "Screen",
+        "x" : 1662,
+        "y" : 1117,
+        "w" : 376,
+        "h" : 808,
+        "z" : 0,
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "style" : {
+          "background" : "@screen-background"
+        },
+        "props" : {
+          "start" : true
+        },
+        "has" : {
+          "image" : true
+        },
+        "children" : [ "w10006_4411", "w10007_98510", "w10010_10262", "w10011_19083", "w10012_25513", "w10014_75729", "w10015_19659", "w10008_66422", "w10022_26701", "w10035_34562" ],
+        "qssSource" : "Screen"
+      },
+      "s10021_31991" : {
+        "x" : 2175,
+        "y" : 1473,
+        "h" : 808,
+        "w" : 376,
+        "name" : "Screen 1",
+        "type" : "Screen",
+        "style" : {
+          "background" : "@screen-background"
+        },
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "has" : {
+          "image" : true
+        },
+        "props" : {
+          "start" : false
+        },
+        "children" : [ "w10039_68643" ],
+        "id" : "s10021_31991",
+        "modified" : 1719519319782
+      }
+    },
+    "widgets" : {
+      "w10006_4411" : {
+        "id" : "w10006_4411",
+        "type" : "TextBox",
+        "name" : "Text Box (Email)",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1165,
+        "w" : 196,
+        "h" : 32,
+        "z" : 1,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "default" : "user.name"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719337323296
+      },
+      "w10007_98510" : {
+        "id" : "w10007_98510",
+        "type" : "TextBox",
+        "name" : "Text Box (Email) 1",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1229,
+        "w" : 196,
+        "h" : 32,
+        "z" : 2,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "default" : "user.lastname"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719337334729,
+        "copyOf" : "w10006_4411",
+        "modified" : 1719337337814
+      },
+      "w10008_66422" : {
+        "id" : "w10008_66422",
+        "type" : "TextArea",
+        "name" : "Text Area",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1285,
+        "w" : 196,
+        "h" : 128,
+        "z" : 3,
+        "props" : {
+          "label" : "Enter a value",
+          "placeholder" : true,
+          "databinding" : {
+            "default" : "user"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-horizontal",
+          "paddingTop" : "@form-padding-horizontal",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextArea",
+        "created" : 1719337350158,
+        "modified" : 1719428876976
+      },
+      "w10010_10262" : {
+        "id" : "w10010_10262",
+        "type" : "TextBox",
+        "name" : "Text Box (Email) 2",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1429,
+        "w" : 196,
+        "h" : 32,
+        "z" : 5,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "default" : "user.age"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719344435106,
+        "copyOf" : "w10007_98510",
+        "modified" : 1719344436766
+      },
+      "w10011_19083" : {
+        "id" : "w10011_19083",
+        "type" : "TextBox",
+        "name" : "Text Box (Email) 3",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1493,
+        "w" : 196,
+        "h" : 32,
+        "z" : 6,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "default" : "user.address.street"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719346258341,
+        "copyOf" : "w10007_98510",
+        "modified" : 1719346260306
+      },
+      "w10012_25513" : {
+        "id" : "w10012_25513",
+        "type" : "TextBox",
+        "name" : "Text Box (Email) 4",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1549,
+        "w" : 196,
+        "h" : 32,
+        "z" : 7,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "default" : "user.address.city"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719346271557,
+        "copyOf" : "w10011_19083",
+        "modified" : 1719346273456
+      },
+      "w10014_75729" : {
+        "id" : "w10014_75729",
+        "type" : "TextBox",
+        "name" : "Text Box (Email) 5",
+        "sidebar" : true,
+        "x" : 1694,
+        "y" : 1605,
+        "w" : 196,
+        "h" : 32,
+        "z" : 8,
+        "props" : {
+          "label" : "Enter an email",
+          "placeholder" : true,
+          "validation" : {
+            "type" : "email"
+          },
+          "databinding" : {
+            "var1" : "API[0].email",
+            "var2": "API.email"
+          },
+          "hidden" : false
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBoxEmail",
+        "created" : 1719347843286,
+        "copyOf" : "w10012_25513",
+        "modified" : 1719425980429
+      },
+      "w10015_19659" : {
+        "id" : "w10015_19659",
+        "type" : "Icon",
+        "name" : "Icon",
+        "x" : 1926,
+        "y" : 1197,
+        "w" : 32,
+        "h" : 32,
+        "z" : 9,
+        "props" : { },
+        "has" : {
+          "onclick" : true,
+          "data" : true
+        },
+        "actions" : { },
+        "style" : {
+          "borderTopRightRadius" : 0,
+          "borderTopLeftRadius" : 0,
+          "borderBottomRightRadius" : 0,
+          "borderBottomLeftRadius" : 0,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "transparent",
+          "borderBottomColor" : "transparent",
+          "borderRightColor" : "transparent",
+          "borderLeftColor" : "transparent",
+          "color" : "@color-icon",
+          "icon" : "mdi mdi-android"
+        },
+        "qssSource" : "Icon",
+        "created" : 1719424747708,
+        "modified" : 1719425980429
+      },
+      "w10022_26701" : {
+        "id" : "w10022_26701",
+        "type" : "Button",
+        "name" : "Primary Button",
+        "sidebar" : true,
+        "x" : 1910,
+        "y" : 1693,
+        "w" : 96,
+        "h" : 32,
+        "z" : 12,
+        "props" : {
+          "label" : "Click Me"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-primary-background",
+          "color" : "@button-primary-color",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-primary-border-color",
+          "borderBottomColor" : "@button-primary-border-color",
+          "borderRightColor" : "@button-primary-border-color",
+          "borderLeftColor" : "@button-primary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-primary-background:hover",
+          "color" : "@button-primary-color:hover",
+          "borderTopColor" : "@button-primary-border-color:hover",
+          "borderBottomColor" : "@button-primary-border-color:hover",
+          "borderRightColor" : "@button-primary-border-color:hover",
+          "borderLeftColor" : "@button-primary-border-color:hover"
+        },
+        "qssSource" : "PrimaryButton",
+        "created" : 1719519322998
+      },
+      "w10035_34562" : {
+        "id" : "w10035_34562",
+        "type" : "Button",
+        "name" : "Primary Button 1",
+        "sidebar" : true,
+        "x" : 1910,
+        "y" : 1589,
+        "w" : 96,
+        "h" : 32,
+        "z" : 22,
+        "props" : {
+          "label" : "Click Me"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-primary-background",
+          "color" : "@button-primary-color",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-primary-border-color",
+          "borderBottomColor" : "@button-primary-border-color",
+          "borderRightColor" : "@button-primary-border-color",
+          "borderLeftColor" : "@button-primary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-primary-background:hover",
+          "color" : "@button-primary-color:hover",
+          "borderTopColor" : "@button-primary-border-color:hover",
+          "borderBottomColor" : "@button-primary-border-color:hover",
+          "borderRightColor" : "@button-primary-border-color:hover",
+          "borderLeftColor" : "@button-primary-border-color:hover"
+        },
+        "qssSource" : "PrimaryButton",
+        "created" : 1719519763480,
+        "copyOf" : "w10022_26701",
+        "modified" : 1719519764302,
+        "action" : {
+          "type" : "back",
+          "steps" : [ ]
+        }
+      },
+      "w10009_93623" : {
+        "id" : "w10009_93623",
+        "name" : "API",
+        "type" : "Rest",
+        "x" : 2168,
+        "y" : 1186,
+        "w" : 128,
+        "h" : 72,
+        "props" : {
+          "rest" : {
+            "method" : "GET",
+            "url" : "https://flowrabbit.de/test/users.json?${type}",
+            "token" : "",
+            "authType" : "Bearer",
+            "input" : {
+              "type" : "JSON",
+              "fileDataBinding" : "",
+              "template" : ""
+            },
+            "output" : {
+              "databinding" : "list",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : {
+                "API[0]" : "Array",
+                "API[0]_id" : "Value",
+                "API[0]_email" : "Value",
+                "API[0]_name" : "Value",
+                "API[0]_lastname" : "Value",
+                "API[0]_hasNewsletter" : "Value"
+              }
+            },
+            "headers" : [ ],
+            "isProxyEnabled" : true
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777",
+          "logo" : "api"
+        },
+        "z" : 4,
+        "created" : 1719337376208,
+        "modified" : 1719343422523
+      },
+      "w10038_95443" : {
+        "id" : "w10038_95443",
+        "name" : "PromptBuilder",
+        "type" : "PromptBuilder",
+        "category" : "Logic",
+        "subcategory" : "ABox",
+        "_type" : "Widget",
+        "x" : 2328,
+        "y" : 1188,
+        "w" : 72,
+        "h" : 72,
+        "props" : {
+          "rest" : {
+            "token" : "",
+            "assistant" : "",
+            "input" : {
+              "databinding" : "",
+              "prompt" : ""
+            },
+            "output" : {
+              "databinding" : "",
+              "path" : ""
+            },
+            "prompt" : "${foo.bar.jackson}​asdasd"
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777",
+          "logo" : "prompt-builder"
+        },
+        "z" : 23,
+        "created" : 1719596824405,
+        "modified" : 1719596841252
+      },
+      "w10039_68643" : {
+        "id" : "w10039_68643",
+        "type" : "TextBox",
+        "name" : "Text Box",
+        "sidebar" : true,
+        "x" : 2231,
+        "y" : 1505,
+        "w" : 196,
+        "h" : 32,
+        "z" : 24,
+        "props" : {
+          "label" : "Enter a value",
+          "placeholder" : true,
+          "databinding" : {
+            "default" : "aaa.aaa"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBox",
+        "created" : 1719596947836,
+        "modified" : 1719599452198
+      }
+    },
+    "lines" : {
+      "l10016_45775" : {
+        "id" : "l10016_45775",
+        "from" : "w10015_19659",
+        "to" : "w10009_93623",
+        "points" : [ ],
+        "event" : "click"
+      }
+    },
+    "groups" : {
+      "g10017_57415" : {
+        "id" : "g10017_57415",
+        "children" : [ "w10010_10262", "w10011_19083", "w10012_25513", "w10014_75729" ],
+        "groups" : [ ],
+        "name" : "Group"
+      }
+    },
+    "templates" : { },
+    "designtokens" : { },
+    "schema" : { },
+    "data" : {
+      "user" : {
+        "lastname" : "Papa"
+      },
+      "foo" : "bar"
+    },
+    "theme" : {
+      "@font-size-s" : {
+        "value" : 12,
+        "type" : "fontSize"
+      },
+      "@font-size-m" : {
+        "value" : 14,
+        "type" : "fontSize"
+      },
+      "@font-size-l" : {
+        "value" : 18,
+        "type" : "fontSize"
+      },
+      "@font-size-xl" : {
+        "value" : 24,
+        "type" : "fontSize"
+      },
+      "@font-size-xxl" : {
+        "value" : 32,
+        "type" : "fontSize"
+      },
+      "@font-family" : {
+        "value" : "Roboto, sans-serif",
+        "type" : "fontFamily"
+      },
+      "@font-weight" : {
+        "value" : "",
+        "type" : "fontWeight"
+      },
+      "@letterSpacing" : {
+        "value" : 0,
+        "type" : "letterSpacing"
+      },
+      "@lineHeight" : {
+        "value" : 1,
+        "type" : "lineHeight"
+      },
+      "@border-width-none" : {
+        "value" : 0,
+        "type" : "borderWidth"
+      },
+      "@border-width" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-width:hover" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-width:focus" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-radius" : {
+        "value" : 4,
+        "type" : "borderRadius"
+      },
+      "@border-radius-round" : {
+        "value" : 256,
+        "type" : "borderRadius"
+      },
+      "@border-radius-none" : {
+        "value" : 0,
+        "type" : "borderRadius"
+      },
+      "@spacing-xs" : {
+        "value" : 4,
+        "type" : "spacing"
+      },
+      "@spacing-s" : {
+        "value" : 8,
+        "type" : "spacing"
+      },
+      "@spacing-m" : {
+        "value" : 16,
+        "type" : "spacing"
+      },
+      "@spacing-l" : {
+        "value" : 32,
+        "type" : "spacing"
+      },
+      "@screen-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@background-passive" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@background-passive:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@color-passive" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@color-passive:hover" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@background-active" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@background-active:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@color-active" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@color-active:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@background-danger" : {
+        "value" : "#efc5c5",
+        "type" : "color"
+      },
+      "@background-info:danger" : {
+        "value" : "#efc5c5",
+        "type" : "color"
+      },
+      "@color-danger" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@color-danger:hover" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@background-info" : {
+        "value" : "#e8ee9c",
+        "type" : "color"
+      },
+      "@background-info:hover" : {
+        "value" : "#e8ee9c",
+        "type" : "color"
+      },
+      "@color-info" : {
+        "value" : "#927e10",
+        "type" : "color"
+      },
+      "@color-info:hover" : {
+        "value" : "#927e10",
+        "type" : "color"
+      },
+      "@background-hint" : {
+        "value" : "#bae7fd",
+        "type" : "color"
+      },
+      "@background-hint:hover" : {
+        "value" : "#bae7fd",
+        "type" : "color"
+      },
+      "@color-hint" : {
+        "value" : "#2784b1",
+        "type" : "color"
+      },
+      "@color-hint:hover" : {
+        "value" : "#2784b1",
+        "type" : "color"
+      },
+      "@background-icon" : {
+        "value" : "transparent",
+        "type" : "color"
+      },
+      "@background-icon:hover" : {
+        "value" : "transparent",
+        "type" : "color"
+      },
+      "@color-icon" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@color-icon:hover" : {
+        "value" : "#000000",
+        "type" : "color"
+      },
+      "@box-shadow-s" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@box-shadow-m" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@box-shadow-l" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@label-color" : {
+        "value" : "#0A0A0B",
+        "type" : "red"
+      },
+      "@label-color:hover" : {
+        "value" : "blue",
+        "type" : "color"
+      },
+      "@label-color:error" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@label-color-secondary" : {
+        "value" : "#686871",
+        "type" : "red"
+      },
+      "@label-font-weight-default" : {
+        "value" : "",
+        "type" : "fontWeight"
+      },
+      "@label-font-weight-bold" : {
+        "value" : "bold",
+        "type" : "fontWeight"
+      },
+      "@form-padding-horizontal" : {
+        "value" : 8,
+        "type" : "paddingHorizontal"
+      },
+      "@form-padding-vertical" : {
+        "value" : 2,
+        "type" : "paddingVertical"
+      },
+      "@form-height" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@form-width" : {
+        "value" : 196,
+        "type" : "width"
+      },
+      "@form-border-color" : {
+        "value" : "#6b7280",
+        "type" : "color"
+      },
+      "@form-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@form-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@form-border-color:hover" : {
+        "value" : "#6b7280",
+        "type" : "color"
+      },
+      "@form-color:hover" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@form-background:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@form-border-color:focus" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@form-color:focus" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@form-background:focus" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@form-border-color:error" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@form-color:error" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@form-background:error" : {
+        "value" : "#efc5c5",
+        "type" : "color"
+      },
+      "@form-popup-border-color" : {
+        "value" : "#6b7280",
+        "type" : "color"
+      },
+      "@form-popup-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@form-popup-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@form-popup-backgrop" : {
+        "value" : "rgba(0,0,0,0.8)",
+        "type" : "color"
+      },
+      "@form-popup-border-width" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@form-popup-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@form-popup-background:hover" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@button-primary-border-color" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@button-primary-background" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@button-primary-color" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-primary-border-color:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@button-primary-background:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@button-primary-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-secundary-border-color" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@button-secundary-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-secundary-color" : {
+        "value" : "#3787f2",
+        "type" : "color"
+      },
+      "@button-secundary-border-color:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@button-secundary-background:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@button-secundary-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-danger-border-color" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@button-danger-background" : {
+        "value" : "#f43535",
+        "type" : "color"
+      },
+      "@button-danger-color" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-danger-border-color:hover" : {
+        "value" : "#f60404",
+        "type" : "color"
+      },
+      "@button-danger-background:hover" : {
+        "value" : "#f60404",
+        "type" : "color"
+      },
+      "@button-danger-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-passive-border-color" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-background" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@button-passive-border-color:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-background:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@panel-box-shadow" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@calendar-item-radius" : {
+        "value" : 4,
+        "type" : "borderRadius"
+      },
+      "@table-border-color" : {
+        "value" : "#b8b8b8",
+        "type" : "color"
+      },
+      "@table-header-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@table-header-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@box-width-xxs" : {
+        "value" : 16,
+        "type" : "height"
+      },
+      "@box-width-xs" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@box-width-s" : {
+        "value" : 40,
+        "type" : "height"
+      },
+      "@box-width-m" : {
+        "value" : 64,
+        "type" : "height"
+      },
+      "@box-width-ms" : {
+        "value" : 56,
+        "type" : "height"
+      },
+      "@box-width-l" : {
+        "value" : 96,
+        "type" : "height"
+      },
+      "@box-width-xl" : {
+        "value" : 128,
+        "type" : "height"
+      },
+      "@box-width-xxl" : {
+        "value" : 256,
+        "type" : "height"
+      },
+      "@box-height-xxs" : {
+        "value" : 16,
+        "type" : "height"
+      },
+      "@box-height-xs" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@box-height-s" : {
+        "value" : 40,
+        "type" : "height"
+      },
+      "@box-height-ms" : {
+        "value" : 56,
+        "type" : "height"
+      },
+      "@box-height-m" : {
+        "value" : 64,
+        "type" : "height"
+      },
+      "@box-height-l" : {
+        "value" : 128,
+        "type" : "height"
+      },
+      "@box-height-xl" : {
+        "value" : 256,
+        "type" : "height"
+      },
+      "@box-height-xxl" : {
+        "value" : 320,
+        "type" : "height"
+      }
+    },
+    "lastUUID" : 10040,
+    "lastUpdate" : 1719599452205,
+    "created" : 1719248043786,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Flowrabbit.ai",
+    "lastCategory" : "Form",
+    "screenCount" : 2,
+    "widgetCount" : 13,
+    "isDirty" : true,
+    "publicName" : "test2",
+    "publicOrgName" : "klaus",
+    "id" : "6679a4ab861cae7b0990d870"
+  }

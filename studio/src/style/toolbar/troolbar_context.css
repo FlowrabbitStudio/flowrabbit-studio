@@ -1,0 +1,39 @@
+.MatcContextMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 91010;
+}
+
+.MatcContextMenu .MatcToolbarPopUp {
+    width: 240px;
+}
+
+.MatcContextMenu .MatcToolbarMenuItem {
+    min-height: 32px;
+}
+
+.MatcContextMenu .MatcToolbarPopUpLabelShortCut {
+    opacity: 0.5;
+    white-space: nowrap;
+    text-align: right;
+    flex-grow: 1;
+    font-size: 12px;
+    margin-left: 24px;
+}
+
+.MatcContextMenu .MatcToolbarPopUpLine{
+    min-height: auto;
+}
+
+.MatcToolbarMenuItem:first-child {
+    border-top-left-radius: var(--popup-radius);
+    border-top-right-radius: var(--popup-radius);
+}
+
+.MatcToolbarMenuItem:last-child {
+    border-bottom-left-radius: var(--popup-radius);
+    border-bottom-right-radius: var(--popup-radius);
+}

@@ -1,0 +1,30 @@
+.MatcFormWizardList {
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: auto;
+    padding: 24px;
+
+    height: 360px;
+    margin-bottom: 8px;
+
+    background: rgb(245, 245, 245);
+    border: 1px solid #cecece;
+
+    .MatcFormRow input {
+        width: 160px;
+    }
+
+    .MatcFormWizardListElement {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        input, .MatcDropDownButton, .VommondInput{
+            width: 30%;
+            flex-grow: 1;
+            min-width: 200px;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+[
+	{
+		"id" : "CheckBoxGroup",
+		 "type" : "CheckBoxGroup",
+		 "name" : "CheckBox (Group)",
+		 "category" : "Form",
+		 "subcategory" : "FormCheckBox",
+		 "_type" : "Widget",
+		 "sidebar": true,
+		 "x" : 0,
+	     "y" : 0,
+		 "w": 208,
+		 "h": "@box-height-l",
+	     "z" : 0,
+	     "props" : {
+	    	"options" : ["Option 1", "Option 2",  "Option 3"],
+	    	"selected": ["Option 1"]
+		 },
+	     "has" : {
+			"backgroundColor" : true,
+	        "onclick" : true,
+	        "border" : true,
+			"label" : true,
+	        "data" : true	   
+	     },
+	     "style" : { 
+	    	"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "center",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+			"background": "@form-background",
+			"color": "@form-color",
+			"colorButton": "@background-active",
+	        "boxHeight": 24,
+	        "boxMarginRight": "@spacing-m",
+			"boxShadow": "@box-shadow-s"
+	    },
+		"error" : {
+			"borderColor": "@form-border-color:error",
+			"background": "@form-background:error",
+			"colorButton": "@form-border-color:error"
+		}
+	}
+]

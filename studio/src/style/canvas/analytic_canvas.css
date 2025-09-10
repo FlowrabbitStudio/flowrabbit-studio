@@ -1,0 +1,57 @@
+.MatcAnalyticCanvas.MatcCanvasSelection .MatcWidgetDND:hover,
+.MatcAnalyticCanvas .MatcBoxSelected.MatcWidgetDND:hover,
+.MatcAnalyticCanvas .MatcBoxMoving.MatcWidgetDND:hover {
+  border:1px solid #49C0F0;
+	background:rgba(73,192,240,0.3);
+}
+
+.MatcAnalyticCanvas .MatcHeatMapScreen{
+  z-index:1000;
+}
+
+.MatcToolbarDropOffChart {
+  padding: 8px;
+}
+
+.MatcToolbarDropOffChart .MatcToolbarDropOffChartBar {
+  border-radius: 4px;
+  background: #3787f2;
+  font-size: 10px;
+  width: 0%;
+  color:#fff;
+  margin-bottom: 16px;
+  padding: 4px;
+  text-align: right;
+  transition: all 0.3s;
+}
+
+.MatcToolbarRadioList {
+  padding: 0px 8px;
+  margin-bottom: 8px;
+}
+
+.MatcAnalyticCanvasEventFlowStep{
+  border:1px solid rgba(0,0,0, 0.15);
+}
+
+.MatcAnalyticCanvasEventLabel{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color:#fff;
+  font-size: 16px;
+}
+
+.MatcCanvasSVGLayer {
+  z-index: 5000;
+}
+
+.MatcAnalyticCanvas .MatcMessage{
+  left:0px
+}
+
+
+.MatcAnalyticCanvas.UserJourney .MatcDnDLayer{
+  display: none;
+}

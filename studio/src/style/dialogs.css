@@ -1,0 +1,180 @@
+
+.MatcDialog {
+    padding: 24px;
+    padding-bottom: 36px;
+    font-size: var(--dialog-content-size);
+}
+
+.MatcDialog .form-group {
+    margin-bottom: 16px;
+}
+ 
+
+.MatcHelpDialog {
+    width: 1000px;
+    height: 700px;
+}
+
+.MatcDialogL{
+    width: 800px;
+    min-height: 480px;
+}
+
+.MatcDialogLL{
+    width: 480px;
+    height: 720px;
+}
+
+
+.MatcDialogM{
+    width: 400px;
+    min-height: 340px;
+}
+
+.MatcDialogMShort{
+    width: 480px;
+    min-height: 240px;
+}
+
+.MatcDialogMShortX{
+    width: 480px;
+    min-height: 96px;
+}
+
+.MatcCreateDialog {
+    padding-top: 10px;
+}
+
+.MatcDataBindingDialogXXL{
+	width: 840px;
+	min-height: 760px;
+}
+
+.MatcPublishDialog {
+    width: 520px;
+    height: 640px;
+}
+
+.MatcFlexDialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    font-size: var(--dialog-content-size);
+}
+
+.MatcFlexDialogHeader {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: var(--dialog-title-border);
+    padding: var(--dialog-title-padding);
+    background: var(--dialog-title-background);
+    font-size: var(--dialog-title-size);
+    font-weight: var(--dialog-title-weight);
+    color: var(--dialog-title-color);
+    border-top-left-radius: var(--dialog-radius);
+    border-top-right-radius: var(--dialog-radius);
+}
+
+.MatcFlexDialogContent {
+    flex-grow: 1;
+    padding: var(--dialog-content-padding);
+    font-size: var(--dialog-content-size);
+    overflow: auto;
+}
+
+.MatcFlexDialogFooter {
+    padding: var(--dialog-footer-padding);
+}
+
+.MatcRestDialog {
+    width: 840px;
+	min-height: 520px;
+}
+
+.MatcDialogHeader {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--dialog-title-border);
+    padding: var(--dialog-title-padding);
+    background: var(--dialog-title-background);
+    color: var(--dialog-title-color);
+    font-weight: var(--dialog-title-weight);
+	margin-bottom: 8px;
+    border-top-left-radius: var(--dialog-radius);
+    border-top-right-radius: var(--dialog-radius);
+}
+
+.MatcDialogHeaderTitle {
+    color: var(--dialog-title-color);
+	font-size: var(--dialog-title-size);
+	font-weight: var(--dialog-title-weight);
+}
+
+.MatcDialogHeaderTitleHelper{
+	font-size: var(--dialog-title-size);
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.MatcDialogTitle label{
+	font-size: var(--dialog-title-size);
+    font-weight: 600;
+}
+
+.MatcDialogBody{
+    padding: var(--dialog-content-padding)
+}
+
+
+.MatcDialog{
+	width: 600px;
+	min-height: 100px;
+	padding: 30px 30px 40px;
+}
+
+ .MatcDialogMobile{
+	width: 100%;
+	min-width:320px;
+	padding: 20px 20px 30px;
+}
+
+.MatcDialogXL{
+	width: 800px;
+	min-height: 400px;
+}
+
+.MatcDialogXXL{
+	width: 1200px;
+	min-height: 600px;
+}
+
+.MatcDialogXLLong {
+	width: 850px;
+	min-height: 600px;
+}
+
+.MatcTestDialog{
+	width: 800px;
+
+	background: #fff;
+	text-align: left;
+	font-size: 16px;
+	color:#333;
+	background: #fff;
+	padding: 40px 40px 50px;
+}
+
+.MatcTestDesktopDialog{
+	width: 90%;
+	width: 90%;
+}
+
+.MatchSimulatorDialog{
+	padding: 20px;
+}
+.MatchTaskRecorderDialog{
+	padding: 20px;
+}

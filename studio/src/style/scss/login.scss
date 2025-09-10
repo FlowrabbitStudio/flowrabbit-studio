@@ -1,0 +1,116 @@
+@import '../variables.scss';
+.MatcLoginPage {
+  font-size: 14px;
+  height: 100vh;
+}
+
+.MatcLoginPageReset {
+  background: linear-gradient(30deg, $color-red 0%, $color-red-dark 100%);
+}
+
+.MatcLoginPageDialog {
+  position: fixed;
+  transform: translateY(-50%);
+  top: 50%;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+.MatcLoginPageContainer {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  overflow: hidden;
+  background-image: none;
+  padding: 32px;
+  z-index: 1;
+  width: 100%;
+  max-width: 450px;
+
+  .MatcToolbarTabs.MatcToolbarTabsBig {
+    text-align: center;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .MatcToolbarTabs a {
+    border-bottom-width: 2px;
+    margin: 0px 5px;
+    color: $form-color;
+    font-size: 15px;
+  }
+
+  .MatcToolbarTabs a:HOVER {
+    color: $form-color-hover;
+  }
+
+  .MatcLoginPageForm {
+    height: auto;
+  }
+
+  .MatcErrorLabel {
+    height: 32px;
+    padding: 8px 0px;
+    display: block;
+  }
+
+  .MatcLoginWrapper {
+    width: 300%;
+    display: flex;
+    align-items: stretch;
+    transition: all 0.2s;
+
+    &.login {
+      transform: translateX(0);
+    }
+
+    &.signup {
+      transform: translateX(-33.333%);
+    }
+
+    &.reset {
+      transform: translateX(-66.667%);
+    }
+  }
+
+  .MatcLoginContent {
+    width: 33.3333%;
+  }
+
+  .MatcLoginPageSection {
+    padding: 30px 40px;
+  }
+
+  .MatcLoginCallToAction {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .MatcLoginPageDialog {
+    transform: translateY(-50%);
+  }
+
+  .MatcLoginPageContainer {
+    width: 100%;
+  }
+
+  .MatcLoginWrapper {
+    width: 300%;
+  }
+
+  .MatcLoginContent {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .MatcLoginPageSection {
+    padding: 10px 5px;
+  }
+}

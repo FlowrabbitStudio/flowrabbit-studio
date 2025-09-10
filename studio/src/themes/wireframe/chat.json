@@ -1,0 +1,101 @@
+[
+    {
+        "id": "Chat",
+        "type": "Chat",
+        "category": "Advanced",
+        "subcategory": "ABox",
+        "_type": "Widget",
+        "name": "Chat",
+        "sidebar": true,
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 400,
+        "z": 0,
+        "props": {
+            "options": [
+                "Hello there! I am your AI assistant!",
+                "What can I do for you?"
+            ],
+            "prompts": [
+                "Give me a recipe"
+            ],
+            "systemprompts": [
+               
+            ],
+            "stream": false,
+            "theme": "default",
+            "themes": {
+  
+            }
+        },
+        "has": {
+            "onclick": true,
+            "border": true,
+            "backgroundColor": true,
+            "text": true,
+            "padding": true
+        },
+        "actions": {},
+        "style": {
+            "fontSize": 12,
+            "textAlign": "left",
+            "letterSpacing": "1.4",
+            "lineHeight": "@lineHeight",
+            "borderRadius": "@border-radius",
+            "borderWidth": "0",
+            "borderColor": "#dbdbdb",
+            "background": "#f5f5f5",
+            "color": "#0d0d0d",
+            "borderStyle": "solid",
+            "fontFamily": "@font-family",
+            "textareaBackground": "#ffffff",
+            "textareaColor": "#757a91",
+            "textareaRadius": 4,
+            "textareaBorderWidth": 1,
+            "textareaBorderColor": "#ced4da",
+            "bubbleShape": "speech",
+            "bubbleBorderRadius": 8,
+            "bubbleBorderWidth": "@border-width",
+            "bubblePadding": 10,
+            "bubbleIconSize": 12,
+            "bubbleIconColor": "#818181",
+            "assistantBackground": "@button-primary-background",
+            "assistantColor": "@button-primary-color",
+            "assistantBorderColor": "@button-primary-border-color",
+            "userBackground": "#ffffff",
+            "userColor": "#757a91",
+            "userBorderColor": "none",
+            "promptBackground": "#f0f0f0",
+            "promptColor": "#333",
+            "promptBorderColor": "#ccc",
+            "promptBorderWidth": 1,
+            "promptBorderRadius": 8,
+            "promptFontSize": 12,
+            "systempromptBackground": "#f0f0f0",
+            "systempromptColor": "#333",
+            "systempromptBorderColor": "#ccc",
+            "systempromptBorderWidth": 1,
+            "systempromptBorderRadius": 8,
+            "systempromptFontSize": 12,
+            "padding": 8,
+            "gap": 16,
+            "inputHeight": 50,
+            "bubbleIconColorHover": "#333",
+            "promptBackgroundHover": "#d1d1d1",
+            "promptColorHover": "#333",
+            "systempromptBackgroundHover": "#d1d1d1",
+            "systempromptColorHover": "#333",
+            "systempromptBorderColorHover": "#ccc",
+            "hover": {
+                "borderColor": "#eaeaea",
+                "background": "#ffffff"
+            }
+        },
+        "focus": {
+            "borderColor": "@form-border-color:focus",
+            "background": "@form-background:focus",
+            "color": "@form-color:focus"
+        }
+    }
+]

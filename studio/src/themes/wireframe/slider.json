@@ -1,0 +1,46 @@
+[ {
+	"id" : "HSliderLabel",
+	"type" : "HSlider",
+	"_type" : "Widget",
+	"category" : "Advanced",
+	"subcategory" : "FormSlider",
+	"name" : "Slider",
+	"x" : 0,
+	"y" : 0,
+	"w": "@form-width",
+	"h": "@box-height-xs",
+	"z" : 0,
+	"props" : {
+		"hasLabel": true,
+		"value" : 50,
+		"max" : 100,
+		"min" : 0
+	},
+	"has" : {
+		"label": true,
+		"data":true,
+	  "backgroundColor" : true
+	},
+	"style" : {
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign": "center",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+		"background": "@form-border-color",
+		"color": "@form-background",
+		"borderRadius" : "@border-radius-round",
+
+
+        "handleColor" : "@background-active",
+        "barColor" : "@background-active",
+ 
+        "handleWidth" : "@box-height-xs",
+        "handleHeight" : 1,
+        "barHeight": 0.3,
+        "cntrHeight":0.3,
+        "handleRadius" : 50,
+		"boxShadow": "@box-shadow-s"
+
+	}
+} ]

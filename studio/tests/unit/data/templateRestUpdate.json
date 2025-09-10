@@ -1,0 +1,281 @@
+{
+  "_id" : "6713ede977a3d5719c091f11",
+  "version" : 2,
+  "publicType" : "forbidden",
+  "name" : "Template Test",
+  "description" : "",
+  "screenSize" : {
+    "w" : 376,
+    "h" : 808
+  },
+  "type" : "smartphone",
+  "screens" : { },
+  "widgets" : {
+    "w10016_98115" : {
+      "id" : "w10016_98115",
+      "name" : "API",
+      "type" : "Rest",
+      "x" : 1556,
+      "y" : 1132,
+      "w" : 72,
+      "h" : 72,
+      "props" : {
+        "rest" : {
+          "method" : "GET",
+          "url" : "https://v1.quant-ux.com/rest/status.json",
+          "token" : "",
+          "authType" : "Bearer",
+          "input" : {
+            "type" : "JSON",
+            "fileDataBinding" : "",
+            "template" : ""
+          },
+          "output" : {
+            "databinding" : "API",
+            "template" : "",
+            "type" : "JSON",
+            "hints" : { }
+          },
+          "headers" : [ ]
+        }
+      },
+      "has" : {
+        "rest" : true
+      },
+      "style" : { },
+      "z" : 1,
+      "created" : 1729366334412,
+      "modified" : 1729366345921,
+      "template" : "tw10017_58575",
+      "isRootTemplate" : true
+    },
+    "w10018_70341" : {
+      "id" : "w10018_70341",
+      "name" : "APICopy",
+      "type" : "Rest",
+      "x" : 1701,
+      "y" : 1150,
+      "w" : 72,
+      "h" : 72,
+      "props" : {
+        "rest" : {
+          "method" : "GET",
+          "url" : "https://v1.quant-ux.com/rest/status.json",
+          "token" : "",
+          "authType" : "Bearer",
+          "input" : {
+            "type" : "JSON",
+            "fileDataBinding" : "",
+            "template" : ""
+          },
+          "output" : {
+            "databinding" : "API",
+            "template" : "",
+            "type" : "JSON",
+            "hints" : { }
+          },
+          "headers" : [ ]
+        }
+      },
+      "has" : {
+        "rest" : true
+      },
+      "style" : { },
+      "z" : 2,
+      "created" : 1729366349499,
+      "modified" : 1729366350611,
+      "template" : "tw10017_58575",
+      "copyOf" : "w10016_98115"
+    },
+    "w10023_36925" : {
+      "id" : "w10023_36925",
+      "name" : "Airtable",
+      "type" : "API",
+      "category" : "Logic",
+      "_type" : "Widget",
+      "x" : 1553,
+      "y" : 1260,
+      "w" : 72,
+      "h" : 72,
+      "props" : {
+        "type" : "airtable",
+        "api" : {
+          "operation" : "readTable",
+          "token" : "pateTDlBNrfLUdhGC.630b952d7e3d4e80a6332a647dbc041bcf46191546d609a536c032374b1bf2d6",
+          "baseId" : "appWLK5W0MPDqaAHo",
+          "tableIdOrName" : "tblRbzsnVDploO5X7",
+          "tableLabel" : "Flowrabbit - Table 1",
+          "input" : [ {
+            "id" : "pageSize",
+            "label" : "Page Size",
+            "isVar" : false,
+            "type" : "Parameter",
+            "value" : 100
+          } ]
+        },
+        "databinding" : {
+          "default" : "Table_1"
+        }
+      },
+      "has" : {
+        "rest" : true
+      },
+      "style" : { },
+      "z" : 3,
+      "created" : 1729452393041,
+      "modified" : 1729452425323,
+      "template" : "tw10024_33586",
+      "isRootTemplate" : true
+    },
+    "w10025_76218" : {
+      "id" : "w10025_76218",
+      "name" : "AirtableCopy",
+      "type" : "API",
+      "category" : "Logic",
+      "_type" : "Widget",
+      "x" : 1708,
+      "y" : 1316,
+      "w" : 72,
+      "h" : 72,
+      "props" : {
+        "type" : "airtable",
+        "api" : {
+          "operation" : "readTable",
+          "token" : "pateTDlBNrfLUdhGC.630b952d7e3d4e80a6332a647dbc041bcf46191546d609a536c032374b1bf2d6",
+          "baseId" : "appWLK5W0MPDqaAHo",
+          "tableIdOrName" : "tblRbzsnVDploO5X7",
+          "tableLabel" : "Flowrabbit - Table 1",
+          "input" : [ {
+            "id" : "pageSize",
+            "label" : "Page Size",
+            "isVar" : false,
+            "type" : "Parameter",
+            "value" : 100
+          } ]
+        },
+        "databinding" : {
+          "default" : "Table_1"
+        }
+      },
+      "has" : {
+        "rest" : true
+      },
+      "style" : { },
+      "z" : 4,
+      "created" : 1729452427097,
+      "modified" : 1729452425323,
+      "template" : "tw10024_33586",
+      "copyOf" : "w10023_36925"
+    }
+  },
+  "lines" : { },
+  "groups" : { },
+  "templates" : {
+    "tw10017_58575" : {
+      "id" : "tw10017_58575",
+      "style" : {
+        "background" : "#777",
+        "logo" : "api"
+      },
+      "has" : {
+        "rest" : true
+      },
+      "props" : {
+        "rest" : {
+          "method" : "GET",
+          "url" : "https://v1.quant-ux.com/rest/status.json",
+          "token" : "",
+          "authType" : "Bearer",
+          "input" : {
+            "type" : "JSON",
+            "fileDataBinding" : "",
+            "template" : ""
+          },
+          "output" : {
+            "databinding" : "API",
+            "template" : "",
+            "type" : "JSON",
+            "hints" : { }
+          },
+          "headers" : [ ]
+        }
+      },
+      "w" : 72,
+      "h" : 72,
+      "z" : 1,
+      "x" : 0,
+      "y" : 0,
+      "templateType" : "Widget",
+      "type" : "Rest",
+      "visible" : true,
+      "name" : "API",
+      "modified" : 1729366345919,
+      "created" : 1729366345919
+    },
+    "tw10024_33586" : {
+      "id" : "tw10024_33586",
+      "style" : {
+        "background" : "#777",
+        "iconSize" : 0.7,
+        "icon" : "mdi mdi-air-filter",
+        "iconStyle" : "Airtable",
+        "logo" : "Airtable"
+      },
+      "has" : {
+        "rest" : true
+      },
+      "props" : {
+        "type" : "airtable",
+        "api" : {
+          "operation" : "readTable",
+          "token" : "pateTDlBNrfLUdhGC.630b952d7e3d4e80a6332a647dbc041bcf46191546d609a536c032374b1bf2d6",
+          "baseId" : "appWLK5W0MPDqaAHo",
+          "tableIdOrName" : "tblRbzsnVDploO5X7",
+          "tableLabel" : "Flowrabbit - Table 1",
+          "input" : [ {
+            "id" : "pageSize",
+            "label" : "Page Size",
+            "isVar" : false,
+            "type" : "Parameter",
+            "value" : 100
+          } ]
+        },
+        "databinding" : {
+          "default" : "Table_1"
+        }
+      },
+      "w" : 72,
+      "h" : 72,
+      "z" : 3,
+      "x" : 0,
+      "y" : 0,
+      "templateType" : "Widget",
+      "type" : "API",
+      "visible" : true,
+      "name" : "Airtable",
+      "modified" : 1729452425321,
+      "created" : 1729452425321
+    }
+  },
+  "designtokens" : { },
+  "schema" : { },
+  "data" : { },
+  "lastUUID" : 10026,
+  "lastUpdate" : 1729452431509,
+  "created" : 1729359337961,
+  "startScreen" : "",
+  "grid" : {
+    "w" : 8,
+    "h" : 8,
+    "style" : "line",
+    "color" : "#cecece",
+    "visible" : false,
+    "enabled" : true
+  },
+  "domain" : "Flowrabbit.ai",
+  "isDirty" : true,
+  "lastCategory" : "WireFrame",
+  "screenCount" : 0,
+  "widgetCount" : 4,
+  "id" : "6713ede977a3d5719c091f11"
+}
