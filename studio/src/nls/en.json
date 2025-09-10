@@ -1,0 +1,618 @@
+{
+    "title": "Quant-UX",
+    "scatter": {
+        "no-data": "No test data was recorded."
+    },
+    "tooltip": {
+        "editmode": "Change edit mode"
+    },
+    "wizards": {
+        "errors": {
+            "token": "Could not get data, Please check the token and the URL",
+            "no-row-in-table": "Please make sure that at least one row is in the Table",
+            "network": "Something went wrong",
+            "url": "Please check the URL",
+            "url-wrong": "The url must start with:" ,
+            "budget": "No AI budget left",
+            "fill-all": "Please fill the form"
+        }   
+    },
+    "theme": {
+        "tab-vars": "Customize",
+        "tab-themes": "Design System",
+        "vars": {
+            "@color-text": "Default Text Color",
+            "@color-border-text": "Default Border Color",
+            "@font-size-s": "Font Size - Small",
+            "@font-size-m": "Font Size - Middle",
+            "@font-size-l": "Font Size - Large",
+            "@font-family": "Font Family",
+            "@letterSpacing": "Letter Spacing",
+            "@lineHeight": "Line Height"
+        }
+    },
+    "design-gpt": {
+        "error-server": "Something went wrong on the server",
+        "error-no-model": "No model. Please reload the page",
+        "error-no-html": "The server returned a wrong result",
+        "error-no-content": "The server returned no result",
+        "error-no-idea": "Something went wrong",
+        "error-server-no-key": "You need to enter the API key",
+        "error-server-key": "The API key is wrong",
+        "error-prompt-too-short": "The prompt is too short",
+        "error-no-budget": "No budget left. ",
+        "error-yaml": "OpenAI send a strange response. Try again...",
+        "is-wireframe": "Create as wireframe",
+        "is-minimal": "Minimize elements",
+        "is-custom-styles": "Use prototype styles",
+        "gpt-model-gpt3": "ChatGPT - Faster and cheaper",
+        "gpt-model-gpt4": "GPT4 - Slower and better",
+        "gpt-model-gpt4-turbo": "GPT4 Turbo - Super creative, but slower",
+        "gpt-model-gpt4-turbo-yaml": "GPT4 Boost -  Fast and clean",
+        "gpt-model": "Select the GPT model to use",
+        "gpt-temperature": "Randomness (Temperature)",
+        "waiting-title": "Processing",
+        "waiting-details": "Generating the design... ",
+        "tab-prompt": "Text to UI",
+        "tab-form-wizard": "Form Assistant",
+        "tab-preview": "Preview",
+        "tab-settings": "Authorization",
+        "key-title": "Your OpenAI API key",
+        "key-hint-1": "We use OpenAI to power our AI engine.",
+        "key-hint-2": "To use the service, you need to bring your API key.",
+        "key-hint-3": "To get a key, create an account at",
+        "key-hint-5": "Your API key is stored in your browser and not on our server.",
+        "show-key": "API",
+        "welcome-design-msg": "Hello, I am DesignGPT. I can create a design for you",
+        "prompt": "Describe the page here",
+        "prompt-placeholder": "Describe your page here, e.g. 'Create a login bad with red buttons...'",
+        "error-public": "You need to sign up to use DesignGPT",
+        "preview": "Run AI",
+        "preview-wizard": "Run Wizard",
+        "no-preview": "No Preview",
+        "busy": "Running AI...",
+        "robo-start-1": "I am DesignGPT. Let's get started.",
+        "robo-running-1": "Starting...",
+        "robo-running-2": "Contacting OpenAI...",
+        "robo-waiting-1": "Soon the design will be ready...",
+        "robo-waiting-2": "I bet the design will be awesome!",
+        "robo-waiting-3": "To get a different design, run the AI again!",
+        "robo-waiting-4": "I can't wait to see what they will come up with!",
+        "robo-waiting-5": "You know that you can ask for colors?",
+        "robo-waiting-6": "I am soooo curious!",
+        "robo-waiting-7": "OpenAI is working hard!", 
+        "robo-waiting-8": "Just some seconds more...",
+        "robo-waiting-9": "Still working....",
+        "robo-waiting-10": "The better you describe your design the better the output will be.",
+        "robo-waiting-11": "Grab a snack while we crunch the numbers...",
+        "robo-waiting-12": "I promise the results will be better than a chocolate fountain.",
+        "robo-waiting-13": "Just a few more steps and we'll be done!",
+        "robo-waiting-14": "I am going as fast as I can without breaking the space-time continuum",
+        "robo-waiting-15": "Don't worry, it'll be worth the time!",
+        "robo-waiting-16": "Making sure every pixel is perfectly aligned.",
+        "robo-waiting-17": "Picking out the perfect color palette. Don't worry, I have excellent taste!",
+        "robo-waiting-18": "Busy crafting a masterpiece...",
+        "robo-waiting-19": "Adding the finishing touches on your design...",
+        "robo-waiting-20": "Stay tuned for the result!",
+        
+        "robo-delayed-1": "Hang in! It can take only some more seconds, minutes or hours...",
+        "robo-delayed-2": "Don't give up!",
+        "robo-delayed-3": "This is taking really long!",
+        "robo-delayed-4": "Sometimes the servers are really busy...",
+        "robo-delayed-5": "Woah, your design must be really complex!",
+        "robo-delayed-6": "It can't take much longer...",
+        "robo-delayed-7": "Still waiting for OpenAI...",
+        "robo-delayed-8": "Hang tight, your results are on the way.",
+        "robo-delayed-9": "I apologize for the delay, the AI is taking a coffee break....",
+        "robo-delayed-10": "I am not saying my system is powered by magic, but sometimes even magic needs a little time.",
+        "robo-delayed-11": "The AI is currently doing some deep thinking...but it'll be worth waiting!",
+        "robo-delayed-12": "Almost there!",
+        "robo-delayed-13": "Sometimes AI takes time, but it's worth it.",
+        "robo-delayed-14": "The system is running a diagnostic scan to ensure that Skynet hasn't taken over.",
+        "robo-delayed-15": "The AI get sometines lost in its deep neural network...",
+        "robo-delayed-16": "I don't know what's going on here.",
+        "hint-did-you-know": "Did you know?",
+        "hint-1": "You can include colors in your prompt! Ask for background, text or border colors. For example:",
+        "hint-1-prompt": "Create a form with a red button. The text color should be black.",
+        "hint-2": "You can ask to create forms? For instance ask:",
+        "hint-2-prompt": "Create a form with an email, password and age field.",
+        "hint-3": "OpenAI can create data tables for you. No need to invent names, places, birthdays and so on. The prompt could look like:",
+        "hint-3-prompt": "Please create a table containing data of 5 persons. Include the name, age, weight and profession.",
+        "hint-4": "You can influence the style of texts used in the design. For example ask:",
+        "hint-4-prompt": "Create a funny headline about designers.",
+        "hint-5": "",
+        "hint-5-prompt": "You know that you can ask for colors?",
+        "hint-6": "6",
+        "hint-6-prompt": "You know that you can ask for colors?",
+        "hint-7": "7",
+        "hint-7-prompt": "You know that you can ask for colors?",
+        "hint-8": "8",
+        "hint-8-prompt": "You know that you can ask for colors?",
+        "hint-9": "9",
+        "hint-9-prompt": "You know that you can ask for colors?",
+        "hint-10": "10",
+        "hint-10-prompt": "You know that you can ask for colors?",
+        "hint-11": "11",
+        "hint-11-prompt": "You know that you can ask for colors?",
+        "hint-12": "12",
+        "hint-12-prompt": "You know that you can ask for colors?"
+    },
+    "text2js": {
+        "error-server": "Something went wrong on the server",
+        "error-no-model": "No model. Please reload the page",
+        "error-no-html": "The server returned a wrong result",
+        "error-no-content": "The server returned no result",
+        "error-no-idea": "Something went wrong",
+        "error-server-no-key": "You need to enter the API key",
+        "error-server-key": "The API key is wrong",
+        "error-prompt-too-short": "The prompt is too short",
+        "error-no-budget": "No budget left. ",
+        "error-yaml": "OpenAI send a strange response. Try again...",
+        "is-wireframe": "Create as wireframe",
+        "is-minimal": "Minimize elements",
+        "is-custom-styles": "Use prototype styles",
+        "gpt-model-gpt3": "ChatGPT - Faster and cheaper",
+        "gpt-model-gpt4": "GPT4 - Slower and better",
+        "gpt-model-gpt4-turbo": "GPT4 Turbo - Super creative, but slower",
+        "gpt-model-gpt4-turbo-yaml": "GPT4 Boost -  Fast and clean",
+        "gpt-model": "Select the GPT model to use",
+        "gpt-temperature": "Randomness (Temperature)",
+        "waiting-title": "Processing",
+        "waiting-details": "Generating the design... ",
+        "tab-prompt": "Text to Script",
+        "tab-form-wizard": "Form Assistant",
+        "tab-preview": "Preview",
+        "tab-settings": "Authorization",
+        "key-title": "Your OpenAI API key",
+        "key-hint-1": "We use OpenAI to power our AI engine.",
+        "key-hint-2": "To use the service, you need to bring your API key.",
+        "key-hint-3": "To get a key, create an account at",
+        "key-hint-5": "Your API key is stored in your browser and not on our server.",
+        "show-key": "API",
+        "welcome-design-msg": "Hello, I am DesignGPT. I can create a design for you",
+        "prompt": "Describe the page here",
+        "prompt-placeholder": "Describe your page here, e.g. 'Create a login bad with red buttons...'",
+        "error-public": "You need to sign up to use DesignGPT",
+        "preview": "Run AI",
+        "preview-wizard": "Run Wizard",
+        "no-preview": "No Preview",
+        "busy": "Running AI..."
+    },
+    "header": {
+        "my-apps": "My Apps",
+        "documentation": "Documentation",
+        "my-account": "My Account",
+        "logout": "Logout"
+    },
+    "script": {
+        "edit": "Edit",
+        "console": "Console",
+        "run": "Run"
+    },
+    "common": {
+        "register": "Please register to save changes...",
+        "guest": "Guest",
+        "loading": "Loading...",
+        "language-changed": "The language was changed"
+    },
+    "simulator": {
+        "welcome": {
+            "title": "Welcome",
+            "msg": 	"You were invited for a usability test of the <b>{{name}}</b> application. You can try out the prototype by clicking on the <b>Start Prototype</b> button.",
+            "privacy": "This is a usability test. Please be aware that your interaction will be recorded to make the design better. We do not store any personal information about you. You can find more information on our <a target='quxPrivacy' href='#/privacy.html'>Privacy page</a>.",
+            "start": "Start Prototype",
+            "showTasks": "Show Tasks"
+        },
+        "tasks": {
+            "title": "Tasks",
+            "msg": "Please perform the following tasks."
+        },
+        "password": {
+            "title": "Password",
+            "msg": "To test this prototype you need a password. Please enter the password and press <b>Next</b>",
+            "next": "Next"
+        }
+    },
+    "toolbar": {
+        "condstyle": {
+            "create": "Create rule",
+            "edit": "Edit rule",
+            "hide": "Hide"
+        },
+        "menu": {
+            "start": "Start Simulator",
+            "theme": "Change Light & Dark mode",
+            "settings": "Settings",
+            "shortcuts": "Keyboard Shortcuts",
+            "share": "Share",
+            "import": "Import",
+            "export": "Export",
+            "change-screen-size": "Change Screen Size",
+            "change-theme": "Change Design System",
+            "save-as": "Duplicate",
+            "exit": "Back to App Dashboard",
+            "dashboard": "Back to Dashboard",
+            "keys": "Secret Vars",
+            "delete": "Delete App",
+            "info": "App Info"
+        },
+        "svgStop": "Stop Editing",
+        "simulate": "Simulate",
+        "group": "Group",
+        "sign-up": "Sign Up To Save",
+        "templates": {
+            "new": "New Template"
+        }
+    },
+    "table": {
+        "action": "Action"
+    },
+    "table-action": "Action X",
+    "btn": {
+        "login": "Login",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "download": "Download",
+        "edit": "Edit",
+        "continue": "Continue",
+        "post": "Post",
+        "close": "Close",
+        "import": "Import",
+        "export": "Export"
+    },
+    "dialog": {
+        "import": {
+   
+            "images-title": "Import from Images",
+            "figma-title": "Import from Figma",
+            "tab-images": "Images",
+            "tab-figma": "Figma",
+            "tab-zip": "Zip",
+            "tab-github": "Github",
+            "tab-open-ai": "OpenAI - GPT",
+            "tab-open-api": "Swagger (OpenAPI)",
+            "images-drop-msg": "Drop images here",
+            "zip-drop-msg": "Drop ZIP here",
+            "image-progress": "Uploading...",
+            "figma-key": "Access Key",
+            "figma-select-page": "Select page to import",
+            "figma-select-screens": "Select artboards to import",
+            "figma-preview": "Preview",
+            "figma-url": "Url",
+            "figma-progress-file": "Loading Figma File...",
+            "figma-progress-preview": "Loading Previews",
+            "error-too-big": "One file is too big. Max is 5MB",
+            "error-wrong-type": "Only JPG, PNG and GIF are supported",
+            "error-figma-key": "Please provide the access key",
+            "error-figma-url": "Copy the url of the Figma prototype",
+            "error-figma-load": "Something went wrong loading the Figma file",
+            "error-figma-load-preview": "Could not load the previews",
+            "error-figma-page": "Select the page you want to import and click on 'Import'",
+            "error-public": "Import does not work in Try-Out mode. Please sign up to import elements.",
+            "error-swagger-no-url": "Please enter a URL with a swagger file",
+            "error-swagger-wrong_url": "Could not load URL",
+            "error-no-file": "No file selected",
+            "error-zip-no-file": "Wrong file type",
+            "open-api-url": "URL",
+            "open-ai-prompt": "Describe your page here",
+            "open-ai-prompt-hint": "Please create a login screen",
+            "open-ai-generate": "Generate Preview"
+        },
+        "export": {
+            "tab-images": "Images",
+            "tab-github": "Github",
+            "tab-zip": "Zip File",
+            "github-token": "Github Access Token",
+            "github-user": "User",
+            "github-repo": "Repository",
+            "github-branch": "Branch",
+            "github-folder": "Folder"
+        },
+        "login": {
+            "password": {
+                "label": "Password",
+                "placeholder": "Your password",
+                "reset": "Forgot Password?",
+                "error": "The password must have 6 characters"
+            },
+            "email": {
+                "placeholder": "Your email",
+                "error": "Please enter your email"
+            },
+            "btn": {
+                "create": "Create Free Account"
+            },
+            "tos": {
+                "1": "I have read the",
+                "2": "Terms of Service",
+                "3": ".",
+                "4": "Privacy Policy",
+                "error": "You must accept the terms of service &amp; privacy policy!"
+            },
+            "privacy": {
+                "1": "I have read the ",
+                "2": "Privacy Notice",
+                "error": "You must accept the privacy notice"
+            }
+        }
+    },
+    "test": {
+        "welcome": {
+            "headline": "Welcome!",
+            "intro": {
+                "1": "You were invited for a usability test of the",
+                "2": "application.",
+                "tasks": "You can try out the prototype and perform certain tasks. When you click on <b>Show Tasks</b> button, you will receive detailed instructions.",
+                "no-tasks": "You can try out the prototype by clicking on the <b>Start Prototype</b> button. ",
+                "privacy": "Please be aware that your interaction will be recored to make the design better. We do not store any personal information about you."
+            },
+            "next": "Show Tasks",
+            "start": "Start Prototype",
+            "privacy": "This is a usability test and your interaction will be stored to make the design better. We do not store any personal information about you."
+        },
+        "task": {
+            "headline": "Tasks",
+            "description": "In the scope of this usability test you are kindly requested to perform the tasks listed below. Don't worry if you can not fulfill all tasks. This is just a sign that the prototype needs further improvements. The tasks are:",
+            "footer": "You can try out the prototype by clicking on the <b>Start Prototype</b> button."
+        },
+        "qr": {
+            "headline": "Scan the QR code with your mobile device."
+        },
+        "splash": {
+            "upload": "Upload Splash image",
+            "uploading": "Uploading..."
+        }
+    },
+    "user": {
+        "retire": {
+            "hi": "Hi ",
+            "msg": "are you sure that you want to <b>delete</b> your account? You will loose all your data.",
+            "cusoon": "Thanks for using Quant-UX. We hope to see you soon again."
+        }
+    },
+    "create": {
+        "title": "Create new App",
+        "type": "Screen Type",
+        "theme": "Color Scheme",
+        "name": "Name",
+        "name-placeholder": "The name of the app",
+        "name-error": "Please enter a name"
+    },
+    "app": {
+        "error": {
+            "server-offline-title": "Ooops",
+            "server-offline-msg": "You have been gone for more than 30 minutes. To continue working, please log in again."
+        },
+        "public": {
+            "errorNotDirty": "No changes",
+            "errorNotUnique": "The name is taken. Choose another name."
+        },
+        "overview": {
+            "apps": "Apps",
+            "create": "Create App",
+            "design": "Design",
+            "tean": "Team",
+            "publish": "Publish",
+            "test": "Test",
+            "dash": "Dashboard",
+            "heat": "Heat Maps",
+            "settings": "Settings",
+            "team": "Team",
+            "open-app": "Open",
+            "share": "Share",
+            "back": "Back"
+        }
+    },
+    "survey": {
+        "video": "Video",
+        "header": "Survey Answers",
+        "download": "Download CSV",
+        "options": "Options",
+        "fullscreen": "Details",
+        "id": "id",
+        "tasks": "Tasks",
+        "taskSuccess": "Show Tasks",
+        "showVideo": "Show Video",
+        "taskDetails": "Task Details",
+        "taskDuration": "Tasks Duration",
+        "taskInteractions": "Tasks Interactions",
+        "dialogTable": "Data",
+        "dialogDiagrams": "Diagrams",
+        "ids": "Show IDs",
+        "no-data": "No survey fields. Make sure that you have to marked the survey fields in the canvas."
+    },
+    "analytic-task-list": {
+        "header": "Task Results",
+        "download": "Download Task Summary"
+    },
+    "canvas": {
+
+    },
+    "comments": {
+        "title": "Comments",
+        "post": "Post Comment"
+    },
+    "applist": {
+        "add": "Create new App",
+        "sign-in": "Sign up to create a new Prototype"
+    },
+    "analytics": {
+        "outlier": {
+            "title" : "Outliers",
+            "no-data": "No data"
+        },
+        "distribution": {
+            "title" : "Data Distribution",
+            "scatterModeInteractionXDuration": "Duration X Interaction",
+            "scatterModeDurationXScreen": "Duration X Screen Views",
+            "scatterModeErrorsXScreen": "Errors X Screen Views",
+            "scatterModeDurationXTasks": "Duration X Tasks",
+            "scatterModeScreensXDuration": "Screens X Interaction",
+            "viewScatter": "Scatter Plot",
+            "viewBoxPlot": "BoxPlot",
+            "viewOutlier": "Outlier",
+            "viewDetails": "Details",
+            "cluster-vars": "Options",
+            "options": "Options",
+            "no-data": "No data",
+            "play": "To replay the session recording press ",
+            "here": "here",
+            "outlier": "Outlier",
+            "details": {
+                "duration": "Duration",
+                "interactions": "Interactions",
+                "screens": "Unique / Visited Screens",
+                "screenUnique": "Unique Screens",
+                "screenLoads": "Visited Screen",
+                "screenRatio": "Unique / Visited Screens",
+                "errors": "Validation Errors",
+                "tasks": "Successful Tasks",
+                "weirdness": "Navigation Anomaly",
+                "dbscan": "DBCAN"
+            },
+            "hint": "Select a dot to replay the screen recording."
+        },
+        "header": {
+            "user": "Tests",
+            "duration": "Test Duration",
+            "coverage": "Test Coverage"
+        },
+        "canvas": {
+            "dropoff": {
+                "hintNoTasksDefined": "No tasks defined",
+                "errorNoTask": "Please select a task"
+            },
+            "heatamp": {
+                "hintAll": "Find the busy areas in your design where the users have clicked most.",
+                "hintFirst": "Uncover which elements draw the most attention from the users right after a screen was loaded.",
+                "hintFirstThree": "Elements that are not clicked withing three interactions, may be hard to discover for the user.",
+                "hintMissed": "Clicks on passive elements, such as backgrounds, can indicate that the users made an error and could not understand the intended interaction."
+            }
+        }
+    },
+    "dashScreenList": {
+        "views": "Views",
+        "dwel": "Dwel Time",
+        "clicks": "Interactions",
+        "table-action": "Analyze"
+    },
+    "share": {
+        "Headline": "Share this app",
+        "Test": "Test",
+        "Comment": "Share & Comment",
+        "Embed": "Embed",
+        "Code": "Code Generation"
+    },
+    "notification": {
+        "more": "More..."
+    },
+    "dash": {
+        "perf": {
+            "scatter": {
+                "outlier": "Outlier",
+                "no-task": "No Task",
+                "yLabel": "Interactions",
+                "xLabel": "Duration"
+            },
+            "dropoff": {
+                "xLabel": "Success Rate",
+                "step": "Step "
+            },
+            "details": {
+                "yLabel": "Interactions",
+                "yLabelEast": "Duration",
+                "xLabel": "Interactions | Duration",
+                "bottom25Label": "Interactions",
+                "bottom75Label": "Duration"
+            },
+            "tab": {
+                "scatter": "Scatter Plot",
+                "dropoff": "Drop Off",
+                "duration": "Duration",
+                "interactions": "Interactions",
+                "details": "Box Plot",
+                "funnelDurartion": "Step-Duration",
+                "funnelInteraction": "Step-Interaction"
+            },
+            "hint": {
+                "scatter": "Each dot presents a successful user test. Select them to get more information.",
+                "session-msg": "To replay the session recording press ",
+                "session-play": "here"
+            },
+            "no-flow-title": "No FLow",
+            "no-flow-msg": "<p>Please define a flow with <b>two or more </b> steps. Otherwise we cannot show details about the task performance.</p>"
+        }
+    },
+    "helper": {
+        "tooltips": {
+            "tooltipEndpoint": "An endpoint is an URL used to retrieve/send data. Enter the URL for your endpoint.",
+            "tooltipOutputVariable": "The variable where the result of the request to the endpoint is stored. Set up a name for your output variable.",
+            "tooltipOutputPath": "The path of the variable you want to access to.",
+            "tooltipOutputType": "The type of the request output.",
+            "tooltipAuthToken": "The token used to authenticate the request to the endpoint.",
+            "tooltipOther": "Other header parameters to set up in the request"
+        }
+    },
+    "testSettingsHeader": "Test Settings",
+    "testSettingsDescription": "Description",
+    "testSettingsTasks": "Tasks",
+    "testSettingsTaskName": "Name",
+    "testSettingsTaskDescription": "Description",
+    "testSettingsTaskAddHint": "Click the  'Add Task' button to create a new task. The tasks a shown to the users before the test.",
+    "testSettingsRegister": "Please register to save changes.",
+    "testSettingsShowTaskInTest": "Show tasks during test.",
+    "testSettingsNoFlow": "No Flow",
+    "testSettingsFlow1": "Flow: ",
+    "testSettingsFlow2": " steps",
+    "testSettingsAddTask": "Add Task",
+    "testSettingTaskDeskPlaceholder": "Enter a description here",
+    "testSettingDesPlaceholder": "Add a short description for the users in here",
+    "testSettingTaskDeleteTitle": "Delete Task",
+    "testSettingTaskDelete1": "Do you want to delete the task '",
+    "testSettingTaskDelete2": "'?",
+    "testSettingsSaved": "Test settings updated...",
+    "testSettingsUpgradePlan": "Upgrade Plan",
+    "testSettingsRecordOneTestPerUser": "Record data only for the first time a user tests the prototype.",
+
+    "dashTaskEmpty": "You can create tasks in the 'Test' tab. ",
+    "dashTaskTableName": "Name",
+    "dashTaskTableSuccess": "Success",
+    "dashTaskTableStart": "Start",
+    "dashTaskTableDuration": "Duration",
+    "dashTaskTableEvents": "Interactions",
+    "dashTaskTableEditFlow": "Edit",
+    "dashTaskFunnel": "Funnel",
+    "dashTaskDurDis": "Duration Distribution",
+    "dashTaskEventDis": "Event Distribution",
+    "dashTaskDesPlaceholder": "Enter a description here",
+    "dashTaskPerfHeadline": "Task: ",
+
+    "taskRecorder1": "A flow is the sequence of interactions the users have to perform to complete a task. ",
+    "taskRecorder2": "For instance, they have to visit 'Screen A' and navigate to 'Screen C'. You can also mark important sub events, like clicking on a button, or visitng a screen in between.",
+    "taskRecorderStep0": "Pess <b>Begin</b> to launch the simulator.",
+    "taskRecorderStep1": "Perform the interactions your users should perform",
+    "taskRecorderStep2": "You can press <b>Pause</b> to pause the recording",
+    "taskRecorderStep3": "Press <b>Done</b> when the flow is complete.",
+    "taskRecorderStep4": "<b>Select</b> all steps that are important for the task.",
+    "taskRecorderPauseHint": "Click Pause to pause recording",
+    "taskRecorderPauseBtn": "Pause",
+    "taskRecorderPauseDes": "Recoding interaction...",
+    "taskRecorderRecordBtn": "Record",
+    "taskRecorderRecordDes": "Click Record to continue recording",
+    "taskRecorderError1": "You have not recorded any flow. Did you press the Record button?",
+    "taskRecorderDoNotAllow": "Do not allow events in between.",
+    "taskRecorderEvent": "Event",
+    "taskRecorderScreen": "Screen",
+    "taskRecorderWidget": "Widget",
+    "taskRecorderAction": "Important",
+
+    "videoTableStatus": "Status",
+    "videoTableUser": "User",
+    "videoTableDuration": "Duration",
+    "videoTableScreens": "Screens",
+    "videoTableEvents": "Events",
+    "videoTableDate": "Date",
+    "videoTableStatusNotPayed": "Blocked",
+    "videoTablePlanUpdateMsg": "To see all videos upgate your plan."
+}

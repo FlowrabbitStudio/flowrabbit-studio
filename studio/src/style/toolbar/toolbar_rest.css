@@ -1,0 +1,308 @@
+@import '../vars.css';
+
+.MatcToolbarRestSettings {
+    min-width: 950px;
+    max-width: 950px;
+    height: 600px;
+    width: 100%;
+}
+
+.MatcToolbarRestSettings .MatcDialogTitle label{
+    font-size: 18px;
+    font-weight: 600;;
+}
+
+.MatcToolbarRestSettings label {
+    font-size: 14px;
+}
+
+.MatcToolbarRestSettingsInputArea{
+    border-radius: 4px;
+    padding: 9.5px;
+}
+
+.MatcToolbarRestSettings textarea {
+    width: 100%;
+    height: 130px;
+}
+
+.MatcToolbarRestDataBindingRow {
+    margin-bottom: 10px;
+}
+
+.MatcToolbarRestSettings.MatcToolbarPromptBuilder {
+    margin: 20px;
+}
+
+.MatcToolbarRestDataBindingCntr{
+    height: 320px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    overflow-y: scroll;
+    font-size: 12px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+.MatcToolbarJSONRestDataBindingCntr{
+    height: 320px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    overflow: scroll;
+    font-size: 12px;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.MatcToolbarSpeechRestDataBindingCntr{
+    max-height: 150px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    overflow-y: scroll;
+    font-size: 12px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+.MatcToolbarRestDataBindingCntr img {
+    width: 100%;
+    border:1px solid #555;
+}
+
+.MatcToolbarRestAssistantResult {
+    padding: 10px;
+    height: 270px;
+    overflow-y: scroll;
+    font-size: 12px;
+}
+
+.MatcToolbarRestDataBindingRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.MatcToolbarRestDataBindingRow .MatcToolbarRestDataBindingRowLabel  {
+    width: 200px;
+    display: inline-block;
+    box-shadow: none;
+    border-radius: 3px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.MatcToolbarRestDataBindingRow .MatcToolbarRestDataBindingFile {
+    flex-grow: 1;
+    display: inline-block;
+    box-shadow: none;
+    border-radius: 7px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+
+.MatcToolbarRestDataBindingRow .MatcToolbarRestDataBindingIcon{
+    margin-left: 10px;
+}
+
+.MatcToolbarRestDataBindingRow .MatcToolbarRestDataBindingRowAudio{
+    max-width: 260px;
+    display: flex;
+}
+
+.MatcToolbarRestSettings .MatcError {
+
+}
+
+.MatcToolbarRestSettingsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.MatcToolbarRestSettingsHeader label {
+    font-size: 18px;
+    margin: 0px;
+}
+
+.MatcToolbarRestSettingsHeader input{
+    flex-grow: 1;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+    height: 36px;
+}
+
+.MatcToolbarRestSettingsHeader .MatcButton{
+    margin-left: 20px;
+    height: 36px;
+}
+
+.MatcToolbarRestSettingsHeader .MatcDropDownButton{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: var(--form-color);
+    color:#fff;
+}
+
+.MatcToolbarRestSettingsHeader .MatcDropDownButtonWidth{
+    margin: 0px;
+    min-width: 110px;
+
+}
+
+
+.MatcToolbarRestAuth {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.MatcToolbarRestAuth .VommondInput {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.MatcToolbarRestAuth input{
+    flex-grow: 1;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+
+}
+
+.MatcToolbarRestAuth .MatcButton.MatcDropDownButton{
+    margin-left: 5px;
+    padding-top: 4px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.MatcToolbarRestAuth .MatcDropDownButtonWidth{
+    margin: 0px;
+    min-width: 110px;
+}
+
+.MatcToolbarRestOutputHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.MatcToolbarRestOutputHeader .MatcToolbarRestOutputHeaderVar{
+    flex-grow: 1;
+}
+
+
+.MatcToolbarRestOutputHeader .MatcToolbarRestOutputHeaderType{
+    margin-left: 20px;
+}
+
+.MatcToolbarRestOutputHeaderType .MatcToolbarRestOutputHeaderTypeFlex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.MatcToolbarRestSettings .MatcToolbarTabs{
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.MatcToolbarRestSettings .MatcToolbarTabs a{
+    margin-bottom: -1px;
+    color:#999;
+}
+.MatcToolbarRestSettings a.MatcToolbarTabActive{
+    color:#333;
+}
+
+
+
+
+
+.MatcToolbarRestHeaderCntr {
+    margin-bottom: 8px;
+}
+
+.MatcToolbarRestHeaderCntrLong {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    --scrollbar-width-legacy: 10px;
+    max-height: 120px;;
+}
+
+.MatcToolbarRestSettingsElementCntr .VommondInput
+{
+    min-width: 450px;
+}
+
+.MatcToolbarRestHeaderCntrLong::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+.MatcToolbarRestHeaderRow {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+    justify-content: space-between;
+}
+
+.MatcToolbarRestHeaderRow .mdi {
+    cursor: pointer;
+}
+
+.MatcToolbarRestHeaderRow .mdi:hover {
+    color: red;
+}
+
+.MatcToolbarRestHeaderRow input.form-control {
+    width: 200px;
+}
+
+
+
+.MatcToolbarResSettingsCntrScroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    --scrollbar-width-legacy: 10px;
+    height: 460px;
+    padding-right: 10px;
+}
+
+.MatcToolbarResSettingsCntrScrollS {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    --scrollbar-width-legacy: 10px;
+    height: 350px;
+    padding-right: 10px;
+}
+
+.MatcToolbarTemplateRestSettings .MatcToolbarRestSettingsHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MatcToolbarTemplateRestSettings .MatcSegmentButton{
+    width: auto;
+
+}
+
+.MatcToolbarPromptBuilder textarea{
+    height: 300px;
+}

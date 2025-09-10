@@ -1,0 +1,64 @@
+[ {
+	"id" : "WireFrameTree",
+	"category" : "Advanced",
+	"subcategory" : "Tree",
+	"type" : "Tree",
+	"name" : "Tree",
+	 "_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xl",
+	"h": "@box-height-xxl",
+
+	"z" : 0,
+	"props" : {
+		"data" : [
+		          ["Category 1","",""],
+		          ["","Item 1",""],
+		          ["","Item 2",""],
+                  ["Category 2","",""],
+                  ["","Item 3",""],
+                  ["","Item 4",""]
+				 ],
+		"selectOnlyLeaves": false,
+		"canCollapse": true
+	},
+	"has" : {
+		"onclick" : true,
+		"label" : true,
+		"padding" : true,
+		"border": true,
+		"backgroundColor" : true
+	},
+	"style" : {
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius-none",
+		"borderWidth": 0,
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",	
+	
+		"paddingTop" : 8,
+		"paddingBottom": 8,
+		"paddingLeft" : 24,
+    	"paddingRight" : 0,
+
+    	"icon": "mdi mdi-chevron-down",
+		"iconMarginRight": 5
+	},
+	"active": {
+		"background": "@form-background",
+		"color": "@form-color"
+	},
+	"hover": {
+		"background": "@form-background:hover",
+		"color": "@form-color:hover"
+	}
+} ]

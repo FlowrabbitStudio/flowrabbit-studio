@@ -1,0 +1,33 @@
+[ {
+	"id" : "WireFrameTypeAhead",
+	"type" : "TypeAheadTextBox",
+	"_type" : "Widget",
+	"category" : "Form",
+	"subcategory" : "FormInput",
+	"name" : "Auto Complete",
+	"_extends": "TextBox",
+	"z" : 0,
+	"props" : {
+		"label" : "Enter a value",
+		"hideUpperBorder": false,
+		"placeholder" : true,
+		"options" : [ "Hint 1", "Hint 2", "Hint 3", "Hint 4" ]
+	},
+	"has" : {
+		"label" : true,
+		"backgroundColor" : true,
+		"border" : true,
+		"editable" : true,
+		"onclick" : true,
+		"padding" : true
+	},
+	"style" : {
+		"popupBorderColor" : "@form-popup-border-color",
+		"popupBorderWidth" : "@form-popup-border-width",
+		"popupColor" : "@form-popup-color",
+		"popupBackground" : "@form-popup-background",
+		"popupShadow": "@box-shadow-m",	
+		"selectedOptionColor" : "@form-popup-color:hover",
+		"selectedOptionBackground": "@form-popup-background:hover"
+	}
+} ]

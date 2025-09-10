@@ -1,0 +1,221 @@
+@import "./vars.css";
+
+/****************************************************
+ * Menu
+ ****************************************************/
+
+.MatcMainMenu {
+  border: none;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  background: none;
+  border-bottom: none;
+  border-bottom: 0px solid transparent;
+  background: var(--primary-color-dark);
+  display: flex;
+  padding: 0px 30px 0px 30px;
+}
+
+.MatcMainMenu > div {
+  flex-grow: 1;
+  display: flex;
+}
+
+.MatcMainMenu > div:last-child {
+  justify-content: flex-end;
+}
+
+.MatcMainMenuSection {
+  width: 100%;
+}
+
+.MatcMainMenuCenter {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.MatcOrganizationMenu {
+  width: 200px;
+}
+
+.MatcOrganizationMenu.button {
+  border-radius: 18px;
+  background: var(--primary-color-dark);
+  color: white;
+  border-color: #484848;
+  word-wrap: break-word;
+  transition: box-shadow 0.1s ease, width 0.1s ease;
+  font-size: 12px;
+}
+
+.MatcOrganizationMenu.button:hover {
+  background: #07131e;
+  color: white;
+  border-color: #07131e;
+}
+
+.MatcOrganizationMenu.button:focus {
+  background: var(--primary-color-dark);
+  color: white;
+  border-color: #484848;
+}
+
+.dropdown-menu {
+  z-index: 99999999 !important;
+}
+
+
+.MatcOrganizationMenu .dropdown-content {
+  border: 1px solid #363636;
+  background: var(--primary-color-dark);
+  border-radius: 6px;
+  color: white;
+}
+
+.MatcOrganizationMenu a {
+  padding: 10px !important;
+  text-align: center !important;
+}
+
+.MatcOrganizationMenu .dropdown-item {
+  border-radius: 2px;
+  color: #f1f1f1;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.MatcOrganizationMenu .dropdown-item:hover {
+  background-color: #07131e;
+  color: white;
+}
+
+.MatcOrganizationMenu .dropdown-item.is-active {
+  background-color: var(--primary-color);
+  color: white;
+}
+.MatcOrganizationMenu .dropdown-divider {
+  background-color: #646464;
+}
+
+.MatcMainMenuItem {
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--from-button-color);
+  align-items: center;
+  margin-left: 8px;
+}
+
+.MatcMainMenuItem .mdi {
+  font-size: 18px;
+  padding: 8px 8px;
+  margin-top: 0px;
+}
+
+.MatcMainMenuItem .menu-label {
+  color: hsl(0, 0%, 71%);
+}
+
+.AvatarDropdown {
+  border-radius: 50%;
+  width: 35px;
+  cursor: pointer;
+}
+
+.AvatarDropdownMenu .dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.AvatarDropdownMenu .dropdown-item i {
+  margin-right: 8px;
+}
+
+.AvatarDropdownMenu.dropdown-menu {
+  left: -190px;
+}
+
+.AvatarDropdownMenu .dropdown-content {
+  width: 250px;
+  padding: 10px 0;
+}
+
+.dropdown-profile {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.profile-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.profile-email {
+  font-size: 0.85em;
+  color: #888;
+}
+
+.dropdown-divider {
+  margin: 0;
+}
+
+.MatcMainMenuItem:hover,
+.MatcMainMenuItem:focus {
+  text-decoration: none;
+  color: var(--from-button-color-hover);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.MatcMainMenuItemSelected {
+  color: var(--from-button-color-hover);
+}
+
+.AvatarDropdown {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.AvatarFallback {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #007bff; /* Adjust background color as needed */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}

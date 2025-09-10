@@ -1,0 +1,58 @@
+[
+    {
+        "id": "LockSlider",
+        "type": "LockSlider",
+        "_type": "Widget",
+        "category": "Advanced",
+        "subcategory": "FormSpecialSlider",
+        "name": "Lock Slider",
+        "x": 0,
+        "y": 0,
+		"w": "@box-width-xxl",
+		"h": "@box-height-m",
+        "z": 0,
+        "props": {
+            "label": "Slide to unlock"
+        },
+        "has": {
+            "onclick": true,
+            "padding": true,
+            "border" : true,
+            "label": true,
+            "backgroundColor": true
+        },
+        "style": {
+            "fontSize": "@font-size-xl",
+			"fontFamily": "@font-family",
+			"textAlign" : "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+
+			"background": "@form-background",
+			"color": "@form-color",
+
+			"borderRadius": "@border-radius-round",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",	
+
+			"padding": "@spacing-s",
+				
+			"popupBorderColor" : "@form-popup-border-color",
+			"popupBorderWidth" : "@form-popup-border-width",
+			"popupColor" : "@form-popup-color",
+			"popupBackground" : "@form-popup-background",
+			"popupShadow": "@box-shadow-m",
+
+      
+            "textDecoration": "none",
+       
+            "foregroundColor": "@form-border-color",
+       
+            "icon": "mdi mdi-lock",
+            "iconOpen": "mdi mdi-lock-open",
+            "iconColor": "@form-border-color",
+            "handleColor": "@form-background"
+        }
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+      "id" : "CopyClipboard2",
+      "type" : "CopyClipboard2",
+      "_type" : "Widget",
+      "category" : "Icon",
+      "subcategory" : "XFormButton",
+      "_extends" : "Box",
+      "name" : "Copy Clipboard",
+        "x" : 0,
+        "y" : 0,
+        "z" : 0,
+        "w": "@box-width-xs",
+        "h": "@box-height-xs",
+        "props" : {
+            "text":"Example Text"
+        },
+        "has" : {       
+          "onclick" : true,
+          "data" : true
+        },
+        "style" : {
+          "borderTopRightRadius" : 0,
+          "borderTopLeftRadius" : 0,
+          "borderBottomRightRadius" : 0,
+          "borderBottomLeftRadius" : 0,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "transparent",
+          "borderBottomColor" : "transparent",
+          "borderRightColor" : "transparent",
+          "borderLeftColor" : "transparent",
+          "iconColor" : "@color-icon",
+          "icon" : "mdi mdi-content-copy"
+        }
+    }
+  ]

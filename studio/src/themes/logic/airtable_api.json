@@ -1,0 +1,28 @@
+[
+    {
+        "id": "AirtableAPI",
+        "name": "Airtable",
+        "type": "API",
+        "subtype": "airtable",
+        "category": "Logic",
+        "subcategory": "ABox",
+        "_type": "Widget",
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 72,
+        "props": {
+            "type": "Airtable" 
+        },
+        "has": {
+            "rest": true
+        },
+        "style": {
+            "background": "#777",
+            "iconSize": 0.7,
+            "icon": "mdi mdi-air-filter",
+            "iconStyle": "Airtable",
+            "logo": "Airtable"
+        }
+    }
+]

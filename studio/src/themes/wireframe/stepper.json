@@ -1,0 +1,44 @@
+[ {
+	"id" : "Stepper",
+	"type" : "Stepper",
+	"name" : "Stepper",
+
+	"_type" : "Widget",
+	"category" : "Form",
+	"subcategory" : "FormButton",
+
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-m",
+	"h": "@box-height-xs",
+	"z" : 0,
+	"props" : {
+		"refs" : {
+			"valueLabel" : []
+		}
+	},
+	"has" : {
+	    "backgroundColor" : true,
+        "border" : true,
+		"label" : true
+	},
+	"style" : {
+
+		"fontSize": "@font-size-l",
+		"fontFamily": "@font-family",
+		"textAlign" : "center",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color"
+	},
+	"hover" : {
+		"color" : "@form-border-color:focus"
+	}
+} ]

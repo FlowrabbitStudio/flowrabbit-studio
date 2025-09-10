@@ -1,0 +1,10 @@
+.MatcToolbarDataBindingLinks{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.MatcToolbarDataBindingLinks .MatcToolbarItem{
+    text-align: left;
+    margin-bottom: 8px;
+}

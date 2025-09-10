@@ -1,0 +1,30 @@
+[
+    {
+        "id" : "UploadPreview",
+        "type" : "UploadPreview",
+        "category" : "Image",
+        "subcategory" : "FormImage",
+        "_type" : "Widget",
+        "name" : "Data Image",
+        "x" : 0,
+        "y" : 0,
+        "w" : 100,
+        "h" : 100,
+        "z" : 0,
+        "props" : {},
+        "has" : {
+            "backgroundColor" : true,
+           "onclick" : true,
+           "border":true
+        },
+        "actions":{},
+        "style" : {
+			"borderRadius": 20,
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+            "background": "#fafafa",                        
+            "backgroundImage" : null
+        }
+    }
+]

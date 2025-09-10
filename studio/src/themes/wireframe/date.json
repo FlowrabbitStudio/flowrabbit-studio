@@ -1,0 +1,214 @@
+[ {
+	"id" : "wireFrameDate",
+	"type" : "Date",
+	"name" : "Date Picker",
+	"category" : "Advanced",
+	"subcategory" : "FormInputDate",
+	"sidebar": true,
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": 320,
+	"h": "@box-height-xxl",
+	"z" : 0,
+	"props" : {
+
+	},
+	"has" : {
+		"backgroundColor" : true,
+		"border" : true,
+		"label" : true,
+		"data" : true
+	},
+	"style" : {
+		"fontSize": "@font-size-s",
+		"fontFamily": "@font-family",
+		"padding": "@form-padding-horizontal-l",
+
+		"borderRadius": 12,
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+		"background": "@screen-background",
+		"color": "@form-color",
+		"colorButton": "@form-border-color",
+
+		"headerColor" : "@form-color",
+		"headerBackground" : "transparent",
+		"headerFontWeight": 600,
+
+		"selectedBackground" : "@background-active",
+		"selectedColor" : "@color-active",
+
+		"tableHeaderColor" : "#71717a",
+		"tableHeaderBackground" : "transparent",
+		"verticalAlign": "middle",
+
+		"itemBorderRadius": "@calendar-item-radius",
+		"boxShadow": "@box-shadow-s",
+		"selectedBorderRadius": 50
+	}
+}, {
+	"id" : "wireFrameDateRange",
+	"type" : "Date",
+	"name" : "Date Range",
+	"category" : "Advanced",
+	"subcategory" : "FormInputDate",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": 320,
+	"h": "@box-height-xxl",
+	"z" : 0,
+	"props" : {
+		"range" : true,
+		"preselectRange" : true
+	},
+	"has" : {
+		"backgroundColor" : true,
+		"border" : true,
+		"label" : true,
+		"data" : true
+	},
+	"style" : {
+		"fontSize": "@font-size-s",
+		"fontFamily": "@font-family",
+		"padding": "@form-padding-horizontal-l",
+
+		"borderRadius": 12,
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+		"background": "@screen-background",
+		"color": "@form-color",
+		"colorButton": "@form-border-color",
+
+		"headerColor" : "@form-color",
+		"headerBackground" : "transparent",
+		"headerFontWeight": 600,
+
+		"selectedBackground" : "@background-active",
+		"selectedColor" : "@color-active",
+
+		"selectedInRangeBackground" : "@background-passive",
+		"selectedInRangeColor" : "@color-passive",
+		"tableHeaderColor" : "#71717a",
+		"tableHeaderBackground" : "transparent",
+		"verticalAlign": "middle",
+
+		"itemBorderRadius": "@calendar-item-radius",
+		"boxShadow": "@box-shadow-s",
+		"selectedBorderRadius": 50
+	}
+}, {
+	"id" : "DateDropDown",
+	"type" : "DateDropDown",
+	"name" : "Date Picker",
+	"category" : "Advanced",
+	"subcategory" : "FormInputDate",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": 280,
+	"h": "@form-height",
+	"z" : 0,
+	"props" : {
+		"label" : "Select Date",
+		"icon" : "mdi mdi-calendar"
+	},
+	"has" : {
+		"backgroundColor" : true,
+		"border" : true,
+		"label" : true,
+		"data" : true,
+		"padding" : true
+	},
+	"style" : {
+		"fontSize": "@font-size-s",
+		"fontFamily": "@font-family",
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+		"colorButton": "@form-border-color",
+
+		"paddingBottom": "@form-padding-vertical",
+		"paddingTop": "@form-padding-vertical",
+		"paddingLeft": "@form-padding-horizontal",
+		"paddingRight": "@form-padding-horizontal",
+
+		"headerColor" : "@form-color",
+		"headerBackground" : "transparent",
+
+		"selectedBackground" : "@background-active",
+		"selectedColor" : "@color-active",
+
+		"tableHeaderColor" : "#71717a",
+		"tableHeaderBackground" : "transparent",
+		"verticalAlign": "middle",
+
+		"itemBorderRadius": "@calendar-item-radius",
+		"boxShadow": "@box-shadow-s",
+		"selectedBorderRadius": 50
+	}
+},
+{
+	"id" : "dateRangeDropDown",
+	"type" : "DateDropDown",
+	"name" : "Date Range",
+	"category" : "Advanced",
+	"subcategory" : "FormInputDate",
+	"_extends": "DateDropDown",
+	"_type" : "Widget",
+	"props" : {
+		"label" : "Select Range",
+		"icon" : "mdi mdi-calendar-week",
+		"range" : true,
+		"preselectRange" : true
+	},
+	"has" : {
+		"backgroundColor" : true,
+		"border" : true,
+		"label" : true,
+		"data" : true,
+		"padding" : true
+	},
+	"style" : {
+		
+		"fontSize": "@font-size-s",
+		"fontFamily": "@font-family",
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+		"colorButton": "@form-border-color",
+
+		"paddingBottom": "@form-padding-vertical",
+		"paddingTop": "@form-padding-vertical",
+		"paddingLeft": "@form-padding-horizontal",
+		"paddingRight": "@form-padding-horizontal",
+
+		"headerColor" : "@form-color",
+		"headerBackground" : "transparent",
+
+		"selectedBackground" : "@background-active",
+		"selectedColor" : "@color-active",
+		"selectedInRangeBackground" : "@background-passive",
+		"selectedInRangeColor" : "@color-passive",
+
+		"tableHeaderColor" : "#71717a",
+		"tableHeaderBackground" : "transparent",
+		"verticalAlign": "middle",
+
+		"itemBorderRadius": "@calendar-item-radius",
+		"boxShadow": "@box-shadow-s",
+		"selectedBorderRadius": 50
+	}
+}
+]

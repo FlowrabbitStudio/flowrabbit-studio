@@ -1,0 +1,30 @@
+[ {
+	"id" : "WireFrameProgressBar",
+	"type" : "ProgressBar",
+	"name" : "Progress",
+	"category" : "Advanced",
+	"subcategory" : "FormSpecial",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xxl",
+	"h": "@box-height-xxs",
+	"z" : 0,
+	"props" : {
+		"value" : 50
+	},
+	"has" : {
+		"onclick" : true,
+		"border" : true
+	},
+	"style" : {
+		
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",	
+
+		"background" : "@background-passive",
+		"foreground": "@background-active"
+	}
+} ]

@@ -1,0 +1,60 @@
+[
+ 	{
+		"id" : "DropDown",
+		"type" : "DropDown",
+		"name" : "DropDown",
+		"subcategory" : "Form",
+		"category" : "Form",
+		"_type" : "Widget",
+		"x" : 0,
+	    "y" : 0,
+        "w": "@form-width",
+        "h": 36,
+	    "z" : 0,
+	    "props" : {
+	        "options" : ["Option 1", "Option 2", "Option 3"]
+	     },
+	     "has" : {
+	    	 "onclick" : true,
+		     "border" : true,
+		     "backgroundColor" : true,
+		     "data" : true,
+		     "padding":true,
+		     "label":true
+	     },
+	     "style" : {  
+	
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign" : "left",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+
+			"background": "@form-background",
+			"color": "@form-color",
+
+			"borderRadius": "@border-radius",
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",	
+
+			"padding" : "@form-padding-horizontal",
+				
+			"popupBorderColor" : "@form-popup-border-color",
+			"popupBorderWidth" : "@form-popup-border-width",
+			"popupColor" : "@form-popup-color",
+			"popupBackground" : "@form-popup-background",
+			"popupShadow": "@box-shadow-s",		
+		    "selectedOptionBackground": "#f4f4f5"
+
+	     },
+		 "hover": {
+			"background": "#f4f4f5"
+		 },
+		 "error": {
+			"borderColor": "@form-border-color:error",	
+			"background": "@form-background:error",
+			"color": "@form-color:error"
+		  }
+	} 
+]

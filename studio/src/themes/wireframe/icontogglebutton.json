@@ -1,0 +1,47 @@
+[ {
+	"id" : "IconToggleButton",
+	"type" : "IconToggleButton",
+	"_type" : "Widget",
+	"category" : "Icon",
+	"subcategory" : "XFormButton",
+	"name" : "Icon Toggle Button",
+    "x" : 0,
+    "y" : 0,
+	"w": "@box-width-l",
+	"h": "@box-width-l",
+    "z" : 0,
+	"props" : {
+		"label" : "Click Me"
+	},
+	"has" : {
+		"data":true,
+		"backgroundColor" : true,
+		"onclick" : true,
+		"label" : true,
+		"border":true
+	},
+	"style" : {
+	
+		"fontSize": "@font-size-l",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacin",
+		"lineHeight": "@lineHeight",
+
+		"background": "@form-background",
+		"color": "@form-color",
+
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",	
+
+        "icon": "mdi mdi-heart",
+		"iconSize": 48
+	},
+	"active" : {
+		"color" : "@color-active",
+		"background" : "@background-active"
+	}
+} ]

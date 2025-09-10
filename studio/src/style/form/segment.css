@@ -1,0 +1,60 @@
+@import '../vars.css';
+/****************************************************
+ * Segment Button
+ ****************************************************/ 
+ .MatcSegmentButton {
+	height: var(--form-height)
+}
+
+.MatcSegmentButtonInline .MatcSegmentButton {
+	display: inline-block;
+}
+
+.MatcSegmentButtonCntr{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	border-radius: var(--from-radius);
+	overflow:hidden;
+	border:1px solid var(--form-border);
+	height: 100%;
+}
+
+.MatcSegmentButtonCntr:hover{
+	border-color: var(--form-border-hover);
+}
+
+.MatcSegmentButton .MatcButton{
+	margin: 0px;	
+	border-left:0px;
+	border-radius:0px;
+	padding: var(--form-padding-wrapped); 
+	flex-grow: 1;
+	text-align: center;
+	background: #fff;
+	color: var(--form-color-passive);
+	font-size: var(--form-font-size);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.MatcSegmentButton .MatcButton:hover{
+	color: var(--form-color);
+}
+
+
+
+.MatcSegmentButton .MatcButton.MatcDropDownButtonSelected,
+.MatcSegmentButton .MatcButton.MatcButtonActive{
+	background: var(--form-border);
+	color: var(--form-color);
+}
+
+
+.MatcSegmentButton .MatcButton.MatcDropDownButtonSelected:hover,
+.MatcSegmentButton .MatcButton.MatcButtonActive:hover{
+	background: var(--form-border);
+}
+

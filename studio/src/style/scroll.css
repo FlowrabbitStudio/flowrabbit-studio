@@ -1,0 +1,31 @@
+/* WebKit browsers (Chrome, Safari) */
+.MatcScrollMS ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar (for horizontal scroll) */
+}
+
+.MatcScrollMS ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+.MatcScrollMS ::-webkit-scrollbar-thumb {
+    background: #b3b3b3; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 3px solid #f1f1f1; /* Space around the thumb */
+}
+
+.MatcScrollMS ::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3; /* Color when hovering over the scrollbar thumb */
+}
+
+
+body.MatcScrollMS {
+	scrollbar-face-color: #b3b3b3; /* Color of the scrollbar thumb */
+    scrollbar-track-color: #f1f1f1; /* Background color of the track */
+    scrollbar-arrow-color: #b3b3b3; /* Color of the scrollbar arrow */
+    scrollbar-shadow-color: #f1f1f1; /* Color of the scrollbar shadow */
+    scrollbar-highlight-color: #f1f1f1; /* Color of the scrollbar highlight */
+    scrollbar-3dlight-color: #f1f1f1; /* Color of the scrollbar 3D light */
+    scrollbar-darkshadow-color: #b3b3b3; /* Color of the scrollbar dark shadow */
+}

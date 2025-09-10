@@ -1,0 +1,37 @@
+[
+	{
+		"id" : "Switch",
+		 "type" : "Switch",
+		 "name" : "Switch",
+		 "category" : "Form",
+		 "subcategory" : "Form",
+		 "_type" : "Widget",
+		 "x" : 0,
+	     "y" : 0,
+		 "w": "@box-width-m",
+		 "h": "@form-height", 
+	     "z" : 0,
+	     "props" : {
+	        "checked" : false
+	     },
+	     "has" : {
+	        "onclick" : true,
+	        "border" : true,
+	        "data" : true
+	     },
+	     "style" : { 
+			"background": "@background-active",
+			"color": "@form-color",
+
+			"borderRadius": "@border-radius-round",
+			"borderWidth": 0,
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",	
+
+	        "colorForeGround" : "@form-border-color",
+		    "colorButton" : "@form-background",
+			"boxShadow": "@box-shadow-s",
+			"handleShadow": "@box-shadow-s"
+	     }
+	}	
+]

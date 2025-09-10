@@ -1,0 +1,294 @@
+
+<template>
+  <!-- :xScroll="scrollToItem()" Add this to enbale scrolling...  HSould be fixed to only tricker when seelction was changes from canvas-->
+  <ul
+    :class="[{ 'MatcTreeItemDragOver': isDragOver }, { 'MatcTreeItemEnd': value.isEnd }, { 'MatcTreeItemSelected': isSelected && !isEditable }, 'MatcTreeItem', 'MatcTreeItemLevel' + level]"
+    :xScroll="scrollToItem()">
+    <li>
+      <div :class="'MatcTreeItemRow ' + rowStyle" @mousedown="onClick($event)" @dragstart="onDragStart"
+        @dragover="onDragOver" @dragleave="onDragLeave" @dblclick.stop="onDoubleClick" @drop="onDrop" :id="value.domId"
+        ref="row" :draggable="!isEditable">
+        <template v-if="hasChildren">
+          <span :class="expandIcon" @click.stop="toggleOpen"></span>
+        </template>
+        <template v-else>
+          <span class="MatcTreeIcon" @click.stop=""></span>
+        </template>
+
+
+        <input 
+          class="MatcTreeItemInput MatcIgnoreOnKeyPress" 
+          :focus="focus()" 
+          @change="onChange"
+          ref="lblNode" 
+          v-model="value.label"
+        />
+
+        <span class="mdi mdi-arrow-right"></span>
+
+        <div class="MatcTreeItemNav">
+          <ToolbarDropDownButton 
+            :qOptions="screens" 
+            :qMaxLabelLength="30"
+            :qValue="value.to" 
+            :qReposition="true"
+            @change="setTo"
+            :isDialog="true"
+          />
+        </div>
+
+        <div class="MatcTreeItemNav">
+          <span :class="'MatcTreeIcon ' + nodeIcon" @click.stop="onIcon"></span>
+        </div>
+
+
+        <div class="MatcTreeItemNav">
+          <ToolbarDropDownButton 
+            :qOptions="options" 
+            :qMaxLabelLength="30"
+            :qValue="'x'" 
+            :qReposition="true"
+
+            :isDialog="true"
+          />
+        </div>
+
+
+      </div>
+      <ul v-if="isOpen">
+        <NavigationEditorItem 
+          v-for="child in value.children" 
+          :key="child.id" :value="child" 
+          :parent="value"
+          @dnd="onChildDnd"
+          :screens="screens"
+          @open="onChildOpen" 
+          @locked="onChildLocked" 
+          @hidden="onChildHidden" 
+          @select="onChildSelect"
+          @change="onChange"
+          @icon="onIcon"
+          @add="onAdd"
+          @startEdit="onChildStartEdit" 
+          @endEdit="onChildEndEdit" :level="level + 1" />
+
+     
+      </ul>
+    </li>
+  </ul>
+</template>
+<script>
+
+import Logger from '../../../core/Logger'
+import TreeDND from '../../../common/TreeDND'
+import ToolbarDropDownButton from '../../toolbar/components/ToolbarDropDownButton'
+
+export default {
+  name: "NavigationEditorItem",
+  props: ['value', 'level', 'screens', "parent"],
+  mixins: [],
+  data: function () {
+    return {
+      options: [
+        {label: 'Action', value: 'x'},
+        {label: 'Delete', value: 's1'},
+        {label: 'Add Child', value: 's2'},
+        {label: 'Add Sibling', value: 's3'},
+      ],
+      hasLock: false,
+      hasOptions: false,
+      isOpen: true,
+      isDragOver: false
+    };
+  },
+  components: {
+    ToolbarDropDownButton
+  },
+  computed: {
+    customCSS() {
+      if (this.value && this.value.customCSS) {
+        return this.value.customCSS
+      }
+      return ''
+    },
+ 
+    rowStyle() {
+      let result = ''
+      if (this.value && this.value.css) {
+        result = this.value.css
+      }
+      if (this.value.locked || this.value.hidden) {
+        result += ' MatcTreeItemOptionsVisible'
+      }
+      return result
+    },
+    hasChildren() {
+      return this.value.children && this.value.children.length > 0
+    },
+    isEditable() {
+      return this.value.editable
+    },
+    isSelected() {
+      return this.value.selected
+    },
+    nodeIcon() {
+      if (this.value && this.value.icon) {
+        return this.value.icon
+      }
+      return "mdi mdi-lock-outline"
+    },
+    lockIcon() {
+      if (this.value && this.value.locked) {
+        return 'mdi mdi-lock-outline'
+      }
+      return 'mdi mdi-lock-open-outline'
+    },
+    hiddenIcon() {
+      if (this.value && this.value.hidden) {
+        return 'mdi mdi-eye-off-outline'
+      }
+      return 'mdi mdi-eye-outline'
+    },
+    expandIcon() {
+      if (this.isOpen) {
+        return 'mdi mdi-chevron-down MatcTreeIcon '
+      }
+      return 'mdi mdi-chevron-right MatcTreeIcon'
+    }
+  },
+  methods: {
+
+    onBlur() {   
+    },
+    onDoubleClick() {
+      if (this.value && !this.value.disabled) {
+        this.$emit('startEdit', this.value.id)
+      }
+    },
+    onIcon() {
+      this.$emit('icon', this.value)
+    },
+    toggleLocked() {
+      this.$emit('locked', this.value.id, !this.value.locked)
+    },
+    toggleHidden() {
+      this.$emit('hidden', this.value.id, !this.value.hidden)
+    },
+    toggleOpen() {
+      this.isOpen = !this.isOpen
+      this.$emit('open', this.value.id, this.isOpen)
+    },
+    onClick() {
+      //   let expand = e.ctrlKey || e.metaKey || e.shiftKey
+      //   if (this.value && !this.value.disabled) {
+      //     this.$emit('select', this.value.id, expand)
+      //   }
+    },
+    onDragStart(e) {
+      if (this.value.hasDND === false) {
+        e.preventDefault()
+        return
+      }
+      if (this.value && !this.value.disabled) {
+        e.dataTransfer.setData("text", this.value.id)
+        TreeDND.start(this.value)
+      } else {
+        e.preventDefault()
+      }
+    },
+    onDragOver(e) {
+      const source = TreeDND.get()
+      if (source && source.dndType !== this.value.dndType) {
+        this.isDragOver = false;
+        return
+      }
+      e.preventDefault()
+      this.isDragOver = true
+    },
+    onDragLeave(e) {
+      e.preventDefault()
+      this.isDragOver = false
+    },
+    onDrop(e) {
+      e.preventDefault()
+      const source = TreeDND.get()
+      const id = e.dataTransfer.getData('text')
+      this.isDragOver = false
+      TreeDND.end()
+      if (source && source.dndType === this.value.dndType) {
+        this.$emit('dnd', id, this.value.id, 'top')
+      } else {
+        Logger.log(-1, 'TreeItem.onDrop() > ignore')
+      }
+    },
+    onChildDnd(from, to, position) {
+      this.$emit('dnd', from, to, position)
+    },
+    onChildLocked(id, value) {
+      this.$emit('locked', id, value)
+    },
+    onChildHidden(id, value) {
+      this.$emit('hidden', id, value)
+    },
+    onChildSelect(id, expand) {
+      this.$emit('select', id, expand)
+    },
+    onChildStartEdit(id) {
+      this.$emit('startEdit', id)
+    },
+    onChildEndEdit(id, txt) {
+      this.$emit('endEdit', id, txt)
+    },
+    onChildOpen(id, open) {
+      this.$emit('open', id, open)
+    },
+    destroy() {
+    },
+    onAdd (item, parent) {
+      this.$emit("add", item, parent)
+    },
+    onClickAdd () {
+      console.debug("onClickAdd", this.parent)
+      this.$emit("add", this.value, this.parent)
+    },
+    setTo (to) {
+      this.value.to = to
+      this.onChange()
+    },
+    onChange () {
+      console.debug('onChange', this.value.label, "-> ", this.value.to)
+      this.$emit("change")
+    },
+    focus() {
+      // somehow not called
+      if (this.value.editable) {
+        setTimeout(() => {
+          if (this.$refs.lblNode) {
+            this.$refs.lblNode.select()
+            this.$refs.lblNode.focus()
+          }
+
+        }, 100)
+      }
+    },
+    scrollToItem() {
+      if (this.value && this.value.scroll) {
+        setTimeout(() => {
+          this.$el.scrollIntoView({ block: "nearest", inline: "nearest" })
+        })
+      }
+    }
+  },
+  watch: {
+    value(v) {
+      this.value = v
+      this.isOpen = this.value.open
+    }
+  },
+  mounted() {
+    if (this.value) {
+      this.isOpen = this.value.open
+    }
+  }
+};
+</script>

@@ -341,11 +341,6 @@ public class UserREST extends MongoREST {
         newUser.put("acceptedPrivacy", System.currentTimeMillis());
         newUser.put("acceptedGDPR", true);
 
-        if (request.containsKey("isAppStoreUser")) {
-            newUser.remove("isAppStoreUser");
-            newUser.put("role", User.APP_USER);
-        }
-
         String orgInvite = getOrgInvite(request);
 
         mongo.insert(this.table, newUser, res -> {

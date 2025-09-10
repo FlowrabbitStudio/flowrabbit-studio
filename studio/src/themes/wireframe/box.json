@@ -1,0 +1,68 @@
+[
+    {
+        "id": "Box",
+        "type": "Box",
+        "category": "Layout",
+        "subcategory": "XBox",
+        "_type": "Widget",
+        "name": "Container",
+        "sidebar": true,
+        "x": 0,
+        "y": 0,
+        "w": "@box-width-l",
+        "h": "@box-height-s",
+        "z": 0,
+        "props": {},
+        "has": {
+            "backgroundColor": true,
+            "border": true
+        },
+        "actions": {},
+        "style": {
+            "fontSize": "@font-size-m",
+			"textAlign" : "left",
+            "letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+
+            "fontFamily": "@font-family",
+            "borderRadius": "@panel-border-radius",
+			"borderWidth": "@panel-border-width",  
+            "borderColor": "@panel-border-color",      
+            "background": "@panel-background",
+            "boxShadow": "@panel-box-shadow"
+        }
+    },
+    {
+        "id": "Round",
+        "type": "Box",
+        "category": "Layout",
+        "subcategory": "XBox",
+        "_type": "Widget",
+        "name": "Circle",
+        "sidebar": true,
+        "x": 0,
+        "y": 0,
+        "w": "@box-width-l",
+        "h": "@box-height-s",
+        "z": 0,
+        "props": {},
+        "has": {
+            "backgroundColor": true,
+            "border": true
+        },
+        "actions": {},
+        "style": {
+            "fontSize": "@font-size-m",
+			"textAlign" : "left",
+            "letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+
+            "fontFamily": "@font-family",
+            "borderRadius": "@border-radius-round",
+			"borderWidth": "@panel-border-width",  
+            "borderColor": "@panel-border-color",      
+            "background": "@panel-background",
+            "boxShadow": "@panel-box-shadow"
+        }
+    }
+]

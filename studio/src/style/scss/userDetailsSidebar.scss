@@ -1,0 +1,326 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: flex;
+  justify-content: flex-end;
+  transition: background 0.3s ease;
+}
+
+.user-details-sidebar {
+  width: 320px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+
+    .sidebar-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      &:focus {
+        outline: 2px solid var(--primary-color);
+      }
+    }
+  }
+
+  .sidebar-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    width:100%;
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      .user-image {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 16px;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #888;
+
+        &.placeholder {
+          background: #e0e0e0;
+          font-size: 2rem;
+          color: #aaa;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      .user-details-text {
+        flex-grow: 1;
+
+        h2 {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .email {
+          font-size: 14px;
+          color: #777;
+          margin-top: 0.25rem;
+        }
+      }
+    }
+
+    .role-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;            
+      margin-top: 16px;
+
+      .role {
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+        font-weight: 600;
+        background: #e0e0e0;
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .edit-role-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-left: 0.2rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #e0f7fa;
+        }
+
+        &:focus {
+          outline: 2px solid var(--primary-color);
+        }
+      }
+    }
+
+    .edit-role {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .MatcDropDownButton {        
+        min-width: 180px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .savebuttons {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+    
+        .save-role-btn,
+        .cancel-role-btn {
+          padding: 5px 10px;
+          margin: 4px;
+          font-size: 14px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background 0.3s, transform 0.1s ease-in-out;
+          border: none;
+    
+          &:hover {
+            transform: translateY(-2px);
+          }
+    
+          &:focus {
+            outline: 2px solid var(--primary-color);
+          }
+    
+          &.save-role-btn {
+            background: var(--primary-color);
+            color: white;
+    
+            &:hover {
+              background: var(--form-color-hover);
+            }
+          }
+    
+          &.cancel-role-btn {
+            background: none;
+            color: var(--danger-color);
+            border: 1px solid var(--danger-color);
+    
+            &:hover {
+              background: var(--danger-color);
+              color: white
+            }
+          }
+        }
+      }
+    }
+
+    .extra-info {
+      margin-bottom: 16px;
+
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding: 12px;
+        background: #f9f9f9;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+
+        strong {
+          color: #555;
+        }
+      }
+
+      .relative-time {
+        font-size: 14px;
+        color: #777;
+      }
+    }
+  }
+
+  .sidebar-footer {
+    padding: 16px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .remove-user-btn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #dc3545;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #c82333;
+      }
+
+      .mdi {
+        margin-right: 8px;
+      }
+
+      &:focus {
+        outline: 2px solid var(--primary-color);
+      }
+    }
+
+    .confirm-remove-user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 16px;
+
+      p {
+        margin: 0 0 16px 0;
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+      }
+
+      .confirm-btn,
+      .cancel-btn {
+        font-size: 16px;
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin: 0.25rem;
+
+        &.confirm-btn {
+          background: var(--primary-color);
+          color: white;
+          border: none;
+
+          &:hover {
+            background: var(--primary-color-dark);
+          }
+        }
+
+        &.cancel-btn {
+          background: var(--danger-color);
+          color: white;
+          border: none;
+
+          &:hover {
+            background: var(--danger-color-dark);
+          }
+        }
+
+        &:focus {
+          outline: 2px solid var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}

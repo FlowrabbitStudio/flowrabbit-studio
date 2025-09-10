@@ -1,0 +1,820 @@
+@import "./vars.css";
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  background: rgb(250, 250, 250);
+}
+
+textarea {
+  resize: none;
+}
+
+.MatcMainCntr {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--background-color);
+}
+
+a {
+  outline: none;
+  cursor: pointer;
+  color: #3787f2;
+}
+
+a:hover {
+  color: #3787f2;
+}
+
+a:focus {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.containerFull {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.VommondDialogContent .container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.containerInline {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.VommondDialogContent label {
+  font-size: 16px;
+}
+
+/****************************************************
+   * Commom
+   ****************************************************/
+
+.MatcContent {
+  min-height: 600px;
+}
+
+.MatcContent H2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.MatcHidden {
+  display: none !important;
+  opacity: 0;
+}
+
+.MatcPlaceCenter {
+  place-content: center;
+}
+
+.MatcCenter {
+  text-align: center;
+}
+
+.MatcLeft {
+  text-align: left;
+}
+
+.MatcRight {
+  text-align: right;
+}
+
+.MatcJustify {
+  text-align: justify;
+}
+
+.MatcInline {
+  display: inline-block;
+}
+
+.MatcPadding {
+  padding: 20px;
+}
+
+.MatcPaddingBottomXXL {
+  padding-bottom: 60px;
+}
+
+.MatcMarginTopXS {
+  margin-top: 8px;
+}
+
+.MatcMarginTopS {
+  margin-top: 16px;
+}
+
+.MatcMarginTop,
+.MatcPaddingTop {
+  margin-top: 24px;
+}
+.MatcMarginTopL {
+  margin-top: 40px;
+}
+
+.MatcMarginTopXXL {
+  margin-top: 64px;
+}
+
+.MatcMarginLeft {
+  margin-left: 8px;
+}
+
+.MatcMarginRight {
+  margin-right: 10px;
+}
+
+.MatcMarginTopS {
+  margin-top: 10px;
+}
+
+.MatcMarginTopXS {
+  margin-top: 5px;
+}
+
+.MatcMarginBottomXS {
+  margin-bottom: 8px;
+}
+
+.MatcMarginBottom,
+.MatcPaddingBottom {
+  margin-bottom: 20px;
+}
+
+.MatcMarginBottomXL {
+  margin-bottom: 40px;
+}
+
+.MatcMarginBottomXXL {
+  margin-bottom: 60px;
+}
+
+.MatcVerticleCenter {
+  margin-top: 20%;
+}
+
+.MatcFloatClear {
+  clear: both;
+}
+
+.MatcPointer {
+  cursor: pointer;
+}
+
+.MatcHint {
+  color: #999;
+  font-weight: 300;
+}
+
+.MatcLoading {
+  color: #999;
+  font-weight: 300;
+  font-size: 24px;
+  padding: 20px 40px;
+}
+
+.MatcFontSmall {
+  font-size: 16px;
+}
+
+.MatcFontTiny {
+  font-size: 12px;
+}
+
+.MatcError {
+  color: #e21d1d;
+  height: 30px;
+  background: #e9dbdb;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0px 16px;
+  border-radius: 12px;
+  font-size: var(--button-font-size);
+  display: flex;
+  align-items: center;
+}
+
+.MatcSuccess {
+  color: #28a808;
+  height: 30px;
+  background: #d5fe8c;
+  padding: 0px 16px;
+  border-radius: 12px;
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.MatcLead {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 2;
+  color: #4a5c68;
+}
+
+.MatcScrolabeContentBox {
+  max-height: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: scroll;
+  margin: 0px 15px;
+  margin-bottom: 30px;
+}
+
+.MatcContract {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 2;
+  color: #4a5c68;
+}
+
+.MatcContract h3 {
+  font-size: 16px;
+  font-weight: 700px;
+  margin-top: 30px;
+  color: #555;
+}
+
+.MatcVerticleMiddle,
+.MatcVerticalMiddle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.MatcHorizontalMiddle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.MatcMiddle {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.MactNoBodyScroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+.MatcBorderLeft {
+  border-left: 1px solid #cecece;
+  padding-left: 40px;
+}
+
+.MatcBreadCrumbs {
+}
+
+.MatcHelpIcon {
+  margin-left: 10px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.MatcHelpIcon:hover {
+  color: #3787f2;
+}
+
+.MatcHelpIcon > div {
+  display: inline-block;
+}
+
+.box.MatcWarningBox,
+.MatcWarningBox {
+  background: #f9ed8371;
+  border: 1px solid #d0c45b;
+}
+
+/****************************************************
+   * Animation
+   ****************************************************/
+
+.MatcAnimated {
+  transition: all 0.5s;
+}
+
+.MatcAnimated.MatcFadeOut {
+  opacity: 0;
+}
+
+/****************************************************
+   * Boxes
+   ****************************************************/
+
+.MatcSection h2,
+.MatcSection h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #3787f2;
+}
+
+.MatcSection .container,
+.MatcSection .container-fluid {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.MatcSection:nth-child(odd) {
+}
+
+.MatcSection:nth-child(even) {
+  background: rgb(242, 242, 242);
+}
+
+.MatcContentBox {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+}
+
+.MatcShadowBox {
+  transition-duration: 0.2s;
+  transition-property: box-shadow;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.MatcShadowBox:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.MatcInfoBox {
+  background: #d6e5f8;
+	border: 1px solid #007bff;
+	padding: 8px;
+  color: #007bff;
+	border-radius: var(--from-radius);
+  font-size: 12px;
+}
+
+.MatcDialogLogo {
+  background: none repeat scroll 0 0 #3787f2;
+  color: #fff;
+  font-size: 70px;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.MatcActionBox {
+  position: relative;
+}
+
+.MatcActionBox .VommondSlideLeftButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.MatcActionBoxRemove {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+  font-size: 24px;
+  display: none;
+  border: 1px orange;
+  text-align: right;
+}
+
+.MatcActionBoxRemove:hover {
+  color: red;
+}
+
+.MatcActionBox:hover .MatcActionBoxRemove {
+  display: inline-block;
+}
+
+.MatcHelpIcon {
+  margin-left: 5px;
+  color: #646464; /* Adjust color as needed */
+  position: absolute;
+  z-index: 1000; /* Adjust z-index as needed, ensure it's higher than other elements */
+}
+
+.MatcHintBox {
+  padding: 16px;
+  background: #f9ed8371;
+  border: 1px solid #f9ed83;
+  border-radius: 4px;
+}
+
+.MatcErrorBox {
+  padding: 16px;
+  color: var(--danger-color);
+  background: var(--danger-color-light);
+  border-radius: 8px;
+}
+
+.coins-icon {
+  height: 50%;
+  background-image: url("../style/logos/coins.svg");
+}
+
+/*** Card ****/
+
+.MatcCard {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 8px;
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  width: 100%;
+  background-image: none;
+  padding: 0px;
+}
+
+.MatcCardContent {
+  padding: 24px;
+}
+
+.MatcCardHeader {
+  padding: 12px 24px 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.6rem;
+
+}
+
+.MatcFlexBar {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.MatcForm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4375em;
+  color: rgb(42, 53, 71);
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  border-radius: 7px;
+}
+
+.MatcLabel {
+  margin: 0px 0px 5px;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 600;
+  display: block;
+}
+
+/*** Alert ****/
+
+.MatcAlertBox {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  font-size: 12px;
+  letter-spacing: 0rem;
+  font-weight: 400;
+  line-height: 16px;
+  display: flex;
+  padding: 6px 16px;
+  display: block;
+}
+
+.MatcAlertBoxXL {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  letter-spacing: 0rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  display: flex;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  display: block;
+}
+
+.MatcAlertBoxContent {
+  padding: 8px 0px;
+  min-width: 0px;
+  overflow: auto;
+}
+
+.MatcAlertBoxDanger {
+  background-color: var(--danger-color-light);
+  color: var(--danger-color);
+}
+
+.MatcAlertBoxInfo {
+  background-color: var(--hightlight-soft);
+  color: var(--primary-color);
+}
+
+.MatcAlertBoxWarning {
+  background-color: var(--warning-color-light);
+  color: var(--warning-color-dark);
+}
+
+/*** Table ****/
+
+.MatcTable {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  border: 1px solid rgb(229, 234, 239);
+  overflow: hidden;
+  width: 100%;
+  background-image: none;
+  padding: 0px;
+}
+
+.MatcTableHeader {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  border: 1px solid rgb(229, 234, 239);
+  overflow: hidden;
+  width: 100%;
+  background-image: none;
+  padding: 0px;
+  margin-bottom: 12px;
+}
+
+.MatcTableHeader th {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 16px;
+  color: rgb(42, 53, 71);
+}
+
+.MatcTableBody {
+  color: inherit;
+  display: table-row;
+  vertical-align: middle;
+  outline: 0px;
+}
+
+.MatcTableBody td {
+  font-size: 0.9rem;
+  letter-spacing: 0rem;
+  font-weight: 400;
+  line-height: 16px;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 16px;
+  color: rgb(42, 53, 71);
+  border-bottom: 1px solid rgb(229, 234, 239);
+}
+
+.MatcTableAction {
+  width: 50px;
+}
+
+/*** Accordion ***/
+
+.MatcAccordion {
+  flex-grow: 1;
+}
+
+.MatcAccordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(233 231 231);
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.MatcAccordionHeaderIcon {
+  transition: transform 350ms;
+}
+
+.MatcAccordionHeaderIcon.open {
+  transform: rotate(180deg);
+}
+
+.MatcAccordionContent {
+  height: 0;
+  overflow-y: scroll;
+  line-height: 1.5;
+  background-color: rgb(255, 255, 255);
+  transition: height 0.5s;
+  border-style: solid;
+  border-color: rgb(233 231 231);
+  border-width: 0px;
+  transition: padding 150ms;
+}
+
+.MatcAccordionContent.open {
+  padding: 12px;
+  transition: padding 150ms;
+  border-width: 0px 1px 1px 1px;
+}
+
+.MatcAccordionContent::-webkit-scrollbar {
+  width: 5px;
+}
+
+.MatcAccordionContent::-webkit-scrollbar-track {
+  appearance: none;
+  background-color: transparent;
+}
+
+.MatcAccordionContent::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+}
+
+.MatcAccordionContent p {
+  padding: 10px;
+}
+
+.MatcAccordionContent.open {
+  height: 200px;
+}
+
+
+/* -----------------------------
+   Spinner Styling
+----------------------------- */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 1rem;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ai-flowrabbit {
+  background-image: url("./icons/ai-flowrabbit.svg");
+}
+
+.icon-key {
+  background-image: url("./logos/key.svg");
+}
+
+.ai-claude {
+  background-image: url("./icons/ai-claude.svg");
+}
+
+.ai-perplexity {
+  background-image: url("./icons/ai-perplexity.svg");
+}
+
+.ai-openai {
+  background-image: url("./icons/ai-openai.svg");
+}
+
+.ai-deepgram {
+  background-image: url("./icons/ai-deepgram.svg");
+  width: 16px;
+  height: 16px;
+}
+
+.ai-gemini {
+  background-image: url("./icons/ai-gemini.svg");
+}
+
+.ai-openrouter {
+  background-image: url("./icons/ai-openrouter.svg");
+}
+
+.ai-replicate {
+  background-image: url("./icons/ai-replicate.svg");
+}
+
+.ai-elevenlabs {
+  background-image: url("./icons/ai-elevenlabs.svg");
+}
+
+.ai-azure {
+  background-image: url("./icons/ai-azure.svg");
+}
+
+.ai-blackforestlabs {
+  background-image: url("./icons/ai-blackforest.svg");
+}
+
+.ai-ideogram {
+  background-image: url("./icons/ai-ideogram.svg");
+}
+
+.ai-fal {
+  background-image: url("./icons/ai-fal.svg");
+}
+
+.ai-segmind {
+  background-image: url("./icons/ai-segmind.svg");
+}
+
+.ai-ionos-text {
+  background-image: url("./icons/ai-ionos-text.svg");
+}
+
+.ai-ionos-image {
+  background-image: url("./icons/ai-ionos-image.svg");
+}
+
+.ai-ionos {
+  background-image: url("./icons/ai-ionos.svg");
+}
+
+.ai-make {
+  background-image: url("./icons/ai-make.svg");
+}
+
+.ai-airtable {
+  background-image: url("./icons/ai-airtable.svg");
+}
+
+.ai-xano {
+  background-image: url("./icons/ai-xano.svg");
+}
+
+.ai-rows {
+  background-image: url("./icons/ai-rows.svg");
+}
+
+.ai-runway {
+  background-image: url("./icons/ai-runway.svg");
+}
+
+.ai-custom {
+  background-image: url("./icons/ai-custom.svg");
+}

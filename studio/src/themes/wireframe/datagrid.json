@@ -1,0 +1,88 @@
+[ {
+	"id" : "DataGrid",
+	"type" : "DataGrid",
+	"name" : "Data Table",
+	 "_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w" : 320,
+	"h" : 160,
+	"category" : "Table",
+	"subcategory" : "Table",
+	"z" : 0,
+	"props" : {
+		"data": [
+			["Klaus","Huber","2"], 
+            ["Vincent","Vega","3"], 
+			["Mia","Wallace","1"], 
+			["Pedro","Oliveira","3"]
+		],
+		"columns": [
+			{
+				"label": "Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": false,
+				"isSearchable": false
+			},
+			{
+				"label": "Last Name",
+				"width": 120,
+				"isEditable": false,
+				"isSortable": false,
+				"isSearchable": false
+			},
+			{
+				"label": "Orders",
+				"width": 80,
+				"isEditable": false,
+				"isSortable": false,
+				"isSearchable": false
+			}
+		],
+		"widths": [
+			120,
+			120,
+			80
+		],
+		"borderStyle" : "Cell"
+	},
+	"has" : {
+		"onclick" : true,
+	     "label" : true
+	},
+	"style" : {
+
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"background": "@form-background",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius-none",
+		"borderWidth": "@border-width",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",	
+
+		"paddingBottom": "@form-padding-vertical",
+		"paddingTop": "@form-padding-vertical",
+		"paddingLeft": "@form-padding-horizontal",
+		"paddingRight": "@form-padding-horizontal",
+
+	
+		"headerFontWeight" : "800",
+		"headerBackground" : "@form-border-color",
+		"headerSticky": true,
+		"headerColor" : "@form-background",
+		"checkBox": false,
+		"checkBoxHookColor": "#@background-active",
+		"checkBoxBackground": "@form-background",
+		"checkBoxBorderColor": "@form-border-color",
+		"checkBoxBorderRadius": "@border-radius",
+		"checkBoxBorderWidth": 1
+	}
+}
+]

@@ -1,0 +1,39 @@
+[ {
+	"id" : "WireFrameRepeater",
+	"type" : "Repeater",
+	"name" : "List",
+	"category" : "Layout",
+	"subcategory" : "FormSpecialContainer",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w" : 304,
+	"h" : 400,
+	"z" : 0,
+	"props" : {
+		"data": [],
+		"auto": true,
+		"layout": "grid",
+		"distanceX": -1,
+		"distanceY": 8
+	},
+	"isContainer": true,
+	"has" : {
+		"backgroundColor": true,
+		"border":true
+	},
+	"style" : {
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"borderRadius": 0,
+		"borderWidth": 0,
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",
+
+		"background" : null
+	}
+} ]

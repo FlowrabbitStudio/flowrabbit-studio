@@ -1,0 +1,75 @@
+
+@import './vars.css';
+
+.MatcDataBinding{
+    width: 800px;
+}
+
+.MatcDataBindingHint {
+    padding: 16px 0px;
+    font-size: 14px;
+   
+    
+}
+
+.MatcDataBindingCheckCntr{
+    width: 30px;
+}
+
+.MatcDataBinding .MatcDialogTable {
+    overflow: auto;
+    height: 500px;
+}
+
+.MatcDataBinding .MatcDialogTable td {
+    height: 55px;
+}
+
+.MatcDataBindingVariableName {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.MatcDataBindingNameCntr{
+    width: 600px;
+}
+
+.MatcDataBindingCheckCntr .mdi {
+    font-size: 24px;
+    color: #777
+}
+
+.MatcDialogTable tr:hover .MatcDataBindingCheckCntr .mdi {
+    color: #3787f2;
+}
+
+.MatcDataBinding .MatcDropDownButtonWidth{
+    min-width: 120px;
+}
+
+.MatcDataBinding .MatcDataBindingVariableDefault {
+    width: 160px;
+}
+
+.MatcDataBinding .MatcDataBindingVariableDefault input{
+    background: none;
+    border-color: transparent;
+    font-style: italic;
+}
+
+.MatcDataBinding .MatcDataBindingVariableDefault input:hover{
+    border-color: var(--form-color-hover);
+    border-style: dashed;
+}
+
+.MatcDataBinding .MatcDataBindingVariableDefault input:focus{
+    border-color: var(--form-color);
+    background: #fff;
+    border-style: solid;
+}
+
+.MatcDataBinding .MatcToolbarTabs .MatcToolbarItemIcon {
+    font-size: 20px;
+    color: var(--primary-color)
+}

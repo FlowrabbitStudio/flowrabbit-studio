@@ -1,0 +1,35 @@
+[
+	{
+		"id": "RadioGroup",
+		"type": "RadioGroup",
+		"name": "Radio Group",
+		"category": "Form",
+		"subcategory": "FormCheckBoxX",
+		"_type": "Widget",
+		"_extends": "CheckBoxGroup",
+		"z": 0,
+		"props": {
+			"options": [
+				"Option 1",
+				"Option 2",
+				"Option 3"
+			],
+			"selected": "Option 1"
+		},
+		"has": {
+			"backgroundColor": true,
+			"onclick": true,
+			"border": true,
+			"label": true,
+			"data": true
+		},
+		"style": {
+			"borderRadius": "@border-radius-round"
+		},
+		"error": {
+			"borderColor": "@form-border-color:error",
+			"background": "@form-background:error",
+			"colorButton": "@form-border-color:error"
+		}
+	}
+]

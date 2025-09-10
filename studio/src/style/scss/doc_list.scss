@@ -1,0 +1,72 @@
+@import '../variables.scss';
+
+.MatcDocList {
+    border: 1px solid $input_border;
+
+    background: #fff;
+    border-radius: 6px;
+    position: relative;
+    height: 320px;
+    overflow: auto;
+
+    &:hover{
+        border-color: $input_border_hover;
+    }
+
+    .MatcDocListHint{
+        font-size: 24px;
+        color: #ccc;
+        padding-top: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      
+    }
+
+    .MatcUploadTrans {
+        position: absolute;
+        cursor: pointer;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    table {
+        width: 100%;
+        font-size: 12px;
+        thead{
+            background:$table_header;
+        }
+        th {
+            border-bottom: 1px solid $input_border
+        }
+        td, th {
+            padding: 8px;
+        }
+        .MatcRemoveIcon {
+            text-align: right;
+        }
+    }
+
+    .MatcDocListUploadRow {
+        position: relative;
+        text-align: center;
+        font-style: italic;
+        cursor: pointer;
+
+        &:hover{
+            color: $main_color;
+        }
+    }
+}
+
+.MatcDocListDND {
+    border: 1px dashed $main_color;
+}

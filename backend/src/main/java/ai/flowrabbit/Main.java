@@ -37,7 +37,7 @@ import io.vertx.ext.web.handler.CorsHandler;
 
 public class Main extends AbstractVerticle {
 
-	public static final String VERSION = "FlowRabbit@1.0.86";
+	public static final String VERSION = "FlowRabbit@1.0.88";
 
 	public static final String BUS_IMAGES_UPLOADED = "images.uploaded";
 
@@ -230,7 +230,7 @@ public class Main extends AbstractVerticle {
 		JsonObject config = this.config();
 		JsonObject defaultConfig = Config.setDefaults(config);
 		JsonObject mergedConfig = Config.mergeEnvIntoConfig(defaultConfig);
-		Main.ADMIN = Config.getAdmin(mergedConfig, Main.ADMIN);
+		Main.ADMIN = Config.getAdminEmail(mergedConfig, Main.ADMIN);
 		return mergedConfig;
 	}
 
@@ -425,10 +425,51 @@ public class Main extends AbstractVerticle {
 
 		AppEventHandler.create(vertx, client);
 
+		if (Config.getAdminPassword(config) != null && !Config.getAdminPassword(config).isEmpty() && !isDebug) {
+			String email = Config.getAdminEmail(config, Main.ADMIN);
+			String password = Config.getAdminPassword(config);
+			logger.error("intiAdmin() > Check admin user: {}", email);
+			client.find(DB.getTable(User.class), User.findByEmail(email), res -> {
+				if (res.succeeded() && res.result().isEmpty()) {
+					createAdminUser(password, email);
+				} else {
+					logger.error("intiAdmin() > Admin exist");
+				}
+			});
+		}
+
 		logger.info("intiAdmin() > exit");
 	}
 
+	private void createAdminUser(String password, String email) {
+		logger.error("createAdminUser() > Create admin user {}", email);
+		String hashedPassword = Util.hashPassword(password);
 
+		JsonObject newUser = new JsonObject();
+		newUser.put("name", "Admin");
+		newUser.put("lastname", "Admin");
+		newUser.put("created", System.currentTimeMillis());
+		newUser.put("lastUpdate", System.currentTimeMillis());
+		newUser.put("paidUntil", -1);
+		newUser.put("email", email);
+		newUser.put("password", hashedPassword);
+
+		newUser.put("role", User.ADMIN);
+		newUser.put("plan", "Free");
+		newUser.put("newsletter", false);
+		newUser.put("lastNotification", 0);
+		newUser.put("acceptedTOS", System.currentTimeMillis());
+		newUser.put("acceptedPrivacy", System.currentTimeMillis());
+		newUser.put("acceptedGDPR", true);
+
+		client.insert(DB.getTable(User.class), newUser, res -> {
+			if (res.succeeded()) {
+				logger.error("createAdminUser() > Success {}", email);
+			} else {
+				logger.error("createAdminUser() > Error", res.cause());
+			}
+		});
+	}
 
 
 	private void initMongo(JsonObject config) {

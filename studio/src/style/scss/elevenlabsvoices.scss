@@ -1,0 +1,78 @@
+.eleven-labs-voices {
+  .item-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .filter-select {
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+  }
+
+  .search-input {
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .voice-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .voice-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .voice-item:last-child {
+    border-bottom: none;
+  }
+
+  .voice-label {
+    flex: 1;
+    margin-right: 20px;
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .play-pause-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .play-pause-button .mdi {
+    font-size: 24px;
+  }
+
+  hr {
+    margin: 0 0 8px 0;
+  }
+}

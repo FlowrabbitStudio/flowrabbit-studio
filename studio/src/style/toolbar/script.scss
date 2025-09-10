@@ -1,0 +1,79 @@
+@import '../variables.scss';
+
+.MatcScriptEditorDialog {
+    height: 640px;
+    width: 980px;
+}
+
+.MatcScriptEditorDialogXL {
+    width: 1280px;
+}
+
+.MatcScriptEditor {
+
+    height: 540px;
+    width: 540px;
+
+    .ace_editor,
+    .MatcScriptEditorConsole {
+        border: 1px solid #ccc;
+        overflow: auto;
+    }
+
+    .MatcScriptColumns {
+        display: flex;
+        gap: 32px;
+        height: 100%;
+    }
+
+    .MatcScriptEditorSimulator {
+        width: 300px;
+    }
+
+    
+
+    &.MatcScriptEditorDesktop {
+        width: 1140px;
+        .MatcScriptEditorSimulator{
+            width: 500px;
+        }
+    }
+
+    .MatcScriptEditorIDE {
+        //width: 600px;
+        border-left: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-left: 32px;
+
+        .MatcScriptEditorContent {
+            //height: 440px;
+
+            .ace-chrome {
+                height: 440px !important;
+                width: 600px !important;
+            }
+        }
+    }
+
+    .MatcScriptEditorIDE .MatcButtonBar {
+        margin: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .MatcScriptEditorConsoleLine {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        padding: 3px;
+
+        &.error {
+            color: $color-danger;
+        }
+    }
+
+
+    
+}

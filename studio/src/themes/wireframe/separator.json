@@ -1,0 +1,29 @@
+[
+    {
+      "id" : "Separator",
+      "type": "Separator",
+      "category": "Layout",
+      "subcategory": "XBox",
+      "_type" : "Widget",
+      "name" : "Separator",
+      "x" : 0,
+      "y" : 0,
+      "w" : 190,
+      "h" : 0,
+      "z" : 0,
+      "props" : {
+        "cssStyled": true        
+      },
+     
+      "has" : {
+        "border":true
+      },
+      "actions":{},
+      "style" : {
+        "borderTopWidth" : 1,
+        "borderTopColor" : "#333333",
+        "borderStyle": "solid",
+        "background": "transparent"
+      }
+    }  
+   ]

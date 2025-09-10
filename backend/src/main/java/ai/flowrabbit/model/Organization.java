@@ -13,7 +13,7 @@ import java.util.*;
 
 public class Organization extends Model{
 
-    private static Logger logger = LoggerFactory.getLogger(Organization.class);
+    private static final Logger logger = LoggerFactory.getLogger(Organization.class);
 
     public static String STATUS_ACTIVE = "active";
 
@@ -35,27 +35,9 @@ public class Organization extends Model{
 
     public static final String FIELD_STATUS = "status";
 
-    public static final String FIELD_PLAN_ID = "planID";
-
-    //public static final String FIELD_STRIPE = "stripe";
-
-    public static final String FIELD_STRIPE_SUB_ID = "stripeSubscriptionID";
-
-    public static final String FIELD_STRIPE_CUS_ID = "stripeCustomerId";
-
-    public static final String FIELD_STRIPE_UPDATE_COUNTS = "stripeUpdateCounts";
-
-
     public static final String FIELD_CREDITS_IN_CENTI_CENTS = "creditsInCentiCent";
 
     public static final String FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS = "additionalCreditsInCentiCent";
-
-    //public static final String FIELD_PAID_UNTIL = "paidUntil";
-
-    public static final String FIELD_LAST_STRIPE_SUB_WEBHOOK = "lastStripeSubscriptionHook";
-
-    public static final String FIELD_LAST_STRIPE_PAYMENT_WEBHOOK = "lastStripePaymentHook";
-
 
     public static JsonObject create(
             String name, // acts as the kind of id in the urls
@@ -177,7 +159,7 @@ public class Organization extends Model{
                 Set<String> found = getOrgNames(res.result());
                 for (String candidate : candidates) {
                     if (found.contains(candidate)) {
-                        logger.error("suggestDomainName() > found" + candidate);
+                        logger.error("suggestDomainName() > found {}", candidate);
                     } else {
                         callback.handle(candidate);
                         return;
@@ -219,7 +201,7 @@ public class Organization extends Model{
     }
 
     private static String makeCap(String str) {
-        if (str.length() < 1) {
+        if (str.isEmpty()) {
             return str;
         }
         return str.substring(0, 1).toUpperCase() + str.substring(1);

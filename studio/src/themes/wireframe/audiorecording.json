@@ -1,0 +1,49 @@
+[
+    {
+      "id": "AudioRecording",
+      "type": "AudioRecording",
+      "name": "Audio Recording",
+      "category": "Advanced",
+      "subcategory": "Advanced",
+      "_type": "Widget",
+      "x": 0,
+      "y": 0,
+      "w": "@box-height-m",
+      "h": "@box-width-m",
+      "z": 0,
+      "props": {
+          "audio": "https://example.com/audio.wav",
+          "streaming": false,
+          "animation": false
+      },
+      "isContainer": true,
+      "has": {
+        "data": true,
+        "onclick": true,
+        "border": true,
+        "backgroundColor": true,
+        "color": true
+      },
+      "style": {
+        "icon": "mdi-microphone",
+        "stopIcon": "mdi-stop-circle",
+        "borderRadius" : "@border-radius-round",
+        "borderWidth": "@border-width",
+        "borderStyle": "solid",
+        "borderColor": "@button-primary-border-color",
+        "background": "@button-primary-background",
+        "color": "@button-primary-color"
+      },
+      "hover": {
+        "borderColor": "@button-primary-border-color:hover",
+        "background": "@button-primary-background:hover",
+        "color": "@button-primary-color:hover"	
+      },
+      "active": {
+        "borderColor": "@button-danger-border-color",
+        "background": "@button-danger-background",
+        "color": "@button-danger-color"	
+      }
+    }
+  ]
+  

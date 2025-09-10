@@ -1,0 +1,12 @@
+.MatcVisualEditor #commandbar-wrapper{
+    src: url("../../../public/icons/icon-b.png");
+    
+}
+
+
+
+.MatcVisualEditor .commandbar-launcher div,
+.commandbar-launcher div,
+.bb-feedback-button-icon {
+    display: none;
+}

@@ -1,0 +1,17 @@
+.MatcLight .MatcSidebar, 
+.MatcLight .MatcToobarPropertiesSection.MatcToobarPropertiesSectionRightSidebar,
+.MatcLight .MatcToolbarSectionTools{
+	box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
+}
+
+.MatcDark .MatcSidebar, 
+.MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseTopSection,
+.MatcDark .MatcToolbarLeftCntr .MatcToolbarDenseSection,
+.MatcDark .MatcToobarPropertiesSection.MatcToobarPropertiesSectionRightSidebar,
+.MatcDark .MatcToolbarTop,
+.MatcDark .MatcToolbarSection.MatcToolbarDenseSection.MatcToolbarSectionTools,
+.MatcDark .MatcSidebarListContainer{
+	box-shadow: 0px 4px 16px rgba(0,0,0,0.3);
+	border:0px;
+}
+

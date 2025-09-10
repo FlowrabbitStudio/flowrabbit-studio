@@ -1,0 +1,36 @@
+{
+    "id": "chatcmpl-AoVWN3gcIM5mtf9n8p1Gy8CN5O8CG",
+    "object": "chat.completion",
+    "created": 1736600931,
+    "model": "gpt-4o-2024-08-06",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "```yaml\nCONTAINER:\n  FLEX-DIRECTION: COLUMN\n  BACKGROUND: '#F0F8FF' # A light blue background for a cheerful appearance\n  CHILDREN:\n    - LABEL:\n        CONTENT: 'Join the League of Extraordinary Users!'\n        TYPE: 'Headline'\n        COLOR: '#000080' # Navy blue text for the headline\n    - LABEL:\n        CONTENT: 'Sign up now to unlock the secrets of the universe... or at least get a great user experience!'\n        TYPE: 'Paragraph'\n        COLOR: '#696969' # Dim grey text for the paragraph\n    - LABEL:\n        CONTENT: 'Username'\n        TYPE: 'Label'\n        COLOR: '#333333'\n    - INPUT:\n        PLACEHOLDER: 'Enter your super-secret alias'\n        TYPE: 'Text'\n        BORDER_COLOR: '#A9A9A9' # Dark grey border for the text input\n    - LABEL:\n        CONTENT: 'Email'\n        TYPE: 'Label'\n        COLOR: '#333333'\n    - INPUT:\n        PLACEHOLDER: 'Enter your electronic pigeon address'\n        TYPE: 'Text'\n        BORDER_COLOR: '#A9A9A9'\n    - LABEL:\n        CONTENT: 'Password'\n        TYPE: 'Label'\n        COLOR: '#333333'\n    - INPUT:\n        PLACEHOLDER: 'Make sure it’s as strong as you are'\n        TYPE: 'Password'\n        BORDER_COLOR: '#A9A9A9'\n    - BUTTON:\n        CONTENT: 'Activate Awesomeness'\n        COLOR: '#FFFFFF'   # White text for visibility\n        BACKGROUND: '#32CD32' # LimeGreen background for a call to action\n        BORDER_COLOR: '#32CD32'\n    - LABEL:\n        CONTENT: 'By signing up, you agree to nurture your cheese-loving cat.'\n        TYPE: 'Paragraph'\n        COLOR: '#2F4F4F' # Dark Slate Grey for a hint of seriousness\n```\n",
+                "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 725,
+        "completion_tokens": 413,
+        "total_tokens": 1138,
+        "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+        }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_703d4ff298",
+    "cost": 0
+}

@@ -1,0 +1,97 @@
+:root {
+	--secundary-color: #f2b637;
+	--hightlight-soft: #d6e5f8;
+	--hightlight-soft-xl: #f2f2f2;
+	--danger-color-light: rgb(253, 237, 232);
+	--danger-color: rgb(250, 137, 107);
+	--danger-color-dark: rgb(202, 78, 44);
+	--error-color: #f43535;
+	--warning-color-light: rgb(254, 245, 229);
+	--warning-color: rgb(255, 174, 31);
+	--warning-color-dark: rgb(214, 144, 24);
+	--form-color: #04152c;
+	--form-color-passive: #939393;
+	--form-color-hover: rgb(38, 86, 218);
+	--form-input-hover:hsl(0deg, 0%, 71%);
+	--form-color-focus: #000;
+	--from-button-color: #ffffffe2;
+	--from-button-color-hover: #fff;
+	--form-border: rgb(223, 229, 239);
+	--form-border-hover: hsl(0deg, 0%, 71%);
+	--form-border-focus: #524343;
+	--form-font-size: 14px;
+	--form-height: 34px;	
+	--rest-icon-height: 80%;
+
+	--toolbar-leftsidebar-dark:#252a2f;
+	--sidebar-selected: #d6e5f8;
+
+	--background-color: #fafafa;
+	--primary-color: #007bff;
+	--primary-color-hover: rgb(38, 86, 218);
+	--primary-color-dark: #0d2236;
+	--primary-color-light: #fff;
+	--dark-color: #0a1826;
+
+	--form-padding: 6px 12px;
+	--form-padding-wrapped: 4px 12px;
+
+	--toolbar-dropdown-hover: #d0d0d0;
+	--toolbar-dropdown-hover-back: #f3f3f3;
+
+	--home-color: #007bff;
+	--home-color-hover: #0062cb;
+	--layer-list-selection: #d6e5f8;
+
+	--section_label_color:#777; 
+	--section_label_weight: 700;
+
+	--from-radius:6px;
+	--border-radius-preview:2px;
+	--border-color-soft: rgba(0, 0, 0, 0.15);
+	--border-color-dark: #2B2F32;
+
+	--popup-radius:12px;
+
+	--border-radius-s: 3px;
+	--border-radius-m: 6px;
+	--border-radius-l: 12px;
+	--border-radius-xl: 18px;
+	--border-radius-xxl: 24px;
+	--dialog-border-radius: 6px;
+
+	--padding-xs: 4px;
+	--padding-s: 8px;
+	--padding-m: 12px;
+	--padding-l: 16px;
+	--padding-xl: 24px;
+
+	--font-size-s: 12px;
+	--font-size-m: 14px;
+	--font-size-l: 16px;
+	--font-size-xl: 18px;
+	--font-size-xxl: 20px;
+
+	--button-padding:6px 16px;
+	--button-font-size:12px;
+	--button-font-size-m:14px;
+
+	--dialog-radius:6px;
+	--dialog-title-color:#333;
+	--dialog-title-size:14px;
+	--dialog-title-weight:600;
+	--dialog-title-padding:16px 24px;
+	--dialog-title-border: 1px solid #ddd;
+	--dialog-title-background:#f1f1f1;
+
+	--dialog-content-padding:16px 24px;
+	--dialog-content-size:14px;
+	--dialog-footer-padding:16px 24px;
+
+	--property-tab-background: #E5E5E5;
+
+	--property-tab-selected-background: #ffffff;;
+	--property-tab-selected-color: #0a1826;
+
+	--property-tab-active-background: #d6e5f8;;
+}

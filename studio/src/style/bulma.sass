@@ -1,0 +1,194 @@
+@charset "utf-8"
+
+$fullhd-enabled: false
+$navbar-height: 4rem
+$tabs-border-bottom-color:  transparent
+$tabs-border-bottom-width: 2px
+$tabs-link-padding: 16px 2rem
+$primary: #04152c
+$info: $primary
+$light: #fff
+$red: #e53935
+$green: #7cb342
+$link: $info
+$navbar-item-hover-background-color: transparent
+$textarea-min-height: 6em
+$footer-padding: 3rem 1.5rem
+$black: darken($primary, 45%)
+$input-focus-box-shadow-size: 0
+
+@import "~bulma/sass/utilities/_all"
+@import "~bulma/sass/base/_all"
+@import "~bulma/sass/elements/_all"
+@import "~bulma/sass/form/_all"
+@import "~bulma/sass/components/_all"
+@import "~bulma/sass/grid/_all"
+@import "~bulma/sass/layout/_all"
+@import "~bulma/sass/helpers/_all"
+
+
+header
+    background: $white
+    border-bottom: 1px solid $grey-lighter
+body
+    background: $light
+
+.hero .title
+    margin-bottom: 2rem!important
+
+.box.is-shadowless
+    border: 1px solid rgba(0, 0, 0, 0.15)
+    border-radius: 3px
+    //box-shadow: $box-shadow!important
+
+.container
+    padding-left: 0
+    padding-right: 0
+
+.field:not(:last-child)
+    margin-bottom: 1.5rem
+
+.navbar
+    margin-bottom: 0
+    border: none
+    border-radius: 0
+    & > .container .navbar-brand
+        margin-left: 0
+    .navbar-brand
+        float: none
+        height: unset
+        padding: unset
+
+.MatcContent section:not(:last-child)
+    padding-bottom: 0
+
+.is-video
+    margin-top: -18%
+    box-shadow: $box-shadow
+    video
+        border-radius: $radius
+    +touch
+        margin-top: 0%
+
+.box.is-image
+    margin-top: -22%
+    padding: 8px
+    img
+        border-radius: $radius
+    +touch
+        margin-top: 0%
+
+.navbar-link:not(.is-arrowless)::after
+    border-color: $dark
+
+.navbar-item,
+.button,
+.tabs a
+    font-size: 14px
+    font-weight: 600
+
+a:hover
+    text-decoration: none
+
+.project-nav
+    border-bottom: 1px solid $grey-lighter
+    padding-bottom: 0
+
+.MatcApps
+    min-height: 100vh
+.MatcSection .container, .MatcSection .container-fluid
+    padding: 0!important
+.navbar-item.is-last
+    margin-left: -1.25rem
+    +touch
+        margin-left: 0
+
+
+.VommondDialogBackground
+    background: rgba($dark,.8)
+.VommondDialogWrapper
+    box-shadow: $box-shadow
+    border-radius: $box-radius
+
+.MatcTeamItem
+    width: 24px
+    height: 24px
+    .MatcUserImageCntr
+        width: 24px
+        height: 24px
+        &:hover
+            box-shadow: $box-shadow
+.MatcButtonGreen
+    background-color: $green
+.team-settings
+    .MatcTeamItem
+        width: 64px
+        height: 64px
+        .MatcUserImageCntr
+            width: 64px
+            height: 64px
+
+
+
+.MatcListItemDescription
+    font-style: normal
+    font-size: 14px
+    color: $grey
+    font-weight: 400
+
+.MatcContent h2
+    margin: unset
+
+.mt-16
+    margin-top: 16px
+
+.mb-16
+    margin-bottom: 16px
+
+.mb-32
+    margin-bottom: 32px
+
+.is-teaser
+    min-height: 100vh
+    background-size: cover
+
+.teaser-text
+    padding: 0 10vw
+    +touch
+        padding: 16px
+.footer
+    background: $black
+    a
+        font-size: 14px
+        color: $white
+        opacity: .7
+        &:hover
+            color: $grey
+            opacity: 1
+    .title
+        margin-bottom: 8px
+        color: $light!important
+
+td.action .button
+    margin-right: 8px
+.vommondTable .vommondInlineEdit
+    margin-left: -8px
+    padding: 8px
+.table td, .table th, .MatcUserAdd
+    border: none
+.MatcUserAdd:hover
+    box-shadow: none
+.MatcToolbar .MatcCreateSearchBtn, .MatcCreateSearchBtn
+    color: $dark
+
+.input, .textarea
+    box-shadow: none
+
+.input::placeholder
+    color: #cccccc
+
+.MatcShareDialog .input
+    width: 97%
+
+.level-options
+    gap:8px

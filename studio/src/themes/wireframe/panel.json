@@ -1,0 +1,93 @@
+[
+    {
+        "id" : "Panel",
+        "type" : "Box",
+        "category" : "Layout",
+        "subcategory" : "XXXBox",
+        "_type" : "Widget",
+        "name" : "Panel",
+        "x" : 0,
+        "y" : 0,
+        "w" : "$80%",
+        "h" : "@box-height-l",
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : { 
+            "fontFamily" : "@font-family",
+            "borderRadius": "@panel-border-radius",
+			"borderWidth": "@panel-border-width",
+			"borderStyle": "solid",
+            "borderColor": "@panel-border-color",      
+            "background": "@panel-background",
+            "boxShadow": "@panel-box-shadow"
+        }
+    },
+    {
+        "id" : "PanelInfo",
+        "type" : "Box",
+        "category" : "Layout",
+        "subcategory" : "XXXBox",
+        "_type" : "Widget",
+        "name" : "Panel Info",
+        "_extends": "Panel",       
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : { 
+            "borderColor": "@color-info",
+            "background" : "@background-info"
+        }
+    },
+    {
+        "id" : "PanelDanger",
+        "type" : "Box",
+        "category" : "Layout",
+        "subcategory" : "XXXBox",
+        "_type" : "Widget",
+        "name" : "Panel Danger",
+        "_extends": "Panel",
+        "x" : 0,
+        "y" : 0,
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : {            
+            "borderColor": "@color-danger",
+            "background" : "@background-danger"
+        }
+    },
+    {
+        "id" : "PanelHint",
+        "type" : "Box",
+        "category" : "Layout",
+        "subcategory" : "XXXBox",
+        "_type" : "Widget",
+        "name" : "Panel Hint",
+        "_extends": "Panel",
+        "z" : 0,
+        "props" : {},
+        "has" : {
+           "backgroundColor" : true,
+           "border" : true
+        },
+        "actions":{},
+        "style" : { 
+            "borderColor": "@color-hint",
+            "background" : "@background-hint"
+        }
+    }
+
+]

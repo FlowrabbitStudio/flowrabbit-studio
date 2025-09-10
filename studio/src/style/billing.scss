@@ -1,0 +1,653 @@
+@import "style/variables.scss";
+// ---------------------------------------------
+// Keyframes
+// ---------------------------------------------
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MatcSettings {
+  max-width: 1450px;
+  width: -webkit-fill-available;
+  justify-self: center;
+}
+
+// ---------------------------------------------
+// Basic Styling & Layout
+// ---------------------------------------------
+.billing-container {
+  gap: 24px;
+  .billing-column {
+    width: 100%;
+
+    .MatcCard,
+    .MatcCardContent {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.info-item-credits {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: var(--primary-color-dark);
+  font-weight: 600;
+}
+
+.info-item-used {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.info-label {
+  color: #8b8b8b;
+}
+
+.info-value {
+  color: rgb(42, 53, 71);
+  display: flex;
+  align-items: center;
+}
+
+.info-value.percentage {
+  color: #8b8b8b;
+}
+
+.billing-address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+
+  .info-item {
+    align-items: center;
+  }
+
+  input {
+    flex: 1;
+    margin-left: 1rem;
+    padding: 0.25rem;
+  }
+}
+
+// ---------------------------------------------
+// Success / Error Messages
+// ---------------------------------------------
+.message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-align: center;
+
+  &.error-message {
+    background: #f8d7da;
+    color: #721c24;
+  }
+
+  &.success-message {
+    background: #d4edda;
+    color: #155724;
+  }
+}
+
+// ---------------------------------------------
+// Transition (fade)
+// ---------------------------------------------
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// ---------------------------------------------
+// Loading States
+// ---------------------------------------------
+.loading-state,
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+// ---------------------------------------------
+// Current Plan Info
+// ---------------------------------------------
+.current-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+
+  p {
+    color: var(--primary-color);
+  }
+
+  .plan-price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .plan-recurrent {
+    font-size: 16px;
+  }
+}
+
+// ---------------------------------------------
+// Next Billing Info
+// ---------------------------------------------
+.next-billing {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
+
+  .date {
+    color: #666;
+    font-weight: 600;
+  }
+}
+
+// ---------------------------------------------
+// Plan Grid
+// ---------------------------------------------
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 800px;
+}
+
+.plan-description {
+  margin: 0.25rem 0;
+  color: #878787;
+  font-size: 12px;
+  max-width: 630px;
+  min-height: 70px;
+}
+
+.plan-card {
+  border-left: 4px solid transparent;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.32);
+  }
+
+  &.selected {
+    border-color: var(--primary-color);
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-price {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .plan-recurring {
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+  }
+}
+
+// ---------------------------------------------
+// Marketing Info
+// ---------------------------------------------
+.marketing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: self-start;
+
+  .plan-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .plan-feature {
+    border-radius: 10px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.plan-cancelled {
+  color: #dc3545;
+}
+
+// ---------------------------------------------
+// Transition (fade-slide)
+// ---------------------------------------------
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-slide-enter,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// ---------------------------------------------
+// Chosen Plan
+// ---------------------------------------------
+.chosen-plan-summary {
+  margin-top: 1rem;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+  .chosen-plan-price {
+    color: var(--primary-color);
+    font-size: 18px;
+  }
+}
+
+.cancel-alert {
+  font-size: 14px;
+  display: grid;
+}
+
+.plan-sidebar {
+  width: 50%;
+}
+
+// ---------------------------------------------
+// Credits Card Wrapper (and related components)
+// ---------------------------------------------
+.CreditsCardWrapper {
+  margin: 0 auto;
+  max-height: 200px;
+  .animate-number {
+    animation: countUp 1s ease-out forwards;
+    display: inline-block;
+  }
+
+  .section-title {
+    margin: 0 0 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .progress-bar {
+    margin-top: 6px;
+    width: 100%;
+    height: 12px;
+    background-color: #f0f2f5;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+
+    .progress-filled {
+      background-color: var(--primary-color);
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+  }
+
+  .add-credits-section {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.payment-form {
+  gap: 16px;
+  display: grid;
+}
+
+.card-element span,
+.address-element span {
+  font-weight: 600;
+  padding-bottom: 16px;
+  display: flex;
+}
+.address-element,
+.card-element {
+  padding: 0px;
+  background: white;
+  border-radius: 6px;
+  margin: 0px;
+  margin-bottom: 24px;
+}
+
+.card-element div {
+  padding: 0 8px;
+}
+
+// ---------------------------------------------
+// Billing Address Component
+// ---------------------------------------------
+
+.billing-address {
+  .address-display {
+    font-size: 14px;
+    color: #2a3547;
+    margin-bottom: 1rem;
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  .address-dialog-content {
+    padding: 1rem;
+  }
+}
+
+// ---------------------------------------------
+// Credit Card Modal
+// ---------------------------------------------
+
+.price-modal-container {
+  .price-section {
+    display: grid;
+    height: fit-content;
+  }
+  .price-info {
+    background: #f2f6fa;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #5a6a85;
+  }
+  .hint {
+    font-size: 12px;
+    color: #8b8b8b;
+    padding-left: 2px;
+  }
+  .price-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    justify-content: space-between;
+    height: fit-content;
+    width: max-content;
+    .price-card {
+      background: #ffffff;
+      padding: 16px;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .price-card:hover {
+      background: #f2f6fa;
+    }
+
+    .selected {
+      border-color: var(--primary-color);
+      background: var(--layer-list-selection);
+    }
+  }
+}
+
+.MatcButtonPrimaryOutline {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: #ffffff;
+}
+
+.MatcSettings .MatcSection {
+  background-color: transparent;
+}
+
+.card-icon {
+  padding: 16px;
+  background: #f2f6fa;
+  border-radius: 8px;
+}
+.card-details {
+  font-size: 12px;
+}
+.card-info-msg {
+  font-size: 12px;
+  color: grey;
+}
+/* -----------------------------
+   Table & Row Styling
+----------------------------- */
+.payment-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.payment-history-table th,
+.payment-history-table td {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid rgb(229, 234, 239);
+}
+
+.payment-history-table th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgb(42, 53, 71);
+  cursor: pointer;
+  position: relative;
+}
+
+.payment-history-table td {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgb(42, 53, 71);
+}
+
+.payment-history-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.payment-history-table tr:hover {
+  background-color: #f2f6fa;
+}
+
+/* -----------------------------
+   Sort Icon Styling
+----------------------------- */
+.sort-icon {
+  margin-left: 4px;
+}
+
+th:hover .sort-icon {
+  opacity: 0.6;
+}
+
+.sort-icon.active {
+  opacity: 1;
+}
+
+/* -----------------------------
+   Search Bar Styling
+----------------------------- */
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.search-wrapper .search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+.search-input {
+  padding: 8px 8px 8px 32px;
+  border: 1px solid rgb(229, 234, 239);
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* -----------------------------
+   Pagination Controls Styling
+----------------------------- */
+.pagination-controls {
+  min-height: 52px;
+  padding-right: 2px;
+  overflow: auto;
+  color: rgb(42, 53, 71);
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
+
+.pagination-controls .page-navigation {
+  font-size: 0.75rem;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.pagination-controls .page-navigation button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  flex: 0 0 auto;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pagination-controls .page-navigation button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-controls .rows-per-page select {
+  font-weight: 400;
+  line-height: 1.4375em;
+  cursor: pointer;
+  margin-right: 32px;
+  margin-left: 8px;
+  border: none;
+}
+
+.pagination-controls.bottom {
+  border-top: 1px solid rgb(229, 234, 239);
+  padding-top: 16px;
+}
+
+.rows-per-page label {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* -----------------------------
+   Status Label Styling
+----------------------------- */
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 8px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background-color 300ms, box-shadow 300ms;
+}
+
+/* -----------------------------
+   Error Styling
+----------------------------- */
+
+.error-message {
+  color: red;
+  padding: 16px;
+  text-align: center;
+}
+
+
+.p-AddressElement input{
+  -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: var(--from-radius);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size: var(--form-font-size);
+    font-weight: 400;
+    line-height: 1.4375em;
+    color: rgb(42, 53, 71);
+    border-color: var(--form-border);
+    -webkit-animation-duration: 10ms;
+    animation-duration: 10ms;
+    box-shadow: none;
+}

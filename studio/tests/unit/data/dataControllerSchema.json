@@ -1,0 +1,138 @@
+{
+    "_id" : "667b0152861cae7b0990e44a",
+    "appID" : "6679a4ab861cae7b0990d870",
+    "schema" : {
+      "type" : {
+        "title" : "type",
+        "properties" : { },
+        "type" : "string"
+      },
+      "foo" : {
+        "title" : "foo",
+        "properties" : {
+          "bar" : {
+            "title" : "bar",
+            "properties" : {
+              "jackson" : {
+                "title" : "jackson",
+                "properties" : { },
+                "type" : "string"
+              }
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "list" : {
+        "title" : "list",
+        "properties" : { },
+        "type" : "string"
+      },
+      "user" : {
+        "title" : "user",
+        "properties" : {
+          "name" : {
+            "title" : "name",
+            "properties" : { },
+            "type" : "string"
+          },
+          "lastname" : {
+            "title" : "lastname",
+            "properties" : { },
+            "type" : "string",
+            "defaultValue" : "Papa"
+          },
+          "age" : {
+            "title" : "age",
+            "properties" : { },
+            "type" : "string"
+          },
+          "address" : {
+            "title" : "address",
+            "properties" : {
+              "street" : {
+                "title" : "street",
+                "properties" : { },
+                "type" : "string"
+              },
+              "city" : {
+                "title" : "city",
+                "properties" : { },
+                "type" : "string"
+              }
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "API" : {
+        "title" : "API",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "title" : "id",
+              "properties" : { },
+              "type" : "string"
+            },
+            "email" : {
+              "title" : "email",
+              "properties" : { },
+              "type" : "string"
+            },
+            "name" : {
+              "title" : "name",
+              "properties" : { },
+              "type" : "string"
+            },
+            "lastname" : {
+              "title" : "lastname",
+              "properties" : { },
+              "type" : "string"
+            },
+            "hasNewsletter" : {
+              "title" : "hasNewsletter",
+              "properties" : { },
+              "type" : "string"
+            }
+          }
+        },
+        "type" : "array"
+      },
+      "cow" : {
+        "title" : "cow",
+        "properties" : {
+          "name" : {
+            "title" : "name",
+            "properties" : { },
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "doh" : {
+        "title" : "doh",
+        "properties" : {
+          "name" : {
+            "title" : "name",
+            "properties" : { },
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "aaa" : {
+        "title" : "aaa",
+        "properties" : {
+          "aaa" : {
+            "title" : "aaa",
+            "properties" : { },
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      }
+    }
+  }

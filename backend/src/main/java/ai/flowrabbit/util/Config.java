@@ -9,7 +9,9 @@ public class Config {
 
     private static final Logger logger = LoggerFactory.getLogger(Config.class);
 
-    public static final String ENV_ADMIN = "FLR_ADMIN";
+    public static final String ENV_ADMIN_EMAIL = "FLR_ADMIN_EMAIL";
+
+    public static final String ENV_ADMIN_PASSWORD = "FLR_ADMIN_PASSWORD";
 
     public static final String ENV_HTTP_HOST = "FLR_HTTP_HOST";
 
@@ -47,7 +49,9 @@ public class Config {
 
     public static final String ENV_DEPLOYMENT = "FLR_DEPLOYMENT";
 
-    public static final String ADMIN = "admin";
+    public static final String ADMIN_EMAIL = "admin.email";
+
+    public static final String ADMIN_PASSWORD = "admin.password";
 
     public static final String HTTP_HOST = "http.host";
 
@@ -233,9 +237,13 @@ public class Config {
         JsonObject result = config.copy();
 
 
-        if (env.containsKey(ENV_ADMIN)) {
-            logger.warn("mergeEncIntoConfig() > " + ENV_ADMIN);
-            result.put(ADMIN, env.get(ENV_ADMIN));
+        if (env.containsKey(ENV_ADMIN_EMAIL)) {
+            logger.warn("mergeEncIntoConfig() > " + ENV_ADMIN_EMAIL);
+            result.put(ADMIN_EMAIL, env.get(ENV_ADMIN_EMAIL));
+        }
+        if (env.containsKey(ENV_ADMIN_PASSWORD)) {
+            logger.warn("mergeEncIntoConfig() > " + ENV_ADMIN_PASSWORD);
+            result.put(ADMIN_PASSWORD, env.get(ENV_ADMIN_PASSWORD));
         }
 
         if (env.containsKey(ENV_HTTP_HOST)) {
@@ -334,8 +342,12 @@ public class Config {
     }
 
 
-    public static String getAdmin(JsonObject mergedConfig, String defaultAdmin) {
-        return mergedConfig.getString(ADMIN, defaultAdmin);
+    public static String getAdminEmail(JsonObject mergedConfig, String defaultAdmin) {
+        return mergedConfig.getString(ADMIN_EMAIL, defaultAdmin);
+    }
+
+    public static String getAdminPassword(JsonObject mergedConfig) {
+        return mergedConfig.getString(ADMIN_PASSWORD);
     }
 }
 

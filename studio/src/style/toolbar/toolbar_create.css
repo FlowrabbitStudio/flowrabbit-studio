@@ -1,0 +1,373 @@
+.MatcCreateSearch {
+	color: #333;
+	margin-bottom: 10px;
+}
+
+.MatcToolbar .MatcCreateSearchBtn,
+.MatcCreateSearchBtn {
+	color: #ccc;
+	font-size: 24px;
+	padding: 5px;
+    cursor: pointer;
+    right: 30px;
+}
+
+.MatcCreateSearchContainer {
+	position: relative;
+}
+.MatcCreateSearchContainer input {
+	margin: 0px;
+}
+
+.MatcSidebarList .MatcCreateSearchContainer {
+	display: flex;
+}
+
+
+.MatcSidebarList .MatcCreateSearchContainer input{
+	border-radius: 12px;
+    padding: 0 10px;
+}
+
+.MatcCreateSearchContainer .MatcQIcon{
+	position: absolute;
+	right: 4px;
+	top: 5px;
+	cursor: pointer;
+}
+
+.MatcCreateBtnLeft {}
+
+.MatcCreateSubCategory {}
+
+.MatcCreateImportCntr {
+	height: 530px;
+	overflow: auto;
+	font-size: 14px;
+	margin-bottom: 20px;
+	background: rgb(245, 245, 245);
+	border: 1px solid #cecece;
+	border-radius: 3px;
+	padding: 16px;
+}
+
+.MatcCreateSubCategory h3 {
+	font-size: 18px;
+}
+
+.MatcCreateCatCntr {
+	height: 550px;
+	overflow: auto;
+}
+
+
+.MatcCreateBtnRight {
+	border-right: 0px solid #cecece;
+	flex-grow: 1;
+	width: 100%;
+}
+
+.MatcCreateBtnCntr .container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.MatcCreateBtnElementList {
+	overflow-y: auto;
+	align-self: center;
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElement {
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 6px;
+	margin-right: 10px;
+	vertical-align: top;
+	cursor: pointer;
+	position: relative;
+	background: none;
+	border-radius: 12px;
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElement:hover {
+	border: 1px solid var(--sidebar-selected);
+	background: var(--sidebar-selected);
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElementLogic {
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	vertical-align: top;
+	cursor: pointer;
+	position: relative;
+	background: none;
+	border-radius: 12px;
+    width: 110px;
+    height: 110px;
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElementLogic:hover {
+	border: 1px solid var(--layer-list-selection);
+	background: var(--layer-list-selection);
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElementLogic .MatcCreateBtnElementLogicCntr span{
+	height: 31px;
+	font-size: 25px;
+}
+
+.MatcCreateBtnElementList .MatcCreateBtnElementLogic .MatcCreateBtnElementLogicCntr .MatcToolbarPopUpLabel{
+	font-size: 12px;
+	font-weight: 400;
+	color:#000;
+}
+
+
+
+.MatcLogicScrollerContainer {
+    overflow-y: auto;
+	padding: 16px;
+	padding-top: 8px;
+}
+
+.MatcCreateBtnElementLogicCntr {
+    display: grid;
+    place-items: center; /* Centers children in both x and y axis */
+    height: 100%; /* Takes the full height of the parent */
+}
+
+.MatcCreateBtnElementLabel {
+	transition: all 0.2;
+	
+	overflow: hidden;
+	width: 100%;
+	font-size: 11px;
+}
+
+
+.MatcCreateBtnElement:hover .MatcCreateBtnElementLabel {
+	opacity: 1;
+}
+
+.MatcCreateBtnCntr .MatcCreateBtnElementPreview input {
+	width: 100%;
+}
+
+.MatcCreateBtnElementPreview {
+	width: 80px;
+	min-height: 80px;
+	overflow: visible;
+	position: relative;
+}
+
+.MatcCreateBtnElementPreview .MatcWidgetTypeRestLabel{
+	display: none;
+}
+
+.MatcCreateCat {
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.MatcCreateCatTitle {
+	display: flex;
+	justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 5px;
+	align-items: center;
+	margin: 5px 0;
+    padding: 4px 10px;
+    border-radius: 0px;
+	cursor: pointer;
+}
+
+.MatcCreateCatTitle .MatcCreateCatChevron {
+  margin-left: 8px;
+}
+
+.MatcCreateCatTitle .MatcCreateCatTitlelabel{	
+	font-size: 11px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.MatcCreateCatTitle .MatcCreateCatTitleNum{	
+	font-size: 12px;
+    margin-left: 5px;
+    font-weight: 600;
+    color: #8e959d;
+}
+
+.MatcCreateCatTitle .MatcCreateCatTitleLink {    
+    font-size: 12px;
+	color: var(--primary-color);
+	cursor: pointer;	
+}
+
+.MatcToolbar .MatcToolbarDropDownButton .MatcCreateBtnCntr li {
+	margin-bottom: 4px;
+	border: none;
+	border-bottom: 1px solid transparent;
+	padding-left: 0px;
+}
+
+.MatcToolbarDropDownButton .MatcCreateBtnCntr li a {
+	color: #555;
+}
+
+.MatcToolbar .MatcToolbarDropDownButton .MatcCreateBtnCntr li:HOVER {
+	background: none;
+}
+
+.MatcToolbar .MatcToolbarDropDownButton .MatcCreateBtnCntr li:HOVER a {
+	color: #3787f2;
+}
+
+.MatcToolbarDropDownButton .MatcCreateBtnCntr li.MatcSelected a {
+	color: #3787f2;
+}
+
+.MatcToolbarDropDownButton .MatcCreateBtnCntr li.MatcSelected {
+	color: #3787f2;
+}
+
+.MatcToolbarDropDownButton .MatcCreateBtnCntr li:HOVER a,
+.MatcToolbarDropDownButton .MatcCreateBtnCntr li.MatcSelected a {}
+
+.MatcCreateBtnCntr a:HOVER {
+	text-decoration: none;
+}
+
+.MatcCreateBtnRemove {
+	position: absolute;
+	display: none;
+	color: #f83a3a;
+	top: 5px;
+	right: 5px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.MatcCreateBtnElement:hover .MatcCreateBtnRemove {
+	display: block;
+}
+
+.MatcCreateCatChildren {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	column-gap: 16px;
+	align-self: center;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.MatcCreateCatChildren .MatcCreateBtnElement {
+	margin: 0px;
+}
+
+.category-scroll-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.category-container {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	height: 32px;
+	margin-top: 8px;
+	gap: 8px;
+}
+
+
+.category-badge, .category-header-badge {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 11px;
+    height: 24px;
+    padding: 2px 8px;
+	cursor: pointer;
+    display: flex;
+	align-items: center;
+	transition: all 0.2s;
+	border-radius: 16px;
+}
+
+.category-badge, .category-header-badge .icon{    
+    padding: 0px;
+}
+
+.category-header-badge:hover {
+	color: var(--property-tab-selected-color);
+}
+
+.category-header-badge.active {
+	color: var(--property-tab-selected-color);
+	background: var(--property-tab-active-background);
+
+}
+
+.category-header-badge.allactive,
+.category-header-badge.active.allactive {
+	color: var(--property-tab-selected-color);
+}
+
+.category-container .scroll-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px !important;
+}
+
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+	gap:5px;
+}
+
+.categoriesTitleContainer {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+    padding-bottom: 5px;
+}
+
+.categoriesTitleContainer .mdi{
+	cursor: pointer;
+}
+
+.categoriesTitle {
+	font-size: 18px;
+    font-weight: 600;
+}
+
+/* Hide scrollbar for aesthetic purposes */
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-scroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.MatcSidebarHeader {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background-color: #fff; 
+	padding: 8px 16px 0 16px;
+	border-bottom: 1px solid rgba(0,0,0, 0.1);
+    padding-bottom: 8px;
+}
+
+.MatcCreateBtnElement .MatchWidgetTypeScreen {
+	border: 1px solid	#cecece;
+	border-radius: 3px;
+}

@@ -1,0 +1,214 @@
+{
+  "_id" : "649c9a57f745331eb7821d4c",
+  "version" : 2,
+  "publicType" : "forbidden",
+  "name" : "Theme",
+  "description" : "",
+  "screenSize" : {
+    "w" : 376,
+    "h" : 808
+  },
+  "type" : "smartphone",
+  "screens" : { },
+  "widgets" : { },
+  "lines" : { },
+  "groups" : { },
+  "templates" : { },
+  "designtokens" : { },
+  "theme" : {
+    "@label-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@label-color:error" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@font-size-s" : {
+      "value" : 12,
+      "type" : "fontSize"
+    },
+    "@font-size-m" : {
+      "value" : 14,
+      "type" : "fontSize"
+    },
+    "@font-size-l" : {
+      "value" : 18,
+      "type" : "fontSize"
+    },
+    "@font-family" : {
+      "value" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+      "type" : "fontFamily"
+    },
+    "@font-weight" : {
+      "value" : "",
+      "type" : "fontWeight"
+    },
+    "@letterSpacing" : {
+      "value" : 1,
+      "type" : "letterSpacing"
+    },
+    "@lineHeight" : {
+      "value" : 1,
+      "type" : "lineHeight"
+    },
+    "@form-border-width" : {
+      "value" : 1,
+      "type" : "borderWidth"
+    },
+    "@form-border-radius" : {
+      "value" : 2,
+      "type" : "borderRadius"
+    },
+    "@form-padding-horizontal" : {
+      "value" : 8,
+      "type" : "paddingHorizontal"
+    },
+    "@form-padding-vertical" : {
+      "value" : 4,
+      "type" : "paddingVertical"
+    },
+    "@form-border-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@form-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@form-background" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@form-border-color:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@form-color:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@form-background:hover" : {
+      "value" : "#FEFEFE",
+      "type" : "color"
+    },
+    "@form-border-color:focus" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@form-color:focus" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@form-background:focus" : {
+      "value" : "#FEFEFE",
+      "type" : "color"
+    },
+    "@form-border-color:error" : {
+      "value" : "#f43535",
+      "type" : "color"
+    },
+    "@form-color:error" : {
+      "value" : "#f43535",
+      "type" : "color"
+    },
+    "@form-background:error" : {
+      "value" : "#efc5c5",
+      "type" : "color"
+    },
+    "@button-border-width" : {
+      "value" : 1,
+      "type" : "borderWidth"
+    },
+    "@button-border-radius" : {
+      "value" : 2,
+      "type" : "borderRadius"
+    },
+    "@button-primary-border-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@button-primary-background" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@button-primary-color" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@button-primary-border-color:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@button-primary-background:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@button-primary-color:hover" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@button-secundary-border-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@button-secundary-background" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@button-secundary-color" : {
+      "value" : "#333333",
+      "type" : "color"
+    },
+    "@button-secundary-border-color:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@button-secundary-background:hover" : {
+      "value" : "#000000",
+      "type" : "color"
+    },
+    "@button-secundary-color:hover" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@button-danger-border-color" : {
+      "value" : "#f43535",
+      "type" : "color"
+    },
+    "@button-danger-background" : {
+      "value" : "#f43535",
+      "type" : "color"
+    },
+    "@button-danger-color" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    },
+    "@button-danger-border-color:hover" : {
+      "value" : "#f60404",
+      "type" : "color"
+    },
+    "@button-danger-background:hover" : {
+      "value" : "#f60404",
+      "type" : "color"
+    },
+    "@button-danger-color:hover" : {
+      "value" : "#FFFFFF",
+      "type" : "color"
+    }
+  },
+  "lastUUID" : 10000,
+  "lastUpdate" : 0,
+  "created" : 1687984727621,
+  "startScreen" : "",
+  "grid" : {
+    "w" : 8,
+    "h" : 8,
+    "style" : "line",
+    "color" : "#cecece",
+    "visible" : false,
+    "enabled" : true
+  },
+  "domain" : "Quant-UX.com",
+  "id" : "649c9a57f745331eb7821d4c"
+}

@@ -1,0 +1,706 @@
+[
+  {
+    "id": 1,
+    "email": "john.doe@example.com",
+    "name": "John",
+    "lastname": "Doe",
+    "hasNewsletter": true
+  },
+  {
+    "id": 2,
+    "email": "jane.smith@example.com",
+    "name": "Jane",
+    "lastname": "Smith",
+    "hasNewsletter": false
+  },
+  {
+    "id": 3,
+    "email": "mike.jones@example.com",
+    "name": "Mike",
+    "lastname": "Jones",
+    "hasNewsletter": true
+  },
+  {
+    "id": 4,
+    "email": "sarah.wilson@example.com",
+    "name": "Sarah",
+    "lastname": "Wilson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 5,
+    "email": "david.brown@example.com",
+    "name": "David",
+    "lastname": "Brown",
+    "hasNewsletter": true
+  },
+  {
+    "id": 6,
+    "email": "emily.adams@example.com",
+    "name": "Emily",
+    "lastname": "Adams",
+    "hasNewsletter": true
+  },
+  {
+    "id": 7,
+    "email": "chris.roberts@example.com",
+    "name": "Chris",
+    "lastname": "Roberts",
+    "hasNewsletter": false
+  },
+  {
+    "id": 8,
+    "email": "lisa.walker@example.com",
+    "name": "Lisa",
+    "lastname": "Walker",
+    "hasNewsletter": true
+  },
+  {
+    "id": 9,
+    "email": "matt.wright@example.com",
+    "name": "Matt",
+    "lastname": "Wright",
+    "hasNewsletter": false
+  },
+  {
+    "id": 10,
+    "email": "amanda.taylor@example.com",
+    "name": "Amanda",
+    "lastname": "Taylor",
+    "hasNewsletter": true
+  },
+  {
+    "id": 11,
+    "email": "kevin.anderson@example.com",
+    "name": "Kevin",
+    "lastname": "Anderson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 12,
+    "email": "jessica.miller@example.com",
+    "name": "Jessica",
+    "lastname": "Miller",
+    "hasNewsletter": true
+  },
+  {
+    "id": 13,
+    "email": "peter.cook@example.com",
+    "name": "Peter",
+    "lastname": "Cook",
+    "hasNewsletter": true
+  },
+  {
+    "id": 14,
+    "email": "laura.white@example.com",
+    "name": "Laura",
+    "lastname": "White",
+    "hasNewsletter": false
+  },
+  {
+    "id": 15,
+    "email": "mark.harris@example.com",
+    "name": "Mark",
+    "lastname": "Harris",
+    "hasNewsletter": true
+  },
+  {
+    "id": 16,
+    "email": "natalie.green@example.com",
+    "name": "Natalie",
+    "lastname": "Green",
+    "hasNewsletter": true
+  },
+  {
+    "id": 17,
+    "email": "andrew.king@example.com",
+    "name": "Andrew",
+    "lastname": "King",
+    "hasNewsletter": false
+  },
+  {
+    "id": 18,
+    "email": "olivia.scott@example.com",
+    "name": "Olivia",
+    "lastname": "Scott",
+    "hasNewsletter": true
+  },
+  {
+    "id": 19,
+    "email": "ryan.wilson@example.com",
+    "name": "Ryan",
+    "lastname": "Wilson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 20,
+    "email": "sophia.young@example.com",
+    "name": "Sophia",
+    "lastname": "Young",
+    "hasNewsletter": true
+  },
+  {
+    "id": 21,
+    "email": "daniel.hill@example.com",
+    "name": "Daniel",
+    "lastname": "Hill",
+    "hasNewsletter": false
+  },
+  {
+    "id": 22,
+    "email": "oliver.carter@example.com",
+    "name": "Oliver",
+    "lastname": "Carter",
+    "hasNewsletter": true
+  },
+  {
+    "id": 23,
+    "email": "lily.morris@example.com",
+    "name": "Lily",
+    "lastname": "Morris",
+    "hasNewsletter": true
+  },
+  {
+    "id": 24,
+    "email": "jacob.bailey@example.com",
+    "name": "Jacob",
+    "lastname": "Bailey",
+    "hasNewsletter": false
+  },
+  {
+    "id": 25,
+    "email": "mia.ross@example.com",
+    "name": "Mia",
+    "lastname": "Ross",
+    "hasNewsletter": true
+  },
+  {
+    "id": 26,
+    "email": "ethan.perry@example.com",
+    "name": "Ethan",
+    "lastname": "Perry",
+    "hasNewsletter": true
+  },
+  {
+    "id": 27,
+    "email": "ava.cooper@example.com",
+    "name": "Ava",
+    "lastname": "Cooper",
+    "hasNewsletter": false
+  },
+  {
+    "id": 28,
+    "email": "logan.reed@example.com",
+    "name": "Logan",
+    "lastname": "Reed",
+    "hasNewsletter": true
+  },
+  {
+    "id": 29,
+    "email": "grace.richards@example.com",
+    "name": "Grace",
+    "lastname": "Richards",
+    "hasNewsletter": false
+  },
+  {
+    "id": 30,
+    "email": "jack.howard@example.com",
+    "name": "Jack",
+    "lastname": "Howard",
+    "hasNewsletter": true
+  },
+  {
+    "id": 31,
+    "email": "amelia.cook@example.com",
+    "name": "Amelia",
+    "lastname": "Cook",
+    "hasNewsletter": true
+  },
+  {
+    "id": 32,
+    "email": "luke.bell@example.com",
+    "name": "Luke",
+    "lastname": "Bell",
+    "hasNewsletter": false
+  },
+  {
+    "id": 33,
+    "email": "ruby.peterson@example.com",
+    "name": "Ruby",
+    "lastname": "Peterson",
+    "hasNewsletter": true
+  },
+  {
+    "id": 
+
+34,
+    "email": "ethan.hughes@example.com",
+    "name": "Ethan",
+    "lastname": "Hughes",
+    "hasNewsletter": true
+  },
+  {
+    "id": 35,
+    "email": "ava.long@example.com",
+    "name": "Ava",
+    "lastname": "Long",
+    "hasNewsletter": false
+  },
+  {
+    "id": 36,
+    "email": "jacob.wood@example.com",
+    "name": "Jacob",
+    "lastname": "Wood",
+    "hasNewsletter": true
+  },
+  {
+    "id": 37,
+    "email": "mia.myers@example.com",
+    "name": "Mia",
+    "lastname": "Myers",
+    "hasNewsletter": true
+  },
+  {
+    "id": 38,
+    "email": "owen.richardson@example.com",
+    "name": "Owen",
+    "lastname": "Richardson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 39,
+    "email": "isabella.hill@example.com",
+    "name": "Isabella",
+    "lastname": "Hill",
+    "hasNewsletter": true
+  },
+  {
+    "id": 40,
+    "email": "noah.baker@example.com",
+    "name": "Noah",
+    "lastname": "Baker",
+    "hasNewsletter": false
+  },
+  {
+    "id": 41,
+    "email": "olivia.kelly@example.com",
+    "name": "Olivia",
+    "lastname": "Kelly",
+    "hasNewsletter": true
+  },
+  {
+    "id": 42,
+    "email": "james.bailey@example.com",
+    "name": "James",
+    "lastname": "Bailey",
+    "hasNewsletter": true
+  },
+  {
+    "id": 43,
+    "email": "emma.bennett@example.com",
+    "name": "Emma",
+    "lastname": "Bennett",
+    "hasNewsletter": false
+  },
+  {
+    "id": 44,
+    "email": "william.russell@example.com",
+    "name": "William",
+    "lastname": "Russell",
+    "hasNewsletter": true
+  },
+  {
+    "id": 45,
+    "email": "mia.cole@example.com",
+    "name": "Mia",
+    "lastname": "Cole",
+    "hasNewsletter": true
+  },
+  {
+    "id": 46,
+    "email": "charlie.peterson@example.com",
+    "name": "Charlie",
+    "lastname": "Peterson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 47,
+    "email": "lucas.stewart@example.com",
+    "name": "Lucas",
+    "lastname": "Stewart",
+    "hasNewsletter": true
+  },
+  {
+    "id": 48,
+    "email": "grace.murphy@example.com",
+    "name": "Grace",
+    "lastname": "Murphy",
+    "hasNewsletter": true
+  },
+  {
+    "id": 49,
+    "email": "leo.bell@example.com",
+    "name": "Leo",
+    "lastname": "Bell",
+    "hasNewsletter": false
+  },
+  {
+    "id": 50,
+    "email": "ava.thompson@example.com",
+    "name": "Ava",
+    "lastname": "Thompson",
+    "hasNewsletter": true
+  },
+  {
+    "id": 51,
+    "email": "mason.rogers@example.com",
+    "name": "Mason",
+    "lastname": "Rogers",
+    "hasNewsletter": false
+  },
+  {
+    "id": 52,
+    "email": "amelia.ross@example.com",
+    "name": "Amelia",
+    "lastname": "Ross",
+    "hasNewsletter": true
+  },
+  {
+    "id": 53,
+    "email": "ethan.ward@example.com",
+    "name": "Ethan",
+    "lastname": "Ward",
+    "hasNewsletter": true
+  },
+  {
+    "id": 54,
+    "email": "ava.cook@example.com",
+    "name": "Ava",
+    "lastname": "Cook",
+    "hasNewsletter": false
+  },
+  {
+    "id": 55,
+    "email": "oliver.richardson@example.com",
+    "name": "Oliver",
+    "lastname": "Richardson",
+    "hasNewsletter": true
+  },
+  {
+    "id": 56,
+    "email": "isabella.grant@example.com",
+    "name": "Isabella",
+    "lastname": "Grant",
+    "hasNewsletter": true
+  },
+  {
+    "id": 57,
+    "email": "ryan.harrison@example.com",
+    "name": "Ryan",
+    "lastname": "Harrison",
+    "hasNewsletter": false
+  },
+  {
+    "id": 58,
+    "email": "sophia.edwards@example.com",
+    "name": "Sophia",
+    "lastname": "Edwards",
+    "hasNewsletter": true
+  },
+  {
+    "id": 59,
+    "email": "thomas.cooper@example.com",
+    "name": "Thomas",
+    "lastname": "Cooper",
+    "hasNewsletter": true
+  },
+  {
+    "id": 60,
+    "email": "lily.gonzalez@example.com",
+    "name": "Lily",
+    "lastname": "Gonzalez",
+    "hasNewsletter": false
+  },
+  {
+    "id": 61,
+    "email": "joshua.roberts@example.com",
+    "name": "Joshua",
+    "lastname": "Roberts",
+    "hasNewsletter": true
+  },
+  {
+    "id": 62,
+    "email": "amelia.hall@example.com",
+    "name": "Amelia",
+    "lastname": "Hall",
+    "hasNewsletter": true
+  },
+  {
+    "id": 63,
+    "email": "dylan.ward@example.com",
+    "name": "Dylan",
+    "lastname": "Ward",
+    "hasNewsletter": false
+  },
+  {
+    "id": 64,
+    "email": "victoria.walker@example.com",
+    "name": "Victoria",
+    "lastname": "Walker",
+    "hasNewsletter": true
+  },
+  {
+    "id": 65,
+    "email": "luke.kelly@example.com",
+    "name": "Luke",
+    "lastname": "Kelly",
+    "hasNewsletter": true
+  },
+  {
+    "id": 66,
+    "email": "zoe.cook@example.com",
+    "name": "Zoe",
+    "lastname": "Cook",
+    "hasNewsletter": false
+  },
+  {
+    "id": 67,
+    "email": "nathan.bell@example.com",
+    "name": "Nathan",
+    "lastname": "Bell",
+    "hasNewsletter":
+
+ true
+  },
+  {
+    "id": 68,
+    "email": "sophie.howard@example.com",
+    "name": "Sophie",
+    "lastname": "Howard",
+    "hasNewsletter": true
+  },
+  {
+    "id": 69,
+    "email": "connor.butler@example.com",
+    "name": "Connor",
+    "lastname": "Butler",
+    "hasNewsletter": false
+  },
+  {
+    "id": 70,
+    "email": "hannah.perez@example.com",
+    "name": "Hannah",
+    "lastname": "Perez",
+    "hasNewsletter": true
+  },
+  {
+    "id": 71,
+    "email": "samuel.gonzalez@example.com",
+    "name": "Samuel",
+    "lastname": "Gonzalez",
+    "hasNewsletter": true
+  },
+  {
+    "id": 72,
+    "email": "ruby.wright@example.com",
+    "name": "Ruby",
+    "lastname": "Wright",
+    "hasNewsletter": false
+  },
+  {
+    "id": 73,
+    "email": "alexander.rogers@example.com",
+    "name": "Alexander",
+    "lastname": "Rogers",
+    "hasNewsletter": true
+  },
+  {
+    "id": 74,
+    "email": "zoey.bailey@example.com",
+    "name": "Zoey",
+    "lastname": "Bailey",
+    "hasNewsletter": true
+  },
+  {
+    "id": 75,
+    "email": "jackson.harris@example.com",
+    "name": "Jackson",
+    "lastname": "Harris",
+    "hasNewsletter": false
+  },
+  {
+    "id": 76,
+    "email": "leah.cooper@example.com",
+    "name": "Leah",
+    "lastname": "Cooper",
+    "hasNewsletter": true
+  },
+  {
+    "id": 77,
+    "email": "luke.hall@example.com",
+    "name": "Luke",
+    "lastname": "Hall",
+    "hasNewsletter": true
+  },
+  {
+    "id": 78,
+    "email": "madison.murphy@example.com",
+    "name": "Madison",
+    "lastname": "Murphy",
+    "hasNewsletter": false
+  },
+  {
+    "id": 79,
+    "email": "daniel.mitchell@example.com",
+    "name": "Daniel",
+    "lastname": "Mitchell",
+    "hasNewsletter": true
+  },
+  {
+    "id": 80,
+    "email": "scarlett.roberts@example.com",
+    "name": "Scarlett",
+    "lastname": "Roberts",
+    "hasNewsletter": true
+  },
+  {
+    "id": 81,
+    "email": "aiden.cox@example.com",
+    "name": "Aiden",
+    "lastname": "Cox",
+    "hasNewsletter": false
+  },
+  {
+    "id": 82,
+    "email": "aubrey.ward@example.com",
+    "name": "Aubrey",
+    "lastname": "Ward",
+    "hasNewsletter": true
+  },
+  {
+    "id": 83,
+    "email": "evan.stewart@example.com",
+    "name": "Evan",
+    "lastname": "Stewart",
+    "hasNewsletter": true
+  },
+  {
+    "id": 84,
+    "email": "claire.richardson@example.com",
+    "name": "Claire",
+    "lastname": "Richardson",
+    "hasNewsletter": false
+  },
+  {
+    "id": 85,
+    "email": "nolan.martinez@example.com",
+    "name": "Nolan",
+    "lastname": "Martinez",
+    "hasNewsletter": true
+  },
+  {
+    "id": 86,
+    "email": "maya.gonzalez@example.com",
+    "name": "Maya",
+    "lastname": "Gonzalez",
+    "hasNewsletter": true
+  },
+  {
+    "id": 87,
+    "email": "blake.miller@example.com",
+    "name": "Blake",
+    "lastname": "Miller",
+    "hasNewsletter": false
+  },
+  {
+    "id": 88,
+    "email": "emilia.perez@example.com",
+    "name": "Emilia",
+    "lastname": "Perez",
+    "hasNewsletter": true
+  },
+  {
+    "id": 89,
+    "email": "nathan.howard@example.com",
+    "name": "Nathan",
+    "lastname": "Howard",
+    "hasNewsletter": true
+  },
+  {
+    "id": 90,
+    "email": "natalie.hall@example.com",
+    "name": "Natalie",
+    "lastname": "Hall",
+    "hasNewsletter": false
+  },
+  {
+    "id": 91,
+    "email": "julian.cox@example.com",
+    "name": "Julian",
+    "lastname": "Cox",
+    "hasNewsletter": true
+  },
+  {
+    "id": 92,
+    "email": "audrey.carter@example.com",
+    "name": "Audrey",
+    "lastname": "Carter",
+    "hasNewsletter": true
+  },
+  {
+    "id": 93,
+    "email": "wyatt.flores@example.com",
+    "name": "Wyatt",
+    "lastname": "Flores",
+    "hasNewsletter": false
+  },
+  {
+    "id": 94,
+    "email": "zoe.stewart@example.com",
+    "name": "Zoe",
+    "lastname": "Stewart",
+    "hasNewsletter": true
+  },
+  {
+    "id": 95,
+    "email": "jacob.cook@example.com",
+    "name": "Jacob",
+    "lastname": "Cook",
+    "hasNewsletter": true
+  },
+  {
+    "id": 96,
+    "email": "sophie.hughes@example.com",
+    "name": "Sophie",
+    "lastname": "Hughes",
+    "hasNewsletter": false
+  },
+  {
+    "id": 97,
+    "email": "jackson.ward@example.com",
+    "name": "Jackson",
+    "lastname": "Ward",
+    "hasNewsletter": true
+  },
+  {
+    "id": 98,
+    "email": "zoey.bennett@example.com",
+    "name": "Zoey",
+    "lastname": "Bennett",
+    "hasNewsletter": true
+  },
+  {
+    "id": 99,
+    "email": "asher.young@example.com",
+    "name": "Asher",
+    "lastname": "Young",
+    "hasNewsletter": false
+  },
+  {
+    "id": 100,
+    "email": "elena.mitchell@example.com",
+    "name": "Elena",
+    "lastname": "Mitchell",
+    "hasNewsletter": true
+  }
+]

@@ -1,0 +1,25 @@
+[
+	{
+		"id": "Link",
+		"type": "Button",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "AForm",
+		"name": "Link",
+		"_extends": "Label",
+		"props": {
+			"label": "Click Me",
+			"newTab": false
+		},
+		"has": {
+			"onclick": true,
+			"label": true
+		},
+		"style": {
+			"textDecoration": "underline"
+		},
+		"hover": {
+			"color": "@label-color:hover"
+		}
+	}
+]

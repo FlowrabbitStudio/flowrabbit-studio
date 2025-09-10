@@ -1,0 +1,213 @@
+/****************************************************
+ * Action Button
+ ****************************************************/
+
+ .MatcAction{
+	width: 100%;
+}
+
+.MatcAction .MatcMultiActionDropDown.MatcToolbarDropDownButton{
+	text-align: center;
+	border:none;
+	padding: 5px;
+	transition: all 0.25s ease 0s;
+	color: #fff;
+}
+
+.MatcAction .MatcMultiActionDropDown .MatcToolbarItem,
+.MatcAction .MatcMultiActionDropDown .MatcToolbarItem .MatcToolbarItemLabel {
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+}
+
+.MatcToobarPropertiesSection .MatcToolbarFormularLabel {
+	padding-left: 34px;
+	text-align: left;
+	width: 100%;
+}
+
+
+
+.MatcMultiActionDropDownPopup.MatcToolbarPopUp {
+	width:200px;
+	background: var(--primary-color);
+	color:#fff;
+}
+
+.MatcMultiActionDropDownPopup.MatcToolbarPopUp .MatcToolbarPopUpWrapper{
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.MatcMultiActionDropDownPopup.MatcToolbarPopUp .MatcToolbarPopUpArrow{
+	background: var(--primary-color);
+}
+
+.MatcToolbarDropDownButtonPopup.MatcMultiActionDropDownPopup li:hover {
+	background: var(--primary-color-hover);
+	color: #fff;
+}
+
+.MatcToolbarDropDownButtonPopup .MatcToolbarPopUpBackBtn{
+	position: absolute;
+	top: 10px;
+    left: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.MatcToolbarDropDownButtonPopup .MatcToolbarPopUpBackBtn:hover{
+	background: var(--primary-color);
+}
+
+.MatcToolbarDropDownButtonPopup .MatcToolbarDropDownButtonLine {
+	height: 1px;
+	padding: 0px;
+	border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.MatcMultiActionDropDown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.MatcToobarPropertiesSection .MatcAction .MatcMultiActionDropDown.MatcToolbarDropDownButton:hover {
+	border: none;
+}
+
+.MatcMultiActionDropDown .MatcButtonIconLabel{
+	vertical-align: middle;
+}
+
+.MatcAction .MatcMultiActionDropDown.MatcToolbarDropDownButton:HOVER{
+	border:none;
+}
+
+.MatcAction .MatcMultiActionDropDown.MatcToolbarDropDownButton .MatcToolbarItemIcon{
+	width: auto;
+	color:#fff;
+}
+
+.MatcAction .MatcMultiActionDropDown.MatcToolbarDropDownButton .caret{
+	display: none;
+}
+
+
+.MatcAction .MatcToolbarDropDownButton .MatcToolbarItemIcon {
+	width: 100%;
+ 	text-align: left;
+	padding: 0px;
+}
+
+.MatcAction .MatcMultiActionDropDown .MatcToolbarItemIcon {
+	text-align: center;
+}
+
+.MatcToolbarDropDownButton.MatcToolbarGridFull .MatcToolbarItemIcon{
+	width: 167px;
+ 	text-align: left;
+	display: inline-flex;
+	align-items: center;
+}
+
+
+.MatcToolbarColorWithHex.MatcToolbarColor .MatcToolbarItemIcon{
+	width: 45px;
+	text-align: left;
+}
+
+.MatcAction .MatcToolbarItem{
+ 	height: auto;
+}
+
+.MatcActionDropDownType{
+	margin-right: 5px;
+}
+
+.MatcActionDropDownType{
+	margin-left: 5px;
+}
+
+.MatcAction .MatcToolbarDropDownButton .MatcToolbarPopUp,
+.MatcActionAnimProperties{
+	width: 200px;
+}
+
+.MatcAction .MatcCenter{
+	width: 100%;
+}
+
+.MatcActionRuleLabel{
+	padding-left: 30px;
+}
+
+
+
+.MatcToobarActionCntr{
+	position: relative;
+}
+
+
+.MatcAction .MatcToolbarSeparator{
+	border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    position: relative;
+}
+
+.MatcToolbarItemSubLabel{
+	padding-left: 25px;
+}
+
+.MatcAction input.MatcToolbarTinyInput{
+	width: 40px;
+}
+
+.MatcLight .MatcToobarPropertiesSection .MatcAction .MatcMultiActionDropDown .MatcToolbarDropDownButton:hover {
+    border-color: transparent;
+	background: transparent;
+}
+
+.MatcAction .MatcToolbarIconButton .MatcToolbarItemLabel {
+	justify-content: center;
+}
+
+
+/****************************************************
+ * Action Section
+ ****************************************************/
+ .MatcToobarActionSelector {
+	display: flex;	
+	align-items: center;
+	gap: 10px;
+}
+
+.MatcToobarActionSelector .MatcToolbarDropDownButtonCntr{
+	width: 180px;
+}
+
+
+.MatcToobarActionSelector .MatcToolbarDropDownButtonCntr .MatcToolbarItemIcon{
+	display: flex;
+	align-items: center;
+}
+
+.MatcToobarActionSelector .MatcToolbarDropDownButton {
+	width: auto;
+	flex-grow: 1;
+	text-align: left;
+}
+
+
+.MatcToobarActionSelector .MatcToolbarDropDownButton .MatcToolbarItemIcon{
+    width: 90%;
+}
+
+
+.MatcToobarActionSelector .MatcToobarRemoveBtn {
+	position: unset;
+	transform: none;
+}

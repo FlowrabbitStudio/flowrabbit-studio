@@ -1,0 +1,1129 @@
+{
+    "_id" : "67825b2e7baa75423b404b43",
+    "version" : 2,
+    "publicType" : "forbidden",
+    "name" : "Responsive DeignGPT",
+    "description" : "",
+    "screenSize" : {
+      "w" : 376,
+      "h" : 808
+    },
+    "type" : "responsive",
+    "screens" : {
+      "s10000_24593" : {
+        "id" : "s10000_24593",
+        "type" : "Screen",
+        "name" : "Screen",
+        "x" : 1690,
+        "y" : 1072,
+        "w" : 376,
+        "h" : 808,
+        "z" : 0,
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "style" : {
+          "background" : "#d8e2f0"
+        },
+        "props" : {
+          "start" : true
+        },
+        "has" : {
+          "image" : true
+        },
+        "children" : [ "w10002_24429", "w10001_15059", "w10003_52033", "w10004_85990" ],
+        "qssSource" : "Screen",
+        "p" : "m",
+        "modified" : 1736596293396
+      },
+      "s10005_72856" : {
+        "id" : "s10005_72856",
+        "type" : "Screen",
+        "name" : "Screen 1",
+        "x" : 1602,
+        "y" : 1091,
+        "w" : 1280,
+        "h" : 808,
+        "z" : 0,
+        "min" : {
+          "w" : 1280,
+          "h" : 720
+        },
+        "style" : {
+          "background" : "#d8e2f0"
+        },
+        "props" : { },
+        "has" : {
+          "image" : true
+        },
+        "children" : [ "w10006_73734", "w10007_69009", "w10008_97538", "w10009_96532" ],
+        "qssSource" : "Screen",
+        "p" : "d",
+        "modified" : 1736596317790
+      }
+    },
+    "widgets" : {
+      "w10001_15059" : {
+        "id" : "w10001_15059",
+        "type" : "Button",
+        "name" : "Primary",
+        "sidebar" : true,
+        "x" : 1754,
+        "y" : 1176,
+        "w" : 115,
+        "h" : 36,
+        "z" : 2,
+        "props" : {
+          "label" : "CONTAINED",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-primary-background",
+          "color" : "@button-primary-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-primary-border-color",
+          "borderBottomColor" : "@button-primary-border-color",
+          "borderRightColor" : "@button-primary-border-color",
+          "borderLeftColor" : "@button-primary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-primary-background:hover",
+          "color" : "@button-primary-color:hover",
+          "borderTopColor" : "@button-primary-border-color:hover",
+          "borderBottomColor" : "@button-primary-border-color:hover",
+          "borderRightColor" : "@button-primary-border-color:hover",
+          "borderLeftColor" : "@button-primary-border-color:hover"
+        },
+        "qssSource" : "PrimaryButton",
+        "p" : "m",
+        "created" : 1736596275559,
+        "modified" : 1736596298225
+      },
+      "w10002_24429" : {
+        "id" : "w10002_24429",
+        "type" : "Button",
+        "name" : "Danger",
+        "sidebar" : true,
+        "x" : 1754,
+        "y" : 1240,
+        "w" : 115,
+        "h" : 36,
+        "z" : 3,
+        "props" : {
+          "label" : "DANGER",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-danger-background",
+          "color" : "@button-danger-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-danger-border-color",
+          "borderBottomColor" : "@button-danger-border-color",
+          "borderRightColor" : "@button-danger-border-color",
+          "borderLeftColor" : "@button-danger-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-danger-background:hover",
+          "color" : "@button-danger-color:hover",
+          "borderTopColor" : "@button-danger-border-color:hover",
+          "borderBottomColor" : "@button-danger-border-color:hover",
+          "borderRightColor" : "@button-danger-border-color:hover",
+          "borderLeftColor" : "@button-danger-border-color:hover"
+        },
+        "qssSource" : "DangerButton",
+        "p" : "m",
+        "created" : 1736596277886,
+        "modified" : 1736596298225
+      },
+      "w10003_52033" : {
+        "id" : "w10003_52033",
+        "type" : "Button",
+        "name" : "Secondary",
+        "sidebar" : true,
+        "x" : 1882,
+        "y" : 1176,
+        "w" : 115,
+        "h" : 36,
+        "z" : 4,
+        "props" : {
+          "label" : "OUTLINED",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-secundary-background",
+          "color" : "@button-secundary-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-secundary-border-color",
+          "borderBottomColor" : "@button-secundary-border-color",
+          "borderRightColor" : "@button-secundary-border-color",
+          "borderLeftColor" : "@button-secundary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-secundary-background:hover",
+          "color" : "@button-secundary-color:hover",
+          "borderTopColor" : "@button-secundary-border-color:hover",
+          "borderBottomColor" : "@button-secundary-border-color:hover",
+          "borderRightColor" : "@button-secundary-border-color:hover",
+          "borderLeftColor" : "@button-secundary-border-color:hover"
+        },
+        "qssSource" : "SecondayButton",
+        "p" : "m",
+        "created" : 1736596281189,
+        "modified" : 1736596298225
+      },
+      "w10004_85990" : {
+        "type" : "Button",
+        "name" : "Box",
+        "x" : 1722,
+        "y" : 1120,
+        "w" : 312,
+        "h" : 200,
+        "z" : 1,
+        "props" : {
+          "label" : ""
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontSize" : 14,
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "textAlign" : "left",
+          "letterSpacing" : 0,
+          "lineHeight" : 1.4,
+          "color" : "#ffffff",
+          "borderTopRightRadius" : 8,
+          "borderTopLeftRadius" : 8,
+          "borderBottomRightRadius" : 8,
+          "borderBottomLeftRadius" : 8,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#ffffff",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "textShadow" : null
+        },
+        "id" : "w10004_85990",
+        "p" : "m",
+        "created" : 1736596284640,
+        "modified" : 1736596304825
+      },
+      "w10006_73734" : {
+        "type" : "Button",
+        "name" : "Box",
+        "x" : 1634,
+        "y" : 1139,
+        "w" : 312,
+        "h" : 200,
+        "z" : 1,
+        "props" : {
+          "label" : ""
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontSize" : 14,
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "textAlign" : "left",
+          "letterSpacing" : 0,
+          "lineHeight" : 1.4,
+          "color" : "#ffffff",
+          "borderTopRightRadius" : 8,
+          "borderTopLeftRadius" : 8,
+          "borderBottomRightRadius" : 8,
+          "borderBottomLeftRadius" : 8,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#ffffff",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "textShadow" : null
+        },
+        "id" : "w10006_73734",
+        "p" : "d",
+        "created" : 1736596284640,
+        "modified" : 1736596317790,
+        "copyOf" : "w10004_85990"
+      },
+      "w10007_69009" : {
+        "id" : "w10007_69009",
+        "type" : "Button",
+        "name" : "Primary",
+        "sidebar" : true,
+        "x" : 1666,
+        "y" : 1195,
+        "w" : 115,
+        "h" : 36,
+        "z" : 2,
+        "props" : {
+          "label" : "CONTAINED",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-primary-background",
+          "color" : "@button-primary-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-primary-border-color",
+          "borderBottomColor" : "@button-primary-border-color",
+          "borderRightColor" : "@button-primary-border-color",
+          "borderLeftColor" : "@button-primary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-primary-background:hover",
+          "color" : "@button-primary-color:hover",
+          "borderTopColor" : "@button-primary-border-color:hover",
+          "borderBottomColor" : "@button-primary-border-color:hover",
+          "borderRightColor" : "@button-primary-border-color:hover",
+          "borderLeftColor" : "@button-primary-border-color:hover"
+        },
+        "qssSource" : "PrimaryButton",
+        "p" : "d",
+        "created" : 1736596275559,
+        "modified" : 1736596317790,
+        "copyOf" : "w10001_15059"
+      },
+      "w10008_97538" : {
+        "id" : "w10008_97538",
+        "type" : "Button",
+        "name" : "Danger",
+        "sidebar" : true,
+        "x" : 1666,
+        "y" : 1259,
+        "w" : 115,
+        "h" : 36,
+        "z" : 3,
+        "props" : {
+          "label" : "DANGER",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-danger-background",
+          "color" : "@button-danger-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-danger-border-color",
+          "borderBottomColor" : "@button-danger-border-color",
+          "borderRightColor" : "@button-danger-border-color",
+          "borderLeftColor" : "@button-danger-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-danger-background:hover",
+          "color" : "@button-danger-color:hover",
+          "borderTopColor" : "@button-danger-border-color:hover",
+          "borderBottomColor" : "@button-danger-border-color:hover",
+          "borderRightColor" : "@button-danger-border-color:hover",
+          "borderLeftColor" : "@button-danger-border-color:hover"
+        },
+        "qssSource" : "DangerButton",
+        "p" : "d",
+        "created" : 1736596277886,
+        "modified" : 1736596317790,
+        "copyOf" : "w10002_24429"
+      },
+      "w10009_96532" : {
+        "id" : "w10009_96532",
+        "type" : "Button",
+        "name" : "Secondary",
+        "sidebar" : true,
+        "x" : 1794,
+        "y" : 1195,
+        "w" : 115,
+        "h" : 36,
+        "z" : 4,
+        "props" : {
+          "label" : "OUTLINED",
+          "loadingText" : "",
+          "loadingAnimation" : "loading"
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "onclick" : true,
+          "label" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "fontWeight" : "@label-font-weight-bold",
+          "textAlign" : "center",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "verticalAlign" : "middle",
+          "background" : "@button-secundary-background",
+          "color" : "@button-secundary-color",
+          "boxShadow" : "@box-shadow-s",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "borderTopColor" : "@button-secundary-border-color",
+          "borderBottomColor" : "@button-secundary-border-color",
+          "borderRightColor" : "@button-secundary-border-color",
+          "borderLeftColor" : "@button-secundary-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "hover" : {
+          "background" : "@button-secundary-background:hover",
+          "color" : "@button-secundary-color:hover",
+          "borderTopColor" : "@button-secundary-border-color:hover",
+          "borderBottomColor" : "@button-secundary-border-color:hover",
+          "borderRightColor" : "@button-secundary-border-color:hover",
+          "borderLeftColor" : "@button-secundary-border-color:hover"
+        },
+        "qssSource" : "SecondayButton",
+        "p" : "d",
+        "created" : 1736596281189,
+        "modified" : 1736596317790,
+        "copyOf" : "w10003_52033"
+      }
+    },
+    "lines" : { },
+    "groups" : { },
+    "templates" : { },
+    "designtokens" : { },
+    "schema" : { },
+    "data" : { },
+    "theme" : {
+      "@font-size-s" : {
+        "value" : 12,
+        "type" : "fontSize"
+      },
+      "@font-size-m" : {
+        "value" : 14,
+        "type" : "fontSize"
+      },
+      "@font-size-l" : {
+        "value" : 18,
+        "type" : "fontSize"
+      },
+      "@font-size-xl" : {
+        "value" : 24,
+        "type" : "fontSize"
+      },
+      "@font-size-xxl" : {
+        "value" : 32,
+        "type" : "fontSize"
+      },
+      "@font-family" : {
+        "value" : "Roboto, sans-serif",
+        "type" : "fontFamily"
+      },
+      "@font-weight" : {
+        "value" : "",
+        "type" : "fontWeight"
+      },
+      "@letterSpacing" : {
+        "value" : 0,
+        "type" : "letterSpacing"
+      },
+      "@lineHeight" : {
+        "value" : 1,
+        "type" : "lineHeight"
+      },
+      "@border-width-none" : {
+        "value" : 0,
+        "type" : "borderWidth"
+      },
+      "@border-width" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-width:hover" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-width:focus" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@border-radius" : {
+        "value" : 12,
+        "type" : "borderRadius"
+      },
+      "@border-radius-round" : {
+        "value" : 256,
+        "type" : "borderRadius"
+      },
+      "@border-radius-none" : {
+        "value" : 0,
+        "type" : "borderRadius"
+      },
+      "@spacing-xs" : {
+        "value" : 4,
+        "type" : "spacing"
+      },
+      "@spacing-s" : {
+        "value" : 8,
+        "type" : "spacing"
+      },
+      "@spacing-m" : {
+        "value" : 16,
+        "type" : "spacing"
+      },
+      "@spacing-l" : {
+        "value" : 32,
+        "type" : "spacing"
+      },
+      "@screen-background" : {
+        "value" : "#d8e2f0",
+        "type" : "color"
+      },
+      "@background-passive" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@background-passive:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@color-passive" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@color-passive:hover" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@background-active" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@background-active:hover" : {
+        "value" : "#1251a3",
+        "type" : "color"
+      },
+      "@color-active" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@color-active:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@background-danger" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@background-info:danger" : {
+        "value" : "#ffefef",
+        "type" : "color"
+      },
+      "@color-danger" : {
+        "value" : "#fff3f3",
+        "type" : "color"
+      },
+      "@color-danger:hover" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@background-info" : {
+        "value" : "#e8ee9c",
+        "type" : "color"
+      },
+      "@background-info:hover" : {
+        "value" : "#e8ee9c",
+        "type" : "color"
+      },
+      "@color-info" : {
+        "value" : "#927e10",
+        "type" : "color"
+      },
+      "@color-info:hover" : {
+        "value" : "#927e10",
+        "type" : "color"
+      },
+      "@background-hint" : {
+        "value" : "#bae7fd",
+        "type" : "color"
+      },
+      "@background-hint:hover" : {
+        "value" : "#bae7fd",
+        "type" : "color"
+      },
+      "@color-hint" : {
+        "value" : "#2784b1",
+        "type" : "color"
+      },
+      "@color-hint:hover" : {
+        "value" : "#2784b1",
+        "type" : "color"
+      },
+      "@background-icon" : {
+        "value" : "transparent",
+        "type" : "color"
+      },
+      "@background-icon:hover" : {
+        "value" : "transparent",
+        "type" : "color"
+      },
+      "@color-icon" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@color-icon:hover" : {
+        "value" : "#000000",
+        "type" : "color"
+      },
+      "@box-shadow-s" : {
+        "value" : {
+          "v" : "1",
+          "h" : "0",
+          "b" : "2",
+          "s" : "0",
+          "i" : false,
+          "c" : "rgba(156, 156, 156, 0.16)"
+        },
+        "type" : "boxShadow"
+      },
+      "@box-shadow-m" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@box-shadow-l" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@label-color" : {
+        "value" : "#0A0A0B",
+        "type" : "red"
+      },
+      "@label-color:hover" : {
+        "value" : "blue",
+        "type" : "color"
+      },
+      "@label-color:error" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@label-color-secondary" : {
+        "value" : "#686871",
+        "type" : "red"
+      },
+      "@label-font-weight-default" : {
+        "value" : "",
+        "type" : "fontWeight"
+      },
+      "@label-font-weight-bold" : {
+        "value" : "bold",
+        "type" : "fontWeight"
+      },
+      "@form-padding-horizontal" : {
+        "value" : 8,
+        "type" : "paddingHorizontal"
+      },
+      "@form-padding-horizontal-l" : {
+        "value" : 12,
+        "type" : "paddingHorizontal"
+      },
+      "@form-padding-vertical" : {
+        "value" : 2,
+        "type" : "paddingVertical"
+      },
+      "@form-height" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@form-width" : {
+        "value" : 196,
+        "type" : "width"
+      },
+      "@form-border-color" : {
+        "value" : "#e4e4e7",
+        "type" : "color"
+      },
+      "@form-color" : {
+        "value" : "#09090b",
+        "type" : "color"
+      },
+      "@form-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@form-grey-background" : {
+        "value" : "#f4f4f5",
+        "type" : "color"
+      },
+      "@form-border-color:hover" : {
+        "value" : "#6b7280",
+        "type" : "color"
+      },
+      "@form-color:hover" : {
+        "value" : "#09090b",
+        "type" : "color"
+      },
+      "@form-background:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@form-border-color:focus" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@form-color:focus" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@form-background:focus" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@form-border-color:error" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@form-color:error" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@form-background:error" : {
+        "value" : "#ffefef",
+        "type" : "color"
+      },
+      "@form-popup-border-color" : {
+        "value" : "#6b7280",
+        "type" : "color"
+      },
+      "@form-popup-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@form-popup-background" : {
+        "value" : "#d8e2f0",
+        "type" : "color"
+      },
+      "@form-popup-backgrop" : {
+        "value" : "rgba(0,0,0,0.8)",
+        "type" : "color"
+      },
+      "@form-popup-border-width" : {
+        "value" : 1,
+        "type" : "borderWidth"
+      },
+      "@form-popup-color:hover" : {
+        "value" : "#d8e2f0",
+        "type" : "color"
+      },
+      "@form-popup-background:hover" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-primary-border-color" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-primary-background" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-primary-color" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-primary-border-color:hover" : {
+        "value" : "#2a4157",
+        "type" : "color"
+      },
+      "@button-primary-background:hover" : {
+        "value" : "#2a4157",
+        "type" : "color"
+      },
+      "@button-primary-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-secundary-border-color" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-secundary-background" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-secundary-color" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-secundary-border-color:hover" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-secundary-background:hover" : {
+        "value" : "#0d2236",
+        "type" : "color"
+      },
+      "@button-secundary-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-danger-border-color" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@button-danger-background" : {
+        "value" : "#dc2626",
+        "type" : "color"
+      },
+      "@button-danger-color" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-danger-border-color:hover" : {
+        "value" : "#f60404",
+        "type" : "color"
+      },
+      "@button-danger-background:hover" : {
+        "value" : "#f60404",
+        "type" : "color"
+      },
+      "@button-danger-color:hover" : {
+        "value" : "#FFFFFF",
+        "type" : "color"
+      },
+      "@button-passive-border-color" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-background" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@button-passive-border-color:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-background:hover" : {
+        "value" : "#F4F4F5",
+        "type" : "color"
+      },
+      "@button-passive-color:hover" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@panel-box-shadow" : {
+        "value" : null,
+        "type" : "boxShadow"
+      },
+      "@calendar-item-radius" : {
+        "value" : 4,
+        "type" : "borderRadius"
+      },
+      "@table-border-color" : {
+        "value" : "#b8b8b8",
+        "type" : "color"
+      },
+      "@table-header-color" : {
+        "value" : "#0A0A0B",
+        "type" : "color"
+      },
+      "@table-header-background" : {
+        "value" : "#d8e2f0",
+        "type" : "color"
+      },
+      "@box-width-xxs" : {
+        "value" : 16,
+        "type" : "height"
+      },
+      "@box-width-xs" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@box-width-s" : {
+        "value" : 40,
+        "type" : "height"
+      },
+      "@box-width-m" : {
+        "value" : 64,
+        "type" : "height"
+      },
+      "@box-width-ms" : {
+        "value" : 56,
+        "type" : "height"
+      },
+      "@box-width-l" : {
+        "value" : 96,
+        "type" : "height"
+      },
+      "@box-width-xl" : {
+        "value" : 128,
+        "type" : "height"
+      },
+      "@box-width-xxl" : {
+        "value" : 256,
+        "type" : "height"
+      },
+      "@box-height-xxs" : {
+        "value" : 16,
+        "type" : "height"
+      },
+      "@box-height-xs" : {
+        "value" : 32,
+        "type" : "height"
+      },
+      "@box-height-s" : {
+        "value" : 40,
+        "type" : "height"
+      },
+      "@box-height-ms" : {
+        "value" : 56,
+        "type" : "height"
+      },
+      "@box-height-m" : {
+        "value" : 64,
+        "type" : "height"
+      },
+      "@box-height-l" : {
+        "value" : 128,
+        "type" : "height"
+      },
+      "@box-height-xl" : {
+        "value" : 256,
+        "type" : "height"
+      },
+      "@box-height-xxl" : {
+        "value" : 320,
+        "type" : "height"
+      },
+      "@panel-background" : {
+        "value" : "#ffffff",
+        "type" : "color"
+      },
+      "@panel-border-color" : {
+        "value" : "#9c9c9c",
+        "type" : "color"
+      },
+      "@panel-border-width" : {
+        "value" : 2,
+        "type" : "color"
+      },
+      "@panel-border-radius" : {
+        "value" : 16,
+        "type" : "color"
+      }
+    },
+    "lastUUID" : 10011,
+    "lastUpdate" : 1736596402786,
+    "created" : 1736596270593,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Flowrabbit.ai",
+    "lastCategory" : "Screens",
+    "pages" : {
+      "m" : {
+        "w" : 376,
+        "h" : 808
+      },
+      "d" : {
+        "w" : 1280,
+        "h" : 720
+      }
+    },
+    "screenCount" : 2,
+    "widgetCount" : 8,
+    "isDirty" : true,
+    "id" : "67825b2e7baa75423b404b43"
+  }

@@ -1,0 +1,74 @@
+[ {
+	"id" : "Icon",
+	"type" : "Icon",
+	"category" : "Icon",
+	"subcategory" : "FormSpecialIcon",
+	"_type" : "Widget",
+	"name" : "Icon",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xs",
+	"h": "@box-height-xs",
+	"z" : 0,
+	"props" : {},
+	"has" : {
+		"onclick" : true,
+		"data" : true
+	},
+	"actions" : {},
+	"style" : {
+		"borderTopRightRadius" : 0,
+		"borderTopLeftRadius" : 0,
+		"borderBottomRightRadius" : 0,
+		"borderBottomLeftRadius" : 0,
+		"borderTopWidth" : 0,
+		"borderBottomWidth" : 0,
+		"borderRightWidth" : 0,
+		"borderLeftWidth" : 0,
+		"borderTopColor" : "transparent",
+		"borderBottomColor" : "transparent",
+		"borderRightColor" : "transparent",
+		"borderLeftColor" : "transparent",
+		"color" : "@color-icon",
+		"icon" : "mdi mdi-android"
+	}
+},{
+	"id": "BackButton",
+	"type": "Icon",
+	"name": "Back Button",
+	"_type": "Widget",
+	"category": "Icon",
+	"subcategory": "FormSpecialIcon",
+	"x": 0,
+	"y": 0,
+	"w": 30,
+	"h": 30,
+	"props": {},
+	"has": {
+		"onclick": true,
+		"data": true,
+		"loadingText": ""
+	},
+	"actions": {},
+	"style": {
+		"borderTopRightRadius": 0,
+		"borderTopLeftRadius": 0,
+		"borderBottomRightRadius": 0,
+		"borderBottomLeftRadius": 0,
+		"borderTopWidth": 0,
+		"borderBottomWidth": 0,
+		"borderRightWidth": 0,
+		"borderLeftWidth": 0,
+		"borderTopColor": "transparent",
+		"borderBottomColor": "transparent",
+		"borderRightColor": "transparent",
+		"borderLeftColor": "transparent",
+		"color": "@button-secundary-color",
+		"icon": "mdi mdi-chevron-left"
+	},
+	"created": 1690317491971,
+	"action": {
+		"type": "back"
+	}
+}
+]

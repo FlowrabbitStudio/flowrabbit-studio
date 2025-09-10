@@ -1,0 +1,28 @@
+[
+  {
+    "id": "AudioPlayer",
+    "type": "AudioPlayer",
+    "name": "Audio Player",
+    "category": "Advanced",
+    "subcategory": "Advanced",
+    "_type": "Widget",
+    "x": 0,
+    "y": 0,
+    "w": "@box-width-xxl",
+    "h": "@box-height-m",
+    "z": 0,
+	"props": {
+		"srcaudio": "https://example.com/audio.wav"
+	},
+    "isContainer": true,
+    "has": {
+      "data": true,
+	    "onclick": true
+    },
+    "style": {
+		"background": "#f2f3f4",
+		"color": "@form-color",
+		"boder": "none"
+    }
+  }
+]

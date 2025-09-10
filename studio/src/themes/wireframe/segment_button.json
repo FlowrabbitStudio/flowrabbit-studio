@@ -1,0 +1,64 @@
+[
+	{
+		"id": "SegmentButton",
+		"type": "SegmentButton",
+		"name": "Segment Button",
+		"category": "Form",
+		"subcategory": "AFormButton",
+		"_type": "Widget",
+		"x": 0,
+		"y": 0,
+		"w": "@box-width-xxl",
+		"h": 48,
+		"z": 0,
+		"props": {
+			"options": [
+				"Option 1",
+				"Option 2",
+				"Option 3"
+			],
+			"selected": [
+				"Option 1"
+			]
+		},
+		"has": {
+			"onclick": true,
+			"backgroundColor": true,
+			"border": true,
+			"label": true
+		},
+		"style": {
+			"fontSize": "@font-size-m",
+			"fontFamily": "@font-family",
+			"textAlign": "center",
+			"letterSpacing": "@letterSpacing",
+			"lineHeight": "@lineHeight",
+			"background": "@form-grey-background",
+			"color": "@form-color",
+			"borderRadius": 10,
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color",
+			"paddingBottom": "@spacing-xs",
+			"paddingTop": "@spacing-xs",
+			"paddingLeft": "@spacing-xs",
+			"paddingRight": "@spacing-xs",
+			"verticalAlign": "middle",
+			"boxShadow": "@box-shadow-s",
+			"buttonBorderStyle": "solid",
+			"buttonBorderColor": "@form-border-color",
+			"buttonBorderWidth": 0,
+			"buttonBorderRadius": 8,
+			"buttonsGap": 0
+		},
+		"active": {
+			"color": "@form-color",
+			"background": "@form-background",
+			"boxShadow": "@box-shadow-s",
+			"borderRadius": 8,
+			"borderWidth": "@border-width",
+			"borderStyle": "solid",
+			"borderColor": "@form-border-color"
+		}
+	}
+]

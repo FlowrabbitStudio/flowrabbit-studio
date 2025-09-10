@@ -1,0 +1,74 @@
+[
+    {
+        "id": "Airtable",
+        "name": "Airtable",
+        "type": "Rest",
+        "subtype": "airtable",
+        "category": "Logic",
+        "subcategory": "ABox",
+        "_type": "Widget",
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 72,
+        "props": {
+            "title": "Airtable",
+            "wizard": "AirtableRestWizard",
+            "adapter": "Airtable",
+            "template": {
+                "title": "Airtable",
+                "rest": {
+                    "method": "POST",
+                    "url": "",
+                    "token": "",
+                    "authType": "Bearer",
+                    "vars": {
+                    },
+                    "input": {
+                        "type": "JSON",
+                        "template": ""
+                    },
+                    "output": {
+                        "databinding": "",
+                        "template": "",
+                        "type": "JSON",
+                        "hints": []
+                    },
+                    "headers": []
+                },
+                "elements": []
+            },
+            "rest": {
+                "vars": {
+                },
+                "method": "POST",
+                "url": "",
+                "token": "",
+                "authType": "Bearer",
+                "input": {
+                    "type": "JSON",
+                    "fileDataBinding": "",
+                    "template": "{}"
+                },
+                "output": {
+                    "databinding": "",
+                    "path": "",
+                    "template": "",
+                    "type": "JSON",
+                    "hints": {}
+                },
+                "headers": []
+            }
+        },
+        "has": {
+            "rest": true
+        },
+        "style": {
+            "background": "#777",
+            "iconSize": 0.7,
+            "icon": "mdi mdi-air-filter",
+            "iconStyle": "Airtable",
+            "logo": "Airtable"
+        }
+    }
+]

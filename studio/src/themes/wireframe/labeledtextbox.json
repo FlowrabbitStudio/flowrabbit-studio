@@ -1,0 +1,38 @@
+[
+	{
+		"id": "LabeledTextBox",
+		"type": "LabeledTextBox",
+		"_type": "Widget",
+		"category": "Form",
+		"subcategory": "AFormInput",
+		"name": "Input (Labeled)",
+        "sidebar": true,
+		"x": 0,
+		"y": 0,
+        "w": "@form-width",
+		"h": "@box-height-ms",
+		"z": 0,
+		"_extends": "TextBox",
+		"props": {
+			"label": "This is a label",
+			"value": "",
+			"placeholderLabel": "Enter a value",
+			"animated": false
+		},
+		"has": {
+			"label": true,
+			"backgroundColor": true,
+			"border": true,
+			"editable": true,
+			"onclick": true,
+			"padding": true
+		},
+		"style": {		
+			"inputHeight": "@form-height",
+			"labelColor": "@form-color",
+			"labelFontSize": "@font-size-s",
+			"labelFontWeight": "",
+			"labelOffset": 4
+		}		
+	}
+]

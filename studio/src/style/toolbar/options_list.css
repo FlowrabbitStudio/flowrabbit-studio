@@ -1,0 +1,44 @@
+
+.MatcOptionList {
+	width: 100%;
+	min-width: 450px;
+}
+
+.MatcOptionList input {
+	width: 100%;
+	height: 40px;
+}
+
+.MatcOptionListInputNew {
+	width: 100%;
+}
+
+.MatcDialogTable td.MatcOptionListCheckCntr {
+	width: 24px;
+}
+
+.MatcOptionList td.MatcOptionListCheckCntr {
+	padding-top: 17px;
+}
+
+
+.MatcOptionList .VommondCheckBoxLabel {
+	display: none;
+}
+
+.MatcOptionList .MatcDataBindingVariableDefault input{
+    background: none;
+    border-color: transparent;
+    font-style: italic;
+}
+
+.MatcOptionList .MatcDataBindingVariableDefault input:hover{
+    border-color: var(--form-color-hover);
+    border-style: dashed;
+}
+
+.MatcOptionList .MatcDataBindingVariableDefault input:focus{
+    border-color: var(--form-color);
+    background: #fff;
+    border-style: solid;
+}

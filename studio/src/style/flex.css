@@ -1,0 +1,68 @@
+.MatcFlex50 {
+  width: 50% !important;
+}
+
+.MatcFlex {
+  display: flex;
+  align-items: center;
+}
+
+.MatcFlexWrap {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.MatcFlexFullHeight {
+    height: 100%;
+}
+
+.MatcFlexSpaceBetween {
+  justify-content: space-between;
+}
+
+.MatcFlexGrow {
+  flex-grow: 1;
+}
+
+.MatcFlexGrow50 {
+  flex-grow: 1;
+  width: 50%;
+}
+
+
+.MatcGapXS {
+  gap: 2px;
+}
+
+.MatcGapS {
+  gap: 4px;
+}
+
+.MatcGapM {
+  gap: 8px;
+}
+
+.MatcGapL {
+  gap: 8px;
+}
+
+.MatcGapXL {
+  gap: 16px;
+}
+
+.MatcGapXXL {
+  gap: 64px;
+}
+
+.MatcFlexTop {
+  align-items: flex-start
+}
+
+
+.MatcEnd {
+  justify-content: flex-end;
+}
+
+.MatcBetween {
+  justify-content: space-between;
+}

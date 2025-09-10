@@ -1,0 +1,58 @@
+.MatcDocTextSettings.MatcMarginTop {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.MatcDocTextSettings.field-group {
+    margin-bottom: 20px;
+}
+
+.MatcDocTextSettings.field-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.MatcDocTextSettings.MatcInputFile, #documentPath, #outputVariable {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.MatcDocTextSettings.tooltip .mdi {
+    color: #999;
+    cursor: help;
+}
+
+.MatcDocTextSettings.info {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+    margin-top: 3px;
+}
+
+.MatcDocTextSettingsGroup {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.MatcInputFile {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.MatcDocTextSettingsSeparator {
+    white-space: nowrap;
+    color: #707070;
+    margin-right: 10px;
+}

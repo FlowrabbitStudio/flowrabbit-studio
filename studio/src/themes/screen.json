@@ -1,0 +1,57 @@
+[
+ {
+		"id" : "Screen",
+		"type" : "Screen",
+		"category" : "Screens",
+		"name" : "Screen",
+		"_type" : "Screen",
+		"x" : 0,
+	    "y" : 0,
+	    "w" : "$screenwidth",
+	    "h" : "$screenheight",
+	    "z" : 0,
+	    "min" : {
+		    "w" : "$screenwidth",
+		    "h" : "$screenheight"
+	    },
+	    "style" : {
+			"background" : "@screen-background"
+	    },	   
+	    "props" : {
+	    	"start":false
+	    },
+	    "has" : {
+	        "image" : true
+	    },
+	    "children" : []
+	 },
+	 {
+		"id" : "PopupScreen",
+		"type" : "Screen",
+		"category" : "Screens",
+		"name" : "Popup Screen",
+		"_type" : "Screen",
+		"x" : 0,
+	    "y" : 0,
+	    "w" : "$screenwidth",
+	    "h" : "$screenheight",
+	    "z" : 0,
+	    "min" : {
+		    "w" : "$screenwidth",
+		    "h" : "$screenheight"
+	    },
+	    "style" : {
+			"background" : "@screen-background",
+			"overlay" : true
+	    },
+	   
+	    "props" : {
+	    	"start":false
+	    },
+	    "has" : {
+	        "image" : true
+	    },
+	    "children" : []
+	 }
+]
+

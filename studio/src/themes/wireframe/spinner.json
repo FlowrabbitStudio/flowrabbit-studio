@@ -1,0 +1,52 @@
+[ {
+	"id" : "Spinner",
+	"type" : "Spinner",
+	"_type" : "Widget",
+	"category" : "Advanced",
+	"subcategory" : "FormSpecial",
+	"name" : "Spinner",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xl",
+	"h": "@box-height-xl",
+	"z" : 0,
+	"props" : {
+		"options" : [ "Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6" ],
+		"selected" : "Option 1"
+	},
+	"has" : {
+		"onclick" : true,
+		"border" : true,
+	    "data" : true,
+	    "backgroundColor" : true,
+	    "label":true
+	},
+	"style" : {
+
+		"fontSize": "@font-size-m",
+		"fontFamily": "@font-family",
+		"textAlign" : "left",
+		"letterSpacing": "@letterSpacing",
+		"lineHeight": "@lineHeight",
+
+		"background": "transparent",
+		"color": "@form-color",
+
+		"borderRadius": "@border-radius",
+		"borderWidth": "@border-width-none",
+		"borderStyle": "solid",
+		"borderColor": "@form-border-color",	
+
+		"paddingBottom": "@form-padding-vertical",
+		"paddingTop": "@form-padding-vertical",
+		"paddingLeft": "@form-padding-horizontal",
+		"paddingRight": "@form-padding-horizontal",
+		
+		"borderBoxColor" : "@form-border-color",
+		"borderBoxWidth" : "@border-width"
+
+	}
+}
+
+
+]

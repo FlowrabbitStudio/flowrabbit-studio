@@ -1,0 +1,87 @@
+@import './vars.css';
+
+.json-visualizer {
+  font-size: 12px;
+}
+
+.json-visualizer .json-key {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.json-visualizer .array-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.json-visualizer .array-item-key {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.json-visualizer .toggle-icon {
+  display: block;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.json-visualizer .toggle-icon:hover {
+  opacity: 1;
+}
+
+
+.json-visualizer .key-name {
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 2px;
+}
+
+.json-visualizer .json-value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.json-visualizer .value-container {
+  margin-left: 24px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-bottom: 4px;
+}
+
+
+.json-visualizer .object-item {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.json-visualizer .index {
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.json-visualizer .value {
+  overflow-wrap: break-word;
+}
+
+.json-visualizer .string-value {
+  color: var(--primary-color);
+}
+
+.json-visualizer .mdi {
+  font-size: 1.2em;
+}
+
+.json-visualizer .error {
+  color: red;
+}
+
+.json-visualizer .jsonMessage {
+  font-size: 12px;
+  font-weight: 600;
+  color: blue;
+  margin-bottom: 15px;
+}

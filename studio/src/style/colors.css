@@ -1,0 +1,21 @@
+@import './vars.css';
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.MactMainGradient {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: radial-gradient(rgb(210, 241, 223), rgb(211, 215, 250), rgb(186, 216, 244)) 0% 0% / 400% 400%;
+    animation: gradient 15s ease infinite;
+}

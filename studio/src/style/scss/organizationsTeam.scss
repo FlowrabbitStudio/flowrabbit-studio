@@ -1,0 +1,146 @@
+.team-container {
+  .team-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid rgb(229, 234, 239);
+    }
+
+    th {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgb(42, 53, 71);
+      cursor: pointer;
+      position: relative;
+    }
+
+    td {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgb(42, 53, 71);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tr:hover {
+      background-color: #f2f6fa;
+    }
+  }
+
+  .loading-indicator, .empty-state {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .team-table th, .team-table td {
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    .actions-column {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  /* Additional Styling for Improved UX */
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .icon-button .mdi {
+    font-size: 16px;
+  }
+
+  .view-button:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: scale(1.1);
+  }
+
+  .delete-button:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+    transform: scale(1.1);
+  }
+
+  .loading-indicator {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .empty-state {
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+  }
+}
+
+.search-bar {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.role-filter {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.action-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.action-menu button {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.MatcErrorBox {
+  font-size: 14px;
+}

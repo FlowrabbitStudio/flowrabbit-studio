@@ -1,0 +1,86 @@
+{
+    "_id" : "667f2cc2861cae7b09910876",
+    "appID" : "667f2cc2861cae7b09910871",
+    "schema" : {
+      "name" : {
+        "title" : "name",
+        "properties" : { },
+        "type" : "string",
+        "defaultValue" : "Klaus"
+      },
+      "user" : {
+        "title" : "user",
+        "properties" : {
+          "name" : {
+            "title" : "name",
+            "properties" : { },
+            "type" : "string",
+            "defaultValue" : "Klaus"
+          },
+          "age" : {
+            "title" : "age",
+            "properties" : { },
+            "type" : "boolean",
+            "defaultValue" : "1"
+          },
+          "cat" : {
+            "title" : "cat",
+            "properties" : {
+              "name" : {
+                "title" : "name",
+                "properties" : { },
+                "type" : "string"
+              }
+            },
+            "type" : "object"
+          },
+          "lastname" : {
+            "title" : "lastname",
+            "properties" : { },
+            "type" : "string",
+            "defaultValue" : "schaef"
+          }
+        },
+        "type" : "object"
+      },
+      "query" : {
+        "title" : "query",
+        "properties" : { },
+        "type" : "string"
+      },
+      "API" : {
+        "title" : "API",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "hasNewsletter" : {
+              "title" : "hasNewsletter",
+              "properties" : { },
+              "type" : "string"
+            },
+            "lastname" : {
+              "title" : "lastname",
+              "properties" : { },
+              "type" : "string"
+            },
+            "email" : {
+              "title" : "email",
+              "properties" : { },
+              "type" : "string"
+            },
+            "name" : {
+              "title" : "name",
+              "properties" : { },
+              "type" : "string"
+            },
+            "id" : {
+              "title" : "id",
+              "properties" : { },
+              "type" : "string"
+            }
+          }
+        },
+        "type" : "array"
+      }
+    }
+  }

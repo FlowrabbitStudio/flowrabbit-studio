@@ -1,0 +1,34 @@
+[ {
+	"id" : "WireFrameVolumeSlider1",
+	"type" : "VolumeSlider",
+	"name" : "Volume",
+	"category" : "Advanced",
+	"subcategory" : "FormSpecial",
+	"_type" : "Widget",
+	"x" : 0,
+	"y" : 0,
+	"w": "@box-width-xl",
+	"h": "@box-height-m",
+	"z" : 0,
+	"props" : {
+		"elementCount" : 10,
+		"selected" : 5
+	},
+	"has" : {
+		"border" : true,
+		"backgroundColor" : true
+	},
+	"style" : {
+		"borderRadius" : 0,
+		"borderWidth" : 1,
+		"borderColor": "@background-passive",		
+		"background": "@background-passive",
+		"color": "@form-color"
+	},
+	"active" : {
+		"borderRadius" : 0,
+		"borderWidth" : 1,
+		"borderColor": "@background-active",	
+		"background" : "@background-active"
+	}
+} ]

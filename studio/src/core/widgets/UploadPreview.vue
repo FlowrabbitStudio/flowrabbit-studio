@@ -1,0 +1,149 @@
+<template>
+  <div
+    :class="[
+      'MatcWidgetTypeUploadPreview',
+      { 'MatcWidgetTypeUploadPreviewImage': hasImage, 'mdi mdi-image': !hasImage }
+    ]"
+    :style="hasImage ? { backgroundImage: src } : {}"
+  />
+</template>
+
+<script>
+import DojoWidget from "dojo/DojoWidget";
+import lang from "dojo/_base/lang";
+import UIWidget from "core/widgets/UIWidget";
+
+export default {
+  name: "UploadPreview",
+  mixins: [UIWidget, DojoWidget],
+  data: function () {
+    return {
+      value: "",
+      style: {},
+      model: {},
+      hackValueLabel: false,
+    };
+  },
+  computed: {
+    hasImage() {
+      return this.value && this.value.length > 0;
+    },
+    src() {
+      if (this.value) {
+        let url = "url(" + this.value + ")";
+        return url;
+      } else if (this.model) {
+        if (this.model.style && this.model.style.backgroundImage) {
+          let url = "url(" + this.model.style.backgroundImage + ")";
+          return url;
+        }
+      }
+      return "";
+    },
+  },
+  methods: {
+    postCreate() {
+      this._borderNodes = [this.domNode];
+      this._backgroundNodes = [this.domNode];
+      this._shadowNodes = [this.domNode];
+      this._paddingNodes = [this.domNode];
+      this._labelNodes = [this.domNode];
+    },
+
+    wireEvents() {
+      this.own(this.addClickListener(this.domNode, lang.hitch(this, "onClick")));
+      this.wireHover();
+    },
+
+    render(model, style, scaleX, scaleY) {
+      this.model = model;
+      this.style = style;
+      this._scaleX = scaleX;
+      this._scaleY = scaleY;
+
+      this.setStyle(style, model);
+      if (model.props && model.props.label) {
+        this.setValue(model.props.label);
+      }
+
+      const borderWidth = Math.max(1, this._getBorderWidth(model.style.borderTopWidth));
+      this.domNode.style.borderWidth = borderWidth + "px";
+    },
+
+    _setDataBindingValue(v) {
+      if (v.substring && (v.indexOf("data:image/png;base64") === 0 || v.indexOf("http") === 0)) {
+        this.setValue(v);
+        return;
+      }
+
+      if (v.name && v.size) {
+        let reader = new FileReader();
+        if (reader.readAsDataURL) {
+          reader.onload = () => {
+            this.setValue(reader.result);
+          };
+          reader.readAsDataURL(v);
+        }
+        return;
+      }
+
+      try {
+        let imgUrl = this.bufferToImage(v);
+        this.setValue(imgUrl);
+      } catch (e) {
+        console.error("UploadPreview._setDataBindingValue() Cannot handle data. Not ArrayBuffer", e);
+      }
+    },
+
+    getValue: function () {
+      return this.value;
+    },
+
+    setValue: function (value) {
+      this.value = value;
+    },
+
+    bufferToImage(buffer) {
+      var base64Flag = "data:image/jpeg;base64,";
+      var imageStr = this.arrayBufferToBase64(buffer);
+      return base64Flag + imageStr;
+    },
+
+    arrayBufferToBase64(buffer) {
+      var binary = "";
+      var bytes = [].slice.call(new Uint8Array(buffer));
+      bytes.forEach((b) => (binary += String.fromCharCode(b)));
+      return window.btoa(binary);
+    },
+
+    getState: function () {
+      return {
+        type: "value",
+        value: "",
+      };
+    },
+
+    setState: function (state) {
+      if (state && state.type == "value") {
+        this.setValue(state.value);
+      }
+    },
+
+    onClick: function (e) {
+      this.stopEvent(e);
+      this.emitClick(e);
+    },
+  },
+  mounted() {},
+};
+</script>
+
+<style>
+.MatcWidgetTypeUploadPreview.mdi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px; 
+  color: #aaaaaa; 
+}
+</style>

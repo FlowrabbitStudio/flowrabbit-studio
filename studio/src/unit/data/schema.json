@@ -1,0 +1,127 @@
+{
+    "_id" : "675a0f1785f75760e62bb838",
+    "appID" : "675a0f1685f75760e62bb832",
+    "schema" : {
+      "Table_1" : {
+        "title" : "Table_1",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "fields" : {
+              "title" : "fields",
+              "properties" : {
+                "Lastname" : {
+                  "title" : "Lastname",
+                  "properties" : { },
+                  "type" : "string"
+                },
+                "Email" : {
+                  "title" : "Email",
+                  "properties" : { },
+                  "type" : "string"
+                },
+                "Name" : {
+                  "title" : "Name",
+                  "properties" : { },
+                  "type" : "string"
+                }
+              },
+              "type" : "object"
+            },
+            "createdTime" : {
+              "title" : "createdTime",
+              "properties" : { },
+              "type" : "string"
+            },
+            "id" : {
+              "title" : "id",
+              "properties" : { },
+              "type" : "string"
+            }
+          }
+        },
+        "type" : "array"
+      },
+      "list1" : {
+        "title" : "list1",
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "a" : {
+              "title" : "a",
+              "properties" : { },
+              "type" : "string",
+              "defaultValue" : "aaaa"
+            },
+            "b" : {
+              "title" : "b",
+              "properties" : { },
+              "type" : "string",
+              "defaultValue" : "bbbb"
+            }
+          }
+        }
+      },
+      "list2" : {
+        "title" : "list2",
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      },
+      "seletcedRow" : {
+        "title" : "seletcedRow",
+        "properties" : {
+          "fields" : {
+            "title" : "fields",
+            "properties" : {
+              "Lastname" : {
+                "title" : "Lastname",
+                "properties" : { },
+                "type" : "string"
+              },
+              "Email" : {
+                "title" : "Email",
+                "properties" : { },
+                "type" : "string"
+              },
+              "Name" : {
+                "title" : "Name",
+                "properties" : { },
+                "type" : "string"
+              }
+            },
+            "type" : "object"
+          },
+          "createdTime" : {
+            "title" : "createdTime",
+            "properties" : { },
+            "type" : "string"
+          },
+          "id" : {
+            "title" : "id",
+            "properties" : { },
+            "type" : "string"
+          },
+          "a" : {
+            "title" : "a",
+            "properties" : { },
+            "type" : "string"
+          },
+          "b" : {
+            "title" : "b",
+            "properties" : { },
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "searchFilter" : {
+        "title" : "searchFilter",
+        "properties" : { },
+        "type" : "string"
+      }
+    }
+  }
