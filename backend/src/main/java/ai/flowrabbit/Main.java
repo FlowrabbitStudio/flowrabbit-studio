@@ -69,7 +69,7 @@ public class Main extends AbstractVerticle {
 		JsonObject config = this.getConfig();
 		if(config.containsKey("debug")){
 			this.isDebug = config.getBoolean("debug");
-			this.logger.info("start() > isDebug : " + this.isDebug);
+			this.logger.info("start() > isDebug: {}", this.isDebug);
 		}
 
 		/*
@@ -198,7 +198,7 @@ public class Main extends AbstractVerticle {
 
 	private void initEncryptionService(JsonObject config) {
 		try {
-			this.encryptionService = new BlowFishService(Config.getDBEncryptionKey(config));
+			this.encryptionService = new ChaChaService(Config.getDBEncryptionKey(config));
 		} catch (Exception e) {
 			throw new RuntimeException("initEncryptionService() > Could not load db key");
 		}
@@ -215,7 +215,7 @@ public class Main extends AbstractVerticle {
 
 	private void sendBootMessage () {
 		if (!this.isDebug) {
-			logger.error("sendBootMessage() > Enter");
+			logger.info("sendBootMessage() > Enter");
 			Mail.to(ADMIN)
 					.template(MailHandler.TEMPLATE_START_UP)
 					.subject("Martelo Server Started")
@@ -515,11 +515,13 @@ public class Main extends AbstractVerticle {
 
 	private MailClient createMail(JsonObject config){
 
-		logger.info("createMail() > enter {}", config.getString("user"));
 
-		if (this.isDebug){
+
+		if (this.isDebug || config.getString("user").isEmpty()){
+			logger.error("createMail() > Email not configured. Server will not send mails.");
 			return new DebugMailClient();
 		} else{
+			logger.info("createMail() > enter {}", config.getString("user"));
 			String user = config.getString("user");
 			String password = config.getString("password");
 			String host = config.getString("host");
