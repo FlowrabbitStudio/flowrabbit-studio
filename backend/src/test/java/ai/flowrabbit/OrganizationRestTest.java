@@ -319,23 +319,6 @@ public class OrganizationRestTest extends BaseTestCase {
         return res;
     }
 
-
-
-    private JsonObject updateStripe(TestContext context, String jansOrgId, JsonObject folders) {
-        JsonObject res = this.post("/rest/organizations/" + jansOrgId +"/stripe.json", folders);
-        context.assertFalse(res.containsKey("error"));
-        context.assertEquals("organization.update.stripe.ok", res.getString("details"));
-        return res;
-    }
-
-    private JsonObject updateStripeError(TestContext context, String jansOrgId, JsonObject folders) {
-        JsonObject res = this.post("/rest/organizations/" + jansOrgId +"/stripe.json", folders);
-        context.assertTrue(res.containsKey("error"));
-        return res;
-    }
-
-
-
     private JsonObject updateOrgFolder(TestContext context, String jansOrgId, JsonObject folders) {
         JsonObject res = this.post("/rest/organizations/" + jansOrgId +"/folders.json", folders);
         context.assertFalse(res.containsKey("error"));
@@ -401,7 +384,7 @@ public class OrganizationRestTest extends BaseTestCase {
         //print(client.find(DB.getTable(PublicationSettings.class), Model.all()));
 
         JsonArray publishedAppInOrg = findPublishedAppInOrg(context, orgID);
-        context.assertEquals(3, publishedAppInOrg.size());
+        context.assertEquals(4, publishedAppInOrg.size());
         print(publishedAppInOrg);
         for (int i=0; i < publishedAppInOrg.size(); i++) {
             JsonObject app = publishedAppInOrg.getJsonObject(i);
@@ -411,7 +394,7 @@ public class OrganizationRestTest extends BaseTestCase {
 
         postPublicSettings(app4, new JsonObject().put("mode", PublicationSettings.MODE_FORBIDDEN).put("name", "App4"), context);
         publishedAppInOrg = findPublishedAppInOrg(context, orgID);
-        context.assertEquals(2, publishedAppInOrg.size());
+        context.assertEquals(4, publishedAppInOrg.size());
     }
 
 

@@ -1,8 +1,7 @@
 package ai.flowrabbit;
 
-//import ai.flowrabbit.services.AESService;
 import ai.flowrabbit.services.BlowFishService;
-//import ai.flowrabbit.services.ChaChaService;
+import ai.flowrabbit.services.ChaChaService;
 import ai.flowrabbit.services.EncryptionService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,14 +17,14 @@ public class EncryptionServiceTest {
         assertService(s,s2, s3);
     }
 
-//    @Test
-//    public void testChaCha() throws Exception {
-//        System.out.println("EncryptionServiceTest.testChaCha() > enter");
-//        ChaChaService s = new ChaChaService("hoosefw45345dfsdfasdasdasdasd");
-//        ChaChaService s2 = new ChaChaService("hoosefw45345dfsdfasdasdasdasd");
-//        ChaChaService s3 = new ChaChaService("sefgdsfg");
-//        assertService(s, s2, s3);
-//    }
+    @Test
+    public void testChaCha() throws Exception {
+        System.out.println("EncryptionServiceTest.testChaCha() > enter");
+        ChaChaService s = new ChaChaService("hoosefw45345dfsdfasdasdasdasd");
+        ChaChaService s2 = new ChaChaService("hoosefw45345dfsdfasdasdasdasd");
+        ChaChaService s3 = new ChaChaService("sefgdsfg");
+        assertService(s, s2, s3);
+    }
 //
 //    @Test
 //    public void testAES() throws Exception {

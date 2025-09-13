@@ -47,7 +47,7 @@ public class OrganizationACL extends MongoAcl implements Acl{
     }
 
     public void canRead(String userID, String orgID, Handler<Boolean> handler) {
-        logger.debug("canRead() > " + orgID + " > " + userID);
+        logger.debug("canRead() > {} > {}", orgID, userID);
         JsonObject query = OrganizationTeam.findByReaderAndOrg(userID, orgID);
         client.count(org_team_db, query, res -> {
             if (res.succeeded() && res.result() >= 1l) {

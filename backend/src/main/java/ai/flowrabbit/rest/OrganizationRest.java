@@ -263,7 +263,7 @@ public class OrganizationRest extends MongoREST {
             return;
         }
 
-        this.acl.canRead(user, event, allowed -> {
+        this.acl.canWrite(user, event, allowed -> {
            if (allowed) {
                this.findPublishedApps(event, orgID);
            }  else {
@@ -276,7 +276,7 @@ public class OrganizationRest extends MongoREST {
 
     private void findPublishedApps(RoutingContext event, String orgID) {
 
-        this.mongo.find(pubsettingsDB, PublicationSettings.findByOrgAndPublic(orgID), res -> {
+        this.mongo.find(pubsettingsDB, PublicationSettings.findByOrg(orgID), res -> {
            if (res.succeeded()) {
 
                List<JsonObject> settings = res.result();
@@ -314,40 +314,5 @@ public class OrganizationRest extends MongoREST {
     }
 
 
-//    public Handler<RoutingContext> setStripe() {
-//        return event -> setStripe(event);
-//    }
-//
-//    private void setStripe(RoutingContext event) {
-//        User user = getUser(event);
-//        String orgID = event.request().getParam("orgID");
-//        if (Organization.DEFAULT_ID.equals(orgID)) {
-//            logger.error("setFolder() > user " + user + " tried to set >private< folder" );
-//            returnError(event, 404);
-//            return;
-//        }
-//        this.acl.canWrite(user, event, allowed -> {
-//            if (allowed) {
-//                setStripe(event, orgID);
-//            } else {
-//                logger.error("setStripe() > user " + user + " tried to write STRIPE with ownership. org >" + orgID + "<");
-//                returnError(event,404);
-//            }
-//        });
-//    }
-//
-//    private void setStripe(RoutingContext event, String orgID) {
-//        JsonObject folder = event.getBodyAsJson();
-//        JsonObject update = new JsonObject()
-//                .put("$set", new JsonObject()
-//                        .put(Organization.FIELD_STRIPE, folder));
-//        this.mongo.updateCollection(organizationDB, Organization.findById(orgID), update, res -> {
-//            if (res.succeeded()) {
-//                returnOk(event, "organization.update.stripe.ok");
-//            } else {
-//                returnError(event, 405);
-//            }
-//        });
-//    }
 
 }
