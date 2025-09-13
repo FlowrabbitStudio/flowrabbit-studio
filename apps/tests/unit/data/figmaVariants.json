@@ -1,0 +1,581 @@
+{
+  "document": {
+    "id": "0:0",
+    "name": "Document",
+    "type": "DOCUMENT",
+    "children": [
+      {
+        "id": "0:1",
+        "name": "Page 1",
+        "type": "CANVAS",
+        "children": [
+          {
+            "id": "1:2",
+            "name": "Frame 1",
+            "type": "FRAME",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "1:6",
+                "name": "VarientButton",
+                "type": "COMPONENT_SET",
+                "blendMode": "PASS_THROUGH",
+                "children": [
+                  {
+                    "id": "1:5",
+                    "name": "type=Primary",
+                    "type": "COMPONENT",
+                    "blendMode": "PASS_THROUGH",
+                    "children": [
+                      {
+                        "id": "1:3",
+                        "name": "VarientButtonBackground",
+                        "type": "RECTANGLE",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": -375.0,
+                          "y": -495.0,
+                          "width": 220.0,
+                          "height": 36.0
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            0.0,
+                            0.0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            0.0
+                          ]
+                        ],
+                        "size": {
+                          "x": 220.0,
+                          "y": 36.0
+                        },
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.76862746477127075,
+                              "g": 0.76862746477127075,
+                              "b": 0.76862746477127075,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "fillGeometry": [
+                          {
+                            "path": "M0 0L220 0L220 36L0 36L0 0Z",
+                            "windingRule": "NONZERO"
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "strokeAlign": "INSIDE",
+                        "strokeGeometry": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "1:4",
+                        "name": "VarientButtonLabel",
+                        "type": "TEXT",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": -336.0,
+                          "y": -488.0,
+                          "width": 122.0,
+                          "height": 16.0
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            0.0,
+                            39.0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            7.0
+                          ]
+                        ],
+                        "size": {
+                          "x": 122.0,
+                          "y": 16.0
+                        },
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "strokeAlign": "OUTSIDE",
+                        "strokeGeometry": [],
+                        "effects": [],
+                        "characters": "Lala",
+                        "style": {
+                          "fontFamily": "Roboto",
+                          "fontPostScriptName": null,
+                          "fontWeight": 400,
+                          "fontSize": 20.0,
+                          "textAlignHorizontal": "CENTER",
+                          "textAlignVertical": "CENTER",
+                          "letterSpacing": 0.0,
+                          "lineHeightPx": 23.43750,
+                          "lineHeightPercent": 100.0,
+                          "lineHeightUnit": "INTRINSIC_%"
+                        },
+                        "characterStyleOverrides": [],
+                        "styleOverrideTable": {}
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": -375.0,
+                      "y": -495.0,
+                      "width": 220.0,
+                      "height": 36.0
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        0.0,
+                        20.0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        20.0
+                      ]
+                    ],
+                    "size": {
+                      "x": 220.0,
+                      "y": 36.0
+                    },
+                    "clipsContent": false,
+                    "background": [
+                      {
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1.0,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 0.0
+                    },
+                    "effects": []
+                  },
+                  {
+                    "id": "1:7",
+                    "name": "type=Secondary",
+                    "type": "COMPONENT",
+                    "blendMode": "PASS_THROUGH",
+                    "children": [
+                      {
+                        "id": "1:8",
+                        "name": "VarientButtonBackground",
+                        "type": "RECTANGLE",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": -375.0,
+                          "y": -439.0,
+                          "width": 220.0,
+                          "height": 36.0
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            0.0,
+                            0.0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            0.0
+                          ]
+                        ],
+                        "size": {
+                          "x": 220.0,
+                          "y": 36.0
+                        },
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "fillGeometry": [
+                          {
+                            "path": "M0 0L220 0L220 36L0 36L0 0Z",
+                            "windingRule": "NONZERO"
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "strokeWeight": 1.0,
+                        "strokeAlign": "INSIDE",
+                        "strokeGeometry": [
+                          {
+                            "path": "M0 0L0 -1L-1 -1L-1 0L0 0ZM220 0L221 0L221 -1L220 -1L220 0ZM220 36L220 37L221 37L221 36L220 36ZM0 36L-1 36L-1 37L0 37L0 36ZM0 1L220 1L220 -1L0 -1L0 1ZM219 0L219 36L221 36L221 0L219 0ZM220 35L0 35L0 37L220 37L220 35ZM1 36L1 0L-1 0L-1 36L1 36Z",
+                            "windingRule": "NONZERO"
+                          }
+                        ],
+                        "effects": []
+                      },
+                      {
+                        "id": "1:9",
+                        "name": "VarientButtonLabel",
+                        "type": "TEXT",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": -336.0,
+                          "y": -432.0,
+                          "width": 122.0,
+                          "height": 16.0
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            0.0,
+                            39.0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            7.0
+                          ]
+                        ],
+                        "size": {
+                          "x": 122.0,
+                          "y": 16.0
+                        },
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "strokeAlign": "OUTSIDE",
+                        "strokeGeometry": [],
+                        "effects": [],
+                        "characters": "Lala",
+                        "style": {
+                          "fontFamily": "Roboto",
+                          "fontPostScriptName": null,
+                          "fontWeight": 400,
+                          "fontSize": 20.0,
+                          "textAlignHorizontal": "CENTER",
+                          "textAlignVertical": "CENTER",
+                          "letterSpacing": 0.0,
+                          "lineHeightPx": 23.43750,
+                          "lineHeightPercent": 100.0,
+                          "lineHeightUnit": "INTRINSIC_%"
+                        },
+                        "characterStyleOverrides": [],
+                        "styleOverrideTable": {}
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": -375.0,
+                      "y": -439.0,
+                      "width": 220.0,
+                      "height": 36.0
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        0.0,
+                        20.0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        76.0
+                      ]
+                    ],
+                    "size": {
+                      "x": 220.0,
+                      "y": 36.0
+                    },
+                    "clipsContent": false,
+                    "background": [
+                      {
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "strokeWeight": 1.0,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 0.0
+                    },
+                    "effects": []
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": -395.0,
+                  "y": -515.0,
+                  "width": 260.0,
+                  "height": 132.0
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    0.0,
+                    19.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    20.0
+                  ]
+                ],
+                "size": {
+                  "x": 260.0,
+                  "y": 132.0
+                },
+                "clipsContent": true,
+                "background": [],
+                "fills": [],
+                "strokes": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.48235294222831726,
+                      "g": 0.38039216399192810,
+                      "b": 1.0,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "cornerRadius": 5.0,
+                "strokeWeight": 1.0,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 0.0
+                },
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -414.0,
+              "y": -535.0,
+              "width": 805.0,
+              "height": 726.0
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                0.0,
+                -414.0
+              ],
+              [
+                0.0,
+                1.0,
+                -535.0
+              ]
+            ],
+            "size": {
+              "x": 805.0,
+              "y": 726.0
+            },
+            "clipsContent": true,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "effects": []
+          }
+        ],
+        "backgroundColor": {
+          "r": 0.89803922176361084,
+          "g": 0.89803922176361084,
+          "b": 0.89803922176361084,
+          "a": 1.0
+        },
+        "prototypeStartNodeID": null,
+        "prototypeDevice": {
+          "type": "NONE",
+          "rotation": "NONE"
+        }
+      }
+    ]
+  },
+  "components": {
+    "1:5": {
+      "key": "c031ff57adb75d7bd56928efea951a50bed2b848",
+      "name": "type=Primary",
+      "description": ""
+    },
+    "1:7": {
+      "key": "e76e5f606a2665d75b2b7291fdb5b1d665a2001e",
+      "name": "type=Secondary",
+      "description": ""
+    }
+  },
+  "schemaVersion": 0,
+  "styles": {},
+  "name": "Untitled",
+  "lastModified": "2020-11-04T21:44:34.998718Z",
+  "thumbnailUrl": "https://s3-alpha-sig.figma.com/thumbnails/01da7a65-2dbc-48b2-8bbc-b098b7d58aab?Expires=1605484800&Signature=B4xtYZhWeXKJccj4qwP3OqgCSRn~fonyGnRZ92GOpCYiGDH6tFcgbRJaffbpak09tASURQRDrNC2eFy0alGd709ncmG5B3crPKjaZVd86hdrZLveo9HZDOhA4xnN0v2kP8nV~oOnLoKjAkAJzKZBjjLkGrOgATAgW5TBGZsUnh9SCxHSdDlx5gfbmn9j6gxYbj2sjnU~QI0u5-f557lKlMe2rY1OGUXmH11ijhElkBh4pNmRm42iI1HTA2c8NOA~Y~rzo8XioN1M5rBSbot01VECaTmQo1wD~hUq0w3K6wnN1819wejdKVXz0~JjpR6xJ2OVhil55vU-rJBmOMFhXg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+  "version": "529095169",
+  "role": "owner"
+}

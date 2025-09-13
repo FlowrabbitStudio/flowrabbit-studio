@@ -1,0 +1,224 @@
+@import './design-system.scss';
+
+
+.LuisaHelp{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: $spacing-l;
+
+  
+
+    .LuisaHelpContent{
+        display: inline-block;
+        margin-bottom: 128px;
+
+        padding-right: 20px;
+        margin-right: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        gap: 40px;
+
+        .LuisaParagraph {
+            font-size: 16px;
+        }
+
+        .LuisaHelpContentCntr {
+            width: 700px;
+            flex-grow: 1;
+        }
+
+        .LuisaHelpSideBar{
+            width: 200px;
+            overflow: auto;
+
+            input {
+                border: 1px solid #ccc;
+                outline: 0px;
+                width: 100%;
+                padding: 3px;
+            }
+
+            a{
+                display: block;
+                text-decoration: none;
+                color: $text-color;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 0px;
+                line-height: 30px;
+                margin-bottom: $spacing-s;
+                cursor: pointer;
+
+                &.MatcHelpTopicSpacer {
+                    margin-top: $spacing-m;
+                }
+
+                &.LuisaHelpSubTopic{
+                    padding-left: $spacing-l;
+                }
+
+                &:hover {
+                    color:#333;
+                    text-decoration: none;
+                }
+        
+                &.selected {
+                    color:#3787f2;
+                    text-decoration: none;
+                }
+        
+                &.LuisaHelpTopicSpacer {
+                    margin-top: 16px;
+                }
+            }
+    
+        }
+
+
+
+        a.LuisaHelpLink {
+            display: inline;
+            color:#3787f2;
+       
+            text-decoration: underline;
+        }
+
+        a.luisa-btn-primary {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        span.LuisaHighlight{
+            background: yellow;
+        }
+
+        span.LuisaLowlight{
+            background: #fee54077; // #1abdfe1e;
+        }
+
+        .LuisaGreenLight {
+            background: #41B88377;
+        }
+      
+
+        .iframe {
+            margin-top: 30px;
+        }
+
+        h1{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: $spacing-s;
+            margin-top: $spacing-xl;
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+
+
+        h2{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: $spacing-s;
+            margin-top: $spacing-xl;
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+
+        h3{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: $spacing-s;
+            margin-top: 0px;
+        }
+
+        ol{
+            list-style: circle;
+            padding-left: $spacing-m;
+            margin: 0px;
+            margin-bottom: $spacing-m;
+        }
+
+        a {
+            color:#3787f2;
+        }
+
+        ol li{
+            list-style-type: circle;
+            margin: 0px;
+            margin-left: $spacing-s;
+            padding: 0;
+            margin-bottom: $spacing-m;
+        }
+
+        .LuisaHelpHint{
+            padding: $spacing-m;
+            background: rgba(26, 188, 254, 0.05000000074505806);
+            border-radius: $border-radius-m;
+            color: #3787f2;
+            border: 1px solid #3787f2;
+        }
+
+        .LuisaHelpContentVideo {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .LuisaBlog {
+
+        .LuisaParagraph {
+            width: 100%;
+        }
+    }
+
+
+    .LuisaHelp{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        margin:0px;
+        padding: 0px;
+        width: 100%;
+
+
+        .LuisaHelpContent{
+            flex-direction:column;
+            margin: 0px;
+            padding: 0px;
+     
+            .LuisaHelpContentCntr {
+                width: 100%;
+                flex-grow: 1;
+            }
+
+            .LuisaHelpSideBar{
+                width: 100%;
+                a {
+                    font-weight: 700;
+                }
+
+            }
+
+            .LuisaPlaygroundPlay {
+                display: none;
+            }
+          
+        }
+
+        .LuisaCodePreview .LuisaCodeWrapper {
+            width: 280px;
+            overflow: hidden;
+            font-size: $font-size-s;
+        }
+
+      
+    }
+}

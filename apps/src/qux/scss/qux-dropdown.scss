@@ -1,0 +1,95 @@
+.qux-dropdown{
+
+    transition: all 0.2s;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    .qux-dropdown-cntr{
+        height: 100%;
+        width: 100%;
+        border:1px solid #333;
+    }
+
+    .qux-dropdown-label {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .qux-dropdown-expend {
+            position: absolute;
+            height: 100%;
+            top: 0px;
+            right: 0px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qux-dropdown-carret {
+            border-left: 1px solid #333;
+            border-top: 1px solid #333;
+            display: inline-block;
+            transform: translateY(-3px) rotate(225deg);
+            transition: transform 0.2s;
+            transform-origin: 50 50;
+            width: 4px;
+            height: 4px;
+            cursor: pointer;
+        }
+    }
+
+    &.qux-open .qux-dropdown-carret {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+
+    .qux-dropdown-popup{
+        position: absolute;
+        top: calc(100%);
+        left: 0px;
+        display: none;
+        border:1px solid #333;
+        width: 100%;
+        z-index: 1000;
+        background: #fff;
+        max-height: 300px;
+        overflow: auto;
+    }
+
+    .qux-dropdown-item {
+        display: block;
+        cursor: pointer;
+
+    }
+
+    &.qux-open .qux-dropdown-popup{
+        display: block;
+    }
+
+
+    &.qux-dropdown-mobile .qux-dropdown-popup{
+        position: fixed;
+        top:50%;
+        transform: translateY(-50%);
+        left: 10%;
+        width: 80%;
+        max-height: 80%;
+        overflow: auto;
+        border-radius: 20px;
+        background: #333;
+        color:#fff;
+        box-shadow: 0px 3px 100px rgba(0, 0, 0, 0.5);
+        border:none;
+        z-index: 10001;
+
+        .qux-dropdown-item {
+            display: block;
+            cursor: pointer;
+            padding: 20px;
+            font-size: 20px;
+        }
+    }
+}

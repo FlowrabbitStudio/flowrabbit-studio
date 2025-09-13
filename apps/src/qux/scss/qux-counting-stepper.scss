@@ -1,0 +1,41 @@
+.qux-counting-stepper{
+    display: inline-block;
+    border: 1px solid #333;
+    color:#333;
+    display: flex;
+    overflow: hidden;
+
+    .qux-stepper-minus {
+        width: 50%;
+        position: relative;
+        text-align: center;        
+        cursor: pointer;
+    }
+
+    .qux-stepper-btn {
+        height: 100%;
+        align-items: center;
+        display: flex;
+    }
+    
+    .qux-stepper-plus {
+        width: calc(50% - 1px);
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .qux-stepper-label{
+        top:50%;
+        width: 100%;
+    }
+
+    .qux-stepper-num {        
+        text-align: center;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+}

@@ -1,0 +1,73 @@
+.qux-date {
+    display: flex;
+    flex-direction: column;
+
+    .qux-date-header {
+        display: flex;
+        width: 100%;
+        height: 15%;
+        font-size: 120%;
+
+        .qux-date-header-btn {
+            position: relative;
+            width: 15%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .qux-date-header-label {
+            position: relative;
+            text-align: center;
+            flex-grow: 1;
+        }
+    }
+
+    .qux-date-header-label .qux-common-valign-center{
+        width: 100%;
+    }
+
+    .qux-date-body {
+        width: 100%;
+        height: 85%;
+    
+        table {
+            width: 100%;
+            height: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        th, td {
+            padding: 5px;
+            width: 14.3%;
+            font-weight: 400;
+        }
+
+        td {
+            cursor: pointer;
+        }
+    }
+
+    .qux-date-range-start,
+    .qux-date-range-end {
+        z-index: 2;
+        position: relative;
+    }
+
+    .qux-date-range-middle {
+        position: relative;
+        z-index: 1;
+    }
+      
+    .qux-date-range-middle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        left: -12px;
+        right: -12px
+    }
+    
+}

@@ -1,0 +1,478 @@
+{
+    "_id" : "67470707ea3f355ca5642e5a",
+    "version" : 2,
+    "publicType" : "public",
+    "name" : "Ionos",
+    "description" : "",
+    "screenSize" : {
+      "w" : 1280,
+      "h" : 720
+    },
+    "type" : "desktop",
+    "screens" : {
+      "s10000_84352" : {
+        "id" : "s10000_84352",
+        "type" : "Screen",
+        "name" : "Screen",
+        "x" : 1399,
+        "y" : 1078,
+        "w" : 1280,
+        "h" : 720,
+        "z" : 0,
+        "min" : {
+          "w" : 1280,
+          "h" : 720
+        },
+        "style" : {
+          "background" : "@screen-background"
+        },
+        "props" : {
+          "start" : true
+        },
+        "has" : {
+          "image" : true
+        },
+        "children" : [ "w10009_34661", "w10001_41121" ],
+        "qssSource" : "Screen",
+        "p" : "d"
+      }
+    },
+    "widgets" : {
+      "w10001_41121" : {
+        "id" : "w10001_41121",
+        "type" : "Chat",
+        "name" : "Chat",
+        "sidebar" : true,
+        "x" : 1847,
+        "y" : 1078,
+        "w" : 832,
+        "h" : 720,
+        "z" : 1,
+        "props" : {
+          "options" : [ "Hello there! I am your AI assistant!", "What can I do for you?" ],
+          "prompts" : [ "Give me a recipe" ],
+          "systemprompts" : [ ],
+          "stream" : false,
+          "theme" : "default",
+          "themes" : { },
+          "resize" : {
+            "right" : false,
+            "up" : true,
+            "left" : false,
+            "down" : true,
+            "fixedHorizontal" : false,
+            "fixedVertical" : false
+          }
+        },
+        "has" : {
+          "onclick" : true,
+          "border" : true,
+          "backgroundColor" : true,
+          "text" : true,
+          "padding" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontSize" : 12,
+          "textAlign" : "left",
+          "letterSpacing" : "1.4",
+          "lineHeight" : "@lineHeight",
+          "background" : "#f5f5f5",
+          "color" : "#0d0d0d",
+          "fontFamily" : "@font-family",
+          "textareaBackground" : "#ffffff",
+          "textareaColor" : "#757a91",
+          "textareaRadius" : 4,
+          "textareaBorderWidth" : 1,
+          "textareaBorderColor" : "#ced4da",
+          "bubbleShape" : "speech",
+          "bubbleBorderRadius" : 8,
+          "bubbleBorderWidth" : "@border-width",
+          "bubblePadding" : 10,
+          "bubbleIconSize" : 12,
+          "bubbleIconColor" : "#818181",
+          "assistantBackground" : "@button-primary-background",
+          "assistantColor" : "@button-primary-color",
+          "assistantBorderColor" : "@button-primary-border-color",
+          "userBackground" : "#ffffff",
+          "userColor" : "#757a91",
+          "userBorderColor" : "none",
+          "promptBackground" : "#f0f0f0",
+          "promptColor" : "#333",
+          "promptBorderColor" : "#ccc",
+          "promptBorderWidth" : 1,
+          "promptBorderRadius" : 8,
+          "promptFontSize" : 12,
+          "systempromptBackground" : "#f0f0f0",
+          "systempromptColor" : "#333",
+          "systempromptBorderColor" : "#ccc",
+          "systempromptBorderWidth" : 1,
+          "systempromptBorderRadius" : 8,
+          "systempromptFontSize" : 12,
+          "gap" : 16,
+          "inputHeight" : 50,
+          "bubbleIconColorHover" : "#333",
+          "promptBackgroundHover" : "#d1d1d1",
+          "promptColorHover" : "#333",
+          "systempromptBackgroundHover" : "#d1d1d1",
+          "systempromptColorHover" : "#333",
+          "systempromptBorderColorHover" : "#ccc",
+          "hover" : {
+            "borderColor" : "#eaeaea",
+            "background" : "#ffffff"
+          },
+          "borderTopWidth" : "0",
+          "borderBottomWidth" : "0",
+          "borderRightWidth" : "0",
+          "borderLeftWidth" : "0",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "paddingTop" : 8,
+          "paddingBottom" : 8,
+          "paddingLeft" : 8,
+          "paddingRight" : 8,
+          "borderTopColor" : "#dbdbdb",
+          "borderBottomColor" : "#dbdbdb",
+          "borderRightColor" : "#dbdbdb",
+          "borderLeftColor" : "#dbdbdb",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "qssSource" : "Chat",
+        "p" : "d",
+        "created" : 1732708111919,
+        "modified" : 1732734728312
+      },
+      "w10007_36380" : {
+        "id" : "w10007_36380",
+        "name" : "Ionos",
+        "type" : "AIRest",
+        "category" : "Logic",
+        "subcategory" : "Ionos",
+        "_type" : "Widget",
+        "x" : 2011,
+        "y" : 947,
+        "w" : 72,
+        "h" : 72,
+        "props" : {
+          "title" : "Ionos",
+          "template" : {
+            "title" : "Ionos",
+            "type" : "ionos",
+            "rest" : {
+              "method" : "POST",
+              "url" : "",
+              "token" : "",
+              "authType" : "Bearer",
+              "vars" : { },
+              "input" : {
+                "type" : "JSON",
+                "template" : "{\"model\":\"@{model}\"}"
+              },
+              "output" : {
+                "databinding" : "abc",
+                "template" : "",
+                "type" : "JSON",
+                "hints" : [ ]
+              },
+              "headers" : [ ]
+            }
+          },
+          "rest" : {
+            "vars" : {
+              "prompt" : "a cat"
+            },
+            "token" : "${secrets.ionos}",
+            "authType" : "Bearer",
+            "input" : {
+              "type" : "JSON",
+              "fileDataBinding" : "",
+              "template" : "{\"model\":\"black-forest-labs/FLUX.1-schnell\",\"prompt\":\"a cat\"}"
+            },
+            "output" : {
+              "databinding" : "Ionos",
+              "path" : "data[0].b64_json",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : { },
+              "streampath" : "choices[0].delta.content",
+              "formatType" : "base64"
+            },
+            "headers" : [ {
+              "key" : "Content-Type",
+              "value" : "application/json"
+            } ],
+            "url" : "https://openai.inference.de-txl.ionos.com/v1/images/generations",
+            "modelType" : "ionos",
+            "aiModelId" : "flux-1-schnell",
+            "method" : "POST",
+            "type" : "image",
+            "modelId" : "flux-1-schnell",
+            "dependentSelections" : { },
+            "userToken" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJNQVRDIiwibmFtZSI6Ik5lcmVhIiwiaWQiOiI2NjJiN2Q2ZTU0ZmVkYzUzMjAzYmFmZGYiLCJleHAiOjE3MzMxMzIxMTUsImVtYWlsIjoibmVyZWFqZW5zZW5AZ21haWwuY29tIiwibGFzdG5hbWUiOiJKZW5zZW4ifQ._SLJ7wyGo6zEplNkG2AaOJsFyKYyqSHhBYCfyEpfQeo",
+            "isFlowrabbitSecret" : false
+          },
+          "aiModelId" : "flux-1-schnell"
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777",
+          "iconSize" : 0.7,
+          "logo" : "ai-ionos"
+        },
+        "z" : 2,
+        "p" : "d",
+        "created" : 1732716790152,
+        "modified" : 1732734924800
+      },
+      "w10008_23207" : {
+        "id" : "w10008_23207",
+        "name" : "Text AI",
+        "type" : "AIRest",
+        "category" : "Logic",
+        "subcategory" : "Text AI",
+        "_type" : "Widget",
+        "x" : 2202,
+        "y" : 951,
+        "w" : 72,
+        "h" : 72,
+        "props" : {
+          "title" : "Text AI",
+          "template" : {
+            "title" : "Text AI",
+            "type" : "llms",
+            "rest" : {
+              "method" : "POST",
+              "url" : "",
+              "token" : "",
+              "authType" : "Bearer",
+              "vars" : { },
+              "input" : {
+                "type" : "JSON",
+                "template" : "{\"model\":\"@{model}\"}"
+              },
+              "output" : {
+                "databinding" : "abc",
+                "template" : "",
+                "type" : "JSON",
+                "hints" : [ ]
+              },
+              "headers" : [ ]
+            }
+          },
+          "rest" : {
+            "vars" : { },
+            "token" : "",
+            "authType" : "Bearer",
+            "input" : {
+              "type" : "JSON",
+              "fileDataBinding" : "",
+              "template" : "{}"
+            },
+            "output" : {
+              "databinding" : "",
+              "path" : "",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : { }
+            },
+            "headers" : [ ]
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777",
+          "iconSize" : 0.7,
+          "icon" : "mdi mdi-chat",
+          "logo" : "ai-text"
+        },
+        "z" : 3,
+        "p" : "d",
+        "created" : 1732716998710
+      },
+      "w10009_34661" : {
+        "id" : "w10009_34661",
+        "type" : "Box",
+        "name" : "Container",
+        "sidebar" : true,
+        "x" : 1399,
+        "y" : 1078,
+        "w" : 448,
+        "h" : 720,
+        "z" : 2,
+        "props" : {
+          "resize" : {
+            "right" : false,
+            "up" : true,
+            "left" : false,
+            "down" : true,
+            "fixedHorizontal" : false,
+            "fixedVertical" : false
+          }
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "fontFamily" : "@font-family",
+          "background" : "#757474",
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@panel-border-color",
+          "borderBottomColor" : "@panel-border-color",
+          "borderRightColor" : "@panel-border-color",
+          "borderLeftColor" : "@panel-border-color"
+        },
+        "qssSource" : "Box",
+        "p" : "d",
+        "created" : 1732734617546,
+        "modified" : 1732734731599
+      },
+      "w10010_54537" : {
+        "id" : "w10010_54537",
+        "type" : "Label",
+        "name" : "Primary Text",
+        "x" : 2352,
+        "y" : 2144,
+        "w" : 128,
+        "h" : 32,
+        "z" : 4,
+        "props" : {
+          "label" : "Lore Ipsum"
+        },
+        "has" : {
+          "label" : true,
+          "padding" : true,
+          "advancedText" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacin",
+          "lineHeight" : "@lineHeight",
+          "color" : "@label-color",
+          "textShadow" : null
+        },
+        "qssSource" : "Label",
+        "p" : "d",
+        "created" : 1732734627008,
+        "modified" : 1732734718608
+      },
+      "w10011_24887" : {
+        "id" : "w10011_24887",
+        "type" : "Box",
+        "name" : "Container 1",
+        "sidebar" : true,
+        "x" : 2328,
+        "y" : 2128,
+        "w" : 399,
+        "h" : 88,
+        "z" : 3,
+        "props" : { },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true
+        },
+        "actions" : { },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "fontFamily" : "@font-family",
+          "background" : "@panel-background",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@panel-border-color",
+          "borderBottomColor" : "@panel-border-color",
+          "borderRightColor" : "@panel-border-color",
+          "borderLeftColor" : "@panel-border-color"
+        },
+        "qssSource" : "Box",
+        "p" : "d",
+        "created" : 1732734632487,
+        "modified" : 1732734718609
+      }
+    },
+    "lines" : { },
+    "groups" : {
+      "g10012_38325" : {
+        "id" : "g10012_38325",
+        "children" : [ "w10009_34661", "w10001_41121" ],
+        "groups" : [ ],
+        "name" : "Group",
+        "props" : {
+          "resize" : {
+            "right" : false,
+            "up" : true,
+            "left" : false,
+            "down" : true,
+            "fixedHorizontal" : false,
+            "fixedVertical" : false
+          }
+        }
+      }
+    },
+    "templates" : { },
+    "designtokens" : { },
+    "schema" : { },
+    "data" : { },
+    "theme" : {
+
+    },
+    "lastUUID" : 10013,
+    "lastUpdate" : 1732734924801,
+    "created" : 1732708103207,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Flowrabbit.ai",
+    "isDirty" : true,
+    "lastCategory" : "Layout",
+    "screenCount" : 1,
+    "widgetCount" : 6,
+    "publicName" : "ionos-test",
+    "publicOrgName" : "test-qa",
+    "id" : "67470707ea3f355ca5642e5a"
+  }

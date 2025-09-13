@@ -1,0 +1,14 @@
+@import './design-system.scss';
+
+
+.LuisaTabBar{
+    display: flex;
+    gap: $spacing-l;
+    a {
+        cursor: pointer;
+
+        &.LuisaTabSelected{
+      
+        }
+    }
+}

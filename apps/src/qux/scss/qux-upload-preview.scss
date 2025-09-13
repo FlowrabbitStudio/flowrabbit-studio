@@ -1,0 +1,16 @@
+.qux-upload-preview{
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  &.qux-upload-preview-border{
+    border: 0px solid #333333;
+  }
+  &.mdi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; 
+    color: #aaaaaa; 
+  }
+}

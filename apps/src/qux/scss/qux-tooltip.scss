@@ -1,0 +1,23 @@
+.qux-tooltip {
+    position:relative; 
+
+    &:before {
+        content: attr(data-tt-text); /* here's the magic */
+        position:absolute;
+        top:calc(100% + 8px);
+        left:50%;
+        transform:translateX(-50%);
+        max-width:200px;
+        padding:2px 8px;
+        border-radius:8px;
+        background:#000;
+        color: #fff;
+        text-align:center;
+        display:none;
+        font-size: 12px;
+    }
+   
+    &:hover:before {
+        display:block;
+    }
+}

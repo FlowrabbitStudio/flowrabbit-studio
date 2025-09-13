@@ -1,0 +1,34 @@
+@import './design-system.scss';
+
+body, html {
+  min-height: 100%;
+  margin: 0px;
+  width: 100%;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.luisa{
+	font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+  background: $luisa-background;
+  height: 100%;
+}
+
+
+.luisa-low-code-wrapper{
+  height: 100%;
+}
+
+.luisa-gradient {
+  background: linear-gradient(30deg, #526DCB 0%,#EC2021);
+}
+
+
+
+

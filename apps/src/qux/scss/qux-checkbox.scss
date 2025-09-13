@@ -1,0 +1,47 @@
+.qux-checkbox{
+    display: inline-flex;
+    /*overflow: hidden;*/
+    cursor: pointer;
+    /* Use here somehow flex? */
+
+   .qux-checkbox-cntr{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        border:1px solid #333;
+        overflow: hidden;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .qux-checkbox-hook{
+        opacity: 0;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        border-bottom: 3.5px solid #333;
+        border-right: 3.5px solid #333;
+        transform: rotate(45deg) scale(0.8); 
+        display: inline-block;
+        height: 60%; 
+        width: 30%; 
+        position: absolute;
+        top: 45%; 
+        left: 50%; 
+        transform-origin: center; 
+        transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
+        border-radius: 2px 0px;
+    }
+
+    .qux-checkbox-label {
+        margin-left: 16px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+}
+
+.qux-checkbox-checked {
+    .qux-checkbox-hook{
+        opacity:1;
+    }
+}

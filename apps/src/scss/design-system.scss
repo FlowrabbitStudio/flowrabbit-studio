@@ -1,0 +1,155 @@
+$color1: #04152c;
+$color1-hover: #04152c;
+
+$color2: #FF416C;
+
+$color3: #2c3e50;
+$color3-hover: rgb(44, 44, 44);
+
+$color4: #FF6575;
+$color4-hover: #eb5f6d;
+
+$color5: rgb(209 213 219);
+$color5-hover: rgba(0,0,0, 0.35);
+
+$color6: rgba(255,255,255, 0.95);
+$color6-hover: rgba(255,255,255, 1);
+
+$color7: rgb(209, 74, 74);
+$color7-hover: rgb(179, 33, 33);
+
+$color8: rgb(44, 44, 44);
+
+$color9: rgb(106, 22, 184);
+$color9-hover: rgb(85, 17, 148);
+
+
+$color-success: rgb(76, 185, 94);
+$color-success-hover: rgb(47, 168, 67);
+
+$color-creme: #E8EFFC;
+$color-light-gray: #FAFAFA;
+$color-white: #fff;
+$color-black: #000;
+$color-red-soft: #FF6575;
+
+$luisa-background: $color-light-gray;
+
+
+$text-color: $color3;
+$text-color-hover: #000;
+$text-color-seconday: #ccc;
+$text-color-active: $color4;
+
+$primary-color: $color6;
+$primary-color-hover: $color6;
+$primary-background: $color1;
+$primary-background-hover: $color1-hover;
+$primary-background-disabled: #ccc;
+
+$secondary-color: $color8;
+$secondary-border: $color8;
+$secondary-color-hover: $color6;
+$secondary-background: none;
+$secondary-background-hover: $color8;
+$secondary-background-disabled: #ccc;
+
+
+$danger-color: $color8;
+$danger-color-hover: $color6;
+$danger-border: $color8;
+$danger-background: none;
+$danger-background-hover: $color8;
+
+
+$header-color: $color3;
+$header-color-hover: $color4;
+$header-color-active: $color-black;
+$header-color-primary: $color6;
+$header-border: $color5;
+$header-background:  $luisa-background;
+$header-background-primary: $color3;
+$header-background-primary-hover: $color3-hover;
+
+
+$dialog-color: $text-color;
+$dialog-color-hover: $text-color-hover;
+$dialog-background: #fff;
+
+
+$input-color: $text-color;
+$input-color-focus: $text-color;
+$input-border-color:$color5;
+$input-border-focus:$color5-hover;
+
+
+$border-color: $color5;
+$border-color-hover: $color5-hover;
+
+$spacing-xxl:64px;
+$spacing-xl:40px;
+$spacing-lx:32px;
+$spacing-l:24px;
+$spacing-m:16px;
+$spacing-s:8px;
+$spacing-xs:4px;
+
+$font-size-xxl: 32px;
+$font-size-xl: 22px;
+$font-size-l: 18px;
+$font-size-m: 16px;
+$font-size-s: 14px;
+
+
+$border-radius-m: 4px;
+$border-radius-s: 3px;
+
+$shadow-s: 0 2px 10px rgba(0,0,0, 0.15);
+$shadow-m: 0 5px 20px rgba(0,0,0, 0.15);
+
+$transition: all 0.2s;
+
+
+$main_color: #3787f2;
+$text-color-passive: #ccc;
+$text-color-dark: #363636;
+$color-danger: #f83a3a;
+$color-passive: #777;
+
+$form-color: #04152c;
+$form-color-hover: #000;
+
+$layer-list-selection: #d6e5f8;
+
+$color-black: #000;
+$color-red: #f94c4c;
+$color-red-dark: #f83a3a;
+
+$table-background:rgb(245, 245, 245);
+$table-selected: #d6e5f8;
+
+$input_border: #dbdbdb;
+$input_border_focus: #b5b5b5;
+
+
+$spacing-xxxl:96px;
+$spacing-xxl:64px;
+$spacing-xl:40px;
+$spacing-lx:32px;
+$spacing-l:24px;
+$spacing-m:16px;
+$spacing-s:8px;
+$spacing-xs:4px;
+
+$font-weight: 400;
+$font-weight-l: 500;
+$font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+
+$font-size-xxl: 5rem;
+$font-size-xl: 1.6rem;
+$font-size-l: 24px;
+$font-size-m: 24px;
+$font-size-default: 18px;
+$font-size-s: 16px;
+$font-size-xs: 14px;
+$font-size-xxs: 12px;

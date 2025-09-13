@@ -1,0 +1,7 @@
+.qux-progress-segments {
+  display: flex;
+  justify-content: space-between;
+  .qux-progress-element {
+    cursor: pointer;
+  }
+}

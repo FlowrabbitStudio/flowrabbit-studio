@@ -1,0 +1,46 @@
+.MatcFlex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.MatcFlex64 {
+    gap: 64px;
+}
+
+.MatcFlexGrow {
+    flex-grow: 1;
+}
+
+.MatcFlexBetween {
+    justify-content: space-between
+}
+
+
+.MatcFlexEnd {
+    justify-content: flex-end;
+}
+
+
+.MatcFlexBar {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    gap: 12px;
+}
+
+@media (max-width: 640px) {
+    .MatcFlexMobile {
+        flex-direction: column;
+    }
+
+    .MatcFlexMobileGrow {
+        flex-grow: 1;
+        width: 100%;
+
+
+    }
+}

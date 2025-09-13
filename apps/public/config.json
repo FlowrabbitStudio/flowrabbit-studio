@@ -1,0 +1,6 @@
+{
+    "api_URL": "https://api-os.flowrabbit.ai",
+    "proxy_URL": "https://proxy-os.flowrabbit.ai",
+    "app_URL": "http://localhost:8081",
+    "node_URL": "https://node-os.flowrabbit.ai"
+}

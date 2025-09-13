@@ -1,0 +1,240 @@
+@import url(vars.scss);
+/****************************************************
+ * Menu
+ ****************************************************/
+
+.MatcMainMenu {
+  border: none;
+  height: 40px;
+  top: 0;
+  background: none;
+  border-bottom: none;
+  border-bottom: 0px solid transparent;
+  background: var(--primary-color-dark);
+  display: flex;
+  padding: 0px 20px;
+  box-shadow: 2px 2px 20px 2px rgb(255 255 255 / 20%),
+    0px 1px 1px 0px rgb(255 255 255 / 14%),
+    0px 1px 3px 0px rgb(255 255 255 / 12%);
+}
+
+.MatcMainMenu > div {
+  flex-grow: 1;
+  display: flex;
+}
+
+.MatcMainMenu > div:last-child {
+  justify-content: flex-end;
+}
+
+.MatcMainMenuSection {
+  width: 100%;
+}
+
+.MatcMainMenuCenter {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.MatcOrganizationMenu {
+  width: 200px;
+}
+
+.MatcOrganizationMenu.button {
+  border-radius: 18px;
+  background: #0c1b2f;
+  color: white;
+  border-color: #484848;
+  word-wrap: break-word;
+  transition: box-shadow 0.1s ease, width 0.1s ease;
+  font-size: 12px;
+}
+
+.MatcOrganizationMenu.button:hover {
+  background: #1d242e;
+  color: white;
+  border-color: #5d5d5d;
+}
+
+.MatcOrganizationMenu.button:focus {
+  background: #0c1b2f;
+  color: white;
+  border-color: #484848;
+}
+
+.dropdown-menu {
+  z-index: 99999999 !important;
+}
+
+.MatcOrganizationMenu .dropdown-content {
+  margin-top: 4px;
+  border: 1px solid #363636;
+  background: #0b1b30;
+  border-radius: 6px;
+  color: white;
+}
+
+.MatcOrganizationMenu a {
+  padding: 10px !important;
+  text-align: center !important;
+}
+
+.MatcOrganizationMenu .dropdown-item {
+  border-radius: 2px;
+  color: #f1f1f1;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.MatcOrganizationMenu .dropdown-item:hover {
+  background-color: #2c3033;
+  color: white;
+}
+
+.MatcOrganizationMenu .dropdown-item.is-active {
+  background-color: var(--primary-color);
+  color: white;
+}
+.MatcOrganizationMenu .dropdown-divider {
+  background-color: #646464;
+}
+
+.MatcMainMenuItem {
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--from-button-color);
+  align-items: center;
+  margin-left: 0px;
+  height: 100%;
+  a, a:focus, a:visited {
+    text-decoration: none;
+    color: var(--from-button-color);
+  }
+
+  .MatcButtonPrimary {
+    padding: 2px 16px;
+    height: auto;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+}
+
+
+.MatcMainMenuItem .mdi {
+  font-size: 18px;
+  padding: 8px 8px;
+  margin-top: 0px;
+}
+
+.MatcMainMenuItem .menu-label {
+  color: hsl(0, 0%, 71%);
+}
+
+.MatcMainMenuItem:hover,
+.MatcMainMenuItem:focus {
+  text-decoration: none;
+  color: var(--from-button-color-hover);
+  //background: rgba(255, 255, 255, 0.1);
+}
+
+.MatcMainMenuItemSelected {
+  color: var(--from-button-color-hover);
+}
+
+.MatcMainMenuItemPrimary {
+  background: var(--primary-color);
+  padding: 0px 16px;
+
+  &:hover {
+    background: var(--primary-color-hover);
+  }
+}
+
+
+.icon-section {
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  gap: 5px;
+  margin: 0 10px;
+  p {
+    color: white;
+    min-width: 52px;
+  }
+}
+
+.credit-section{
+
+ 
+  .credit-section-tooltip {   
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  &:hover .credit-section-tooltip {
+    display: flex;
+    width: 256px;
+    height: 48px;
+    padding: 8px 16px;
+  }
+
+  .credit-section-circle {
+    border-radius: 50px;
+    font-size: 10px;
+    border: 3px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+}
+
+.account-section {
+
+  &:hover .account-section-content {
+    display: flex;
+    flex-direction: column;
+    width: 196px;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .account-section-image {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+
+  .account-section-letters {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+}

@@ -1,0 +1,31 @@
+.MatcTabsContainer {
+    padding: 24px 0px
+}
+
+.MatcTabs {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.MatcTabs li {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.MatcTabs li a {
+    text-decoration: none;
+    padding: 10px 25px;
+    display: block;
+    color: #333;
+    border-radius: 5px 5px 0 0;
+}
+
+.MatcTabs .MatcTabActive a {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color) !important;
+    font-weight: 700;
+    border-bottom: none;
+}
