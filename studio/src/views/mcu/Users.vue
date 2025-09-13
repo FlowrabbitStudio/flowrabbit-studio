@@ -4,7 +4,7 @@
     <Panel :transparent="true">
             <div class="MCUTopBar ">
               <SearchBar v-model="searchFilter" />
-                <a class="MatcButton MatcButtonRed" @click="backupUsers">Backup</a>
+
             </div>
         </Panel>
 
@@ -20,7 +20,7 @@
 
         <DataTable :data="filteredUsers" :size="100" :columns="[
           {id:'email', key: 'email', label: 'Email', width: '20%', max:20},
-          {id:'paidUntil', key: 'paidUntil', label: 'Paid Until', width: '10%', value: (row) => printDate(row.paidUntil), class: (row) => row.paidUntil < now ? 'orange': '' },
+          {id:'name', key: 'name', label: 'Name', width: '10%', max:20, value: (row) => row.name + ' ' + row.lastname},
           {id:'created', key: 'created', label: 'Created', width: '10%', value: (row) => printDate(row.created)},
           {id:'lastlogin', key: 'lastlogin', label: 'Last Login', width: '10%', value: (row) => printDate(row.lastlogin)},
           {id:'loginCount', key: 'loginCount', label: 'Count', width: '10%'},
@@ -48,11 +48,7 @@ import SearchBar from './SearchBar.vue'
 import AdminService from './AdminService'
 import UserDialog from './UserDialog'
 import Services from 'services/Services'
-import Dialog from 'common/Dialog'
-import DomBuilder from 'common/DomBuilder'
-// import CheckBox from 'common/CheckBox'
-// import on from 'dojo/on'
-// import * as DojoUtil from 'dojo/DojoUtil';
+
 
 export default {
   props:[''],
@@ -91,26 +87,7 @@ export default {
         this.loadUsers()
       })
     },
-    async backupUsers(){
-			var d = new Dialog();
-			var db = new DomBuilder();
-			var div = db.div("MatcDialog ").build();
-			db.h1("", "Users Backup...").build(div);
-			var label = db.div("", "Backup users...").build(div);
-			d.on("close", function(){
-				console.debug("close");
-				d.isDone = true;
-			})
-			d.popup(div);
     
-      let result = await this.adminService.backupUsers()
-      if (result.status == "ok"){
-        label.innerHTML = "Done...(" + Math.round(result.size /1024) / 1000 + "kb )";
-      } else {
-        label.innerHTML = "Error!";
-      }
-			
-		},
     printDate (ms) {
       var date = new Date(ms);
       return date.toLocaleDateString();

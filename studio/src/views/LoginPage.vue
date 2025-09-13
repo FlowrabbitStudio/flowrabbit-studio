@@ -126,14 +126,14 @@
                       <a
                         target="_blank"
                         style="color: var(--primary-color)"
-                        href="https://www.flowrabbit.ai/privacy"
+                        href="#/privacy.html"
                         >privacy of policy</a
                       >
                       and
                       <a
                         target="_blank"
                         style="color: var(--primary-color)"
-                        href="https://www.flowrabbit.ai/terms-of-service"
+                        href="#/terms-of-service.html"
                         >terms of service</a
                       >
                     </span>
@@ -203,6 +203,15 @@ a.MatcButton.MatcButtonPrimary.MatcButtonFullWidth {
 <style lang="css">
 @import "../style/toolbar/tab.css";
 </style>
+<style>
+@import url("../style/matc.css");
+@import url("../style/qux.css");
+@import url("../style/fonts.css");
+</style>
+<style lang="sass">
+@import "../style/bulma.sass"
+</style>
+
 <script>
 import Services from "services/Services";
 import Logger from "common/Logger";

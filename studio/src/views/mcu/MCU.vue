@@ -24,21 +24,14 @@
             <router-link to="/mcu/users.html" class="navbar-item">Users</router-link>
             <router-link to="/mcu/organizations.html" class="navbar-item">Organization</router-link>
             <router-link to="/mcu/apps.html" class="navbar-item">Apps</router-link>
-            <router-link to="/mcu/pubs.html" class="navbar-item">Pubs</router-link>
-    
             <router-link to="/mcu/secrets.html" class="navbar-item">Secrets</router-link>
-            <!-- <router-link to="/mcu/ai.html" class="navbar-item">AI Models</router-link> -->
-            <!-- <router-link to="/mcu/promo.html" class="navbar-item">Promo</router-link> -->
-
            
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Log</a>
                 <div class="navbar-dropdown MatcNavDropDown">
-
                   <router-link to="/mcu/log.html" class="navbar-item">Log</router-link>
                   <router-link to="/mcu/errors.html" class="navbar-item">Errors</router-link>
                   <router-link to="/mcu/events.html" class="navbar-item">Events</router-link>
-
                 </div>
             </div>
 
@@ -50,7 +43,6 @@
                   <router-link to="/mcu/dash-metrics.html" class="navbar-item">Metrics</router-link>
                   <router-link to="/mcu/dash-db.html" class="navbar-item">DB</router-link>
                   <router-link to="/mcu/dash-users.html" class="navbar-item">Users</router-link>
-                  <router-link to="/mcu/dash-open-ai.html" class="navbar-item">OpenAI</router-link>
                 </div>
             </div>
           </div>

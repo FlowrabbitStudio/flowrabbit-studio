@@ -23,9 +23,11 @@
     </div>
   </div>
 </template>
+
 <style lang="scss">
-@import "../../style/scss/workspace.scss";
+  @import "../../style/scss/workspace.scss";
 </style>
+
 <script>
 import Logger from "common/Logger";
 import DojoWidget from "dojo/DojoWidget";
