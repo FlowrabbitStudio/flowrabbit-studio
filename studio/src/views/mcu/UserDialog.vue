@@ -16,11 +16,19 @@
                         {{user.name ? user.name : '?????'}} {{user.lastname ? user.lastname : '???????'}}
                     </div>      
                 </div>
-
+<!-- 
                 <div class="form-group">
                     <label>Paid Until</label>
                     <div>
                         <input class="form-control" type="date" v-model="paidUntilDate" />
+                    </div>               
+                </div> -->
+
+           
+                <div class="form-group">
+                    <label>Passwort reset link</label>
+                    <div>
+                        <a :href="`#/login.html?id=${user.passwordRestKey}`" target="_blank">{{user.id}}</a>
                     </div>               
                 </div>
 

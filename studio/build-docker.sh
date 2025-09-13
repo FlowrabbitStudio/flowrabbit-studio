@@ -1,1 +1,1 @@
-docker build -t flowrabbit/studio .
+docker buildx build --platform linux/amd64 -t flowrabbit/studio:latest --push .

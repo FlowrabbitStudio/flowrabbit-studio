@@ -3,24 +3,9 @@
     <div class="MatcContent MatcAbout">
       <div class="MatcSection">
         <div class="container container-center-xxl" v-if="user">
-          <div class="MatcCard">
-            <div class="tabs">
-              <ul>
-                <li
-                  :class="{ 'is-active': activeTab === 'profile' }"
-                  @click="activeTab = 'profile'"
-                >
-                  <a>Profile</a>
-                </li>
-                <!--<li
-                  :class="{ 'is-active': activeTab === 'organizations' }"
-                  @click="activeTab = 'organizations'"
-                >
-                  <a>Organizations</a>
-                </li>-->
-              </ul>
-            </div>
-            <div class="MatcCardContent">
+          <div class="">
+    
+            <div class="">
               <div v-if="activeTab === 'profile'">
                 <div v-if="isQuxAuth">
                   <div class="MatcCard">

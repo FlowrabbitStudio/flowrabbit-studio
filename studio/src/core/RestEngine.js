@@ -6,8 +6,15 @@ import ConstantsUtil from "../util/ConstantsUtil.js";
 import JSONPath from "src/core/JSONPath";
 class RestEngine {
   constructor() {
-    this.proxyURL = `${Services.getConfig().proxy_URL}/proxy`;
+    this.proxyURL = `/proxy`;
   }
+
+
+  setProxyURL(url) {
+    this.proxyURL = url;
+    console.debug("RestEngine > setProxyURL: ", this.proxyURL);
+  }
+
 
   async run(request, data, hash, appID, isProxy = false, isAi = false) {
     Logger.log(1, "RestEngine.run()", hash, appID, isProxy);

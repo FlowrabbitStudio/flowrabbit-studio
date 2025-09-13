@@ -18,10 +18,6 @@ import SecretsDialog from '../dialogs/SecretWizardDialog';
 
 import Services from 'services/Services'
 
-import Help from 'help/Help'
-// import Share from 'page/Share'
-// import QR from 'core/QR'
-// import Simulator from 'core/Simulator'
 
 import ImportDialog from 'canvas/toolbar/dialogs/ImportDialog'
 import DesignGPTDialogSmall from 'canvas/toolbar/dialogs/DesignGPTDialogSmall'
@@ -240,14 +236,6 @@ export default {
 			})
 		},
 
-		showHelp(e) {
-			let dialog = new Dialog()
-			var db = new DomBuilder();
-			let popup = db.div("MatcDialog MatcHelpDialog MatcPadding").build();
-			dialog.popup(popup, e.target);
-			let help = this.$new(Help)
-			help.placeAt(popup)
-		},
 
 		// async showSharing(e) {
 		// 	this.logger.log(-1, "showSharing", "entry > ", this.isPublic);
