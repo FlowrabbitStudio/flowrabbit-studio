@@ -16,19 +16,11 @@
                         {{user.name ? user.name : '?????'}} {{user.lastname ? user.lastname : '???????'}}
                     </div>      
                 </div>
-<!-- 
-                <div class="form-group">
-                    <label>Paid Until</label>
-                    <div>
-                        <input class="form-control" type="date" v-model="paidUntilDate" />
-                    </div>               
-                </div> -->
-
            
                 <div class="form-group">
                     <label>Passwort reset link</label>
                     <div>
-                        <a :href="`#/login.html?id=${user.passwordRestKey}`" target="_blank">{{user.id}}</a>
+                        <a :href="`#/login.html?id=${user.passwordRestKey}`" target="_blank">{{`#/login.html?id=${user.passwordRestKey}`}}</a>
                     </div>               
                 </div>
 
@@ -68,7 +60,6 @@ export default {
     data: function () {
         return {
             user: {},
-            paidUntilDate: '',
             isBlocked: false
         }
     },
@@ -80,9 +71,7 @@ export default {
     },
     methods: {
         async updateUser () {
-            const paidUntil = Date.parse(this.paidUntilDate);
             await this.adminService.updateUser(this.user.id, {
-                paidUntil: paidUntil,
                 status: this.isBlocked ? 'blocked' : 'active'
             })
             if (this.saveCallback) {
@@ -97,11 +86,6 @@ export default {
         show (user, e, saveCallback) {
             this.$refs.dialog.show(e.target)
             this.user = lang.clone(user)
-            const date = new Date(user.paidUntil)
-            const year = date.getFullYear()
-            const month = `0${date.getMonth() + 1}`.slice(-2)
-            const day = `0${date.getDate()}`.slice(-2)
-            this.paidUntilDate = `${year}-${month}-${day}`;
             this.isBlocked = this.user.status === 'blocked'
             this.saveCallback = saveCallback
         }
