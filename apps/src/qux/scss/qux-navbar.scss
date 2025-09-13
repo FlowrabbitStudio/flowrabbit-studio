@@ -1,0 +1,36 @@
+.qux-navbar{
+
+    .qux-navbar-item {
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .qux-navbar-item:visited {
+        color: inherit;
+    }
+
+    &.MobileBottom,
+    &.TopNavBar {
+        display: flex;
+
+        .qux-navbar-item {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &.SideNavBar{
+        display: flex;
+        flex-direction: column;
+
+        .qux-navbar-item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+
+    
+}

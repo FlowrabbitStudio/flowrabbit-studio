@@ -1,0 +1,65 @@
+.qux-repeater{
+    overflow: auto;
+
+    .qux-repeater-wrapper {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    &.qux-repeater-loading{
+        position: relative;
+        overflow: hidden;
+        
+        .qux-repeater-loading-label{
+            font-size: 24px;
+            opacity: 0.6;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+   
+    .qux-repeater-loading{
+        background: #fff;
+        opacity: 0.25;
+        animation: loadingAnimation 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .qux-repeater-loading-1{
+        animation-delay: 100ms;
+    }
+
+    .qux-repeater-loading-2{
+        animation-delay: 200ms;
+    }
+
+    .qux-repeater-loading-3{
+        animation-delay: 300ms;
+    }
+
+    .qux-repeater-loading-4{
+        animation-delay: 400ms;
+    }
+
+    .qux-repeater-loading-5{
+        animation-delay: 500ms;
+    }
+
+    .qux-label {
+        overflow: hidden;
+        text-overflow: ellipsis;        
+    }
+}
+
+@keyframes loadingAnimation {
+    0% {opacity: 0.5 }
+    33% { opacity: 0.8}
+    66% { opacity: 0.5}
+}

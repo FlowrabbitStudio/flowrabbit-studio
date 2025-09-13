@@ -1,0 +1,49 @@
+.qux-segment {
+  position: relative;
+
+  .qux-segment-indicator {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: left 0.2s, width 0.2s;
+
+    z-index: 1;
+  }
+
+  .qux-segment-picker-cntr {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: stretch;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+
+    .qux-segment-item {
+      flex-grow: 1;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      z-index: 2;
+
+      .qux-segment-item-label {
+        display: inline-block;
+        width: 100%;
+        z-index: 9;
+      }
+      &.qux-segment-item-selected {
+        transition: left 0.3s ease;
+        position: relative;
+      }
+    }
+  }
+}

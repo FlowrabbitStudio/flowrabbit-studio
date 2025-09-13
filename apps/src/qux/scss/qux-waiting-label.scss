@@ -1,0 +1,12 @@
+.qux-waiting-label {
+    display: flex;
+    align-items: flex-end;
+
+    >span {
+        transition: 0.1 all;
+    }
+
+    .qux-waiting-label-selected {
+       transform: translateY(-2px);
+    }
+}

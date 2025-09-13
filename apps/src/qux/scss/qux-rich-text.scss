@@ -1,0 +1,11 @@
+.qux-rich-text{
+  display: inline-block;
+
+  .qux-common-label{
+    width: 100%;
+
+    span{
+      display: inline;
+    }
+  }
+}

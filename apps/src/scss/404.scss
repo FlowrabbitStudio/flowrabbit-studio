@@ -1,0 +1,21 @@
+@import './design-system.scss';
+
+.luisa-404{
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .luisa-404-header {
+        color: rgb(255, 255, 255, 0.8);
+        font-size: $font-size-xxl;
+    }
+
+    .luisa-404-hint {
+        color: rgb(255, 255, 255, 0.8);
+        font-size: $font-size-s;
+    }
+}
+

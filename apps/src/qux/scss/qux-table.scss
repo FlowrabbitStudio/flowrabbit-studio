@@ -1,0 +1,86 @@
+.qux-table {
+    overflow: auto;
+
+    &.qux-table-fixed {
+        display: flex;
+        flex-direction: column;
+
+        .qux-table-header {
+
+        }
+
+        .qux-table-body {
+            overflow: auto;
+            flex-grow: 1;
+        }
+    }
+
+    table {
+        max-width: 100%;
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        table-layout: fixed;
+        box-sizing: border-box;
+
+        .qux-table-action{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .qux-table-action:hover{
+            text-decoration: none;
+        }
+
+        .qux-table-action-hover{
+            opacity: 0;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        td, th {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            white-space: nowrap; /* Add this line */
+            box-sizing: border-box;
+        }
+
+        tr:hover .qux-table-action-hover{
+            opacity: 1;
+        }
+
+        .qux-table-action-cntr{
+            text-align: right;
+        }
+    }
+
+    .qux-table-loadingx {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 300%;
+        opacity: 0.5;
+        height: 100%;
+    }
+
+    .qux-table-loading {
+        background: #d8d8d8;
+        height: 100%;
+        width: 100%;
+        display: block;
+        color: transparent;
+        opacity: 0.25;
+        animation: loadingAnimationTable 2s;
+        animation-iteration-count: infinite;
+    }
+
+}
+
+
+@keyframes loadingAnimationTable {
+    0% {opacity: 0.5 }
+    33% { opacity: 0.8}
+    66% { opacity: 0.5}
+}

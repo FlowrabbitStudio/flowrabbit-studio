@@ -1,0 +1,383 @@
+@import "./design-system.scss";
+
+
+
+
+
+.MatcErrorLabel {
+  color: #f83a3a;
+  height: 20px;
+  padding: 5px;
+  transition-duration: 0.2s;
+  display: block;
+}
+
+
+.MatcAlertBox {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  font-size: 12px;
+  letter-spacing: 0rem;
+  font-weight: 400;
+  line-height: 16px;
+  display: flex;
+  padding: 6px 16px;
+  display: block;
+}
+
+.MatcAlertBoxContent {
+  padding: 8px 0px;
+  min-width: 0px;
+  overflow: auto;
+}
+
+.MatcAlertBoxDanger {
+  background-color: var(--danger-color-light);
+  color: var(--danger-color);
+}
+
+.MatcAlertBoxSuccess {
+  background-color: #aef89b;
+  color: #1e610e;;
+}
+
+.MatcAlertBoxInfo {
+  background-color: var(--hightlight-soft);
+  color: var(--primary-color);
+}
+
+.MatcAlertBoxWarning {
+  background-color: var(--warning-color-light);
+  color: var(--warning-color-dark);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.has-feedback {
+  position: relative;
+}
+
+.has-feedback .form-control {
+  padding-right: 42.5px;
+}
+
+.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: var(--from-radius);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4375em;
+  color: rgb(42, 53, 71);
+  border-color: rgb(223, 229, 239);
+  -webkit-animation-duration: 10ms;
+  animation-duration: 10ms;
+  box-shadow: none;
+}
+
+.MatcLoginPage {
+  font-size: 14px;
+  height: 100vh;
+}
+
+
+.MactMainGradient {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: radial-gradient(rgb(210, 241, 223),
+      rgb(211, 215, 250),
+      rgb(186, 216, 244)) 0% 0% / 400% 400%;
+
+  background: radial-gradient(rgb(32, 178, 93),
+      rgb(89, 103, 231),
+      rgb(44, 126, 202)) 0% 0% / 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.MatcLoginPageReset {
+  background: linear-gradient(30deg, $color-red 0%, $color-red-dark 100%);
+}
+
+.MatcLoginPageDialog {
+  position: fixed;
+  transform: translateY(-50%);
+  top: 50%;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+
+  .MatcLoginPageContainer {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 7px;
+    box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+      rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+    max-width: 450px;
+  }
+}
+
+.MatcLoginPageContainer {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  overflow: hidden;
+  background-image: none;
+  padding: 32px;
+  z-index: 1;
+  width: 100%;
+
+  .MatcButton,
+  .MatcLinkButton {
+    font-size: 16px;
+  }
+
+  .MatcToolbarTabs.MatcToolbarTabsBig {
+    text-align: center;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .MatcToolbarTabs a {
+    border-bottom-width: 2px;
+    margin: 0px 5px;
+    color: $form-color;
+    font-size: 15px;
+  }
+
+  .MatcToolbarTabs a:hover {
+    color: $form-color-hover;
+  }
+
+  .MatcLoginPageForm {
+    height: auto;
+  }
+
+  .MatcErrorLabel {
+    height: 32px;
+    padding: 8px 0px;
+    display: block;
+  }
+
+  .MatcLoginWrapper {
+    width: 300%;
+    display: flex;
+    align-items: stretch;
+    transition: all 0.2s;
+
+    &.login {
+      transform: translateX(0);
+    }
+
+    &.signup {
+      transform: translateX(-33.333%);
+    }
+
+    &.reset {
+      transform: translateX(-66.667%);
+    }
+  }
+
+  .MatcLoginContent {
+    width: 33.3333%;
+  }
+
+  .MatcLoginPageSection {
+    padding: 24px 40px;
+  }
+
+  .MatcLoginCallToAction {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .MatcLoginPageDialog {
+    transform: translateY(-50%);
+  }
+
+  .MatcLoginPageContainer {
+    width: 100%;
+  }
+
+  .MatcLoginWrapper {
+    width: 300%;
+  }
+
+  .MatcLoginContent {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .MatcLoginPageSection {
+    padding: 10px 5px;
+  }
+}
+
+.MatcToolbarTabContainer {
+  padding: 8px;
+  padding-top: 0px;
+}
+
+.MatcToolbarTabsFlex {
+  display: flex;
+  padding-right: 25px;
+}
+
+.MatcToolbarTabs {
+  text-align: center;
+}
+
+.MatcToolbarTabs a {
+  margin-right: 5px;
+  font-size: 12px;
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ddd;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.MatcToolbarTabsBig.MatcToolbarTabs {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.MatcToolbarTabsBig a {
+  font-size: 18px;
+  padding: 5px;
+  border-bottom-width: 2px;
+}
+
+.MatcToolbarTabs a:hover {
+  color: #fff;
+}
+
+.MatcToolbarTabs a.MatcToolbarTabActive {
+  border-bottom-color: var(--primary-color);
+  color: #333;
+}
+
+.MatcDialog .MatcToolbarTabs a {
+  color: #333;
+  font-size: 18px;
+  border-bottom: 2px solid transparent;
+}
+
+.MatcDialog .MatcToolbarTabs a.MatcToolbarTabActive {
+  border-bottom-width: 2px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.MatcDialog .MatcToolbarTabs a:hover {
+  color: var(--form-color-hover);
+}
+
+.MatcCenter {
+  text-align: center;
+  justify-content: center;
+}
+
+.MatcButton {
+  padding: 6px 16px;
+  border-radius: var(--border-radius-m);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: var(--form-color);
+  border-color: transparent;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+}
+
+.MatcButton[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.MatcButton:hover {
+  background: var(--form-color-hover);
+  text-decoration: none;
+  color: #fff;
+}
+
+.MatcButtonPrimary {
+  background: var(--color-primary);
+}
+
+.MatcButtonPrimary:hover {
+  background: var(--color-primary-hover);
+}
+
+.MatcButtonSignUp {
+  background: var(--form-color);
+  text-decoration: none;
+  color: #fff;
+}
+
+.MatcButtonSignUp:hover {
+  background: var(--form-color);
+  border-color: var(--form-color-hover);
+}
+
+.MatcButtonFullWidth {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.MatcButtonBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.MatcDialog .MatcButtonBar {
+  margin-top: 20px;
+}
+
+.MatcDialog .MatcButtonBar.MatcMarginTopXL {
+  margin-top: 40px;
+}
+
+.MatcDialog .MatcButtonBar.MatcMarginTopXXL {
+  margin-top: 60px;
+}
+
+.MatcButtonBarRelative {
+  position: relative;
+}
+
+.MatcButtonBarRelative .MatcButtonRight {
+  float: right;
+  font-size: 16px;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}

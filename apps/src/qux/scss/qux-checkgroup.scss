@@ -1,0 +1,15 @@
+.qux-checkgroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .qux-checkbox{
+        display: flex;
+        align-items: center;
+
+        .qux-checkbox-cntr{
+            vertical-align: middle;
+        }
+    }
+
+}

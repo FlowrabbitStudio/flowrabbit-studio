@@ -1,0 +1,19 @@
+.qux-tabbar {
+    display: flex;
+
+    .qux-tabbar-placeholder {
+        flex-grow: 1;
+        border-style: solid;
+    }
+
+    .qux-tabbar-item {
+        display: flex;
+        align-items: center;
+        border-style: solid;
+        cursor: pointer;
+
+        label {
+            cursor: pointer;
+        }
+    }
+}

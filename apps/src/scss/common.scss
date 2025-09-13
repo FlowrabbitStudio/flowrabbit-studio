@@ -1,0 +1,60 @@
+@import './design-system.scss';
+
+
+.LuisaApp.LuisaCommon{
+
+    font-family: "Nunito Sans";
+    font-size: $font-size-m;
+
+    .LuisaParagraph {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 30px;
+    }
+
+    h2{
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: $spacing-s;
+        margin-top: $spacing-xl;
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    h3{
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: $spacing-s;
+        margin-top: 0px;
+    }
+}
+
+.LuisaBlog {
+    .LuisaParagraph {
+        width: 800px;
+    }
+}
+
+.LuisaCaption{
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: $spacing-s;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .LuisaBlog {
+
+        .LuisaParagraph {
+            width: 100%;
+        }
+    }
+}
+
+@import './image.scss';
+
+
+

@@ -1,0 +1,29 @@
+.qux-upload{
+  cursor: pointer;
+  transition: all 0.2s;
+  border:1px solid red;
+  position: relative;
+
+  input {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .upload-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;    
+    align-content: center;
+
+    .qux-common-label {
+      display: block;
+      pointer-events: none;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}

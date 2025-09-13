@@ -1,0 +1,13 @@
+.qux-geo-location{
+
+    .qux-geo-location-cntr {
+        width: 100%;
+
+        .qux-geo-location-label {
+            max-width: 45%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,565 @@
+{
+    "_id" : "660742e1c5759a12ee181074",
+    "version" : 2,
+    "publicType" : "forbidden",
+    "name" : "Table",
+    "description" : "",
+    "screenSize" : {
+      "w" : 376,
+      "h" : 808
+    },
+    "type" : "smartphone",
+    "screens" : {
+      "s10000_8016" : {
+        "x" : 1059,
+        "y" : 1040,
+        "h" : 808,
+        "w" : 376,
+        "name" : "Screen",
+        "type" : "Screen",
+        "style" : {
+          "background" : "@screen-background"
+        },
+        "min" : {
+          "w" : 376,
+          "h" : 808
+        },
+        "has" : {
+          "image" : true
+        },
+        "props" : {
+          "start" : true
+        },
+        "children" : [ "w10077_14804", "w10246_33094", "w10232_62831", "w10250_12267" ],
+        "id" : "s10000_8016",
+        "modified" : 1713205582213
+      }
+    },
+    "widgets" : {
+      "w10077_14804" : {
+        "id" : "w10077_14804",
+        "type" : "Table",
+        "name" : "Table",
+        "x" : 1083,
+        "y" : 1128,
+        "w" : 328,
+        "h" : 240,
+        "z" : 6,
+        "props" : {
+          "data" : [ [ "Klaus", "Huber", "2", "1" ], [ "Vincent", "Vega", "3", "2" ], [ "Mia", "Wallace", "1", "3" ], [ "Pedro", "Oliveira", "3", "" ] ],
+          "columns" : [ {
+            "label" : "id",
+            "width" : 100,
+            "isEditable" : false,
+            "isSortable" : false,
+            "isSearchable" : false,
+            "databinding" : "id"
+          }, {
+            "label" : "Last Name",
+            "width" : 120,
+            "isEditable" : false,
+            "isSortable" : false,
+            "isSearchable" : false,
+            "databinding" : "lastname"
+          }, {
+            "label" : "Email",
+            "width" : 80,
+            "isEditable" : false,
+            "isSortable" : false,
+            "isSearchable" : false,
+            "databinding" : "email"
+          }, {
+            "label" : "Name",
+            "width" : 120,
+            "isEditable" : false,
+            "isSortable" : false,
+            "isSearchable" : false,
+            "databinding" : "name"
+          } ],
+          "widths" : [ 120, 120, 80 ],
+          "borderStyle" : "HLines",
+          "tableActions" : [ {
+            "label" : "Edit",
+            "callback" : "",
+            "padding" : 5,
+            "background" : "#ffffff",
+            "borderColor" : "#333333",
+            "borderRadius" : 2,
+            "borderWidth" : 1,
+            "color" : "#333333",
+            "isHover" : false,
+            "id" : "Edit"
+          }, {
+            "label" : "X",
+            "callback" : "",
+            "padding" : 5,
+            "background" : "#ffffff",
+            "borderColor" : "#333333",
+            "borderRadius" : 2,
+            "borderWidth" : 1,
+            "color" : "#333333",
+            "isHover" : false,
+            "id" : "Delete"
+          } ],
+          "databinding" : { },
+          "rowsToShow" : "5"
+        },
+        "has" : {
+          "onclick" : true,
+          "maxHeight" : true,
+          "label" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-horizontal",
+          "paddingTop" : "@form-padding-horizontal",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "headerFontWeight" : "800",
+          "headerBackground" : "@table-header-background",
+          "headerColor" : "@table-header-color",
+          "headerSticky" : true,
+          "checkBox" : false,
+          "checkBoxHookColor" : "@background-active",
+          "checkBoxBackground" : "@form-background",
+          "checkBoxBorderColor" : "@form-border-color",
+          "checkBoxBorderRadius" : "@border-radius",
+          "checkBoxBorderWidth" : 1,
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius-none",
+          "borderTopLeftRadius" : "@border-radius-none",
+          "borderBottomRightRadius" : "@border-radius-none",
+          "borderBottomLeftRadius" : "@border-radius-none",
+          "borderTopColor" : "@table-border-color",
+          "borderBottomColor" : "@table-border-color",
+          "borderRightColor" : "@table-border-color",
+          "borderLeftColor" : "@table-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid",
+          "rowsToShow" : "5"
+        },
+        "qssSource" : "Table",
+        "created" : 1712257303094,
+        "modified" : 1713212946189
+      },
+      "w10232_62831" : {
+        "id" : "w10232_62831",
+        "type" : "TextArea",
+        "name" : "Text Area",
+        "sidebar" : true,
+        "x" : 1099,
+        "y" : 1616,
+        "w" : 196,
+        "h" : 128,
+        "z" : 15,
+        "props" : {
+          "label" : "Enter a value",
+          "placeholder" : true,
+          "databinding" : {
+            "default" : "users"
+          }
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-horizontal",
+          "paddingTop" : "@form-padding-horizontal",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextArea",
+        "created" : 1713215825875,
+        "modified" : 1713289043910
+      },
+      "w10144_34834" : {
+        "id" : "w10144_34834",
+        "name" : "Rest",
+        "type" : "Rest",
+        "x" : 1453,
+        "y" : 1193,
+        "w" : 128,
+        "h" : 72,
+        "props" : {
+          "rest" : {
+            "method" : "GET",
+            "url" : "https://flowrabbit.ai/test/users.json",
+            "token" : "",
+            "authType" : "Bearer",
+            "input" : {
+              "type" : "JSON",
+              "fileDataBinding" : "",
+              "template" : ""
+            },
+            "output" : {
+              "databinding" : "users",
+              "template" : "",
+              "type" : "JSON",
+              "hints" : {
+                "Rest[0]" : "Array",
+                "Rest[0]_id" : "Object",
+                "Rest[0]_email" : "Object",
+                "Rest[0]_name" : "Object",
+                "Rest[0]_lastname" : "Object",
+                "Rest[0]_hasNewsletter" : "Object"
+              }
+            },
+            "headers" : [ ],
+            "isProxyEnabled" : true
+          }
+        },
+        "has" : {
+          "rest" : true
+        },
+        "style" : {
+          "background" : "#777"
+        },
+        "z" : 12,
+        "created" : 1712608920991,
+        "modified" : 1713217587434
+      },
+      "w10246_33094" : {
+        "id" : "w10246_33094",
+        "type" : "TextBox",
+        "name" : "Text Box",
+        "sidebar" : true,
+        "x" : 1219,
+        "y" : 1064,
+        "w" : 196,
+        "h" : 32,
+        "z" : 16,
+        "props" : {
+          "label" : "Enter a value",
+          "placeholder" : true
+        },
+        "has" : {
+          "label" : true,
+          "backgroundColor" : true,
+          "border" : true,
+          "editable" : true,
+          "onclick" : true,
+          "padding" : true
+        },
+        "style" : {
+          "fontSize" : "@font-size-m",
+          "fontFamily" : "@font-family",
+          "textAlign" : "left",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "background" : "@form-background",
+          "color" : "@form-color",
+          "paddingBottom" : "@form-padding-vertical",
+          "paddingTop" : "@form-padding-vertical",
+          "paddingLeft" : "@form-padding-horizontal",
+          "paddingRight" : "@form-padding-horizontal",
+          "borderTopWidth" : "@border-width",
+          "borderBottomWidth" : "@border-width",
+          "borderRightWidth" : "@border-width",
+          "borderLeftWidth" : "@border-width",
+          "borderTopRightRadius" : "@border-radius",
+          "borderTopLeftRadius" : "@border-radius",
+          "borderBottomRightRadius" : "@border-radius",
+          "borderBottomLeftRadius" : "@border-radius",
+          "borderTopColor" : "@form-border-color",
+          "borderBottomColor" : "@form-border-color",
+          "borderRightColor" : "@form-border-color",
+          "borderLeftColor" : "@form-border-color",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "focus" : {
+          "background" : "@form-background:focus",
+          "color" : "@form-color:focus",
+          "borderTopWidth" : "@border-width:focus",
+          "borderBottomWidth" : "@border-width:focus",
+          "borderRightWidth" : "@border-width:focus",
+          "borderLeftWidth" : "@border-width:focus",
+          "borderTopColor" : "@form-border-color:focus",
+          "borderBottomColor" : "@form-border-color:focus",
+          "borderRightColor" : "@form-border-color:focus",
+          "borderLeftColor" : "@form-border-color:focus"
+        },
+        "hover" : {
+          "background" : "@form-background:hover",
+          "color" : "@form-color:hover",
+          "borderTopColor" : "@form-border-color:hover",
+          "borderBottomColor" : "@form-border-color:hover",
+          "borderRightColor" : "@form-border-color:hover",
+          "borderLeftColor" : "@form-border-color:hover"
+        },
+        "error" : {
+          "background" : "@form-background:error",
+          "color" : "@form-color:error",
+          "borderTopColor" : "@form-border-color:error",
+          "borderBottomColor" : "@form-border-color:error",
+          "borderRightColor" : "@form-border-color:error",
+          "borderLeftColor" : "@form-border-color:error"
+        },
+        "qssSource" : "TextBox",
+        "created" : 1713289024014
+      },
+      "w10250_12267" : {
+        "id" : "w10250_12267",
+        "type" : "Paging",
+        "name" : "Paging",
+        "x" : 1155,
+        "y" : 1392,
+        "w" : 196,
+        "h" : 24,
+        "z" : 17,
+        "props" : {
+          "max" : 10,
+          "selected" : 1,
+          "iconBack" : "mdi mdi-chevron-left",
+          "iconNext" : "mdi mdi-chevron-right"
+        },
+        "has" : {
+          "onclick" : true,
+          "border" : true,
+          "label" : true,
+          "backgroundColor" : true,
+          "data" : true,
+          "padding" : false
+        },
+        "style" : {
+          "fontSize" : "@font-size-s",
+          "fontFamily" : "@font-family",
+          "letterSpacing" : "@letterSpacing",
+          "lineHeight" : "@lineHeight",
+          "textAlign" : "center",
+          "verticalAlign" : "middle",
+          "background" : "@background-passive",
+          "color" : "@form-color",
+          "borderTopWidth" : "0",
+          "borderBottomWidth" : "0",
+          "borderRightWidth" : "0",
+          "borderLeftWidth" : "0",
+          "borderTopRightRadius" : "@border-radius-round",
+          "borderTopLeftRadius" : "@border-radius-round",
+          "borderBottomRightRadius" : "@border-radius-round",
+          "borderBottomLeftRadius" : "@border-radius-round",
+          "paddingTop" : "@spacing-xs",
+          "paddingBottom" : "@spacing-xs",
+          "paddingLeft" : "@spacing-xs",
+          "paddingRight" : "@spacing-xs",
+          "borderTopColor" : "@background-passive",
+          "borderBottomColor" : "@background-passive",
+          "borderRightColor" : "@background-passive",
+          "borderLeftColor" : "@background-passive",
+          "borderTopStyle" : "solid",
+          "borderBottomStyle" : "solid",
+          "borderRightStyle" : "solid",
+          "borderLeftStyle" : "solid"
+        },
+        "active" : {
+          "background" : "@background-active",
+          "color" : "@form-background",
+          "borderTopColor" : "@background-active",
+          "borderBottomColor" : "@background-active",
+          "borderRightColor" : "@background-active",
+          "borderLeftColor" : "@background-active"
+        },
+        "hover" : {
+          "background" : "@background-active",
+          "color" : "@form-color",
+          "borderTopColor" : "@background-active",
+          "borderBottomColor" : "@background-active",
+          "borderRightColor" : "@background-active",
+          "borderLeftColor" : "@background-active"
+        },
+        "qssSource" : "WireFramePaging",
+        "created" : 1713289093338,
+        "modified" : 1713289097326
+      }
+    },
+    "lines" : {
+      "l10261_12915" : {
+        "id" : "l10261_12915",
+        "from" : "w10077_14804",
+        "to" : "w10144_34834",
+        "points" : [ ],
+        "event" : "click",
+        "action" : "TableLoad",
+        "databinding" : {
+          "type" : "rest",
+          "variables" : {
+            "default" : "default"
+          }
+        }
+      },
+      "l10262_30391" : {
+        "id" : "l10262_30391",
+        "from" : "w10077_14804",
+        "to" : "w10246_33094",
+        "points" : [ ],
+        "event" : "click",
+        "action" : "Search",
+        "databinding" : {
+          "type" : "filter",
+          "variables" : {
+            "filter" : "default"
+          }
+        }
+      },
+      "l10263_19433" : {
+        "id" : "l10263_19433",
+        "from" : "w10077_14804",
+        "to" : "w10250_12267",
+        "points" : [ ],
+        "event" : "click",
+        "action" : "Pagination",
+        "databinding" : {
+          "type" : "pagination",
+          "variables" : {
+            "paginationCount" : "input",
+            "paginationPosition" : "output"
+          }
+        }
+      }
+    },
+    "groups" : { },
+    "templates" : {
+      "tw10214_66476" : {
+        "id" : "tw10214_66476",
+        "style" : {
+          "fontSize" : 14,
+          "fontFamily" : "Helvetica Neue,Helvetica,Arial,sans-serif",
+          "textAlign" : "left",
+          "letterSpacing" : 0,
+          "lineHeight" : 1.4,
+          "color" : "#ffffff",
+          "borderTopRightRadius" : 32,
+          "borderTopLeftRadius" : 32,
+          "borderBottomRightRadius" : 32,
+          "borderBottomLeftRadius" : 32,
+          "borderTopWidth" : 0,
+          "borderBottomWidth" : 0,
+          "borderRightWidth" : 0,
+          "borderLeftWidth" : 0,
+          "borderTopColor" : "#333333",
+          "borderBottomColor" : "#333333",
+          "borderRightColor" : "#333333",
+          "borderLeftColor" : "#333333",
+          "background" : "#a92c2c",
+          "paddingTop" : 0,
+          "paddingBottom" : 0,
+          "paddingLeft" : 0,
+          "paddingRight" : 0,
+          "textShadow" : null
+        },
+        "has" : {
+          "backgroundColor" : true,
+          "border" : true,
+          "label" : true,
+          "padding" : true,
+          "onclick" : true
+        },
+        "props" : {
+          "label" : ""
+        },
+        "w" : 48,
+        "h" : 48,
+        "z" : 15,
+        "x" : 0,
+        "y" : 0,
+        "templateType" : "Widget",
+        "type" : "Button",
+        "visible" : true,
+        "name" : "Box 2",
+        "modified" : 1712785849079,
+        "created" : 1712785849079
+      }
+    },
+    "designtokens" : { },
+    "schema" : { },
+    "data" : {
+      "userCount" : "3"
+    },
+    "lastUUID" : 10264,
+    "lastUpdate" : 1713292398649,
+    "created" : 1711751905101,
+    "startScreen" : "",
+    "grid" : {
+      "w" : 8,
+      "h" : 8,
+      "style" : "line",
+      "color" : "#cecece",
+      "visible" : false,
+      "enabled" : true
+    },
+    "domain" : "Quant-UX.com",
+    "screenCount" : 1,
+    "widgetCount" : 5,
+    "isDirty" : true,
+    "lastCategory" : "Advanced",
+    "id" : "660742e1c5759a12ee181074"
+  }

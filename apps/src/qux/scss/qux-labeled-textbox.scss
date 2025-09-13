@@ -1,0 +1,8 @@
+.qux-labeled-textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .qux-textbox{
+        box-sizing: border-box;
+    }
+}
