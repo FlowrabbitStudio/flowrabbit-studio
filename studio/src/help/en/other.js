@@ -1,2 +1,0 @@
-export let texts = [
-]

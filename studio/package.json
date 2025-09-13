@@ -1,6 +1,6 @@
 {
-  "name": "flowrabbit-ui",
-  "version": "4.1.23",
+  "name": "flowrabbit-studio",
+  "version": "5.0.12",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -17,7 +17,6 @@
     "exceljs": "^4.4.0",
     "express": "^4.18.1",
     "file-saver": "^2.0.5",
-    "flowrabbit-ui": "file:",
     "frappe-charts": "^1.6.2",
     "helmet": "^5.1.0",
     "highlight.js": "^11.5.1",
@@ -27,7 +26,6 @@
     "js-cookie": "^3.0.1",
     "jszip": "^3.10.0",
     "keycloak-js": "^16.1.1",
-    "prando": "^6.0.1",
     "pretty": "^2.0.0",
     "qrcode": "^1.5.0",
     "remixicon": "^3.2.0",

@@ -4,13 +4,12 @@ import OrgService from './OrgService'
 import PublicModelService from './PublicModelService'
 import CommentService from './CommentService'
 import SymbolService from './SymbolService'
-import HelpService from './HelpService'
 import ImageService from './ImageService'
 import PreviewService from './PreviewService'
 import WebSocketService from './WebSocketService'
 import CommandService from './CommandService'
 import AIService from './AIService'
-
+import RestEngine from '../core/RestEngine'
 class Services {
 
     constructor () {
@@ -21,7 +20,7 @@ class Services {
                 'allowSignUp': true
             },
             'websocket': '',
-            'proxy_URL': 'http://localhost:8084',
+            'proxy_URL': '/proxy',
             'app_URL': 'http://localhost:8081'
         }
     }
@@ -34,7 +33,8 @@ class Services {
             }).then((res) => {
                 if (res.status === 200) {
                     res.json().then(j => {
-                        this.config = j                
+                        this.config = j  
+                        RestEngine.setProxyURL(this.config.proxy_URL)              
                         resolve(j)
                     })
                 } else {
@@ -89,10 +89,6 @@ class Services {
 
     getSymbolService () {
         return SymbolService
-    }
-
-    getHelpService () {
-        return HelpService
     }
 
     getOrgService() {

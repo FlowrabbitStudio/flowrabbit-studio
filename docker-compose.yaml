@@ -1,4 +1,18 @@
-version: "3.9"
+x-common-env: &common-env
+  TZ: America/Chicago
+  FLR_AUTH_SERVICE: qux
+  FLR_USER_ALLOW_SIGNUP: "true"
+  FLR_USER_ALLOWED_DOMAINS: "*"
+  FLR_SERVER_API_URL: http://backend:8080
+  FLR_SERVER_PROXY_URL: http://proxy-os.flowrabbit.ai
+  FLR_API_URL: http://backend:8080
+  FLR_APPS_URL: http://apps-os.flowrabbit.ai
+  FLR_PROXY_URL: http://proxy-os.flowrabbit.ai
+  FLR_NODE_URL: http://node-os.flowrabbit.ai
+  FLR_HTTP_HOST: http://studio-os.flowrabbit.ai:8082
+  FLR_CLIENT_API_KEY: 123cjMKJcm234?sfsdf
+  FLR_ADMIN_EMAIL: klaus.schaefers@gmail.com
+  FLR_ADMIN_PASSWORD: FlowBunny2020!
 
 services:
   traefik:
@@ -47,62 +61,46 @@ services:
     volumes:
       - ./app-data:/app-data
     environment:
-      - FLR_HTTP_HOST=http://frontend:8082   # this is the URL included in the mails, e.g. password resets
-      - FLR_CLIENT_API_KEY=123cjMKJcm234?sfsdf
-      - FLR_HTTP_PORT=8080  # This is the port the backend will use
-      - FLR_MONGO_DB_NAME=quantux  # the database / collection name in mongodb
-      - FLR_MONGO_TABLE_PREFIX=quantux  # table / document prefix in mongodb
-      - FLR_MONGO_CONNECTION_STRING=mongodb://mongo:27017 # this assumes your mongodb container will be called "quant-ux-mongo" in the docker-compose file
-      - FLR_MAIL_USER=mail_admin@example.com        # this should be your smtp email user
-      - FLR_MAIL_PASSWORD=sTr0ngPa55w0Rd        # this should be your smtp email password
-      - FLR_MAIL_HOST=mail.example.com        # this should be your smtp host address
-      - FLR_JWT_PASSWORD=some-long-string-of-mix-case-chars-and-nums        # you should change this to a real JWT secret
-      - FLR_IMAGE_FOLDER_USER=/app-data/qux-images        # this folder should mapped in the volume
-      - FLR_IMAGE_FOLDER_APPS=/app-data/qux-image-apps        # this folder should mapped in the volume
-      - TZ=America/Chicago        # change to your timezone
-      - FLR_AUTH_SERVICE=qux
-      - FLR_KEYCLOAK_SERVER= # just the keycloak host & port
-      - FLR_KEYCLOAK_REALM=
-      - FLR_USER_ALLOW_SIGNUP=true # set the false to not allow users to signup
-      - FLR_USER_ALLOWED_DOMAINS=* # comma separated list of domains, e.g. 'my-server.com' or '*' for all
+      <<: *common-env
+      FLR_HTTP_PORT: 8080
+      FLR_MONGO_DB_NAME: quantux
+      FLR_MONGO_TABLE_PREFIX: quantux
+      FLR_MONGO_CONNECTION_STRING: mongodb://mongo:27017
+      FLR_MAIL_USER: mail_admin@example.com
+      FLR_MAIL_PASSWORD: sTr0ngPa55w0Rd 
+      FLR_MAIL_HOST: mail.example.com
+      FLR_JWT_PASSWORD: some-long-string-of-mix-case-chars-and-nums
+      FLR_IMAGE_FOLDER_USER: /app-data/qux-images
+      FLR_IMAGE_FOLDER_APPS: /app-data/qux-image-apps 
     depends_on:
       - mongo
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.api-os.rule=Host(`api-os.flowrabbit.ai`)"
-      - "traefik.http.routers.api-os.entrypoints=websecure"
-      - "traefik.http.routers.api-os.tls.certresolver=myresolver"
-      - "traefik.http.services.api-os.loadbalancer.server.port=8080"
-  # qux-fe:
-  #   restart: always
-  #   container_name: quant-ux-frontend
-  #   image: klausenschaefersinho/quant-ux
-  #   environment:
-  #     - FLR_PROXY_URL=http://quant-ux-backend:8080        # this is the path the front end uses to talk tot he backend
-  #     - FLR_AUTH=qux
-  #     - FLR_KEYCLOAK_REALM=
-  #     - FLR_KEYCLOAK_CLIENT=
-  #     - FLR_KEYCLOAK_URL=
-  #     - FLR_WS_URL=ws://127.0.0.1:8086        # change to where the websocket server is deployed for external access
-  #   links:
-  #     - mongo
-  #     - qux-be
-  #   ports:
-  #     - 8082:8082        # change the left side port if your host machine already has 8082 in use
-  #   depends_on:
-  #     - qux-be
-
-  # Networks
-  # qux-ws:
-  #   restart: always
-  #   container_name: quant-ux-websocket-server
-  #   image: klausenschaefersinho/quant-ux-websocket
-  #   environment:
-  #     - FLR_SERVER=http://quant-ux-backend:8080/
-  #     - FLR_SERVER_PORT=8086
-  #   ports:
-  #     - 8086:8086
-  #   links:
-  #     - qux-be
-  #   depends_on:
-  #     - qux-be
+      - "traefik.http.routers.api.rule=Host(`api-os.flowrabbit.ai`)" # update here
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.tls.certresolver=myresolver"
+      - "traefik.http.services.api.loadbalancer.server.port=8080"
+  studio:
+    restart: always
+    container_name: studio
+    image: flowrabbit/studio:latest
+    environment:
+        <<: *common-env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.studio.rule=Host(`studio-os.flowrabbit.ai`)" # update here
+      - "traefik.http.routers.studio.entrypoints=websecure"
+      - "traefik.http.routers.studio.tls.certresolver=myresolver"
+      - "traefik.http.services.studio.loadbalancer.server.port=8082"
+  proxy:
+    restart: always
+    container_name: proxy
+    image: flowrabbit/proxy:latest
+    environment:
+        <<: *common-env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.proxy.rule=Host(`proxy-os.flowrabbit.ai`)" #update here
+      - "traefik.http.routers.proxy.entrypoints=websecure"
+      - "traefik.http.routers.proxy.tls.certresolver=myresolver"
+      - "traefik.http.services.proxy.loadbalancer.server.port=8084"

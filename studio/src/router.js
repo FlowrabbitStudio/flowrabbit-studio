@@ -8,13 +8,10 @@ Vue.use(VueRouter)
 let matcRoutes = []
 
 matcRoutes.push({path:'my-account.html', component: () => import(/* webpackChunkName: "about" */ 'views/user/Account.vue')})
-matcRoutes.push({path:'reset_password.html', component: () => import(/* webpackChunkName: "about" */ 'views/user/ResetPassword.vue')})
-matcRoutes.push({path:'reset_password3.html', component: () => import(/* webpackChunkName: "about" */ 'views/user/ResetPassword.vue')})
 matcRoutes.push({path:'404.html', component: () => import(/* webpackChunkName: "about" */ 'views/404.vue')})
 matcRoutes.push({path:'logout.html', component: () => import(/* webpackChunkName: "about" */ 'views/LogoutPage.vue')})
-matcRoutes.push({path:'help.html', component: () => import(/* webpackChunkName: "about" */ 'views/Help.vue')})
-matcRoutes.push({path:'help/:topic.html', component: () => import(/* webpackChunkName: "about" */ 'views/Help.vue')})
-matcRoutes.push({path:'help/:topic/:subtopic.html', component: () => import(/* webpackChunkName: "about" */ 'views/Help.vue')})
+matcRoutes.push({path:'login.html', component: () => import(/* webpackChunkName: "about" */ 'views/LoginPage.vue')})
+
 // Apps
 let appRoutes = [
   {
@@ -58,7 +55,7 @@ mcuRoutes.push({path:'users.html', name: "mcu_users", component: () => import(/*
 mcuRoutes.push({path:'notifications.html', name: "mcu_notifications", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/Notifications.vue'), meta: {isAdmin:true, isHome:false} })
 mcuRoutes.push({path:'backups.html', name: "mcu_backups", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/Backups.vue'), meta: {isAdmin:true, isHome:false} })
 mcuRoutes.push({path:'events.html', name: "mcu_log", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/Events.vue'), meta: {isAdmin:true, isHome:false} })
-mcuRoutes.push({path:'log.html', name: "mcu_log", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/FileLog.vue'), meta: {isAdmin:true, isHome:false} })
+mcuRoutes.push({path:'log.html', name: "mcu_log_file", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/FileLog.vue'), meta: {isAdmin:true, isHome:false} })
 mcuRoutes.push({path:'dash-users.html', name: "mcu_dash_users", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/DashUsers.vue'), meta: {isAdmin:true, isHome:false} })
 mcuRoutes.push({path:'dash-performance.html', name: "mcu_dash_performance", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/DashPerformance.vue'), meta: {isAdmin:true, isHome:false} })
 mcuRoutes.push({path:'dash-db.html', name: "mcu_dash_db", component: () => import(/* webpackChunkName: "mcu" */ 'views/mcu/DashDB.vue'), meta: {isAdmin:true, isHome:false} })
@@ -91,7 +88,7 @@ const routes = new VueRouter({
       path: '/',
       name: '',
       children: matcRoutes,
-      component: () => import(/* webpackChunkName: "matc" */ 'views/QUX.vue'),
+      component: () => import(/* webpackChunkName: "matc" */ 'views/Flowrabbit.vue'),
     },
     {
       path: '/mcu/',

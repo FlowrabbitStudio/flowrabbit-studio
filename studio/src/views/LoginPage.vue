@@ -359,20 +359,6 @@ export default {
       }
     },
     async load() {
-        // will be handlet in QUX on login event
-        // const orgID = this.$route.params.orgId || "private";
-        // if (orgID) {
-        //     this.orgID = orgID;
-        //     let selectedOrg = { id: "private", name: "Default" };
-        //     if (orgID !== "private") {
-        //         selectedOrg = await Services.getOrgService().findOrganization(
-        //         orgID
-        //         );
-        //     }
-        //     await this.updateSelectedOrg(selectedOrg);
-        //     await this.loadSummaries();
-        //     await this.loadApps();
-        // }
     },
     initKeyCloak(conf) {
       const keycloakService = Services.getUserService();

@@ -6,9 +6,7 @@
   </div>
 </template>
 
-<!-- <style>
- @import 'remixicon/fonts/remixicon.css';
-</style> -->
+
 <script>
 import css from 'dojo/css'
 import win from 'dojo/win'
@@ -70,7 +68,9 @@ export default {
 	},
 	initNLS () {
 		let language = Services.getUserService().getLanguage()
-		this.$root.$i18n.locale = language
+		if (language) {
+			this.$root.$i18n.locale = language
+		}
 	},
   },
   watch :{
