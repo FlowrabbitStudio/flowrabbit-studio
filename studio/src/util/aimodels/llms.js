@@ -45,8 +45,7 @@ const llms = {
               id: "deployment",
               label: "Deployment Id",
               placeholder: "Deployment Name",
-              helper:
-                "The deployment name you chose when you deployed the model.",
+              helper: "The deployment name you chose when you deployed the model.",
             },
           ],
         },
@@ -56,8 +55,7 @@ const llms = {
           id: "apiversion",
           label: "API version",
           placeholder: "YYYY-MM-DD",
-          helper:
-            "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+          helper: "The API version to use for this operation. This follows the YYYY-MM-DD format.",
         },
         {
           type: "TextArea",
@@ -90,16 +88,13 @@ const llms = {
       ],
       method: "POST",
       authHeader: "api-key",
-      documentationAuthLink:
-        "https://learn.microsoft.com/en-us/azure/ai-services/openai/reference",
+      documentationAuthLink: "https://learn.microsoft.com/en-us/azure/ai-services/openai/reference",
       getTemplate: (vars) => {
         const template = {
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -128,7 +123,8 @@ const llms = {
       headers: [
         { key: "Content-Type", value: "application/json" },
         { key: "HTTP-Referer", value: "https://www.flowrabbit.ai" },
-        { key: "X-Title", value: "Flowrabbit" }],
+        { key: "X-Title", value: "Flowrabbit" },
+      ],
       elements: [
         {
           type: "TextArea",
@@ -158,9 +154,8 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Controls randomness. 1.0 is the most random, 0.0 is deterministic.",
-          decimals: true, 
+          helper: "Controls randomness. 1.0 is the most random, 0.0 is deterministic.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -169,9 +164,8 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
-          decimals: true, 
+          helper: "Limits token selection to a cumulative probability threshold.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -181,7 +175,7 @@ const llms = {
           id: "presence_penalty",
           label: "Presence Penalty",
           helper: "Discourages using tokens from the prompt.",
-          decimals: true, 
+          decimals: true,
         },
         {
           default: 0.0,
@@ -191,13 +185,12 @@ const llms = {
           id: "frequency_penalty",
           label: "Frequency Penalty",
           helper: "Discourages frequent token repetition.",
-          decimals: true, 
+          decimals: true,
         },
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         return {
           model: "mistralai/mistral-7b-instruct:free",
@@ -257,9 +250,8 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Adjusts randomness in output. 1.0 is most random, 0.0 is deterministic.",
-          decimals: true, 
+          helper: "Adjusts randomness in output. 1.0 is most random, 0.0 is deterministic.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -268,9 +260,8 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Restricts token selection to a cumulative probability threshold.",
-          decimals: true, 
+          helper: "Restricts token selection to a cumulative probability threshold.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -280,7 +271,7 @@ const llms = {
           id: "presence_penalty",
           label: "Presence Penalty",
           helper: "Discourages repeating tokens from the prompt.",
-          decimals: true, 
+          decimals: true,
         },
         {
           default: 0.0,
@@ -290,7 +281,7 @@ const llms = {
           id: "frequency_penalty",
           label: "Frequency Penalty",
           helper: "Discourages repeating frequently used tokens.",
-          decimals: true, 
+          decimals: true,
         },
       ],
       method: "POST",
@@ -351,9 +342,8 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Controls randomness. 1.0 is the most random, 0.0 is deterministic.",
-          decimals: true, 
+          helper: "Controls randomness. 1.0 is the most random, 0.0 is deterministic.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -362,9 +352,8 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
-          decimals: true, 
+          helper: "Limits token selection to a cumulative probability threshold.",
+          decimals: true,
         },
         {
           default: 1.0,
@@ -374,7 +363,7 @@ const llms = {
           id: "presence_penalty",
           label: "Presence Penalty",
           helper: "Discourages using tokens from the prompt.",
-          decimals: true, 
+          decimals: true,
         },
         {
           default: 0.0,
@@ -384,13 +373,12 @@ const llms = {
           id: "frequency_penalty",
           label: "Frequency Penalty",
           helper: "Discourages frequent token repetition.",
-          decimals: true, 
+          decimals: true,
         },
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         return {
           model: "mistralai/mistral-7b-instruct:free",
@@ -454,8 +442,7 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Controls randomness. 1.0 is the most random, 0.0 is the most deterministic.",
+          helper: "Controls randomness. 1.0 is the most random, 0.0 is the most deterministic.",
         },
         {
           default: 1.0,
@@ -465,8 +452,7 @@ const llms = {
           decimals: true,
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
         },
         {
           default: 1.0,
@@ -491,8 +477,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         return {
           model: "google/gemini-flash-1.5",
@@ -564,8 +549,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Token selection limited to a cumulative probability threshold.",
+          helper: "Token selection limited to a cumulative probability threshold.",
         },
         {
           default: 1.0,
@@ -655,8 +639,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Token selection limited to a cumulative probability threshold.",
+          helper: "Token selection limited to a cumulative probability threshold.",
         },
         {
           default: 1.0,
@@ -753,8 +736,7 @@ const llms = {
       getMaxTokens: (vars) => vars.max_tokens,
       method: "POST",
       authHeader: "x-api-key",
-      documentationAuthLink:
-        "https://docs.anthropic.com/en/api/getting-started",
+      documentationAuthLink: "https://docs.anthropic.com/en/api/getting-started",
       getTemplate: (vars) => {
         let template = {
           model: "claude-3-5-sonnet-20240620",
@@ -768,10 +750,8 @@ const llms = {
           max_tokens: vars.max_tokens || 1024,
         };
         if (vars.temperature) template["temperature"] = vars.temperature;
-        if (vars.presence_penalty)
-          template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.presence_penalty) template["presence_penalty"] = vars.presence_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         if (vars.systemprompt) {
           template.messages.push({
             role: "assistant",
@@ -839,8 +819,7 @@ const llms = {
       getMaxTokens: (vars) => vars.max_tokens,
       method: "POST",
       authHeader: "x-api-key",
-      documentationAuthLink:
-        "https://docs.anthropic.com/en/api/getting-started",
+      documentationAuthLink: "https://docs.anthropic.com/en/api/getting-started",
       getTemplate: (vars) => {
         let template = {
           model: "claude-3-sonnet-20240229",
@@ -854,10 +833,8 @@ const llms = {
           max_tokens: vars.max_tokens || 1024,
         };
         if (vars.temperature) template["temperature"] = vars.temperature;
-        if (vars.presence_penalty)
-          template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.presence_penalty) template["presence_penalty"] = vars.presence_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         if (vars.systemprompt) {
           template.messages.push({
             role: "assistant",
@@ -925,8 +902,7 @@ const llms = {
       getMaxTokens: (vars) => vars.max_tokens,
       method: "POST",
       authHeader: "x-api-key",
-      documentationAuthLink:
-        "https://docs.anthropic.com/en/api/getting-started",
+      documentationAuthLink: "https://docs.anthropic.com/en/api/getting-started",
       getTemplate: (vars) => {
         let template = {
           model: "claude-3-opus-20240229",
@@ -1040,14 +1016,12 @@ const llms = {
           required: true,
           id: "maxOutputTokens",
           label: "Max Output Tokens",
-          helper:
-            "The maximum number of output tokens to be generated per message.",
+          helper: "The maximum number of output tokens to be generated per message.",
         },
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://cloud.google.com/vertex-ai/docs/generative-ai/gemini",
+      documentationAuthLink: "https://cloud.google.com/vertex-ai/docs/generative-ai/gemini",
       /*https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference?hl=es-419#examples*/
       getTemplate: (vars) => {
         return {
@@ -1064,9 +1038,7 @@ const llms = {
               role: "system",
               parts: [
                 {
-                  text:
-                    cleanPromptString(vars.systemprompt) ||
-                    "You are an AI assistant that helps people find information.",
+                  text: cleanPromptString(vars.systemprompt) || "You are an AI assistant that helps people find information.",
                 },
               ],
             },
@@ -1107,8 +1079,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1130,8 +1101,7 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
+          helper: "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
           decimals: true,
         },
         {
@@ -1141,8 +1111,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -1168,8 +1137,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         let template = {
           model: "o1-mini",
@@ -1180,9 +1148,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1230,8 +1196,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1253,8 +1218,7 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
+          helper: "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
           decimals: true,
         },
         {
@@ -1264,8 +1228,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -1291,8 +1254,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       disableFlowrabbit: true,
       getTemplate: (vars) => {
         let template = {
@@ -1304,9 +1266,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1353,8 +1313,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1376,8 +1335,7 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
+          helper: "Adjusts randomness in output. 1.0 is the most random, 0.0 is deterministic.",
           decimals: true,
         },
         {
@@ -1387,8 +1345,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -1414,8 +1371,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         let template = {
           model: "gpt-4o-mini",
@@ -1426,9 +1382,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1444,11 +1398,11 @@ const llms = {
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_completion_tokens,
       output: {
@@ -1482,8 +1436,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1515,8 +1468,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -1542,8 +1494,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         let template = {
           model: "gpt-4o",
@@ -1554,9 +1505,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1570,13 +1519,13 @@ const llms = {
           template["response_format"] = { type: "json_object" };
         }
         return template;
-      },      
+      },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_completion_tokens,
       output: {
@@ -1610,8 +1559,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1637,7 +1585,7 @@ const llms = {
             {
               value: "low",
               label: "Low (Least context, lowest cost, fastest response, but potentially lower answer quality.)",
-            }
+            },
           ],
           default: "low",
           id: "search_context_size",
@@ -1648,8 +1596,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         let template = {
           model: "gpt-4o-mini-search-preview-2025-03-11",
@@ -1660,9 +1607,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1678,11 +1623,11 @@ const llms = {
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_completion_tokens,
       output: {
@@ -1716,8 +1661,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1730,7 +1674,7 @@ const llms = {
           label: "System Prompt",
           placeholder: "Write your system prompt",
           class: "MatcAutoCompleteTextareaXXS",
-        },        
+        },
         {
           type: "DropDown",
           required: true,
@@ -1743,7 +1687,7 @@ const llms = {
             {
               value: "low",
               label: "Low (Least context, lowest cost, fastest response, but potentially lower answer quality.)",
-            }
+            },
           ],
           default: "low",
           id: "search_context_size",
@@ -1754,8 +1698,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         let template = {
           model: "gpt-4o-search-preview-2025-03-11",
@@ -1766,9 +1709,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           temperature: vars.temperature,
@@ -1782,13 +1723,13 @@ const llms = {
           template["response_format"] = { type: "json_object" };
         }
         return template;
-      },      
+      },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_completion_tokens,
       output: {
@@ -1822,8 +1763,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1855,8 +1795,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -1882,8 +1821,7 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         const template = {
           model: "gpt-4-turbo",
@@ -1894,9 +1832,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           max_completion_tokens: vars.max_completion_tokens,
@@ -1909,11 +1845,11 @@ const llms = {
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_completion_tokens,
       output: {
@@ -1952,8 +1888,7 @@ const llms = {
           id: "max_completion_tokens",
           label: "Max Tokens",
           default: 2048,
-          helper:
-            "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
+          helper: "An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.",
           required: true,
           min: 1,
           max: 2048,
@@ -1985,8 +1920,7 @@ const llms = {
           type: "range",
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits token selection to a cumulative probability threshold.",
+          helper: "Limits token selection to a cumulative probability threshold.",
           decimals: true,
         },
         {
@@ -2013,8 +1947,7 @@ const llms = {
       getMaxTokens: (vars) => vars.max_completion_tokens,
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://replicate.com/docs/reference/http#authentication",
+      documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
       getTemplate: (vars) => {
         const template = {
           model: "gpt-3.5-turbo-0125",
@@ -2025,9 +1958,7 @@ const llms = {
             },
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
           ],
           max_completion_tokens: vars.max_completion_tokens,
@@ -2040,11 +1971,11 @@ const llms = {
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       output: {
         path: "choices[0].message.content",
@@ -2099,8 +2030,7 @@ const llms = {
           required: true,
           id: "temperature",
           label: "Temperature",
-          helper:
-            "Adjusts the randomness of the output. 1.0 is the most random, 0.0 is deterministic.",
+          helper: "Adjusts the randomness of the output. 1.0 is the most random, 0.0 is deterministic.",
           decimals: true,
         },
         {
@@ -2130,17 +2060,14 @@ const llms = {
       ],
       authType: "Bearer",
       method: "POST",
-      documentationAuthLink:
-        "https://docs.perplexity.ai/reference/post_chat_completions",
+      documentationAuthLink: "https://docs.perplexity.ai/reference/post_chat_completions",
       getTemplate: (vars) => {
         let template = {
           model: "llama-3.1-sonar-small-128k-online",
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -2151,18 +2078,16 @@ const llms = {
         };
         if (vars.temperature) template["temperature"] = vars.temperature;
         if (vars.max_tokens) template["max_tokens"] = vars.max_tokens;
-        if (vars.presence_penalty)
-          template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.presence_penalty) template["presence_penalty"] = vars.presence_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_tokens,
       output: {
@@ -2247,17 +2172,14 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://docs.perplexity.ai/reference/post_chat_completions",
+      documentationAuthLink: "https://docs.perplexity.ai/reference/post_chat_completions",
       getTemplate: (vars) => {
         let template = {
           model: "llama-3.1-sonar-large-128k-online",
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -2268,18 +2190,16 @@ const llms = {
         };
         if (vars.temperature) template["temperature"] = vars.temperature;
         if (vars.max_tokens) template["max_tokens"] = vars.max_tokens;
-        if (vars.presence_penalty)
-          template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.presence_penalty) template["presence_penalty"] = vars.presence_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       getMaxTokens: (vars) => vars.max_tokens,
       output: {
@@ -2354,17 +2274,14 @@ const llms = {
       ],
       authType: "Bearer",
       method: "POST",
-      documentationAuthLink:
-        "https://docs.perplexity.ai/reference/post_chat_completions",
+      documentationAuthLink: "https://docs.perplexity.ai/reference/post_chat_completions",
       getTemplate: (vars) => {
         let template = {
           model: "llama-3.1-8b-instruct",
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -2376,16 +2293,15 @@ const llms = {
         if (vars.temperature) template["temperature"] = vars.temperature;
         if (vars.max_tokens) template["max_tokens"] = vars.max_tokens;
         template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       output: {
         path: "choices[0].message.content",
@@ -2459,17 +2375,14 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://docs.perplexity.ai/reference/post_chat_completions",
+      documentationAuthLink: "https://docs.perplexity.ai/reference/post_chat_completions",
       getTemplate: (vars) => {
         let template = {
           model: "llama-3.1-70b-instruct",
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -2481,16 +2394,15 @@ const llms = {
         if (vars.temperature) template["temperature"] = vars.temperature;
         if (vars.max_tokens) template["max_tokens"] = vars.max_tokens;
         template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       output: {
         path: "choices[0].message.content",
@@ -2564,17 +2476,14 @@ const llms = {
       ],
       method: "POST",
       authType: "Bearer",
-      documentationAuthLink:
-        "https://docs.perplexity.ai/reference/post_chat_completions",
+      documentationAuthLink: "https://docs.perplexity.ai/reference/post_chat_completions",
       getTemplate: (vars) => {
         let template = {
           model: "mixtral-8x7b-instruct",
           messages: [
             {
               role: "system",
-              content:
-                vars.systemprompt ||
-                "You are an AI assistant that helps people find information.",
+              content: vars.systemprompt || "You are an AI assistant that helps people find information.",
             },
             {
               role: "user",
@@ -2585,18 +2494,16 @@ const llms = {
         };
         if (vars.temperature) template["temperature"] = vars.temperature;
         if (vars.max_tokens) template["max_tokens"] = vars.max_tokens;
-        if (vars.presence_penalty)
-          template["presence_penalty"] = vars.presence_penalty;
-        if (vars.frequency_penalty)
-          template["frequency_penalty"] = vars.frequency_penalty;
+        if (vars.presence_penalty) template["presence_penalty"] = vars.presence_penalty;
+        if (vars.frequency_penalty) template["frequency_penalty"] = vars.frequency_penalty;
         return template;
       },
       injectContext: (template, context) => {
-        const tmp = JSON.parse(template)
-        const systemmessage = tmp.messages.find((msg) => msg.role === "system")
+        const tmp = JSON.parse(template);
+        const systemmessage = tmp.messages.find((msg) => msg.role === "system");
         tmp.messages = context.slice(0, context.length - 1);
-        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage]
-        return JSON.stringify(tmp)
+        if (systemmessage) tmp.messages = [...tmp.messages, systemmessage];
+        return JSON.stringify(tmp);
       },
       output: {
         path: "choices[0].message.content",
@@ -2678,8 +2585,7 @@ const llms = {
           required: false,
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits the model's choices to a percentage of likely tokens.",
+          helper: "Limits the model's choices to a percentage of likely tokens.",
           decimals: true,
         },
         {
@@ -2809,8 +2715,7 @@ const llms = {
           required: false,
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits the model's choices to a percentage of likely tokens.",
+          helper: "Limits the model's choices to a percentage of likely tokens.",
           decimals: true,
         },
         {
@@ -2940,8 +2845,7 @@ const llms = {
           required: false,
           id: "top_p",
           label: "Top P",
-          helper:
-            "Limits the model's choices to a percentage of likely tokens.",
+          helper: "Limits the model's choices to a percentage of likely tokens.",
           decimals: true,
         },
         {

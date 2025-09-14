@@ -35,9 +35,11 @@ public class Organization extends Model{
 
     public static final String FIELD_STATUS = "status";
 
-    public static final String FIELD_CREDITS_IN_CENTI_CENTS = "creditsInCentiCent";
+    public static final String FIELD_CREDITS_IN_MICRO_CENT = "creditsInMicroCent";
 
-    public static final String FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS = "additionalCreditsInCentiCent";
+    public static final String FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS = "additionalCreditsInMicroCent";
+
+    public static long DEFAUlT_CREDITS = 0;
 
     public static JsonObject create(
             String name, // acts as the kind of id in the urls
@@ -47,8 +49,8 @@ public class Organization extends Model{
         return new JsonObject()
                 .put(FIELD_NAME, name)
                 .put(FIELD_DISPLAY_NAME, displayName)
-                .put(FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS, 0)
-                .put(FIELD_CREDITS_IN_CENTI_CENTS, creditsInCentiCent)
+                .put(FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS, 0)
+                .put(FIELD_CREDITS_IN_MICRO_CENT, creditsInCentiCent)
                 .put(FIELD_IS_AUTO_ORG, true)
                 .put(FIELD_STATUS, STATUS_ACTIVE)
                 .put(FIELD_CREATED, System.currentTimeMillis());
@@ -63,17 +65,17 @@ public class Organization extends Model{
     }
 
     public static int getCredits(JsonObject org){
-        if (!org.containsKey(FIELD_CREDITS_IN_CENTI_CENTS)) {
-            org.put(FIELD_CREDITS_IN_CENTI_CENTS, 0);
+        if (!org.containsKey(FIELD_CREDITS_IN_MICRO_CENT)) {
+            org.put(FIELD_CREDITS_IN_MICRO_CENT, 0);
         }
-        return org.getInteger(FIELD_CREDITS_IN_CENTI_CENTS);
+        return org.getInteger(FIELD_CREDITS_IN_MICRO_CENT);
     }
 
     public static int getAdditionalCredits(JsonObject org){
-        if (!org.containsKey(FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS)) {
-            org.put(FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS, 0);
+        if (!org.containsKey(FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS)) {
+            org.put(FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS, 0);
         }
-        return org.getInteger(FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS);
+        return org.getInteger(FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS);
     }
 
     public static JsonObject deductCredits(JsonObject org, int price) {
@@ -87,8 +89,8 @@ public class Organization extends Model{
             credits = 0;
         }
 
-        update.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, credits);
-        update.put(Organization.FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS, additionalCredits);
+        update.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, credits);
+        update.put(Organization.FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS, additionalCredits);
 
         logger.info("deductCredits() > Dec to {} /{} centi-cent for {}", credits, additionalCredits, org.getString("_id"));
         return update;
@@ -98,17 +100,17 @@ public class Organization extends Model{
 
     public static boolean hasOrgBudgetLeft(JsonObject org, JsonObject secret, double quantity) {
 
-        if (quantity > 0 && secret.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY)) {
+        if (quantity > 0 && secret.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT)) {
             int totalCredits = getTotalBudget(org);
-            int pricePerQuantity = secret.getInteger(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY);
-            int price = Secret.computePrice(quantity, pricePerQuantity);
+            int pricePerQuantity = secret.getInteger(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT);
+            int price = Secret.calculatePriceInMicroCent(quantity, pricePerQuantity);
             logger.info("hasOrgBudgetLeft() credits: {} > quantity: {} > price: {}", totalCredits, quantity, price);
             return totalCredits - price >= 0;
         }
 
-        if (secret.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST)) {
+        if (secret.containsKey(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT)) {
             int totalCredits = getTotalBudget(org);
-            int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST);
+            int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT);
             logger.info("hasOrgBudgetLeft() credits with default: {} > price: {}", totalCredits, price);
             return totalCredits - price >= 0;
         }
