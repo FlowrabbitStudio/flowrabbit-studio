@@ -16,30 +16,22 @@
         <h1>Organizations</h1>
 
         <DataTable :data="data" :size="100" :columns="[
-          { id: 'name', key: 'name', label: 'Name', width: '30%', max: 20 },
-          { id: 'displayName', key: 'displayName', label: 'Display Name', width: '30%', max: 10 },
+          { id: 'name', key: 'name', label: 'Name', width: '15%', max: 20 },
+          { id: 'displayName', key: 'displayName', label: 'Display Name', width: '15%', max: 10 },
           { 
             id: 'status', 
             key: 'status', 
             label: 'Status', 
             width: '10%',
             class: (row) => row.status == 'blocked' ? 'red': 'green'
-          },     
-          {
-            id: 'paidUntilDate',
-            key: 'paidUntilDate',
-            label: 'Paid Until',
-            width: '10%',
-            value: (row) => printDate(row.paidUntil),
-            class: (row) => (row.paidUntil < now ? 'red' : ''),
           },
           { 
-            id: 'creditsInCentiCent', 
-            key: 'creditsInCentiCent', 
-            label: 'Credits (CentiCent)', 
-            width: '10%',
-            value: (row) => (row.creditsInCentiCent) + ' CC',
-            class: (row) => row.creditsInCentiCent == undefined ? 'red': ''
+            id: 'creditsInMicroCent', 
+            key: 'creditsInMicroCent', 
+            label: 'Credits ( Euro / Dollar )', 
+            width: '20%',
+            value: (row) => (printCurrency(row.creditsInMicroCent) + ' '),
+            class: (row) => row.creditsInMicroCent == undefined ? 'red': ''
           },          
           {
             id: 'created',
@@ -47,13 +39,6 @@
             label: 'Created',
             width: '10%',
             value: (row) => printDate(row.created),
-          },
-          {
-            id: 'domain',
-            key: 'domains',
-            label: 'Domain',
-            width: '10%',
-            value: (row) => printDomain(row),
           },
           {
             id: 'action-delete',
@@ -72,16 +57,7 @@
             value: 'Edit',
             class: 'action',
             click: (row, e) => onEditOrg(row, e),
-          },
-          {
-            id: 'action-pay',
-            key: 'action',
-            label: '',
-            width: '10%',
-            value: 'Pay 1M',
-            class: 'action',
-            click: (row, e) => onPayOneMonth(row, e),
-          },
+          }
         ]" @load="onLoadPage" @sortyBy="onSortBy" />
       </div>
     </Panel>
@@ -97,11 +73,7 @@ import SearchBar from "./SearchBar.vue";
 import AdminService from "./AdminService";
 import OrganizationDialog from "./OrganizationDialog";
 import Services from "services/Services";
-//    import Dialog from 'common/Dialog'
-//    import DomBuilder from 'common/DomBuilder'
-// import CheckBox from 'common/CheckBox'
-// import on from 'dojo/on'
-// import * as DojoUtil from 'dojo/DojoUtil';
+import { microCentoToEuro } from "src/util/CreditUtil.js";
 
 export default {
   props: [""],
@@ -144,19 +116,6 @@ export default {
     onEditOrg(org) {
       this.$router.push(`/mcu/organizations/${org.id}.html`);
     },
-    async onPayOneMonth (org) {
-      const now = new Date(); // Get the current date
-      now.setMonth(now.getMonth() + 1); // Add one month
-      const paidUntil  = now.getTime(); 
-      org.paidUntil = paidUntil
-      const res = await this.adminService.updateOrg(org);
-      if (res.error || res.errors) {
-        this.$root.$emit("Error", "Error");
-      } else {
-        this.$root.$emit("Success", "Saved Paid Until");
-      }
-      this.loadAll()
-    },
     async onDeleteOrg(org) {
       if (org.id === "private") {
         alert("You cannot delete the private org");
@@ -175,6 +134,12 @@ export default {
         return row.domains[0];
       }
       return "-";
+    },
+    printCurrency (microCent) {
+      if (microCent == undefined) {
+        return '0.00'
+      }
+      return (microCentoToEuro(microCent)).toFixed(2)
     },
     printDate(ms) {
       var date = new Date(ms);

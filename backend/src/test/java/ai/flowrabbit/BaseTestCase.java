@@ -46,7 +46,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import io.vertx.ext.unit.TestContext;
 import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.utility.DockerImageName;
 
 import javax.imageio.ImageIO;
 
@@ -127,6 +126,8 @@ public class BaseTestCase {
 		} catch (IOException e) {
 
 		}
+
+		Organization.DEFAUlT_CREDITS = 1000;
 
 		this.serverURL = "http://localhost:" + conf.getInteger("http.port");
 
@@ -1820,7 +1821,7 @@ public class BaseTestCase {
 	public JsonObject adminCreateOrganization(TestContext context, String name, long budget) {
 		JsonObject org = new JsonObject()
 				.put(Organization.FIELD_NAME, name)
-				.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, budget);
+				.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, budget);
 		JsonObject result = this.post("/rest/admin/organizations/", org);
 		context.assertTrue(!result.containsKey("errors"));
 		context.assertTrue(result.containsKey("_id"));
@@ -2116,8 +2117,8 @@ public class BaseTestCase {
 				.put(Secret.FIELD_SECRET_NAME, name)
 				.put(Secret.FIELD_SECRET_VALUE, value)
 				.put(Secret.FIELD_SECRET_DOMAIN, domain)
-				.put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY, priceByQuantity)
-				.put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST, pricePerRequest);
+				.put(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT, priceByQuantity)
+				.put(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, pricePerRequest);
 
 		JsonObject result = this.post("/rest/admin/secrets/", request);
 		context.assertTrue(!result.containsKey("error"));

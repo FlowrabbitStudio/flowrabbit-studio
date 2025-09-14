@@ -37,7 +37,7 @@ import io.vertx.ext.web.handler.CorsHandler;
 
 public class Main extends AbstractVerticle {
 
-	public static final String VERSION = "FlowRabbit@1.0.88";
+	public static final String VERSION = "FlowRabbit@5.0.13";
 
 	public static final String BUS_IMAGES_UPLOADED = "images.uploaded";
 
@@ -321,11 +321,6 @@ public class Main extends AbstractVerticle {
 
 	private void initAdmin(Router router, JsonObject config) {
 		logger.info("intiAdmin() > enter");
-
-		/*
-		 * Make sure we have one admin
-		 */
-		Setup.instance(config, client);
 
 		/*
 		 * Staff stuff: KPI, User, Notifications

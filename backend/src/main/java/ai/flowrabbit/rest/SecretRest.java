@@ -7,7 +7,6 @@ import ai.flowrabbit.bus.MongoLogger;
 import ai.flowrabbit.model.*;
 import ai.flowrabbit.services.EncryptionService;
 import ai.flowrabbit.util.DB;
-import ai.flowrabbit.services.BlowFishService;
 import ai.flowrabbit.util.MongoREST;
 import ai.flowrabbit.services.TokenService;
 import ai.flowrabbit.util.SecretUtil;
@@ -109,7 +108,7 @@ public class SecretRest extends MongoREST {
         this.mongo.findOne(secretDb, Secret.findByName(name), null, res -> {
             if(res.succeeded() && res.result() != null){
                 JsonObject secret = res.result();
-                if (!secret.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY)) {
+                if (!secret.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT)) {
                     logger.error("meterBySecretPrepaidBudget() > no price per quantity");
                     returnError(event, "app.secret.no.priceQuantity",405);
                     return;
@@ -132,8 +131,8 @@ public class SecretRest extends MongoREST {
             if (res.succeeded() && res.result() != null) {
                 JsonObject org = res.result();
 
-                int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY);
-                int totalPrice = Secret.computePrice(quantity, price);
+                int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT);
+                int totalPrice = Secret.calculatePriceInMicroCent(quantity, price);
 
                 org = Organization.deductCredits(org, totalPrice);
 
@@ -294,10 +293,6 @@ public class SecretRest extends MongoREST {
         }
     }
 
-
-
-
-
     /********************************************************
      * Find & meter by ORGANIZATION
      ********************************************************/
@@ -378,7 +373,7 @@ public class SecretRest extends MongoREST {
         callCounter.put(APICalls.FIELD_CURRENT_API_CALLS, currentCalls + 1);
 
         if (meterOnRequest) {
-            int price = Secret.getPrice(secret, quantity);
+            int price = Secret.calculatePriceInMicroCent(secret, quantity);
             org = Organization.deductCredits(org, price);
             APICalls.incAnalytics(org, price);
         } else {

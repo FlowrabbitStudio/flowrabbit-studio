@@ -23,13 +23,13 @@ public class SecretMeteringTest2 extends BaseTestCase {
 
         assertEquals(100, Organization.getTotalBudget(org));
 
-        JsonObject secret = new JsonObject().put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST, 10);
+        JsonObject secret = new JsonObject().put(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, 10);
         assertTrue(Organization.hasOrgBudgetLeft(org, secret, 0));
 
-        secret = new JsonObject().put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST, 101);
+        secret = new JsonObject().put(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, 101);
         assertFalse(Organization.hasOrgBudgetLeft(org, secret, 0));
 
-        org.put(Organization.FIELD_ADDITIONAL_CREDITS_IN_CENTI_CENTS, 200);
+        org.put(Organization.FIELD_ADDITIONAL_CREDITS_IN_MICRO_CENTS, 200);
         assertEquals(300, Organization.getTotalBudget(org));
 
         assertTrue(Organization.hasOrgBudgetLeft(org, secret, 0));
@@ -73,8 +73,8 @@ public class SecretMeteringTest2 extends BaseTestCase {
 
     private static JsonObject createSecret(long creditsRequest, int creditsQuantity) {
         return new JsonObject()
-                .put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST, creditsRequest)
-                .put(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY, creditsQuantity);
+                .put(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, creditsRequest)
+                .put(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT, creditsQuantity);
     }
 
     @Test

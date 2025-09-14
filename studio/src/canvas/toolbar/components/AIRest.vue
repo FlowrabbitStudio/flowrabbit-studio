@@ -1,132 +1,57 @@
 <template>
-  <div
-    class="MatcToolbarRestSettings MatcToolbarTemplateRestSettings MatcDialogContainer"
-  >
+  <div class="MatcToolbarRestSettings MatcToolbarTemplateRestSettings MatcDialogContainer">
     <div class="MatcDialogContent">
       <div class="MatcDialogContentHeader">
         <label>{{ title }}</label>
       </div>
       <div class="MatcToolbarTabs MatcToolbarTabsBig">
         <div>
-          <a
-            @click="selectTab('data')"
-            :class="{ MatcToolbarTabActive: tab === 'data' }"
-            >Input</a
-          >
-          <a
-            @click="selectTab('output')"
-            :class="{ MatcToolbarTabActive: tab === 'output' }"
-            >Output</a
-          >
-          <a
-            v-if="aiModel?.type !== 'flowrabbit'"
-            @click="selectTab('auth')"
-            :class="{ MatcToolbarTabActive: tab === 'auth' }"
-          >
+          <a @click="selectTab('data')" :class="{ MatcToolbarTabActive: tab === 'data' }">Input</a>
+          <a @click="selectTab('output')" :class="{ MatcToolbarTabActive: tab === 'output' }">Output</a>
+          <a v-if="aiModel?.type !== 'flowrabbit'" @click="selectTab('auth')"
+            :class="{ MatcToolbarTabActive: tab === 'auth' }">
             Authorization
           </a>
-          <a
-            @click="selectTab('advanced')"
-            :class="{ MatcToolbarTabActive: tab === 'advanced' }"
-            v-if="aiModel && aiModel.advanced"
-          >
+          <a @click="selectTab('advanced')" :class="{ MatcToolbarTabActive: tab === 'advanced' }"
+            v-if="aiModel && aiModel.advanced">
             Advanced
           </a>
         </div>
       </div>
       <div class="MatcMarginTop">
-        <div
-          v-show="tab === 'data'"
-          class="MatcToolbarRestSettingsElementCntr p-2"
-        >
-          <AIRestDataTab
-            :key="`data-tab-${key}`"
-            :aiModel="aiModel"
-            :databingValues="databingValues"
-            :hash="hash"
-            :hints="hints"
-            :model="model"
-            :rest="rest"
-            :template="template"
-            :variableAndSecretHints="variableAndSecretHints"
-            :variableAndSecretHintsList="variableAndSecretHintsList"
-            @onChangeDataBindingValues="onChangeDataBindingValues"
-            @modelChange="onModelChange"
-            @changeBrand="onChangeBrand"
-            @elementChange="onTemplateElementChange"
-            @onChangeInputVar="onChangeInputVar"
-            @isVarCombo="isVarCombo"
-            @onChangeIsCombo="onChangeIsCombo"
-          />
+        <div v-show="tab === 'data'" class="MatcToolbarRestSettingsElementCntr p-2">
+          <AIRestDataTab :key="`data-tab-${key}`" :aiModel="aiModel" :databingValues="databingValues" :hash="hash"
+            :hints="hints" :model="model" :rest="rest" :template="template"
+            :variableAndSecretHints="variableAndSecretHints" :variableAndSecretHintsList="variableAndSecretHintsList"
+            @onChangeDataBindingValues="onChangeDataBindingValues" @modelChange="onModelChange"
+            @changeBrand="onChangeBrand" @elementChange="onTemplateElementChange" @onChangeInputVar="onChangeInputVar"
+            @isVarCombo="isVarCombo" @onChangeIsCombo="onChangeIsCombo" />
         </div>
-        <div
-          v-show="tab === 'auth' && aiModel?.type !== 'flowrabbit'"
-          class="MatcToolbarRestSettingsElementCntr p-2"
-        >
-          <AIRestAuthTab
-            @setRestToken="setRestToken"
-            @setIsFlowrabbitSecret="setIsFlowrabbitSecret"
-            :rest="rest"
-            :org="selectedOrg"
-            :aiModel="aiModel"
-            :secretHints="secretHints"
-            :disableFlowrabbit="aiModel.disableFlowrabbit"
-            :model="model"
-          />
+        <div v-show="tab === 'auth' && aiModel?.type !== 'flowrabbit'" class="MatcToolbarRestSettingsElementCntr p-2">
+          <AIRestAuthTab @setRestToken="setRestToken" @setIsFlowrabbitSecret="setIsFlowrabbitSecret" :rest="rest"
+            :org="selectedOrg" :aiModel="aiModel" :secretHints="secretHints"
+            :disableFlowrabbit="aiModel.disableFlowrabbit" :model="model" />
         </div>
         <div v-show="tab === 'output'">
-          <AIRestOutputTab
-            :aiModel="aiModel"
-            :formatType="formatType"
-            :hints="hints"
-            :rest="rest"
-            :template="template"
-            @changeOutputVar="onChangeOutputVar"
-            @changeFormatType="onChangeFormatTypeVar"
-            @changeStream="onChangeStream"
-            @changeLoadingVar="onChangeLoadingVar"
-            @changeErrorVar="onChangeErrorVar"
-          />
+          <AIRestOutputTab :aiModel="aiModel" :formatType="formatType" :hints="hints" :rest="rest" :template="template"
+            @changeOutputVar="onChangeOutputVar" @changeFormatType="onChangeFormatTypeVar"
+            @changeStream="onChangeStream" @changeLoadingVar="onChangeLoadingVar" @changeErrorVar="onChangeErrorVar" />
         </div>
         <div v-show="tab === 'advanced'">
-          <AIRestAdvancedTab
-            :key="`advanced-tab-${key}`"
-            :aiModel="aiModel"
-            :databingValues="databingValues"
-            :hash="hash"
-            :rest="rest"
-            :variableAndSecretHintsList="variableAndSecretHintsList"
-            :variableAndSecretHints="variableAndSecretHints"
-            @elementChange="onTemplateElementChange"
-            @isVarCombo="isVarCombo"
-            @onChangeIsCombo="onChangeIsCombo"
-          />
+          <AIRestAdvancedTab :key="`advanced-tab-${key}`" :aiModel="aiModel" :databingValues="databingValues"
+            :hash="hash" :rest="rest" :variableAndSecretHintsList="variableAndSecretHintsList"
+            :variableAndSecretHints="variableAndSecretHints" @elementChange="onTemplateElementChange"
+            @isVarCombo="isVarCombo" @onChangeIsCombo="onChangeIsCombo" />
         </div>
       </div>
     </div>
     <div v-if="hasTest">
-      <AIRestTestSection
-        :aiModel="aiModel"
-        :audioUrl="audioUrl"
-        :dataBindingKeys="dataBindingKeys"
-        :databingValues="databingValues"
-        :formatType="formatType"
-        :loadingResult="loadingResult"
-        :template="template"
-        :testError="testError"
-        :testResult="testResult"
-        :testtab="testtab"
-        :organizations="organizations"
-        :rest="rest"
-        :hash="hash"
-        :model="model"
-        @fileChange="onFileChange"
-        @onDataBingingFileChange="onDataBingingFileChange"
-        @handleError="handleError"
-        @run="run"
-        @onChangeDataBindingValues="onChangeDataBindingValues"
-        @onChangeAudioUrl="onChangeAudioUrl"
-      />
+      <AIRestTestSection :aiModel="aiModel" :audioUrl="audioUrl" :dataBindingKeys="dataBindingKeys"
+        :databingValues="databingValues" :formatType="formatType" :loadingResult="loadingResult" :template="template"
+        :testError="testError" :testResult="testResult" :testtab="testtab" :organizations="organizations" :rest="rest"
+        :hash="hash" :model="model" @fileChange="onFileChange" @onDataBingingFileChange="onDataBingingFileChange"
+        @handleError="handleError" @run="run" @onChangeDataBindingValues="onChangeDataBindingValues"
+        @onChangeAudioUrl="onChangeAudioUrl" />
     </div>
   </div>
 </template>
@@ -187,7 +112,7 @@ export default {
           hints: {},
         },
         headers: [],
-        isFlowrabbitSecret: true,
+        isFlowrabbitSecret: false,
         combos: {},
         dependentSelections: {},
       },
@@ -208,7 +133,7 @@ export default {
       organizations: [],
       enableAnalytics: false,
       key: 0,
-      selectedOrg:{}
+      selectedOrg: {}
     };
   },
   components: {
@@ -571,7 +496,7 @@ export default {
       return this.aiModel.id;
     },
     onModelChange(value) {
-      this.logger.log(5, "onModelChange", "enter");
+      this.logger.log(-5, "onModelChange", "enter");
       this.key++;
       const selectedModel = this.template.models.find((m) => value === m.id);
       this.$set(this, "aiModel", selectedModel);
@@ -582,14 +507,13 @@ export default {
       this.$nextTick(() => {
         this.$forceUpdate();
       });
-      this.logger.log(
-        -5,
-        "onModelChange",
+      this.logger.log(-5, "onModelChange",
         "exit",
         JSON.stringify(this.rest, null, 2)
       );
     },
     onChangeBrand() {
+      this.logger.log(-5, "onChangeBrand", "enter");
       this.$set(this, "aiModel", {});
     },
     updateAuthParam() {
@@ -608,7 +532,7 @@ export default {
       this.rest.authHeader = this.aiModel.authHeader;
       this.rest.output.path = this.aiModel.output.path;
       if (this.rest.isFlowrabbitSecret === undefined && !this.aiModel.disableFlowrabbit) {
-        this.rest.isFlowrabbitSecret = true;
+        this.rest.isFlowrabbitSecret = false;
       }
       const template = this.aiModel.getTemplate(
         this.rest.vars,
@@ -650,7 +574,7 @@ export default {
     },
     updateRest() {
       this.logger.log(4, "updateRest", "enter");
-      if (this.aiModel) {
+      if (this.aiModel && this.aiModel.getTemplate) {
         const template = this.aiModel.getTemplate(
           this.rest.vars,
           this.rest.input.fileDataBinding
@@ -660,6 +584,9 @@ export default {
         } catch (e) {
           this.logger.error("updateRest", "Could not parse", e);
         }
+      } else {
+        this.logger.error("updateRest", "No aiModel", this.aiModel);
+        this.rest.input.template = JSON.stringify({"url":""});
       }
     },
     replacePattern(s, pattern, value) {
@@ -719,6 +646,7 @@ export default {
       return true;
     },
     validate() {
+      this.logger.log(-4, "validate", "enter");
       let url = this.rest.url;
       let template = this.rest.input.template;
       let prefix = this.rest.output.databinding;
@@ -1021,7 +949,7 @@ export default {
     async processStream(stream) {
       const reader = stream.getReader();
       this.testResult = "";
-      for (;;) {
+      for (; ;) {
         // A common idiom for a loop that reads until done
         const { done, value } = await reader.read();
         if (done) break;

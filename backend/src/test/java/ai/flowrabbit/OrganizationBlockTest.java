@@ -64,7 +64,7 @@ public class OrganizationBlockTest extends BaseTestCase {
         JsonObject org = toMap(jansOrgs, Organization.FIELD_DISPLAY_NAME).get("Jan");
         String janOrgId = org.getString("id");
         String jansOrgName = org.getString("name");
-        context.assertEquals(10000, org.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(10000, org.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
 
 
@@ -100,7 +100,7 @@ public class OrganizationBlockTest extends BaseTestCase {
 
         // just one call was deducted
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(janOrgId));
-        context.assertEquals(9998, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(9998, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
         // now the admin will block the org
         assertLogin(context, admin.getString("email"), "123456789");

@@ -71,7 +71,7 @@ public class SecretRestTest extends BaseTestCase {
 
         // now we set some budget
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        orgDb.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, 100 * 2 + 7);
+        orgDb.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, 100 * 2 + 7);
         client.save(DB.getTable(Organization.class), orgDb);
         print("Org > Step 1", orgDb);
 
@@ -84,7 +84,7 @@ public class SecretRestTest extends BaseTestCase {
         orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
         print("Org > Step 2", orgDb);
 
-        context.assertEquals(200, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS)); // - 7 see above
+        context.assertEquals(200, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT)); // - 7 see above
 
         JsonObject callCounterMyApp = APICalls.getCallCounter(orgDb, "myai");
         context.assertEquals(2, callCounterMyApp.getInteger(APICalls.FIELD_CURRENT_API_CALLS));
@@ -102,7 +102,7 @@ public class SecretRestTest extends BaseTestCase {
 
         callCounterMyApp = APICalls.getCallCounter(orgDb, "myai");
         context.assertTrue(callCounterMyApp.getInteger(APICalls.FIELD_CURRENT_API_CALLS) > 98);
-        context.assertTrue(3 > orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertTrue(3 > orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
 
         sleep(4000);
@@ -115,12 +115,12 @@ public class SecretRestTest extends BaseTestCase {
         assertLogin(context, admin.getString("email"), "123456789");
         JsonObject orgAdmin = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
         orgAdmin.put("id", orgAdmin.getString("_id"));
-        orgAdmin.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, 100);
+        orgAdmin.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, 100);
         adminUpdateOrganization(context, orgAdmin);
 
         // check db is updated
         orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        context.assertEquals(100, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(100, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
         getPublicSecretsByName(context, token, "myai", SECRET_DEFAULT_URL);
 
@@ -179,7 +179,7 @@ public class SecretRestTest extends BaseTestCase {
 
         // now we set some budget
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        orgDb.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, 200);
+        orgDb.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, 200);
         client.save(DB.getTable(Organization.class), orgDb);
 
 
@@ -202,7 +202,7 @@ public class SecretRestTest extends BaseTestCase {
         orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
 
         // only the first two request were metered. The rest
-        context.assertEquals(200 - (42), orgDb.getInteger("creditsInCentiCent"));
+        context.assertEquals(200 - (42), orgDb.getInteger("creditsInMicroCent"));
 
     }
 
@@ -264,7 +264,7 @@ public class SecretRestTest extends BaseTestCase {
 
         // now we set some budget
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        orgDb.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, 100 * 2 + 7);
+        orgDb.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, 100 * 2 + 7);
         client.save(DB.getTable(Organization.class), orgDb);
         print("Org > Step 1", orgDb);
 
@@ -334,7 +334,7 @@ public class SecretRestTest extends BaseTestCase {
 
         // now we set some budget
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        orgDb.put(Organization.FIELD_CREDITS_IN_CENTI_CENTS, 100 * 2 + 7);
+        orgDb.put(Organization.FIELD_CREDITS_IN_MICRO_CENT, 100 * 2 + 7);
         client.save(DB.getTable(Organization.class), orgDb);
         print("Org > Step 1", orgDb);
 
@@ -506,8 +506,8 @@ public class SecretRestTest extends BaseTestCase {
         for (int i=0; i < secrets.size(); i++) {
             JsonObject s = secrets.getJsonObject(i);
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_VALUE));
-            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST));
-            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY));
+            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT));
+            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT));
             context.assertTrue(s.getString(Secret.FIELD_SECRET_VALUE).startsWith("top"));
         }
 
@@ -516,8 +516,8 @@ public class SecretRestTest extends BaseTestCase {
         for (int i=0; i < pubSecrets.size(); i++) {
             JsonObject s = pubSecrets.getJsonObject(i);
             context.assertFalse(s.containsKey(Secret.FIELD_SECRET_VALUE));
-            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST));
-            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY));
+            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT));
+            context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT));
         }
 
 

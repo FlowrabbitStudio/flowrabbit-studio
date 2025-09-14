@@ -184,7 +184,7 @@ public class SecretMeteringTest extends BaseTestCase {
 
         // just one call was deducted
         JsonObject orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        context.assertEquals(98, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(98, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
         // now we meter per call
         meterSecretByPrepaidBudgetOrOrg(context, token, "myai", 2, 44);
@@ -193,7 +193,7 @@ public class SecretMeteringTest extends BaseTestCase {
 
         orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
         print(orgDb);
-        context.assertEquals(98-44, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(98-44, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
 
 
         getPublicSecretsByName(context, token, "myai", SECRET_DEFAULT_URL); //-2
@@ -204,7 +204,7 @@ public class SecretMeteringTest extends BaseTestCase {
         getPublicSecretsByNameError(context, token, "myai", "http://other.api.com"); //-0
 
         orgDb = client.findOne(DB.getTable(Organization.class), Organization.findById(nereasOrgId));
-        context.assertEquals(98-50, orgDb.getInteger(Organization.FIELD_CREDITS_IN_CENTI_CENTS));
+        context.assertEquals(98-50, orgDb.getInteger(Organization.FIELD_CREDITS_IN_MICRO_CENT));
     }
 
 

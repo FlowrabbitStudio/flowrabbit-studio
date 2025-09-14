@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public class AdminSecretRest extends MongoREST {
 
-    private Logger logger = LoggerFactory.getLogger(AdminSecretRest.class);
+    private static final Logger logger = LoggerFactory.getLogger(AdminSecretRest.class);
 
     private final EncryptionService encryptionService;
 

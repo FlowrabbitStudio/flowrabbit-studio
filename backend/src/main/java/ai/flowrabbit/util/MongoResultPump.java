@@ -26,6 +26,7 @@ public class MongoResultPump implements Handler<AsyncResult<JsonObject>>{
 	
 	public MongoResultPump(RoutingContext event, MongoFilter<JsonObject, JsonObject> filter){
 		this.event = event;
+		event.response().putHeader("content-type", "application/json");
 		this.event.response().setChunked(true);
 		this.event.response().write("[");
 		this.filter = filter;

@@ -400,7 +400,7 @@ public class UserREST extends MongoREST {
                 JsonObject newOrg = Organization.create(
                         finalName,
                         displayName,
-                        10000
+                        Organization.DEFAUlT_CREDITS
                 );
 
                 this.mongo.insert(org_db, newOrg, saved -> {

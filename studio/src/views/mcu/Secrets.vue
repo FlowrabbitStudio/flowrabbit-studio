@@ -6,79 +6,14 @@
         <div class="MatcCardHeader align-items-center">
           <h1 class="heading">Secrets</h1>
 
-          <div class="MatcFlex MatcEnd search-bar-container">
+          <div class="MatcFlex MatcEnd search-bar-container MatcFelxGapM">
             <SearchBar v-model="searchFilter" />
+            <button class="MatcButton MatcButtonPrimary" @click="createSecret" :disabled="isLoading">Create
+              Secret</button>
           </div>
-          
 
-          <div class="MatcFlex MatcBetween actions MatcMarginTop">
-            <div class="MatcFlex filters">
-              <div class="filter-dropdown">
-                <select id="brandFilter" v-model="selectedBrand">
-                  <option value="">All Brands</option>
-                  <option v-for="brand in availableBrands" :key="brand.value" :value="brand.value">
-                    {{ brand.label }}
-                  </option>
-                </select>
-              </div>
-              <div class="filter-dropdown">
-                <select id="typeFilter" v-model="selectedType">
-                  <option value="">All Types</option>
-                  <option v-for="type in availableTypes" :key="type.value" :value="type.value">
-                    {{ type.label }}
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <div class="MatcFlex buttons actions">
-              <button class="MatcButton MatcButtonPrimary" @click="createSecret" :disabled="isLoading">Create Secret</button>
-              <button class="MatcButton MatcButtonSecondary" @click="exportToExcel" :disabled="isLoading">Export to Excel</button>
-              <button class="MatcButton MatcButtonSecondary" @click="showImportJSDialog" :disabled="isLoading">Import JS Secrets</button>
-            </div>
-          </div>
         </div>
 
-        <!-- Brand-level Token Update Controls -->
-        <div class="brand-token-update" v-if="selectedBrand">
-          <label for="brandTokenInput">Set token for all models in {{ selectedBrand }}:</label>
-          <input
-            id="brandTokenInput"
-            v-model="brandToken"
-            placeholder="Enter new token"
-            :disabled="isLoading"
-          />
-          <button
-            class="MatcButton MatcButtonSecondary"
-            @click="updateAllTokensForBrand"
-            :disabled="!canUpdateBrandTokens || isLoading"
-          >
-            Update Brand Tokens
-          </button>
-        </div>
-
-        <!-- Bulk Actions for Selected Secrets -->
-        <div v-if="selectedSecrets.length > 0" class="bulk-actions">
-          <button
-            class="MatcButton MatcButtonDanger"
-            @click="deleteSelected"
-            :disabled="isLoading"
-          >
-            Delete Selected
-          </button>
-          <input
-            v-model="selectedSecretsToken"
-            placeholder="Token for selected secrets"
-            :disabled="isLoading"
-          />
-          <button
-            class="MatcButton MatcButtonSecondary"
-            @click="updateTokenForSelected"
-            :disabled="!canUpdateSelectedTokens || isLoading"
-          >
-            Update Token
-          </button>
-        </div>
 
         <!-- Loading Indicator -->
         <div v-if="isLoading" class="loading-indicator">
@@ -91,104 +26,10 @@
             <p>No secrets found with the current filters.</p>
           </div>
           <div v-else>
-            <DataTable
-              :data="filteredSecrets"
-              :size="10"
-              :isSelectable="true"
-              :columns="columns"
-              @update:selectedRows="updateSelectedSecrets"
-            />
+            <DataTable :data="filteredSecrets" :size="10" :isSelectable="false" :columns="columns" />
           </div>
         </div>
 
-        {{selectedSecret}}
-
-        <!-- Secret Details Form -->
-        <div class="secret-details-form" v-if="selectedSecret">
-          <h2>Edit Secret</h2>
-          <div v-for="(val, key) in selectedSecret" :key="key" class="form-group">
-            <label :for="`secret-${key}`">{{ formatLabel(key) }}:</label>
-            <!-- System fields read-only -->
-            <template v-if="isSystemField(key)">
-              <span>{{ formatSystemField(key, val) }}</span>
-            </template>
-          
-
-            <!-- For pricingQuantity, ensure integer -->
-            <template v-else-if="key === 'pricingQuantity'">
-              <input
-                :id="`secret-${key}`"
-                v-model.number="selectedSecret[key]"
-                :disabled="isLoading"
-                type="number"
-                placeholder="Enter pricing quantity (integer)"
-              />
-            </template>
-
-            <!-- Status field -->
-            <template v-else-if="key === 'status'">
-              <select :id="`secret-${key}`" v-model="selectedSecret[key]" :disabled="isLoading">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-            </template>
-
-            <!-- Domain field -->
-            <template v-else-if="key === 'domain'">
-              <!-- <input v-model="selectedSecret[key]" :disabled="isLoading" /> -->
-              <Combo 
-                  :value="selectedSecret[key]" 
-                  @change="setDomain" 
-                  :options="domainHints" 
-                  :fireOnBlur="true"
-                  :showHintLabel="true" 
-                  cssClass="form-control MatcDropDownButtonWidth" 
-                  :isDropDown="true" 
-                  ref="newDomainCombo" 
-                  placeholder="Service" 
-              />
-            </template>
-
-            <!-- Value (token) field -->
-            <template v-else-if="key === 'value'">
-              <div class="token-edit-field">
-                <input
-                  :id="`secret-${key}`"
-                  :type="showFullToken ? 'text' : 'password'"
-                  v-model="selectedSecret[key]"
-                  placeholder="Token"
-                  :disabled="isLoading"
-                />
-                <button
-                  type="button"
-                  class="MatcButton MatcButtonSecondary show-hide-token"
-                  @click="toggleShowFullToken"
-                >
-                  {{ showFullToken ? 'Hide' : 'Show' }}
-                </button>
-                <span class="token-length">{{ selectedSecret.value.length }} chars</span>
-              </div>
-            </template>
-
-            <!-- Name field shown read-only if needed -->
-            <template v-else-if="key === 'name'">
-              <span>{{ selectedSecret[key] }}</span>
-            </template>
-
-            <!-- Other editable non-system fields -->
-            <template v-else>
-              <input
-                :id="`secret-${key}`"
-                v-model="selectedSecret[key]"
-                :disabled="isLoading"
-              />
-            </template>
-          </div>
-          <!-- Save Button -->
-          <button class="MatcButton MatcButtonPrimary" @click="updateSecret" :disabled="isLoading">
-            Save Changes
-          </button>
-        </div>
 
         <!-- Dialogs -->
         <SecretDialog ref="secretDialog" :brands="availableBrands" />
@@ -196,10 +37,6 @@
         <BaseDialog title="Delete Secret" ref="deleteSecretConfirm" @confirmAction="() => deleteSecret(secretToDelete)">
           Are you sure you want to delete this secret?
         </BaseDialog>
-        <ImportJSDialog
-          ref="importJSDialog"
-          @importJSSecrets="handleImportJSSecrets"
-        />
       </div>
     </Panel>
   </div>
@@ -214,10 +51,7 @@ import Panel from "./Panel.vue";
 import DataTable from "./DataTable.vue";
 import SearchBar from "./SearchBar.vue";
 import BaseDialog from "../../components/dialogs/BaseDialog.vue";
-import { saveAs } from "file-saver";
-import ExcelJS from "exceljs";
-import ImportJSDialog from "./components/ImportSecretsJSDialog.vue";
-import Input from 'page/DropDownButton'
+
 import * as SecretUtil from '../../util/SecretUtil'
 
 export default {
@@ -295,8 +129,8 @@ export default {
             row.status === "Active" || !row.status
               ? "status-active"
               : row.status === "new"
-              ? "status-new"
-              : "status-inactive",
+                ? "status-new"
+                : "status-inactive",
         },
         {
           id: "domain",
@@ -331,10 +165,10 @@ export default {
       return this.secrets.filter((secret) => {
         const matchesSearch =
           (secret.name?.toLowerCase().includes(filter) ||
-           secret.label?.toLowerCase().includes(filter) ||
-           secret.brand?.toLowerCase().includes(filter) ||
-           secret.type?.toLowerCase().includes(filter) ||
-           secret.value?.toLowerCase().includes(filter));
+            secret.label?.toLowerCase().includes(filter) ||
+            secret.brand?.toLowerCase().includes(filter) ||
+            secret.type?.toLowerCase().includes(filter) ||
+            secret.value?.toLowerCase().includes(filter));
         const matchesBrand = !this.selectedBrand || secret.brand === this.selectedBrand;
         const matchesType = !this.selectedType || secret.type === this.selectedType;
         return matchesSearch && matchesBrand && matchesType;
@@ -353,103 +187,11 @@ export default {
     'Panel': Panel,
     'DataTable': DataTable,
     'SearchBar': SearchBar,
-    'BaseDialog': BaseDialog,
-    'ImportJSDialog': ImportJSDialog,
-    'Combo': Input
+    'BaseDialog': BaseDialog
   },
   methods: {
 
-    setDomain (d) {
-      if (this.selectedSecret) {
-        this.selectedSecret.domain = d;
-        this.$forceUpdate()
-      }
-    },
-    
-    async exportToExcel() {
-      if (this.isLoading) return;
-      this.isLoading = true;
-      try {
-        const workbook = new ExcelJS.Workbook();
-        const worksheet = workbook.addWorksheet("Secrets");
 
-        worksheet.columns = [
-          { header: "Model ID", key: "id", width: 30 },
-          { header: "Label", key: "label", width: 30 },
-          { header: "Brand", key: "brand", width: 20 },
-          { header: "Pricing", key: "pricing", width: 15 },
-          { header: "PricingInCents", key: "pricingQuantity", width: 15 },
-          { header: "URL", key: "url", width: 30 },
-          { header: "Status", key: "status", width: 15 },
-          { header: "Token", key: "value", width: 30 },
-          { header: "Created At", key: "createdAt", width: 25 },
-          { header: "Updated At", key: "updatedAt", width: 25 },
-        ];
-
-        this.secrets.forEach((secret) => {
-          worksheet.addRow({
-            id: secret.name,
-            label: secret.label,
-            brand: secret.brand,
-            pricing: secret.pricing,
-            pricingQuantity: secret.pricingQuantity,
-            url: secret.url,
-            status: secret.status,
-            value: secret.value,
-            createdAt: secret.createdAt ? this.formatDate(secret.createdAt) : "",
-            updatedAt: secret.updatedAt ? this.formatDate(secret.updatedAt) : "",
-          });
-        });
-
-        worksheet.eachRow({ includeEmpty: false }, (row) => {
-          row.eachCell((cell) => {
-            cell.border = {
-              top: { style: "thin" },
-              left: { style: "thin" },
-              bottom: { style: "thin" },
-              right: { style: "thin" },
-            };
-          });
-        });
-
-        const buffer = await workbook.xlsx.writeBuffer();
-        saveAs(new Blob([buffer]), "secrets.xlsx");
-        this.$root.$emit("Success", "Exported to Excel successfully.");
-      } catch (error) {
-        console.error("Error exporting to Excel:", error);
-        this.$root.$emit("Error", "Failed to export to Excel.");
-      } finally {
-        this.isLoading = false;
-      }
-    },
-    formatTokenForDisplay(token) {
-      if (!token) return "";
-      const maxLength = 10;
-      return token.length > maxLength ? token.slice(0, maxLength) + "..." : token;
-    },
-    copyToClipboard(text) {
-      if (!text) return;
-      navigator.clipboard.writeText(text).then(() => {
-        this.$root.$emit("Success", "Token copied to clipboard!");
-      }).catch((err) => {
-        console.error("Could not copy token:", err);
-        this.$root.$emit("Error", "Failed to copy token.");
-      });
-    },
-    toggleShowFullToken() {
-      this.showFullToken = !this.showFullToken;
-    },
-    isSystemField(key) {
-      // System fields that should be read-only (just show them)
-      const systemFields = ["_id", "id", "createdAt", "updatedAt", "created", "updated"];
-      return systemFields.includes(key);
-    },
-    formatSystemField(key, val) {
-      if ((key === "createdAt" || key === "updatedAt" || key === "created" || key === "updated") && val) {
-        return this.formatDate(val);
-      }
-      return val;
-    },
     formatDate(value) {
       try {
         const date = new Date(value);
@@ -459,66 +201,8 @@ export default {
         return value;
       }
     },
-    updateSelectedSecrets(selected) {
-      this.selectedSecrets = selected;
-    },
-    async deleteSelected() {
-      if (this.selectedSecrets.length === 0) return;
-      this.isLoading = true;
-      try {
-        await Promise.all(this.selectedSecrets.map((secret) => this.deleteSecretInternal(secret)));
-        this.selectedSecrets = [];
-        this.$root.$emit("Success", "Selected secrets deleted.");
-        await this.loadSecrets();
-      } catch (error) {
-        console.error("Error deleting selected secrets:", error);
-        this.$root.$emit("Error", "Some secrets could not be deleted.");
-      } finally {
-        this.isLoading = false;
-      }
-    },
-    async deleteSecretInternal(secret) {
-      if (!secret.id) return;
-      await this.adminService.deleteSecret(secret.id);
-    },
-    async updateTokenForSelected() {
-      if (!this.canUpdateSelectedTokens) return;
-      this.isLoading = true;
-      try {
-        await Promise.all(this.selectedSecrets.map(async (secret) => {
-          secret.value = this.selectedSecretsToken;
-          await this.adminService.updateSecret(this.prepareSecretForSave(secret));
-        }));
-        this.$root.$emit("Success", `Tokens updated for ${this.selectedSecrets.length} secret(s).`);
-        this.selectedSecrets = [];
-        this.selectedSecretsToken = "";
-        await this.loadSecrets();
-      } catch (error) {
-        console.error("Error updating tokens for selected secrets:", error);
-        this.$root.$emit("Error", "Failed to update tokens for selected secrets.");
-      } finally {
-        this.isLoading = false;
-      }
-    },
-    async updateAllTokensForBrand() {
-      if (!this.canUpdateBrandTokens) return;
-      this.isLoading = true;
-      try {
-        const secretsToUpdate = this.secrets.filter((secret) => secret.brand === this.selectedBrand);
-        for (const secret of secretsToUpdate) {
-          secret.value = this.brandToken;
-          await this.adminService.updateSecret(this.prepareSecretForSave(secret));
-        }
-        this.brandToken = "";
-        this.$root.$emit("Success", `All secrets for ${this.selectedBrand} updated successfully.`);
-        await this.loadSecrets();
-      } catch (error) {
-        console.error("Error updating brand tokens:", error);
-        this.$root.$emit("Error", "Failed to update tokens for the selected brand.");
-      } finally {
-        this.isLoading = false;
-      }
-    },
+   
+  
     getPricingQuantity(row) {
       const price = row.pricingQuantity != null ? `${row.pricingQuantity}¢` : "-";
       const type = row.type;
@@ -536,14 +220,17 @@ export default {
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
     },
+      formatTokenForDisplay(token) {
+      if (!token) return "";
+      const maxLength = 10;
+      return token.length > maxLength ? token.slice(0, maxLength) + "..." : token;
+    },
     async onDeleteSecret(secret, event) {
       if (event) event.preventDefault();
       this.secretToDelete = secret;
       this.$refs.deleteSecretConfirm.show();
     },
-    onRowClick(row) {
-      this.selectedSecret = { ...row };
-    },
+ 
     async deleteSecret(secret) {
       if (!secret.id) return;
       this.isLoading = true;
@@ -561,16 +248,9 @@ export default {
       }
     },
     async onEditSecret(secret) {
-      this.selectedSecret = { ...secret };
-      if (!this.selectedSecret.domain) {
-        this.selectedSecret.domain = "";
-      }
-      if (this.selectedSecret.token) {
-        delete this.selectedSecret.token
-      }
-      if (this.selectedSecret.errors) {
-        delete this.selectedSecret.errors
-      }
+      if (this.isLoading) return;
+      this.$refs.secretDialog.show(secret, () => this.loadSecrets());
+      
     },
     async createSecret() {
       if (this.isLoading) return;
@@ -580,9 +260,8 @@ export default {
       this.isLoading = true;
       try {
         const dbSecrets = await this.fetchSecretsFromServer();
-        this.secrets = dbSecrets; // Just show what the server returns, no merging
-        this.extractAvailableFilters();
-        this.groupSecretsByBrand();
+        this.secrets = dbSecrets; 
+        this.isLoading = false;
       } catch (error) {
         console.error("Error loading secrets:", error);
         this.$root.$emit("Error", "Failed to load secrets.");
@@ -593,6 +272,7 @@ export default {
     async fetchSecretsFromServer() {
       try {
         const dbsecrets = await this.adminService.getAllSecrets();
+        console.debug("Fetched secrets:", dbsecrets);
         dbsecrets.forEach((s) => {
           if (s.pricingQuantity && typeof s.pricingQuantity !== "number") {
             const parsed = parseInt(s.pricingQuantity, 10);
@@ -610,36 +290,7 @@ export default {
         return [];
       }
     },
-    extractAvailableFilters() {
-      const brands = [...new Set(this.secrets.map((secret) => secret.brand).filter(Boolean))];
-      this.availableBrands = brands.map((b) => ({ value: b, label: b }));
-
-      const types = [...new Set(this.secrets.map((secret) => secret.type).filter(Boolean))];
-      this.availableTypes = types.map((t) => ({ value: t, label: t }));
-    },
-    groupSecretsByBrand() {
-      const brands = {};
-      this.secrets.forEach((secret) => {
-        if (!brands[secret.brand]) {
-          brands[secret.brand] = [];
-        }
-        let valueGroup = brands[secret.brand].find((group) => group.value === secret.value);
-        if (!valueGroup) {
-          valueGroup = { value: secret.value, secrets: [] };
-          brands[secret.brand].push(valueGroup);
-        }
-        valueGroup.secrets.push(secret);
-      });
-
-      this.groupedBrands = Object.keys(brands).map((brand) => ({
-        name: brand,
-        values: brands[brand].map((group) => ({
-          value: group.value,
-          secrets: group.secrets,
-          newValue: "",
-        })),
-      }));
-    },
+   
     prepareSecretForSave(secret) {
       // Ensure pricingQuantity is integer before saving
       if (secret.pricingQuantity != null) {
@@ -680,47 +331,8 @@ export default {
       } finally {
         this.isLoading = false;
       }
-    },
-    showImportJSDialog() {
-      if (this.isLoading) return;
-      this.$refs.importJSDialog.show();
-    },
-    async handleImportJSSecrets(importedSecrets) {
-      await this.importSecrets(importedSecrets);
-    },
-    async importSecrets(importedSecrets) {
-      if (!Array.isArray(importedSecrets)) {
-        this.$root.$emit("Error", "Imported data is not an array of secrets.");
-        return;
-      }
-
-      const existingSecretNames = new Set(this.secrets.map((s) => s.name));
-      const newSecrets = importedSecrets.filter((secret) => secret.name && !existingSecretNames.has(secret.name));
-
-      if (newSecrets.length === 0) {
-        this.$root.$emit("Info", "No new secrets to import.");
-        return;
-      }
-
-      this.isLoading = true;
-      try {
-        for (const secret of newSecrets) {
-          // Ensure pricingQuantity is integer
-          if (secret.pricingQuantity) {
-            const parsed = parseInt(secret.pricingQuantity, 10);
-            secret.pricingQuantity = isNaN(parsed) ? 0 : parsed;
-          }
-          await this.adminService.createSecret(secret);
-        }
-        this.$root.$emit("Success", `${newSecrets.length} new secret(s) imported successfully.`);
-        await this.loadSecrets();
-      } catch (error) {
-        console.error("Error importing secrets:", error);
-        this.$root.$emit("Error", "Failed to import some secrets.");
-      } finally {
-        this.isLoading = false;
-      }
-    },
+    }
+   
   },
   async mounted() {
     this.adminService = new AdminService();
@@ -735,16 +347,18 @@ export default {
 </script>
 
 <style scoped>
-
 .MatcDropDownButtonWidth {
   min-width: auto;
 }
+
 .status-active {
   color: green !important;
 }
+
 .status-inactive {
   color: red !important;
 }
+
 .status-new {
   color: blue !important;
 }

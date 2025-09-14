@@ -19,7 +19,7 @@ class CostCalculator {
   }
 
   calculateQuantityFromTokens(totalTokens) {
-    return totalTokens / 1000000;
+    return totalTokens;
   }
 
   /**

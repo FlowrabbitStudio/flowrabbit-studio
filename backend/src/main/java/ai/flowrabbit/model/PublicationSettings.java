@@ -17,8 +17,6 @@ public class PublicationSettings extends AppPart{
     public static final String FIELD_VERSIONS = "versions";
     public static final String FIELD_CURRENT_VERSION = "current";
 
-    public static final String FIELD_PREVIEWS = "previews";
-
     public static final String FIELD_ORG_ID = "orgID";
     public static final String FIELD_APP_ID = "appID";
     public static final String FIELD_MODE = "mode";

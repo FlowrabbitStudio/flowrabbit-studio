@@ -18,7 +18,9 @@
             </div>
           </div>
 
-           <div class="form-group MatcFlexGrow50">
+        </div>
+        <div class="MatcFlex MatcGapM">
+          <div class="form-group MatcFlexGrow50">
             <label>Status</label>
             <div>
               <select v-model="status" class="form-control">
@@ -28,11 +30,18 @@
             </div>
           </div>
 
-        </div>
-      
+          <div class="form-group MatcFlexGrow50">
+            <label>Credits (Euro / Dollar)</label>
+            <div>
+              <input class="form-control" v-model="creditsInMicroCent" type="number" />
+            </div>
+          </div>
 
-         
         </div>
+
+
+
+      </div>
 
 
       <div class="MatcButtonBar MatcMarginTopXXL">
@@ -41,91 +50,47 @@
     </Panel>
 
     <Panel>
-      <h2>Tokens</h2>
-
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Current API Calls</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(apiCalls, name) in organization.apiCalls" :key="name">
-              <td class="">
-                <span>
-                  {{ name }}
-                </span>
-              </td>
-              <td class="">
-                <input
-                  class="form-control"
-                  style="width: 64px"
-                  :value="apiCalls.currentApiCalls"
-                  @change="($event) => setAPICallQuota(name, 'currentApiCalls', $event)"
-                />
-              </td>
-              <td class="">
-                <a class="MatcButton MatcButtonRed" @click="removeApiCall(name)"> Delete </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="MatcButtonBar MatcMarginTopXXL">
-        <div class="MatcButton" @click="updateOrg">Save Secrets</div>
-      </div>
-    </Panel>
-
-    <Panel>
       <div v-if="team" class="form-group">
         <h2>Members</h2>
 
-        <DataTable
-          :data="team"
-          :size="100"
-          :columns="[
-            {
-              id: 'email',
-              key: 'email',
-              label: 'Email',
-              width: '20%',
-              max: 20,
-            },
-            {
-              id: 'name',
-              key: 'name',
-              label: 'Name',
-              width: '10%',
-              value: (row) => printName(row),
-            },
-            {
-              id: 'permission',
-              key: 'permission',
-              label: 'Permission',
-              width: '10%',
-              value: (row) => getPermissionLabel(row.permission),
-            },
-            {
-              id: 'action-edit',
-              key: 'action',
-              label: '',
-              width: '10%',
-              value: 'Edit',
-              class: 'action',
-              click: (row, e) => editPermission(row, e),
-            },
-          ]"
-        />
+        <DataTable :data="team" :size="100" :columns="[
+          {
+            id: 'email',
+            key: 'email',
+            label: 'Email',
+            width: '20%',
+            max: 20,
+          },
+          {
+            id: 'name',
+            key: 'name',
+            label: 'Name',
+            width: '10%',
+            value: (row) => printName(row),
+          },
+          {
+            id: 'permission',
+            key: 'permission',
+            label: 'Permission',
+            width: '10%',
+            value: (row) => getPermissionLabel(row.permission),
+          },
+          {
+            id: 'action-edit',
+            key: 'action',
+            label: '',
+            width: '10%',
+            value: 'Edit',
+            class: 'action',
+            click: (row, e) => editPermission(row, e),
+          },
+        ]" />
       </div>
       <div class="form-group">
         <label>New Member</label>
         <div class="form-control-btn">
           <input class="form-control" v-model="newTeamEmail" placeholder="Enter email of new member" />
-          <select v-model="newPermission">
+          <select v-model="newPermission" class="form-control" style="width: 150px;">
             <option value="5">Owner</option>
             <option value="3">Writer</option>
             <option value="2">Reader</option>
@@ -144,7 +109,8 @@
 
         <div class="MatcHint">{{ selectedMember?.email }} has the following permission:</div>
 
-        <RadioBoxList :qOptions="permissionOptions" :qValue="selectedMember?.permission" @change="changePermission"></RadioBoxList>
+        <RadioBoxList :qOptions="permissionOptions" :qValue="selectedMember?.permission" @change="changePermission">
+        </RadioBoxList>
 
         <div class="MatcButtonBar">
           <div class="MatcButton" @click="savePermission">Save</div>
@@ -224,6 +190,7 @@ import DataTable from "./DataTable.vue";
 import ZoomDialog from "common/ZoomDialog";
 import RadioBoxList from "common/RadioBoxList";
 import { getRolesWithLabels } from "src/util/Util.js";
+import { microCentoToEuro, euroToMicroCento } from "src/util/CreditUtil.js";
 
 export default {
   name: "Organization",
@@ -238,7 +205,7 @@ export default {
       domain: "",
       newPermission: 1,
       selectedMember: null,
-      creditsInCentiCent: 0,
+      creditsInMicroCent: 0,
       newSecretName: "",
       newCurrentApiCalls: 0,
       status: "",
@@ -258,38 +225,9 @@ export default {
     },
   },
   methods: {
-    printDate (ms) {
-        const date = new Date(ms);
-        return date.toLocaleDateString();
-    },
-    addApiCall() {
-      if (!this.newSecretName) {
-        this.$root.$emit("Error", "Select a secret to add");
-        return;
-      }
-      if (!this.organization.apiCalls) {
-        this.organization.apiCalls = {};
-      }
-      if (this.organization.apiCalls.hasOwnProperty(this.newSecretName)) {
-        this.$root.$emit("Error", "This secret is already added");
-        return;
-      }
-      this.organization.apiCalls[this.newSecretName] = {
-        currentApiCalls: Number(this.newCurrentApiCalls),
-        maxApiCalls: Number(this.newMaxApiCalls),
-      };
-      // Clear the input fields after adding
-      this.newSecretName = "";
-      this.newCurrentApiCalls = 0;
-      this.newMaxApiCalls = 1000;
-      this.$root.$emit("Success", "New secret added");
-    },
-    setAPICallQuota(name, field, event) {
-      const value = event.target?.value || event;
-      const intValue = parseInt(value, 10);
-      if (!isNaN(intValue)) {
-        this.$set(this.organization.apiCalls[name], field, intValue);
-      }
+    printDate(ms) {
+      const date = new Date(ms);
+      return date.toLocaleDateString();
     },
     printName(user) {
       return user.name + " " + user.lastname;
@@ -298,7 +236,7 @@ export default {
       const secret = this.secrets.find((s) => s.id === secretId);
       return secret ? secret.name : secretId;
     },
-  
+
     async updateOrg() {
       if (!this.organization.name) {
         this.$refs.dialog.shake();
@@ -306,8 +244,8 @@ export default {
       }
       this.organization.name = this.organization.name.toLowerCase();
       this.organization.status = this.status;
-      this.organization.creditsInCentiCent = this.creditsInCentiCent * 1;
-      this.organization.additionalCreditsInCentiCent = this.additionalCreditsInCentiCent * 1;
+      this.organization.creditsInMicroCent = euroToMicroCento(this.creditsInMicroCent * 1);
+      this.organization.additionalcreditsInMicroCent = 0
       const res = await this.adminService.updateOrg(this.organization);
       if (res.error || res.errors) {
         this.$root.$emit("Error", "Error");
@@ -368,7 +306,7 @@ export default {
         this.$refs.editPermissionDialog.close();
       }
     },
-    cancelEdit() {},
+    cancelEdit() { },
     getPermissionLabel(permission) {
       permission = permission * 1;
       switch (permission) {
@@ -401,8 +339,7 @@ export default {
         this.organization.name = "";
       }
       this.status = this.organization.status;
-      this.creditsInCentiCent = this.organization.creditsInCentiCent || 0;
-      this.additionalCreditsInCentiCent = this.organization.additionalCreditsInCentiCent || 0;
+      this.creditsInMicroCent = microCentoToEuro(this.organization.creditsInMicroCent) || 0;
     },
 
     async loadSecrets() {

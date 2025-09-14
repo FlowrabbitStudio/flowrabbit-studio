@@ -1,6 +1,5 @@
 package ai.flowrabbit.model;
 
-import ai.flowrabbit.services.BlowFishService;
 import ai.flowrabbit.services.EncryptionService;
 import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
@@ -8,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class Secret extends Model{
 
-    private static Logger logger = LoggerFactory.getLogger(Secret.class);
+    private static final Logger logger = LoggerFactory.getLogger(Secret.class);
 
     public static String FIELD_SECRET_NAME = "name";
 
@@ -16,11 +15,9 @@ public class Secret extends Model{
 
     public static String FIELD_SECRET_DOMAIN = "domain";
 
-    public static String FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST = "pricing";
+    public static String FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT = "pricing";
 
-    public static String FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY = "pricingQuantity";
-
-    public static String FIELD_VERSION = "version";
+    public static String FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT = "pricingQuantity";
 
     public static String FIELD_LAST_UPDATED = "lastUpdated";
 
@@ -28,18 +25,18 @@ public class Secret extends Model{
 
     public static int MAX_PRICE = 1000000;
 
-    public static int computePrice(double quantity, int pricePerQuantity) {
+    public static int calculatePriceInMicroCent(double quantity, int pricePerQuantity) {
         return (int) Math.ceil(pricePerQuantity * quantity);
     }
 
 
-    public static int getPrice(JsonObject secret, double quantity) {
-        if (quantity > 0 && secret.containsKey(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY)) {
-            int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_QUANTITY, MAX_PRICE);
-            logger.debug("getPrice() >  {} * {}", quantity, price );
-            return computePrice(quantity, price);
+    public static int calculatePriceInMicroCent(JsonObject secret, double quantity) {
+        if (quantity > 0 && secret.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT)) {
+            int price = secret.getInteger(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT, MAX_PRICE);
+            logger.debug("calculatePriceInMicroCent() >  {} * {}", quantity, price );
+            return calculatePriceInMicroCent(quantity, price);
         } else {
-            return secret.getInteger(Secret.FIELD_SECRET_PRICE_IN_CENTY_CENT_REQUEST, MAX_PRICE);
+            return secret.getInteger(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, MAX_PRICE);
         }
     }
 
