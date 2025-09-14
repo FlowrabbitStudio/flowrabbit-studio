@@ -1,0 +1,102 @@
+import { cleanPromptString } from "./util.js";
+
+export const mistral_meta_mistral_7b_instruct_free = {
+  id: "mistral-7b-instruct",
+  name: "Mistral 7B Free",
+  url: "https://openrouter.ai/api/v1/chat/completions",
+  type: "openrouter",
+  headers: [
+    { key: "Content-Type", value: "application/json" },
+    { key: "HTTP-Referer", value: "https://www.flowrabbit.ai" },
+    { key: "X-Title", value: "Flowrabbit" },
+  ],
+  elements: [
+    {
+      type: "TextArea",
+      required: true,
+      id: "prompt",
+      label: "Prompt",
+      placeholder: "Write your prompt",
+      class: "MatcAutoCompleteTextareaXS",
+    },
+    {
+      type: "Number",
+      id: "max_tokens",
+      label: "Max Tokens",
+      default: 4096,
+      helper: "Maximum number of tokens to generate (Limit: 4096).",
+      required: true,
+      min: 1,
+      max: 4096,
+    },
+  ],
+  advanced: [
+    {
+      default: 0.7,
+      min: 0,
+      max: 1,
+      type: "range",
+      required: true,
+      id: "temperature",
+      label: "Temperature",
+      helper: "Controls randomness. 1.0 is the most random, 0.0 is deterministic.",
+      decimals: true,
+    },
+    {
+      default: 1.0,
+      min: 0,
+      max: 2.0,
+      type: "range",
+      id: "top_p",
+      label: "Top P",
+      helper: "Limits token selection to a cumulative probability threshold.",
+      decimals: true,
+    },
+    {
+      default: 1.0,
+      min: 0,
+      max: 2.0,
+      type: "range",
+      id: "presence_penalty",
+      label: "Presence Penalty",
+      helper: "Discourages using tokens from the prompt.",
+      decimals: true,
+    },
+    {
+      default: 0.0,
+      min: 0,
+      max: 2.0,
+      type: "range",
+      id: "frequency_penalty",
+      label: "Frequency Penalty",
+      helper: "Discourages frequent token repetition.",
+      decimals: true,
+    },
+  ],
+  method: "POST",
+  authType: "Bearer",
+  documentationAuthLink: "https://replicate.com/docs/reference/http#authentication",
+  getTemplate: (vars) => {
+    return {
+      model: "mistralai/mistral-7b-instruct:free",
+      messages: [
+        {
+          role: "user",
+          content: cleanPromptString(vars.prompt),
+        },
+      ],
+      temperature: vars.temperature,
+      max_tokens: vars.max_tokens,
+      top_p: vars.top_p,
+      presence_penalty: vars.presence_penalty,
+      frequency_penalty: vars.frequency_penalty,
+      stream: vars.stream,
+    };
+  },
+  getMaxTokens: (vars) => vars.max_tokens,
+  output: {
+    path: "choices[0].message.content",
+    type: "JSON",
+    streampath: "choices[0].delta.content",
+  },
+};
