@@ -6,7 +6,7 @@
         </div>
 
         <div class="MatcWorkspaceTab" :class="{ 'active': activeTab === 'apps' }" @click="activeTab = 'apps'">
-          <QIcon size="20" icon="Money"></QIcon><span>Published Apps</span>
+          <QIcon size="20" icon="Money"></QIcon><span>Apps</span>
         </div>
     </div>
 

@@ -59,9 +59,11 @@ export default {
   methods: {
     close() {
       this.showModal = false;
+      this.isLoading = false;
     },
     show() {
       this.showModal = true;
+      this.isLoading = false;
     },
     async confirm() {
       this.setLoading(true);

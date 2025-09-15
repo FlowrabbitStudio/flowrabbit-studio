@@ -3,7 +3,7 @@
     <section class="MatcSection" aria-label="Published Apps">
           <div class="MatcContent MatcCard ">
               <div class="MatcCardHeader">
-                <span>Published Apps</span>
+                <span>Apps</span>
               </div>
               <div class="MatcCardContent ">
                 <DataTable :selectable="false" :data="apps" :size="100" :columns="[

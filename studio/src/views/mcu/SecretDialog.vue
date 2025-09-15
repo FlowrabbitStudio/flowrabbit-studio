@@ -1,28 +1,20 @@
 <template>
-  <BaseDialog
-    title="Edit Secret"
-    subtitle=""
-    :labels="labels"
-    ref="dialog"
-    @confirmAction="saveSecret"
-  >
+  <BaseDialog title="Edit Secret" subtitle="" :labels="labels" ref="dialog" @confirmAction="saveSecret">
     <div class="MatcDialog MatcSurveyDialog MatcPadding">
       <div class="MatcFlex MatcGapXL">
 
 
         <div class="form-group MatcFlexGrow">
           <label>Type</label>
-          <select class="form-control" v-model="secret.type">
-            <option value="llm">llm</option>
-            <option value="image">image</option>
-            <option value="video">video</option>
-            <option value="speechToText">speechToText</option>
-            <option value="textToSpeech">textToSpeech</option>
+          <select class="form-control" v-model="secret.type" @change="onTypeChange">
+            <option v-for="type in modelTypes" :key="type" :value="type">{{ type }}</option>
           </select>
         </div>
         <div class="form-group MatcFlexGrow">
           <label>Brand</label>
-          <input class="form-control" v-model="secret.brand" />
+          <select class="form-control" v-model="secret.brand" @change="onBrandChange">
+            <option v-for="b in currentBrands" :key="b.id" :value="b.id">{{ b.label }}</option>
+          </select>
         </div>
 
       </div>
@@ -30,37 +22,34 @@
       <div class="MatcFlex MatcGapXL">
 
         <div class="form-group MatcFlexGrow">
-          <label>Label</label>
-          <input class="form-control" v-model="secret.label" />
+          <label>URL</label>
+          <input class="form-control" v-model="secret.domain" @onchange="onDomainChange" />
         </div>
 
         <div class="form-group MatcFlexGrow">
-          <label>Name</label>
-          <input class="form-control" v-model="secret.name" />
+          <label>Model Name</label>
+          <select class="form-control" v-model="secret.name" v-if="currentModels.length > 0">
+            <option v-for="b in currentModels" :key="b.id" :value="b.id">{{ b.id }}</option>
+          </select>
+
+          <input class="form-control" v-model="secret.name" v-else />
         </div>
 
       </div>
+
+      <div class="form-group">
+
+
+        <label>Label</label>
+        <input class="form-control" v-model="secret.label" />
+      </div>
+
 
       <div class="form-group">
         <label>Token</label>
         <input class="form-control" v-model="secret.value" />
       </div>
 
-      <div class="form-group">
-        <label>URL ({{secret.domain}})</label>
-
-        <Combo 
-            :value="secret.domain" 
-            @change="setDomain" 
-            :hints="domainHints" 
-            :fireOnBlur="true"
-            :showHintLabel="true" 
-            cssClass="form-control" 
-            :isDropDown="true" 
-            ref="newDomainCombo" 
-            placeholder="Service" 
-        />
-      </div>
 
       <div class="MatcFlex MatcGapXL">
         <div class="form-group MatcFlexGrow">
@@ -77,32 +66,55 @@
   </BaseDialog>
 </template>
 
+<style lang="css" scoped>
+.MatcFlexGrow select.form-control {
+  width: 100%;
+}
+
+.MatcFlexGrow {
+  width: 50%;
+}
+</style>
+
 <script>
 import Logger from "common/Logger";
 import Services from "services/Services";
 import AdminService from "./AdminService";
 import lang from "dojo/_base/lang";
-import Input from 'common/Input'
+
 import BaseDialog from "../../components/dialogs/BaseDialog.vue";
 import * as SecretUtil from '../../util/SecretUtil'
 
+
 export default {
   name: "SecretDialog",
-  props: ["availableBrands"],
+  props: [""],
   data() {
     return {
       secret: {
+        type: 'llm',
+        brand: '',
         status: true,
-        domain:'' // Set default status to true
+        domain: '' // Set default status to true
       },
       paidUntilDate: "",
       isBlocked: false,
+      modelTypes: SecretUtil.getAllTypes(),
+      brandsByType: {},
+      modelsByTypeAndBrand: {
+        llm: {},
+        image: {},
+        video: {},
+        speechToText: {},
+        textToSpeech: {}
+      },
       domainHints: SecretUtil.getDomains(),
+      currentBrands: [],
+      currentModels: [],
     };
   },
   components: {
-    'BaseDialog': BaseDialog,
-    'Combo': Input
+    'BaseDialog': BaseDialog
   },
   computed: {
     labels() {
@@ -116,10 +128,28 @@ export default {
     },
   },
   methods: {
-    setDomain (d) {
-      console.log('setDomain', d);
-      this.secret.domain = d;
+    onTypeChange() {
+      this.secret.brand = '';
+      this.secret.name = '';
+      this.secret.domain = '';
+      this.currentBrands = this.brandsByType[this.secret.type] || [];
       this.$forceUpdate()
+    },
+    onBrandChange() {
+      if (this.modelsByTypeAndBrand[this.secret.type] && this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]) {
+        this.currentModels = this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]
+      } else {
+        this.currentModels = []
+      }
+      this.secret.name = '';
+      this.secret.domain = this.domainHints.find(d => {
+        return d.brand === this.secret.brand
+      })?.value || ''
+
+      this.$forceUpdate()
+    },
+    onDomainChange() {
+
     },
     async saveSecret() {
       if (this.secret && this.secret.id) {
@@ -148,17 +178,22 @@ export default {
     },
     show(secret, saveCallback) {
       this.$refs.dialog.show();
-      this.secret = lang.clone(secret || {});
+      this.secret = lang.clone(secret || { type: '', brand: '' });
       if (this.secret.status === undefined) {
         this.secret.status = true; // Set default status if undefined
       }
       this.saveCallback = saveCallback;
+      console.log("Editing secret:", this.secret);
     },
   },
   mounted() {
-    this.logger = new Logger("UserDialog");
+    this.logger = new Logger("SecretDialog");
     this.adminService = new AdminService();
     this.adminService.setToken(Services.getUserService().getToken());
+
+    this.brandsByType = SecretUtil.getAllBrandsByType()
+    this.modelsByTypeAndBrand = SecretUtil.getAllModelsByTypeAndBrand()
+
   },
 };
 </script>
