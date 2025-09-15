@@ -12,7 +12,7 @@ import {
 } from "./llm/openrouter.js";
 import { mistral_meta_mistral_7b_instruct_free } from "./llm/mistral.js";
 import { antrophic_35_sonnet, antrophic_3_opus, antrophic_3_sonnet } from "./llm/antrophic.js";
-import { gemini_vertex_ai } from "./llm/gemini.js";
+//import { gemini_vertex_ai } from "./llm/gemini.js";
 import {
   openai_01_mini,
   openai_01_preview,
@@ -43,7 +43,7 @@ const llms = {
   brands: [
     { id: "azure", label: "Azure", logo: "ai-azure" },
     { id: "claude", label: "Claude", logo: "ai-claude" },
-    { id: "gemini", label: "Gemini", logo: "ai-gemini" },
+    // { id: "gemini", label: "Gemini", logo: "ai-gemini" },
     { id: "openai", label: "OpenAI", logo: "ai-openai" },
     { id: "openrouter", label: "Open Router", logo: "ai-openrouter" },
     { id: "perplexity", label: "Perplexity", logo: "ai-perplexity" },
@@ -59,7 +59,7 @@ const llms = {
     antrophic_35_sonnet,
     antrophic_3_opus,
     antrophic_3_sonnet,
-    gemini_vertex_ai,
+   // gemini_vertex_ai,
 
     openai_chat_5_nano,
     openai_chat_5,

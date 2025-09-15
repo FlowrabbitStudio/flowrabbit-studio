@@ -1,4 +1,5 @@
 import { cleanPromptString } from "./util.js";
+// https://platform.openai.com/docs/pricing
 
 export const openai_01_mini = {
   id: "openai-o1-mini",

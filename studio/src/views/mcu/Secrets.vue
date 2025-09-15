@@ -33,7 +33,7 @@
 
         <!-- Dialogs -->
         <SecretDialog ref="secretDialog" :brands="availableBrands" />
-        <SecretDetails ref="secretDetailsDialog" />
+
         <BaseDialog title="Delete Secret" ref="deleteSecretConfirm" @confirmAction="() => deleteSecret(secretToDelete)">
           Are you sure you want to delete this secret?
         </BaseDialog>
@@ -44,7 +44,6 @@
 
 <script>
 import SecretDialog from "./SecretDialog.vue";
-import SecretDetails from "./SecretDetails.vue";
 import AdminService from "./AdminService";
 import Services from "services/Services";
 import Panel from "./Panel.vue";
@@ -183,7 +182,6 @@ export default {
   },
   components: {
     'SecretDialog': SecretDialog,
-    'SecretDetails': SecretDetails,
     'Panel': Panel,
     'DataTable': DataTable,
     'SearchBar': SearchBar,
@@ -254,7 +252,7 @@ export default {
     },
     async createSecret() {
       if (this.isLoading) return;
-      this.$refs.secretDialog.show({}, () => this.loadSecrets());
+      this.$refs.secretDialog.show(null, () => this.loadSecrets());
     },
     async loadSecrets() {
       this.isLoading = true;
