@@ -190,7 +190,7 @@ import DataTable from "./DataTable.vue";
 import ZoomDialog from "common/ZoomDialog";
 import RadioBoxList from "common/RadioBoxList";
 import { getRolesWithLabels } from "src/util/Util.js";
-import { microCentoToEuro, euroToMicroCento } from "src/util/CreditUtil.js";
+import { microCentoToEuro, euroToMicroCent } from "src/util/CreditUtil.js";
 
 export default {
   name: "Organization",
@@ -244,7 +244,7 @@ export default {
       }
       this.organization.name = this.organization.name.toLowerCase();
       this.organization.status = this.status;
-      this.organization.creditsInMicroCent = euroToMicroCento(this.creditsInMicroCent * 1);
+      this.organization.creditsInMicroCent = euroToMicroCent(this.creditsInMicroCent * 1);
       this.organization.additionalcreditsInMicroCent = 0
       const res = await this.adminService.updateOrg(this.organization);
       if (res.error || res.errors) {

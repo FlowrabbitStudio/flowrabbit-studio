@@ -53,13 +53,13 @@
 
       <div class="MatcFlex MatcGapXL">
         <div class="form-group MatcFlexGrow">
-          <label>Pricing Default (1€ = 10,000)</label>
-          <input class="form-control" v-model.number="secret.pricing" />
+          <label>Pricing Default (€ per million request) </label>
+          <input class="form-control" v-model.number="pricingInEuro" />
         </div>
 
         <div class="form-group MatcFlexGrow">
-          <label>Pricing Quantity (1€ = 10,000)</label>
-          <input class="form-control" v-model.number="secret.pricingQuantity" />
+          <label>Pricing Quantity (€ per million tokens)</label> 
+          <input class="form-control" v-model.number="pricingQuantityPerMillionInEuro" />
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ import lang from "dojo/_base/lang";
 
 import BaseDialog from "../../components/dialogs/BaseDialog.vue";
 import * as SecretUtil from '../../util/SecretUtil'
-
+import * as CreditUtil from '../../util/CreditUtil'
 
 export default {
   name: "SecretDialog",
@@ -100,17 +100,13 @@ export default {
       paidUntilDate: "",
       isBlocked: false,
       modelTypes: SecretUtil.getAllTypes(),
-      brandsByType: {},
-      modelsByTypeAndBrand: {
-        llm: {},
-        image: {},
-        video: {},
-        speechToText: {},
-        textToSpeech: {}
-      },
+      brandsByType: SecretUtil.getAllBrandsByType(),
+      modelsByTypeAndBrand: SecretUtil.getAllModelsByTypeAndBrand(),
       domainHints: SecretUtil.getDomains(),
       currentBrands: [],
       currentModels: [],
+      pricingInEuro: 0,
+      pricingQuantityPerMillionInEuro: 0,
     };
   },
   components: {
@@ -132,15 +128,11 @@ export default {
       this.secret.brand = '';
       this.secret.name = '';
       this.secret.domain = '';
-      this.currentBrands = this.brandsByType[this.secret.type] || [];
+      this.setBrandsByType();
       this.$forceUpdate()
     },
     onBrandChange() {
-      if (this.modelsByTypeAndBrand[this.secret.type] && this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]) {
-        this.currentModels = this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]
-      } else {
-        this.currentModels = []
-      }
+      this.setModelsByBrand();
       this.secret.name = '';
       this.secret.domain = this.domainHints.find(d => {
         return d.brand === this.secret.brand
@@ -151,6 +143,16 @@ export default {
     onDomainChange() {
 
     },
+    setBrandsByType() {
+      this.currentBrands = this.brandsByType[this.secret.type] || [];
+    },
+    setModelsByBrand() {
+      if (this.modelsByTypeAndBrand[this.secret.type] && this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]) {
+        this.currentModels = this.modelsByTypeAndBrand[this.secret.type][this.secret.brand]
+      } else {
+        this.currentModels = []
+      }
+    },
     async saveSecret() {
       if (this.secret && this.secret.id) {
         await this.updateSecret();
@@ -159,6 +161,8 @@ export default {
       }
     },
     async updateSecret() {
+      this.secret.pricing = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingInEuro);
+      this.secret.pricingQuantity = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingQuantityPerMillionInEuro);
       await this.adminService.updateSecret(this.secret);
       if (this.saveCallback) {
         this.saveCallback();
@@ -166,7 +170,9 @@ export default {
       this.close();
     },
     async createSecret() {
-      this.secret.status = true; // Ensure status is true by default
+      this.secret.pricing = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingInEuro);
+      this.secret.pricingQuantity = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingQuantityPerMillionInEuro);
+      this.secret.status = "Active"; // Ensure status is true by default
       await this.adminService.createSecret(this.secret);
       if (this.saveCallback) {
         this.saveCallback();
@@ -183,6 +189,10 @@ export default {
         this.secret.status = true; // Set default status if undefined
       }
       this.saveCallback = saveCallback;
+      this.pricingInEuro = CreditUtil.pricePerUnitToPricePerMillion(this.secret.pricing || 0);
+      this.pricingQuantityPerMillionInEuro = CreditUtil.pricePerUnitToPricePerMillion(this.secret.pricingQuantity || 0);
+      this.setModelsByBrand();
+      this.setBrandsByType();
       console.log("Editing secret:", this.secret);
     },
   },
@@ -190,10 +200,6 @@ export default {
     this.logger = new Logger("SecretDialog");
     this.adminService = new AdminService();
     this.adminService.setToken(Services.getUserService().getToken());
-
-    this.brandsByType = SecretUtil.getAllBrandsByType()
-    this.modelsByTypeAndBrand = SecretUtil.getAllModelsByTypeAndBrand()
-
   },
 };
 </script>
