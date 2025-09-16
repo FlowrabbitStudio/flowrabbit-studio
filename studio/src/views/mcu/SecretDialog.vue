@@ -170,9 +170,9 @@ export default {
       this.close();
     },
     async createSecret() {
-      this.secret.pricing = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingInEuro);
-      this.secret.pricingQuantity = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingQuantityPerMillionInEuro);
-      this.secret.status = "Active"; // Ensure status is true by default
+      this.secret.pricing = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingInEuro * 1.0);
+      this.secret.pricingQuantity = CreditUtil.pricePerMillionToPriceMicroCent(this.pricingQuantityPerMillionInEuro * 1.0);
+      this.secret.status = true; // Ensure status is true by default
       await this.adminService.createSecret(this.secret);
       if (this.saveCallback) {
         this.saveCallback();
