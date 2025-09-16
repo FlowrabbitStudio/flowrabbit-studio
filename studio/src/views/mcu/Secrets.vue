@@ -121,9 +121,9 @@ export default {
         {
           id: "pricingQuantity",
           key: "pricingQuantity",
-          label: "Pricing",
+          label: "Pricing (€/M)",
           value: (row) => this.getPricingPerMillion(row),
-          width: "10%",
+          width: "15%",
         },
         {
           id: "token",
@@ -140,7 +140,7 @@ export default {
           value: (row) => (row.status ? row.status : "Active"),
           width: "10%",
           class: (row) =>
-            row.status === "Active" || !row.status
+            row.status === "Active" || row.status === true || !row.status
               ? "green"
               : row.status === "new"
                 ? "red"
@@ -214,28 +214,13 @@ export default {
       return `${pricePerMillion.toFixed(2)}€ / ${pricePerMillionQuantity.toFixed(2)}€`;
     },
   
-    getPricingQuantity(row) {
-      const price = row.pricingQuantity != null ? `${row.pricingQuantity}¢` : "-";
-      const type = row.type;
-      switch (type) {
-        case "llms": return `${price} / 1M tokens`;
-        case "image": return `${price} / image`;
-        case "speechToText": return `${price} / 1 min`;
-        case "textToSpeech": return `${price} / ?`;
-        case "video": return `${price} / video`;
-        default: return price;
-      }
-    },
-
     formatLabel(key) {
       return key
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
     },
 
-
     async onTokenByBrand(event) {
-      console.log("Setting token by brand...");
       if (event) event.preventDefault();
       this.brandToUpdate = "";
       this.tokenToUpdate = "";
@@ -243,7 +228,6 @@ export default {
     },
     async updateSecretByBrand() {
       if (!this.brandToUpdate || !this.tokenToUpdate) return;
-      console.log("Updating secrets for brand:", this.brandToUpdate, this.tokenToUpdate);
       this.isLoading = true;
       try {
         const secretsToUpdate = this.secrets.filter(s => s.brand === this.brandToUpdate);
@@ -289,15 +273,6 @@ export default {
         this.isLoading = false;
       }
     },
-     copyToClipboard(text) {
-      if (!text) return;
-      navigator.clipboard.writeText(text).then(() => {
-        this.$root.$emit("Success", "Token copied to clipboard.");
-      }).catch(err => {
-        console.error('Could not copy text: ', err);
-        this.$root.$emit("Error", "Failed to copy token to clipboard.");
-      });
-    },
     async deleteSecret(secret) {
       if (!secret.id) return;
       this.isLoading = true;
@@ -316,8 +291,7 @@ export default {
     },
     async onEditSecret(secret) {
       if (this.isLoading) return;
-      this.$refs.secretDialog.show(secret, () => this.loadSecrets());
-      
+      this.$refs.secretDialog.show(secret, () => this.loadSecrets());      
     },
     async createSecret() {
       if (this.isLoading) return;
@@ -377,49 +351,8 @@ export default {
         this.$root.$emit("Error", "Failed to fetch secrets from the server.");
         return [];
       }
-    },
-   
-    prepareSecretForSave(secret) {
-      // Ensure pricingQuantity is integer before saving
-      if (secret.pricingQuantity != null) {
-        const parsed = parseInt(secret.pricingQuantity, 10);
-        secret.pricingQuantity = isNaN(parsed) ? 0 : parsed;
-      }
-      return secret;
-    },
-    async updateSecret() {
-      if (this.isLoading) return;
-      if (!this.selectedSecret.name && !this.selectedSecret.id) {
-        this.$root.$emit("Error", "Secret must have a name before saving.");
-        return;
-      }
+    } 
 
-      this.isLoading = true;
-      try {
-        const secretToSave = this.prepareSecretForSave({ ...this.selectedSecret });
-
-        if (!secretToSave.id) {
-          await this.adminService.createSecret(secretToSave);
-          this.$root.$emit("Success", "Secret created successfully.");
-        } else {
-          await this.adminService.updateSecret(secretToSave);
-          this.$root.$emit("Success", "Secret updated successfully.");
-        }
-
-        if (!secretToSave.value) {
-          this.$root.$emit("Info", "Warning: Token (value) is empty.");
-        }
-
-        await this.loadSecrets();
-        this.selectedSecret = null;
-        this.showFullToken = false;
-      } catch (error) {
-        console.error("Error updating secret:", error);
-        this.$root.$emit("Error", "Failed to update secret.");
-      } finally {
-        this.isLoading = false;
-      }
-    }
    
   },
   async mounted() {

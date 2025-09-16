@@ -116,7 +116,7 @@ export function getDefaultSecrets() {
           brand: brand,
           pricing: 0,
           pricingQuantity: 0,
-          status: "Active",
+          status: true,
         });
       });
     });
