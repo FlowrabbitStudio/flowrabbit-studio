@@ -20,6 +20,9 @@ public class BlowFishService implements EncryptionService {
     }
 
     public String encrypt(String secretMessage) throws Exception {
+        if (secretMessage.isEmpty()) {
+            return "";
+        }
         Cipher encryptCipher = Cipher.getInstance(ALGORITHM);
         encryptCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
         byte[] encryptedBytes = encryptCipher.doFinal(secretMessage.getBytes(StandardCharsets.UTF_8));
@@ -27,6 +30,9 @@ public class BlowFishService implements EncryptionService {
     }
 
     public String decrypt(String encryptedtext) throws Exception {
+        if (encryptedtext.isEmpty()) {
+            return "";
+        }
         byte[] encryptedTextToBytes = Base64.getDecoder().decode(encryptedtext);
         Cipher decryptCipher = Cipher.getInstance(ALGORITHM);
         decryptCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
