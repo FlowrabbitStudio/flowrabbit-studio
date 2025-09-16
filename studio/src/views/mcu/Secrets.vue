@@ -1,19 +1,39 @@
 <template>
   <div class="MatcMCUPanel">
+
+    <Panel :transparent="true">
+        <div class="MCUTopBar ">
+          <SearchBar v-model="searchFilter" />
+
+            <!-- <button class="MatcButton MatcButtonPrimary" @click="createSecret" :disabled="isLoading">
+              Create Secret
+            </button> -->
+
+            <button class="MatcButton MatcButtonPrimary" @click="createDefaultSecrets" :disabled="isLoading">
+              Setup Secrets
+            </button>
+
+
+            <button class="MatcButton MatcButtonPrimary" @click="onTokenByBrand" :disabled="isLoading">
+              Set Token By Brand
+            </button>
+
+
+            <button class="MatcButton MatcButtonRed" @click="onDeleteAllSecrets" :disabled="isLoading">
+              Delete All
+            </button>
+        </div>
+    </Panel>
+
+
+
     <Panel>
       <div class="secrets-container">
         <!-- Heading and Actions -->
         <div class="MatcCardHeader align-items-center">
           <h1 class="heading">Secrets</h1>
-
-          <div class="MatcFlex MatcEnd search-bar-container MatcFelxGapM">
-            <SearchBar v-model="searchFilter" />
-            <button class="MatcButton MatcButtonPrimary" @click="createSecret" :disabled="isLoading">Create
-              Secret</button>
-          </div>
-
         </div>
-
+     
 
         <!-- Loading Indicator -->
         <div v-if="isLoading" class="loading-indicator">
@@ -21,24 +41,44 @@
         </div>
 
         <!-- Data Table -->
-        <div class="MatcCardContent" v-else>
+        <div class="MatcPaddingTop" v-else>
           <div v-if="filteredSecrets.length === 0">
             <p>No secrets found with the current filters.</p>
           </div>
           <div v-else>
-            <DataTable :data="filteredSecrets" :size="10" :isSelectable="false" :columns="columns" />
+            <DataTable :data="filteredSecrets" :size="50" :isSelectable="false" :columns="columns" />
           </div>
         </div>
 
 
         <!-- Dialogs -->
-        <SecretDialog ref="secretDialog" :brands="availableBrands" />
+        <SecretDialog ref="secretDialog" />
 
         <BaseDialog title="Delete Secret" ref="deleteSecretConfirm" @confirmAction="() => deleteSecret(secretToDelete)">
           Are you sure you want to delete this secret?
         </BaseDialog>
+
+        <BaseDialog title="Delete ALL Secrets" ref="deleteAllSecretsConfirm" @confirmAction="() => deleteAllSecrets">
+          Are you sure you want to delete ALL secrets?
+        </BaseDialog>
+
+
+        <BaseDialog title="Set Token By Brand" ref="setTokenByBrandConfirm" @confirmAction="() => updateSecretByBrand()">
+          <div class="MatcFlex MatcGapXL">
+            <div class="form-group MatcFlexGrow">
+              <label>Brand</label>XX {{brandToUpdate}}
+              <select class="form-control" v-model="brandToUpdate">
+                <option v-for="b in availableBrands" :key="b.id" :value="b.id">{{ b.label }}</option>
+              </select>
+            </div>
+            <div class="form-group MatcFlexGrow">
+              <label>Token</label>
+              <input type="text" class="form-control" v-model="tokenToUpdate" />
+            </div>
+          </div>
+        </BaseDialog>
       </div>
-    </Panel>
+      </Panel>
   </div>
 </template>
 
@@ -52,31 +92,24 @@ import SearchBar from "./SearchBar.vue";
 import BaseDialog from "../../components/dialogs/BaseDialog.vue";
 
 import * as SecretUtil from '../../util/SecretUtil'
+import * as CreditUtil from '../../util/CreditUtil'
 
 export default {
   data() {
     return {
       secrets: [],
       searchFilter: "",
-      availableBrands: [],
-      secretToDelete: {},
-      groupedBrands: [],
-      selectedBrand: "",
-      selectedType: "",
-      availableTypes: [],
-      selectedSecret: null,
-      selectedSecrets: [],
-      selectedSecretsToken: "",
-      brandToken: "",
+      availableBrands: SecretUtil.getAllBrands(),
       showFullToken: false,
       isLoading: false,
-      domainHints: SecretUtil.getDomains(),
+      brandToUpdate: "",
+      tokenToUpdate: "",
       columns: [
         {
           id: "label",
           key: "label",
           label: "Label",
-          width: "15%",
+          width: "25%",
         },
         {
           id: "brand",
@@ -84,39 +117,21 @@ export default {
           label: "Brand",
           width: "15%",
         },
-        {
-          id: "value",
-          key: "value",
-          label: "Token",
-          width: "25%",
-          value: (row) => this.formatTokenForDisplay(row.value),
-          renderCell: (h, { row }) => {
-            const shortToken = this.formatTokenForDisplay(row.value);
-            const fullToken = row.value || "";
-            return h("div", { class: "token-cell" }, [
-              h("span", {
-                class: "token-truncated",
-                attrs: { title: fullToken },
-              }, shortToken),
-              h("button", {
-                class: "copy-token-button",
-                attrs: { title: "Copy full token" },
-                on: {
-                  click: (e) => {
-                    e.stopPropagation();
-                    this.copyToClipboard(fullToken);
-                  },
-                },
-              }, "Copy")
-            ]);
-          },
-        },
+    
         {
           id: "pricingQuantity",
           key: "pricingQuantity",
-          label: "Pricing (Quantity)",
-          value: (row) => this.getPricingQuantity(row),
-          width: "20%",
+          label: "Pricing",
+          value: (row) => this.getPricingPerMillion(row),
+          width: "10%",
+        },
+        {
+          id: "token",
+          key: "value",
+          label: "Token",
+          value: (row) => (row.value ? "✓" : ""),
+          width: "10%",
+          class: (row) => (row.value ? "green" : "status-inactive"),
         },
         {
           id: "status",
@@ -126,10 +141,10 @@ export default {
           width: "10%",
           class: (row) =>
             row.status === "Active" || !row.status
-              ? "status-active"
+              ? "green"
               : row.status === "new"
-                ? "status-new"
-                : "status-inactive",
+                ? "red"
+                : "red",
         },
         {
           id: "domain",
@@ -168,17 +183,9 @@ export default {
             secret.brand?.toLowerCase().includes(filter) ||
             secret.type?.toLowerCase().includes(filter) ||
             secret.value?.toLowerCase().includes(filter));
-        const matchesBrand = !this.selectedBrand || secret.brand === this.selectedBrand;
-        const matchesType = !this.selectedType || secret.type === this.selectedType;
-        return matchesSearch && matchesBrand && matchesType;
+        return matchesSearch;
       });
-    },
-    canUpdateBrandTokens() {
-      return this.selectedBrand && this.brandToken && this.brandToken.trim().length > 0;
-    },
-    canUpdateSelectedTokens() {
-      return this.selectedSecrets.length > 0 && this.selectedSecretsToken.trim().length > 0;
-    },
+    }
   },
   components: {
     'SecretDialog': SecretDialog,
@@ -200,6 +207,12 @@ export default {
       }
     },
    
+    getPricingPerMillion (row) {
+      const pricePerMillion = CreditUtil.pricePerUnitToPricePerMillion(row.pricing || 0);
+      const pricePerMillionQuantity = CreditUtil.pricePerUnitToPricePerMillion(row.pricingQuantity || 0);
+
+      return `${pricePerMillion.toFixed(2)}€ / ${pricePerMillionQuantity.toFixed(2)}€`;
+    },
   
     getPricingQuantity(row) {
       const price = row.pricingQuantity != null ? `${row.pricingQuantity}¢` : "-";
@@ -213,22 +226,78 @@ export default {
         default: return price;
       }
     },
+
     formatLabel(key) {
       return key
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
     },
-      formatTokenForDisplay(token) {
-      if (!token) return "";
-      const maxLength = 10;
-      return token.length > maxLength ? token.slice(0, maxLength) + "..." : token;
+
+
+    async onTokenByBrand(event) {
+      console.log("Setting token by brand...");
+      if (event) event.preventDefault();
+      this.brandToUpdate = "";
+      this.tokenToUpdate = "";
+      this.$refs.setTokenByBrandConfirm.show();
+    },
+    async updateSecretByBrand() {
+      if (!this.brandToUpdate || !this.tokenToUpdate) return;
+      console.log("Updating secrets for brand:", this.brandToUpdate, this.tokenToUpdate);
+      this.isLoading = true;
+      try {
+        const secretsToUpdate = this.secrets.filter(s => s.brand === this.brandToUpdate);
+        for (const secret of secretsToUpdate) {
+          secret.value = this.tokenToUpdate;
+          await this.adminService.updateSecret(secret);
+        }
+        await this.loadSecrets();
+        this.$root.$emit("Success", `Updated ${secretsToUpdate.length} secrets for brand ${this.brandToUpdate}.`);
+      } catch (error) {
+        console.error("Error updating secrets by brand:", error);
+        this.$root.$emit("Error", "Failed to update secrets by brand.");
+      } finally {
+        this.isLoading = false;
+      }
+      this.brandToUpdate = "";
+      this.tokenToUpdate = "";
+
+      this.$refs.setTokenByBrandConfirm.close();
     },
     async onDeleteSecret(secret, event) {
       if (event) event.preventDefault();
       this.secretToDelete = secret;
       this.$refs.deleteSecretConfirm.show();
     },
- 
+    async onDeleteAllSecrets(event) {
+      if (event) event.preventDefault();
+      this.$refs.deleteAllSecretsConfirm.show();
+    },
+    async deleteAllSecrets() {
+      if (this.isLoading) return;
+      this.isLoading = true;
+      try {
+        for (const secret of this.secrets) {
+          await this.adminService.deleteSecret(secret.id);
+        }
+        await this.loadSecrets();
+        this.$root.$emit("Success", "All secrets deleted successfully.");
+      } catch (error) {
+        console.error("Error deleting all secrets:", error);
+        this.$root.$emit("Error", "Failed to delete all secrets.");
+      } finally {
+        this.isLoading = false;
+      }
+    },
+     copyToClipboard(text) {
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        this.$root.$emit("Success", "Token copied to clipboard.");
+      }).catch(err => {
+        console.error('Could not copy text: ', err);
+        this.$root.$emit("Error", "Failed to copy token to clipboard.");
+      });
+    },
     async deleteSecret(secret) {
       if (!secret.id) return;
       this.isLoading = true;
@@ -254,6 +323,28 @@ export default {
       if (this.isLoading) return;
       this.$refs.secretDialog.show(null, () => this.loadSecrets());
     },
+    async createDefaultSecrets() {
+      if (this.isLoading) return;
+      this.isLoading = true;
+      try {
+        const defaultSecrets = SecretUtil.getDefaultSecrets();
+        let counted = 0;
+        for (const secret of defaultSecrets) {
+          const existing = this.secrets.find(s => s.name === secret.name && s.brand === secret.brand);
+          if (!existing) {
+            await this.adminService.createSecret(secret);
+            counted++;
+          }
+        }
+        await this.loadSecrets();
+        this.$root.$emit("Success", `${counted} default secrets created successfully.`);
+      } catch (error) {
+        console.error("Error creating default secrets:", error);
+        this.$root.$emit("Error", "Failed to create default secrets.");
+      } finally {
+        this.isLoading = false;
+      }
+    },
     async loadSecrets() {
       this.isLoading = true;
       try {
@@ -270,7 +361,6 @@ export default {
     async fetchSecretsFromServer() {
       try {
         const dbsecrets = await this.adminService.getAllSecrets();
-        console.debug("Fetched secrets:", dbsecrets);
         dbsecrets.forEach((s) => {
           if (s.pricingQuantity && typeof s.pricingQuantity !== "number") {
             const parsed = parseInt(s.pricingQuantity, 10);
@@ -340,181 +430,7 @@ export default {
     }
     this.adminService.setToken(token);
     await this.loadSecrets();
+    console.debug("Available secrets:", SecretUtil.getAllBrands());
   },
 };
 </script>
-
-<style scoped>
-.MatcDropDownButtonWidth {
-  min-width: auto;
-}
-
-.status-active {
-  color: green !important;
-}
-
-.status-inactive {
-  color: red !important;
-}
-
-.status-new {
-  color: blue !important;
-}
-
-/* Container Styles */
-.secrets-container {
-  padding: 20px;
-}
-
-/* Heading and Actions */
-.heading {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-}
-
-.filters {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.search-bar-container {
-  min-width: 250px;
-  margin-right: 20px;
-}
-
-.filter-dropdown {
-  margin-right: 20px;
-}
-
-.filter-dropdown label {
-  margin-right: 5px;
-  font-weight: bold;
-}
-
-.filter-dropdown select {
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-
-.buttons .MatcButton {
-  margin-right: 20px;
-}
-
-/* Brand/Bulk Actions */
-.brand-token-update {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  gap: 10px;
-}
-
-.brand-token-update label {
-  font-weight: bold;
-}
-
-.bulk-actions {
-  display: flex;
-  gap: 10px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-/* Loading Indicator */
-.loading-indicator {
-  margin-top: 20px;
-  text-align: center;
-  font-style: italic;
-  color: #555;
-}
-
-/* Secret Details Form */
-.secret-details-form {
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-}
-
-.secret-details-form h2 {
-  margin-bottom: 20px;
-}
-
-.secret-details-form .form-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.secret-details-form .form-group label {
-  flex: 0 0 150px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.secret-details-form .form-group input,
-.secret-details-form .form-group select {
-  flex: 1;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.token-edit-field {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.show-hide-token {
-  padding: 5px 10px;
-  font-size: 12px;
-}
-
-.token-length {
-  font-size: 12px;
-  color: #888;
-}
-
-/* Table Token Cell */
-.token-cell {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.copy-token-button {
-  background-color: #eeeeee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.copy-token-button:hover {
-  background-color: #cccccc;
-}
-
-.token-truncated {
-  display: inline-block;
-  max-width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* DataTable Styles */
-.MatcCardContent {
-  margin-top: 20px;
-}
-</style>
