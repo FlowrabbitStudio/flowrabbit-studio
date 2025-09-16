@@ -23,6 +23,9 @@ public class ChaChaService implements EncryptionService {
     }
 
     public String encrypt(String plainText) throws Exception {
+        if (plainText.isEmpty()) {
+            return "";
+        }
         // Generate salt
         byte[] salt = new byte[SALT_LENGTH];
         new SecureRandom().nextBytes(salt);
@@ -50,6 +53,9 @@ public class ChaChaService implements EncryptionService {
     }
 
     public String decrypt(String encryptedText) throws Exception {
+        if (encryptedText.isEmpty()) {
+            return "";
+        }
         byte[] decoded = Base64.getDecoder().decode(encryptedText);
 
         // Extract salt, nonce, ciphertext

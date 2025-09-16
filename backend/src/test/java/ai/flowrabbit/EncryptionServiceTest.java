@@ -36,6 +36,11 @@ public class EncryptionServiceTest {
 //    }
 
     private static void assertService(EncryptionService s, EncryptionService s2, EncryptionService s3) throws Exception {
+
+        // empty string should stay empty
+        Assert.assertEquals("", s.encrypt(""));
+        Assert.assertEquals("", s.decrypt(""));
+
         String encrypted = s.encrypt("abc");
         Assert.assertNotEquals("abc", encrypted);
 

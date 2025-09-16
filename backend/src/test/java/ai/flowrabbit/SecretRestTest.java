@@ -501,23 +501,26 @@ public class SecretRestTest extends BaseTestCase {
 
         createSecret(context, "myai", "topsecret1", "myai.com", 11, 111);
         createSecret(context, "myService", "topsecret2", "myService.com", 22, 222);
+        createSecret(context, "noToken", "", "myService.com", 2, 0);
+        createSecret(context, "noPrice", "asd", "myService.com", 0, 0);
         JsonArray secrets = this.adminFindSecrets(context);
-        context.assertEquals(2, secrets.size());
+        context.assertEquals(4, secrets.size());
         for (int i=0; i < secrets.size(); i++) {
             JsonObject s = secrets.getJsonObject(i);
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_VALUE));
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT));
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT));
-            context.assertTrue(s.getString(Secret.FIELD_SECRET_VALUE).startsWith("top"));
         }
 
         assertLogin(context, nerea);
         JsonArray pubSecrets = this.findPublicSecrets(context);
+        context.assertEquals(2, pubSecrets.size());
         for (int i=0; i < pubSecrets.size(); i++) {
             JsonObject s = pubSecrets.getJsonObject(i);
             context.assertFalse(s.containsKey(Secret.FIELD_SECRET_VALUE));
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT));
             context.assertTrue(s.containsKey(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT));
+            context.assertFalse(s.containsKey(Secret.FIELD_SECRET_VALUE));
         }
 
 

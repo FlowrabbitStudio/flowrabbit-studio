@@ -37,7 +37,7 @@ import io.vertx.ext.web.handler.CorsHandler;
 
 public class Main extends AbstractVerticle {
 
-	public static final String VERSION = "FlowRabbit@5.0.13";
+	public static final String VERSION = "FlowRabbit@5.0.14";
 
 	public static final String BUS_IMAGES_UPLOADED = "images.uploaded";
 
@@ -762,7 +762,7 @@ public class Main extends AbstractVerticle {
 		// org.credit = org.credit - req.quantity * secret.pricePerQuantity
 		router.route(HttpMethod.POST, "/rest/public/secrets/:hash/secret/:name.json").handler(secretRest.meterBySecret());
 		// use to set prices prices or so
-		router.route(HttpMethod.GET, "/rest/public/secrets.json").handler(secretRest.findPublicSecretList());
+		router.route(HttpMethod.GET, "/rest/public/secrets.json").handler(secretRest.findActiveModels());
 
 	}
 

@@ -56,6 +56,43 @@ public class SecretRest extends MongoREST {
     }
 
 
+    public Handler<RoutingContext> findActiveModels() {
+        return event -> findActiveModels(event);
+    }
+
+    private void findActiveModels(RoutingContext event) {
+        User user = getUser(event);
+        if (!user.hasRole(User.USER)) {
+            returnError(event, 404);
+        }
+
+        this.mongo.find(secretDb, Secret.all(), res -> {
+
+            if (res.failed()) {
+                returnError(event, 500);
+            }
+            List<JsonObject> all = res.result();
+            JsonArray result = new JsonArray();
+
+            for (JsonObject s : all) {
+                // FIXME: The secret service will encrypt also an empty string.
+                boolean hasToken = !s.getString(Secret.FIELD_SECRET_VALUE, "").isEmpty();
+                boolean hasPrice = s.getInteger(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, 0) > 0;
+                boolean hasPriceQuantity = s.getInteger(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT, 0) > 0;
+                boolean isActive = hasToken && (hasPriceQuantity || hasPrice);
+                if (isActive) {
+                    result.add(new JsonObject()
+                            .put(Secret.FIELD_SECRET_NAME, s.getString(Secret.FIELD_SECRET_NAME))
+                            .put(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT, s.getInteger(Secret.FIELD_SECRET_PRICE_REQUEST_IN_MICRO_CENT))
+                            .put(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT, s.getInteger(Secret.FIELD_SECRET_PRICE_QUANTITY_IN_MICRO_CENT))
+                    );
+                }
+            }
+
+            returnJson(event, result);
+        });
+    }
+
     public Handler<RoutingContext> meterBySecret() {
         return event -> meterBySecret(event);
     }
@@ -401,28 +438,28 @@ public class SecretRest extends MongoREST {
 
 
 
-    public Handler<RoutingContext> findPublicSecretList() {
-        return event -> findPublicSecretList(event);
-    }
-
-    private void findPublicSecretList(RoutingContext event) {
-        User user = getUser(event);
-        if (!user.hasRole(User.USER)) {
-            error("findPublicSecretList", "User " + user + " tried to read secret data");
-            returnError(event, 404);
-            return;
-        }
-        this.mongo.find(secretDb, Secret.all(), res -> {
-            if (res.succeeded()) {
-                List<JsonObject> result = res.result();
-                for (JsonObject s: result) {
-                    s.remove(Secret.FIELD_SECRET_VALUE);
-                }
-                returnJson(event, result);
-            } else {
-                error("findPublicSecretList", "Error > " + res.cause());
-                returnError(event, 405);
-            }
-        });
-    }
+//    public Handler<RoutingContext> findPublicSecretList() {
+//        return event -> findPublicSecretList(event);
+//    }
+//
+//    private void findPublicSecretList(RoutingContext event) {
+//        User user = getUser(event);
+//        if (!user.hasRole(User.USER)) {
+//            error("findPublicSecretList", "User " + user + " tried to read secret data");
+//            returnError(event, 404);
+//            return;
+//        }
+//        this.mongo.find(secretDb, Secret.all(), res -> {
+//            if (res.succeeded()) {
+//                List<JsonObject> result = res.result();
+//                for (JsonObject s: result) {
+//                    s.remove(Secret.FIELD_SECRET_VALUE);
+//                }
+//                returnJson(event, result);
+//            } else {
+//                error("findPublicSecretList", "Error > " + res.cause());
+//                returnError(event, 405);
+//            }
+//        });
+//    }
 }
