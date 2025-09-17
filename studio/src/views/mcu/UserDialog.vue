@@ -5,22 +5,33 @@
        
                 <div class="form-group">
                     <label>Email</label>
-                    <div>
+                    <div class="form-control" :disabled="true">
                         {{user.email}}
                     </div>      
                 </div>
 
                 <div class="form-group">
                     <label>Name</label>
-                    <div>
+                    <div class="form-control" :disabled="true">
                         {{user.name ? user.name : '?????'}} {{user.lastname ? user.lastname : '???????'}}
                     </div>      
+                </div>
+
+                <div class="form-group">
+                    <label>Role</label>
+                    <select class="form-control" v-model="user.role">
+                        <option value="user">User</option>
+                         <option value="admin">Admin</option>
+                    </select>  
                 </div>
            
                 <div class="form-group">
                     <label>Passwort reset link</label>
-                    <div>
-                        <a :href="`#/login.html?id=${user.passwordRestKey}`" target="_blank">{{`#/login.html?id=${user.passwordRestKey}`}}</a>
+                    <div class="form-control" :disabled="true">
+                        <a :href="`#/login.html?id=${user.passwordRestKey}`" target="_blank">
+                            <template v-if="user.passwordRestKey">{{`#/login.html?id=${user.passwordRestKey}`}}</template>
+                            <template v-else>no reset key available</template>
+                        </a>
                     </div>               
                 </div>
 
@@ -33,8 +44,8 @@
 
 
                 <div class="MatcButtonBar MatcMarginTopXXL">
-                    <div class="MatcButton" @click="updateUser">Save</div>
                     <div class="MatcLinkButton" @click="close">Close</div>
+                    <div class="MatcButton" @click="updateUser">Save</div>
                 </div>
  
         </div>
@@ -72,7 +83,8 @@ export default {
     methods: {
         async updateUser () {
             await this.adminService.updateUser(this.user.id, {
-                status: this.isBlocked ? 'blocked' : 'active'
+                status: this.isBlocked ? 'blocked' : 'active',
+                role: this.user.role
             })
             if (this.saveCallback) {
                 this.saveCallback()

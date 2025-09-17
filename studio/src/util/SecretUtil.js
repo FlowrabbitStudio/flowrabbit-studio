@@ -114,8 +114,8 @@ export function getDefaultSecrets() {
           domain: domainsByBrand[brand] || "",
           type: type,
           brand: brand,
-          pricing: 0,
-          pricingQuantity: 0,
+          pricing: 300,
+          pricingQuantity: 300,
           status: true,
         });
       });
