@@ -26,8 +26,7 @@ export function rawBodyBufferMiddleware(req, res, next) {
 }
 
 export async function secretRetrievalMiddleware(req, res, next) {
-  const { "x-forwarded-host": target, "x-flowrabbit-hash": hash, "x-flowrabbit-appid": appID } =
-    req._luisaHeaders || {};
+  const { "x-flowrabbit-proxy-target": target, "x-flowrabbit-hash": hash, "x-flowrabbit-appid": appID } = req._luisaHeaders || {};
   console.info(`checkRequest() > target ${target}`);
 
   if (hash && appID) {

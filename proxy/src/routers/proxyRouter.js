@@ -16,13 +16,15 @@ function createCustomProxyMiddleware() {
     proxyTimeout: 60000,
     timeout: 60000,
     router: (req) => {
-      const target = req._luisaHeaders["x-forwarded-host"];
+      const target = req._luisaHeaders["x-flowrabbit-proxy-target"];
+      console.info(`Proxying request to target: ${target}`);
       const { host } = parseURL(target);
+      console.info(`Proxying request to host: ${host}`);
       return host;
     },
     onProxyReq,
     pathRewrite: (path, req) => {
-      const target = req._luisaHeaders["x-forwarded-host"];
+      const target = req._luisaHeaders["x-flowrabbit-proxy-target"];
       const { path: targetPath } = parseURL(target);
       return targetPath;
     },

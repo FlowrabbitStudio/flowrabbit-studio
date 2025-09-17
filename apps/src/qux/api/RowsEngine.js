@@ -58,7 +58,7 @@ export default class RowsEngine {
             let headerKeys = Object.keys(headers).join(';')
             headers['x-flowrabbit-headers'] = headerKeys
         }
-        headers['x-forwarded-host'] = url
+        headers['x-flowrabbit-proxy-target'] = url
         headers['x-flowrabbit-hash'] = hash
         headers['x-flowrabbit-appid'] = appID
 
