@@ -276,6 +276,11 @@ export class ModelService extends AbstractService{
         return this._get(`/rest/apps/${id}/secrets.json`)
     }
 
+    findFlowRabbitSecrets() {
+        return this._get(`/rest/public/secrets.json`)
+    }
+
+
     findSecretsByHash(id, hash) {
         return this._get(`/rest/invitation/${id}/${hash}/secrets.json`)
     }

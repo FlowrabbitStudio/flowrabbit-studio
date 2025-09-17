@@ -29,7 +29,7 @@
         </div>
         <div v-show="tab === 'auth' && aiModel?.type !== 'flowrabbit'" class="MatcToolbarRestSettingsElementCntr p-2">
           <AIRestAuthTab @setRestToken="setRestToken" @setIsFlowrabbitSecret="setIsFlowrabbitSecret" :rest="rest"
-            :org="selectedOrg" :aiModel="aiModel" :secretHints="secretHints"
+            :org="selectedOrg" :aiModel="aiModel" :secretHints="secretHints" :flowRabbitSecrets="flowRabbitSecrets"
             :disableFlowrabbit="aiModel.disableFlowrabbit" :model="model" />
         </div>
         <div v-show="tab === 'output'">
@@ -133,7 +133,8 @@ export default {
       organizations: [],
       enableAnalytics: false,
       key: 0,
-      selectedOrg: {}
+      selectedOrg: {},
+      flowRabbitSecrets: [],
     };
   },
   components: {
@@ -479,7 +480,7 @@ export default {
               .updateAppProps(app.id, {
                 integrations: JSON.stringify(integrations),
               })
-              .then((result) => console.og(result));
+              .then((result) => console.log(result));
           });
       }
     },
@@ -507,10 +508,8 @@ export default {
       this.$nextTick(() => {
         this.$forceUpdate();
       });
-      this.logger.log(-5, "onModelChange",
-        "exit",
-        JSON.stringify(this.rest, null, 2)
-      );
+      this.logger.log(-5, "onModelChange", "exit");
+
     },
     onChangeBrand() {
       this.logger.log(-5, "onChangeBrand", "enter");
@@ -1071,8 +1070,10 @@ export default {
   destroyed() {
     this.resetAllVariables();
   },
-  mounted() {
+  async mounted() {
     this.logger = new Logger("AIRest");
+    this.flowRabbitSecrets = await Services.getModelService().findFlowRabbitSecrets()
+
 
     if (this.app) {
       this.setModel(this.app);
