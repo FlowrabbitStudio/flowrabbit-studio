@@ -12,7 +12,7 @@ beforeAll(() => {
             "version": "1.0.0",
             "status": "static",
             "headerAuth": req.headers['authorization'],
-            "headerHost": req.headers['x-forwarded-host'],
+            "headerHost": req.headers['x-flowrabbit-proxy-target'],
             "headerHash": req.headers['x-flowrabbit-hash'],
             "headerAppID": req.headers['x-flowrabbit-appid'],
             "headerOther": req.headers['x-flowrabbit-other'],
@@ -26,7 +26,7 @@ beforeAll(() => {
             "status": "static",
             "body": req.body,
             "headerAuth": req.headers['authorization'],
-            "headerHost": req.headers['x-forwarded-host'],
+            "headerHost": req.headers['x-flowrabbit-proxy-target'],
             "headerHash": req.headers['x-flowrabbit-hash'],
             "headerAppID": req.headers['x-flowrabbit-appid'],
             "headerOther": req.headers['x-flowrabbit-other'],
@@ -52,7 +52,7 @@ test('Proxy > GET /test/static.json', async () => {
 test('Proxy > GET proxy?/test/static.json', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json");
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json");
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe('static');    
 });
@@ -60,7 +60,7 @@ test('Proxy > GET proxy?/test/static.json', async () => {
 test('Proxy > GET proxy?/test/static.json HEADER', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash',appHash)
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set("Authorization", "Bearer ${secrets.apiToken}");
@@ -73,7 +73,7 @@ test('Proxy > GET proxy?/test/static.json HEADER', async () => {
 test('Proxy > GET proxy?/test/static.json HEADER RAw', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash',appHash)
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set("Authorization", "${secrets.apiToken}");
@@ -85,7 +85,7 @@ test('Proxy > GET proxy?/test/static.json HEADER RAw', async () => {
 test('Proxy > GET proxy?/test/static.json Error', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash', 'wrong')
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set("Authorization", "Bearer ${secrets.apiToken}");
@@ -98,7 +98,7 @@ test('Proxy > GET proxy?/test/static.json Error', async () => {
 test('Proxy > GET proxy?/test/static.json Custom Header', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash',appHash)
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set('x-flowrabbit-other', 'ABC')
@@ -114,7 +114,7 @@ test('Proxy > GET proxy?/test/static.json Custom Header', async () => {
 test('Proxy > GET proxy?/test/static.json  Filter headers', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash',appHash)
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set('x-flowrabbit-headers', 'Authorization')
@@ -131,7 +131,7 @@ test('Proxy > GET proxy?/test/static.json  Filter headers', async () => {
 test('Proxy > GET proxy?/test/static.json  Wrong domain', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
         .set('x-flowrabbit-hash',appHash)
         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
         .set('x-flowrabbit-headers', 'Authorization')
@@ -150,7 +150,7 @@ test('Proxy > GET proxy?/test/static.json  Wrong domain', async () => {
 //     const res = await request(app)
 //         .post("/proxy")
 //         .send({x:1})
-//         .set('x-forwarded-host', "http://localhost:8084/test/static.json")
+//         .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json")
 //         .set('x-flowrabbit-hash',appHash)
 //         .set('x-flowrabbit-appid', '664cffce20b96b11e39b771a')
 //         .set('x-flowrabbit-headers', 'Authorization')

@@ -29,13 +29,13 @@ function createCustomProxyMiddleware() {
     proxyTimeout: 60000,
     timeout: 60000,
     router: (req) => {
-      const target = req._luisaHeaders["x-forwarded-host"] || "http://www.example.org";
+      const target = req._luisaHeaders["x-flowrabbit-proxy-target"] || "http://www.example.org";
       const { host } = parseURL(target);
       return host;
     },
     onProxyReq,
     pathRewrite: (path, req) => {
-      const target = req._luisaHeaders["x-forwarded-host"] || "http://www.example.org";
+      const target = req._luisaHeaders["x-flowrabbit-proxy-target"] || "http://www.example.org";
       const { path: targetPath } = parseURL(target);
       return targetPath;
     },

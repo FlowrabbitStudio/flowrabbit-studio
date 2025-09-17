@@ -8,6 +8,9 @@ class RestEngine {
   }
 
   setProxyURL(url) {
+    if (!url.endsWith("/proxy")) {
+      url = url + "/proxy";
+    }
     this.proxyURL = url;
     console.debug("RestEngine > setProxyURL: ", this.proxyURL);
   }

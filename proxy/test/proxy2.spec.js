@@ -9,7 +9,7 @@ beforeAll(() => {
             "version": "1.0.0",
             "status": "static",
             "headerAuth": req.headers['authorization'],
-            "headerHost": req.headers['x-forwarded-host'],
+            "headerHost": req.headers['x-flowrabbit-proxy-target'],
             "headerHash": req.headers['x-flowrabbit-hash'],
             "headerAppID": req.headers['x-flowrabbit-appid'],
             "headerOther": req.headers['x-flowrabbit-other'],
@@ -23,7 +23,7 @@ beforeAll(() => {
             "status": "static",
             "body": req.body,
             "headerAuth": req.headers['authorization'],
-            "headerHost": req.headers['x-forwarded-host'],
+            "headerHost": req.headers['x-flowrabbit-proxy-target'],
             "headerHash": req.headers['x-flowrabbit-hash'],
             "headerAppID": req.headers['x-flowrabbit-appid'],
             "headerOther": req.headers['x-flowrabbit-other'],
@@ -36,7 +36,7 @@ beforeAll(() => {
 test('Proxy > intercept proxy?/test/static.json', async () => {
     const res = await request(app)
         .get("/proxy")
-        .set('x-forwarded-host', "http://localhost:8084/test/static.json");
+        .set('x-flowrabbit-proxy-target', "http://localhost:8084/test/static.json");
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe('static');    
 });
