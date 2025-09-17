@@ -917,7 +917,6 @@ export const openai_chat_5 = {
       top_p: vars.top_p,
       presence_penalty: vars.presence_penalty,
       frequency_penalty: vars.frequency_penalty,
-      temperature: vars.temperature,
       stream: vars.stream,
     };
     return template;
@@ -1043,7 +1042,6 @@ export const openai_chat_5_nano = {
       top_p: vars.top_p,
       presence_penalty: vars.presence_penalty,
       frequency_penalty: vars.frequency_penalty,
-      temperature: vars.temperature,
       stream: vars.stream,
     };
     return template;
@@ -1422,7 +1420,6 @@ export const openai_chat_5_mini = {
       top_p: vars.top_p,
       presence_penalty: vars.presence_penalty,
       frequency_penalty: vars.frequency_penalty,
-      temperature: vars.temperature,
       stream: vars.stream,
     };
     return template;

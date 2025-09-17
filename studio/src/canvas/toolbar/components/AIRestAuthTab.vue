@@ -1,6 +1,6 @@
 <template>
   <div v-if="aiModel && aiModel.id" class="MatcToolbarRestSettingsElementCntr p-2">
-    <div v-show="!rest.isFlowrabbitSecret" class="form-group">
+    <div v-show="!rest.isFlowrabbitSecret || !showFlowrabbitToken" class="form-group">
       <div class="MatcFlex MatcBetween">
         <label>
           API Key
@@ -23,13 +23,12 @@
         />
       </div>
     </div>
-    <div v-if="canUseFlowrabbit" class="">
+    <div  class="">
       <template v-if="showFlowrabbitToken">
         <CheckBox :value="isFlowrabbitSecret" @change="onChange($event)" label="Use Flowrabbit authentication key" />
       </template>
-      <div v-else>Flowrabit authentication keys not supported in this Organization.</div>
+      <div v-else class="">Flowrabit authentication keys not supported for this model ({{aiModel.id}}).</div>
     </div>
-    <div v-else>Flowrabit authentication keys not supported in this Model.</div>
   </div>
 </template>
 
@@ -44,11 +43,24 @@ export default {
     TokenInput,
     CheckBox,
   },
-  props: ["rest", "aiModel", "secretHints", "disableFlowrabbit", "org", "model"],
+  props: ["rest", "aiModel", "secretHints", "disableFlowrabbit", "org", "model", "flowRabbitSecrets"],
   computed: {
     ...mapState(["selectedOrg"]),
     showFlowrabbitToken() {
-      return this.org && (this.org.id !== "private");
+      if (this.org.id === "private") {
+        return false;
+      }
+      if (this.aiModel && this.aiModel.id) {
+        const aiModelId = this.aiModel.id
+        const found = this.flowRabbitSecrets.find((s) => {
+          return s.name == aiModelId
+        });
+        if (found) {
+          return true;
+        }
+      }
+
+      return false;
     },
     canUseFlowrabbit() {
       return !this.disableFlowrabbit && this.showFlowrabbitToken;
