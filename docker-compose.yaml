@@ -49,11 +49,6 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./letsencrypt:/letsencrypt"
-    # labels:
-    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT,POST,DELETE,PATCH"
-    #   - "traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*"
-    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*"
-    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowcredentials=true"
 
   mongo:
     restart: always
@@ -111,7 +106,6 @@ services:
       - "traefik.http.routers.proxy.entrypoints=websecure"
       - "traefik.http.routers.proxy.tls.certresolver=myresolver"
       - "traefik.http.services.proxy.loadbalancer.server.port=8084"
-      #- "traefik.http.routers.proxy.middlewares=cors@docker"
   apps:
     restart: always
     container_name: apps
