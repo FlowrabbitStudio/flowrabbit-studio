@@ -8,7 +8,7 @@ import CostCalculator from "./services/CostCalculator.js";
 import proxyRouter from "./routers/proxyRouter.js";
 import streamProxyRouter from "./routers/streamProxyRouter.js";
 
-const version = "FlowRabbit Proxy 5.0.16";
+const version = "FlowRabbit Proxy 5.0.17";
 const startedAt = new Date().toISOString();
 
 const config = new Config();

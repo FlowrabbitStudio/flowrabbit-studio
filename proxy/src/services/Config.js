@@ -10,6 +10,6 @@ export default class Config {
     }
 
     getAPIServer () {
-        return process.env.FLR_API_URL;
+        return process.env.FLR_INTERNAL_API_URL;
     }
 }
