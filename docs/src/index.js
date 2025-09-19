@@ -68,6 +68,26 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Ensure upload directories exist for multer
+const uploadBase = "uploads";
+const uploadDirs = [
+  path.join(uploadBase, "doctmp"),
+  path.join(uploadBase, "audiotmp")
+];
+for (const dir of uploadDirs) {
+  try {
+    fs.mkdirSync(dir, { recursive: true });
+    // set permissive mode for compatibility where needed
+    try {
+      fs.chmodSync(dir, 0o755);
+    } catch {
+      // ignore chmod errors on some platforms
+    }
+  } catch (err) {
+    console.warn(`Could not create upload dir ${dir}:`, err.message);
+  }
+}
+
 
 const startedAt = new Date().toISOString();
 const secretService = new SecretService(apiServer, apiKey);
@@ -77,6 +97,7 @@ const server = http.createServer(app);
 const wss = new WebSocketServer({ noServer: true });
 import { createClient, LiveTranscriptionEvents } from "@deepgram/sdk";
 import VideoAI from "./components/VideoAI.js";
+
 
 const docUploads = multer({
   storage: multer.diskStorage({
