@@ -9,7 +9,7 @@ const proxyMiddleware = require('http-proxy-middleware')
  */
 const host = '0.0.0.0'
 const assetsRoot = path.resolve(__dirname, '../dist')
-const version = "5.0.12"
+const version = "5.0.17"
 const port = (process.env.FLR_HTTP_PORT * 1) || 8082
 const api_URL = process.env.FLR_API_URL || 'http://localhost:8080'
 const proxy_URL = process.env.FLR_PROXY_URL || 'http://localhost:8084'
@@ -18,6 +18,8 @@ const node_URL = process.env.FLR_NODE_URL || 'http://localhost:8088'
 const wsUrl = process.env.FLR_WS_URL || 'wss://localhost:8086'
 const auth = process.env.FLR_AUTH || 'qux'
 const tos = process.env.FLR_TOS_URL || ''
+const internal_API_URL = process.env.FLR_INTERNAL_API_URL || 'http://localhost:8080'
+const internal_Proxy_URL = process.env.FLR_INTERNAL_PROXY_URL || 'http://localhost:8084'
 const keycloak_realm = process.env.FLR_KEYCLOAK_REALM || ''
 const keycloak_client = process.env.FLR_KEYCLOAK_CLIENT || ''
 const keycloak_url = process.env.FLR_KEYCLOAK_URL || ''
@@ -69,17 +71,17 @@ app.get("/config.json", (_req, res) => {
  * init proxy.
  */
 app.use('/rest/', proxyMiddleware.createProxyMiddleware({
-    target: api_URL,
+    target: internal_API_URL,
     changeOrigin: true
 }))
 
 app.use('/ai/', proxyMiddleware.createProxyMiddleware({
-  target: api_URL,
+  target: internal_API_URL,
   changeOrigin: true
 }))
 
 app.use('/proxy', proxyMiddleware.createProxyMiddleware({
-  target: proxy_URL,
+  target: internal_Proxy_URL,
   changeOrigin: true
 }))
 
@@ -106,7 +108,9 @@ module.exports = server.listen(port, function (err) {
   console.log('Root      :' + assetsRoot)
   console.log('Listening on ' + host + ':' + server.address().port)
   console.log('Backend   : ' + api_URL)
+  console.log('Backend   : ' + internal_API_URL + ' (internal)')
   console.log('Proxy   : '   + proxy_URL)
+  console.log('Proxy   : '   + internal_Proxy_URL + ' (internal)')
   console.log('WebSocket : ' + wsUrl)
   console.log('Auth      : ' + auth)
   console.log('SignUp    : ' + userAllowSignUp)

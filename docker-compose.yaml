@@ -3,16 +3,16 @@ x-common-env: &common-env
   FLR_AUTH_SERVICE: qux
   FLR_USER_ALLOW_SIGNUP: "true"
   FLR_USER_ALLOWED_DOMAINS: "*"
-  FLR_SERVER_API_URL: http://backend:8080
-  FLR_SERVER_PROXY_URL: http://proxy-os.flowrabbit.ai
-  FLR_API_URL: http://backend:8080
-  FLR_APPS_URL: http://apps-os.flowrabbit.ai
-  FLR_PROXY_URL: http://proxy-os.flowrabbit.ai
-  FLR_NODE_URL: http://node-os.flowrabbit.ai
-  FLR_HTTP_HOST: http://studio-os.flowrabbit.ai:8082
-  FLR_CLIENT_API_KEY: 123cjMKJcm234?sfsdf
+  FLR_INTERNAL_API_URL: http://backend:8080
+  FLR_INTERNAL_PROXY_URL: http://proxy:8084
+  FLR_API_URL: https://api-os.flowrabbit.ai
+  FLR_APPS_URL: https://apps-os.flowrabbit.ai
+  FLR_PROXY_URL: https://proxy-os.flowrabbit.ai
+  FLR_NODE_URL: https://node-os.flowrabbit.ai
+  FLR_HTTP_HOST: https://studio-os.flowrabbit.ai
+  FLR_CLIENT_API_KEY: Put_Some_Secret_In_Here
   FLR_ADMIN_EMAIL: klaus.schaefers@gmail.com
-  FLR_ADMIN_PASSWORD: FlowBunny2020!
+  FLR_ADMIN_PASSWORD: Put_Some_Secret_In_Here
 
 services:
   traefik:
@@ -42,12 +42,19 @@ services:
       - "--entrypoints.websecure.http.tls.certresolver=myresolver"
       - "--entrypoints.websecure.http.tls.domains[0].main=docs-os.flowrabbit.ai"
 
+
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./letsencrypt:/letsencrypt"
+    # labels:
+    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT,POST,DELETE,PATCH"
+    #   - "traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*"
+    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*"
+    #   - "traefik.http.middlewares.cors.headers.accesscontrolallowcredentials=true"
+
   mongo:
     restart: always
     container_name: mongo
@@ -66,9 +73,9 @@ services:
       FLR_MONGO_DB_NAME: quantux
       FLR_MONGO_TABLE_PREFIX: quantux
       FLR_MONGO_CONNECTION_STRING: mongodb://mongo:27017
-      FLR_MAIL_USER: mail_admin@example.com
-      FLR_MAIL_PASSWORD: sTr0ngPa55w0Rd 
-      FLR_MAIL_HOST: mail.example.com
+      FLR_MAIL_USER: 
+      FLR_MAIL_PASSWORD: 
+      FLR_MAIL_HOST: 
       FLR_JWT_PASSWORD: some-long-string-of-mix-case-chars-and-nums
       FLR_IMAGE_FOLDER_USER: /app-data/qux-images
       FLR_IMAGE_FOLDER_APPS: /app-data/qux-image-apps 
@@ -104,3 +111,16 @@ services:
       - "traefik.http.routers.proxy.entrypoints=websecure"
       - "traefik.http.routers.proxy.tls.certresolver=myresolver"
       - "traefik.http.services.proxy.loadbalancer.server.port=8084"
+      #- "traefik.http.routers.proxy.middlewares=cors@docker"
+  apps:
+    restart: always
+    container_name: apps
+    image: flowrabbit/apps:latest
+    environment:
+        <<: *common-env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.apps.rule=Host(`apps-os.flowrabbit.ai`)" #update here
+      - "traefik.http.routers.apps.entrypoints=websecure"
+      - "traefik.http.routers.apps.tls.certresolver=myresolver"
+      - "traefik.http.services.apps.loadbalancer.server.port=8083"
