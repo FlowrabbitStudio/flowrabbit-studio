@@ -11,7 +11,7 @@ x-common-env: &common-env
   FLR_NODE_URL: https://node-os.flowrabbit.ai
   FLR_HTTP_HOST: https://studio-os.flowrabbit.ai
   FLR_CLIENT_API_KEY: Put_Some_Secret_In_Here
-  FLR_ADMIN_EMAIL: klaus.schaefers@gmail.com
+  FLR_ADMIN_EMAIL: email@example.com
   FLR_ADMIN_PASSWORD: Put_Some_Secret_In_Here
 
 services:
