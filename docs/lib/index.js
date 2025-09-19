@@ -20,16 +20,10 @@ import { Blob } from "buffer";
 import fetch from "node-fetch";
 global.Blob = Blob;
 globalThis.fetch = fetch;
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-
-
-const version = "FlowRabbit - Doc - 5.0.20";
-const apiServer = process.env.FLR_INTERNAL_API_URL || 'http://localhost:8080'
-const apiKey = process.env.FLR_CLIENT_API_KEY 
-
+const apiServer = process.env.FLR_INTERNAL_API_URL || 'http://localhost:8080';
+const apiKey = process.env.FLR_CLIENT_API_KEY || process.env.FLR_CLIENT_API_KEY;
 if (!apiKey) {
   console.error("Please create a .env file with the API_KEY");
   throw new Error("Please create a .env file with the API_KEY");
@@ -38,46 +32,17 @@ if (!apiServer) {
   console.error("Please create a .env file with the API_URL");
   throw new Error("Please create a .env file with the API_URL");
 }
-
-
 export const app = express();
-
-// Configure CORS explicitly so browsers receive the expected headers
-const corsOptions = {
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like CURL or server-to-server)
-    if (!origin) return callback(null, true);
-    // You can add a whitelist check here if desired
-    return callback(null, true);
-  },
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "X-Requested-With",
-    "Accept",
-    "x-flowrabbit-headers",
-    "x-flowrabbit-hash",
-    "x-flowrabbit-appid",
-    "x-forwarded-host",
-  ],
-  exposedHeaders: ["Content-Length", "X-Request-Id"],
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
-
-
+const version = "FlowRabbit - Doc - 5.0.18";
 const startedAt = new Date().toISOString();
 const secretService = new SecretService(apiServer, apiKey);
 const transcriber = new Transcriber(apiServer, apiKey);
-
 const server = http.createServer(app);
-const wss = new WebSocketServer({ noServer: true });
+const wss = new WebSocketServer({
+  noServer: true
+});
 import { createClient, LiveTranscriptionEvents } from "@deepgram/sdk";
 import VideoAI from "./components/VideoAI.js";
-
 const docUploads = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
@@ -87,11 +52,12 @@ const docUploads = multer({
       const format = file.originalname.split(".").pop();
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
       cb(null, file.fieldname + "-" + uniqueSuffix + "." + format);
-    },
+    }
   }),
-  limits: { fileSize: 50 * 1024 * 1024 },
+  limits: {
+    fileSize: 50 * 1024 * 1024
+  }
 });
-
 const preRecorderAudioUpload = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
@@ -101,11 +67,12 @@ const preRecorderAudioUpload = multer({
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
       const extension = file.originalname.split(".").pop();
       cb(null, file.fieldname + "-" + uniqueSuffix + "." + extension);
-    },
+    }
   }),
-  limits: { fileSize: 50 * 1024 * 1024 },
+  limits: {
+    fileSize: 50 * 1024 * 1024
+  }
 });
-
 const mdUploads = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
@@ -114,75 +81,69 @@ const mdUploads = multer({
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
       cb(null, file.fieldname + "-" + uniqueSuffix + ".md");
-    },
+    }
   }),
-  limits: { fileSize: 50 * 1024 * 1024 },
+  limits: {
+    fileSize: 50 * 1024 * 1024
+  }
 });
-
-
-
+app.use(cors());
 server.on("upgrade", (request, socket, head) => {
-  const pathname = new URL(request.url, `http://${request.headers.host}`)
-    .pathname;
+  const pathname = new URL(request.url, `http://${request.headers.host}`).pathname;
   console.log(pathname);
   if (pathname === "/live-transcription") {
-    wss.handleUpgrade(request, socket, head, (ws) => {
+    wss.handleUpgrade(request, socket, head, ws => {
       wss.emit("connection", ws, request);
     });
   } else {
     socket.destroy();
   }
 });
-
 const setupDeepgram = (ws, headers, clientData, token, metadata) => {
   const deepgramClient = createClient(token || process.env.DEEPGRAM_API_KEY);
   const model = clientData.vars["model"] || "base";
   const deepgramOptions = {
     smart_format: true,
     model: model || "nova-2",
-    ...clientData.vars,
+    ...clientData.vars
   };
   const deepgram = deepgramClient.listen.live(deepgramOptions);
   deepgram.addListener(LiveTranscriptionEvents.Open, async () => {
     console.log("deepgram: connected");
-
-    deepgram.addListener(LiveTranscriptionEvents.Transcript, (data) => {
+    deepgram.addListener(LiveTranscriptionEvents.Transcript, data => {
       console.log("deepgram: transcript received");
       console.log("ws: transcript sent to client");
       console.log(data);
       metadata = data;
       ws.send(JSON.stringify(data));
     });
-
     deepgram.addListener(LiveTranscriptionEvents.Close, async () => {
       console.log("deepgram: disconnected");
       let duration = metadata?.duration;
-      if (duration)
-        await transcriber.calculateCost({ headers }, duration, token);
+      if (duration) await transcriber.calculateCost({
+        headers
+      }, duration, token);
       deepgram.finish();
     });
-
-    deepgram.addListener(LiveTranscriptionEvents.Error, async (error) => {
+    deepgram.addListener(LiveTranscriptionEvents.Error, async error => {
       console.log("deepgram: error received");
       console.error(error);
     });
-
-    deepgram.addListener(LiveTranscriptionEvents.Warning, async (warning) => {
+    deepgram.addListener(LiveTranscriptionEvents.Warning, async warning => {
       console.log("deepgram: warning received");
       console.warn(warning);
     });
-
-    deepgram.addListener(LiveTranscriptionEvents.Metadata, (data) => {
+    deepgram.addListener(LiveTranscriptionEvents.Metadata, data => {
       console.log("deepgram: metadata received");
       console.log("ws: metadata sent to client");
-      ws.send(JSON.stringify({ metadata: data }));
+      ws.send(JSON.stringify({
+        metadata: data
+      }));
     });
   });
-
   return deepgram;
 };
-
-wss.on("connection", (ws) => {
+wss.on("connection", ws => {
   console.log("ws: client connected");
   let deepgram;
   let isAuthenticated = false;
@@ -190,28 +151,23 @@ wss.on("connection", (ws) => {
   let clientData;
   let token;
   let data = {};
-
-  ws.on("message", (message) => {
+  ws.on("message", message => {
     if (!isAuthenticated) {
       try {
         const initialData = JSON.parse(message);
         clientHeaders = initialData.header;
         clientData = initialData.data;
-        secretService
-          .getSecrets(clientHeaders, "https://api.deepgram.com")
-          .then((secrets) => {
-            token = getAuthToken("Authorization", clientHeaders, secrets);
-
-            if (clientData.type === "deepgram") {
-              deepgram = setupDeepgram(ws, clientHeaders, clientData, token);
-              isAuthenticated = true;
-              console.log("Client authenticated and Deepgram setup completed.");
-            }
-          })
-          .catch((err) => {
-            console.error("Authentication failed:", err);
-            ws.close();
-          });
+        secretService.getSecrets(clientHeaders, "https://api.deepgram.com").then(secrets => {
+          token = getAuthToken("Authorization", clientHeaders, secrets);
+          if (clientData.type === "deepgram") {
+            deepgram = setupDeepgram(ws, clientHeaders, clientData, token);
+            isAuthenticated = true;
+            console.log("Client authenticated and Deepgram setup completed.");
+          }
+        }).catch(err => {
+          console.error("Authentication failed:", err);
+          ws.close();
+        });
       } catch (err) {
         console.error("Failed to parse initial message:", err);
         ws.close();
@@ -221,14 +177,12 @@ wss.on("connection", (ws) => {
 
     // Process audio data
     console.log("ws: client data received");
-
     if (deepgram.getReadyState() === 1 /* OPEN */) {
       console.log("ws: data sent to deepgram");
       deepgram.send(message);
     } else if (deepgram.getReadyState() >= 2 /* 2 = CLOSING, 3 = CLOSED */) {
       console.log("ws: data couldn't be sent to deepgram");
       console.log("ws: retrying connection to deepgram");
-
       deepgram.finish();
       deepgram.removeAllListeners();
       deepgram = setupDeepgram(ws, clientHeaders, clientData, token, data);
@@ -236,7 +190,6 @@ wss.on("connection", (ws) => {
       console.log("ws: data couldn't be sent to deepgram");
     }
   });
-
   ws.on("close", () => {
     console.log("ws: client disconnected");
     if (deepgram) {
@@ -246,7 +199,6 @@ wss.on("connection", (ws) => {
     }
   });
 });
-
 app.use("/doc", (req, res, next) => {
   req._luisaHeaders = req.headers;
   if (req.headers["x-flowrabbit-headers"]) {
@@ -254,33 +206,19 @@ app.use("/doc", (req, res, next) => {
     const parts = allowedHeaders.toLowerCase().split(";");
     console.info("filterHeaders() > ", parts);
     const newHeaders = {};
-    parts.forEach((key) => {
+    parts.forEach(key => {
       newHeaders[key] = req.headers[key];
     });
     req.headers = newHeaders;
   }
   next();
 });
-
 app.use("/doc", (req, res, next) => {
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
   res.setHeader("Connection", "keep-alive");
   next();
 });
-
-// Respond to CORS preflight requests for /doc explicitly
-app.options("/doc", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    corsOptions.allowedHeaders.join(",")
-  );
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  return res.sendStatus(corsOptions.optionsSuccessStatus);
-});
-
 app.use("/doc", (req, res, next) => {
   createProxyMiddleware({
     target: "http://www.example.org",
@@ -293,26 +231,20 @@ app.use("/doc", (req, res, next) => {
     onError: (err, req, res) => {
       console.error("Proxy encountered an error:", err);
       if (!res.headersSent) {
-        // Make sure CORS headers are present on error responses as well
-        try {
-          res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
-          res.setHeader(
-            "Access-Control-Allow-Headers",
-            corsOptions.allowedHeaders.join(",")
-          );
-          res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS");
-          res.setHeader("Access-Control-Allow-Credentials", "true");
-        } catch {
-          // ignore
-        }
-        res.status(500).json({ error: "Error proxying to API" });
+        res.status(500).json({
+          error: "Error proxying to API"
+        });
       }
-    },
+    }
   })(req, res, next);
 });
-
-app.use(bodyParser.json({ limit: "100mb" }));
-app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
+app.use(bodyParser.json({
+  limit: "100mb"
+}));
+app.use(bodyParser.urlencoded({
+  limit: "100mb",
+  extended: true
+}));
 
 /**
  * Status
@@ -321,7 +253,7 @@ app.get("/status.json", (req, res) => {
   res.send({
     version: version,
     startedAt: startedAt,
-    status: "running",
+    status: "running"
   });
 });
 
@@ -333,37 +265,34 @@ app.get("/echo.json", (req, res) => {
     host: req.baseUrl,
     path: req.path,
     query: req.query,
-    headers: req.headers,
+    headers: req.headers
   });
 });
-
 app.post("/echo.json", (req, res) => {
   res.send({
     host: req.baseUrl,
     path: req.path,
     query: req.query,
     headers: req.headers,
-    body: req.body,
+    body: req.body
   });
 });
-
 app.post("/doc-to-text", docUploads.single("doc"), async (req, res) => {
   try {
     console.info("doc-to-text");
     const parser = new DocParser();
     await parser.parseFile(req, res);
-
     console.info("doc-to-text done");
     removeFile(req);
   } catch (error) {
     console.error("Failed to process PDF:", error);
     removeFile(req);
-    res
-      .status(500)
-      .json({ message: "Failed to process PDF", error: error.toString() });
+    res.status(500).json({
+      message: "Failed to process PDF",
+      error: error.toString()
+    });
   }
 });
-
 app.post("/text-to-doc", mdUploads.single("doc"), async (req, res) => {
   try {
     console.info("text-to-doc");
@@ -374,52 +303,50 @@ app.post("/text-to-doc", mdUploads.single("doc"), async (req, res) => {
   } catch (error) {
     console.error("Failed to process PDF:", error);
     removeFile(req);
-    res
-      .status(500)
-      .json({ message: "Failed to process PDF", error: error.toString() });
+    res.status(500).json({
+      message: "Failed to process PDF",
+      error: error.toString()
+    });
   }
 });
-
-app.post(
-  "/transcribe-audio",
-  preRecorderAudioUpload.single("audio"),
-  async (req, res) => {
-    if (!req.file) {
-      return res.status(400).json({ message: "No audio file provided" });
-    }
-    if (req.file.mimetype !== "audio/wav") {
-      return res
-        .status(400)
-        .json({ message: "Invalid audio format. Only WAV is supported." });
-    }
-    let secrets;
-    try {
-      console.info("get secrets");
-      const headers = req.headers;
-      secrets = await secretService.getSecrets(headers);
-    } catch (error) {
-      return handleError(error, res, req);
-    } finally {
-      removeFile(req);
-    }
-    try {
-      console.info("transcribe-audio");
-      const headers = req.headers;
-      const token = getAuthToken("authorization", headers, secrets);
-      await transcriber.transcribeAudio(req, res, token);
-      removeFile(req);
-      console.info("transcribe-audio done");
-    } catch (error) {
-      console.error("Transcription failed:", error);
-      res
-        .status(500)
-        .json({ message: "Transcription failed", error: error.toString() });
-    } finally {
-      removeFile(req);
-    }
+app.post("/transcribe-audio", preRecorderAudioUpload.single("audio"), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({
+      message: "No audio file provided"
+    });
   }
-);
-
+  if (req.file.mimetype !== "audio/wav") {
+    return res.status(400).json({
+      message: "Invalid audio format. Only WAV is supported."
+    });
+  }
+  let secrets;
+  try {
+    console.info("get secrets");
+    const headers = req.headers;
+    secrets = await secretService.getSecrets(headers);
+  } catch (error) {
+    return handleError(error, res, req);
+  } finally {
+    removeFile(req);
+  }
+  try {
+    console.info("transcribe-audio");
+    const headers = req.headers;
+    const token = getAuthToken("authorization", headers, secrets);
+    await transcriber.transcribeAudio(req, res, token);
+    removeFile(req);
+    console.info("transcribe-audio done");
+  } catch (error) {
+    console.error("Transcription failed:", error);
+    res.status(500).json({
+      message: "Transcription failed",
+      error: error.toString()
+    });
+  } finally {
+    removeFile(req);
+  }
+});
 app.post("/video", async (req, res) => {
   try {
     const headers = req.headers;
@@ -431,10 +358,11 @@ app.post("/video", async (req, res) => {
     return handleError(error, res, req);
   }
 });
-
 app.post("/upload-file-ftp", docUploads.single("doc"), async (req, res) => {
   if (!req.file) {
-    return res.status(400).json({ message: "No audio file provided" });
+    return res.status(400).json({
+      message: "No audio file provided"
+    });
   }
   try {
     const host = req.body.host;
@@ -443,11 +371,10 @@ app.post("/upload-file-ftp", docUploads.single("doc"), async (req, res) => {
     const headers = req.headers;
     const secrets = await secretService.getSecrets(headers, host);
     const password = getAuthToken("authorization", headers, secrets);
-
     const config = {
       host: host,
       user: user,
-      password: password,
+      password: password
     };
     const ftpengine = new FTPEngine(config);
     const localPath = req.file.path;
@@ -456,9 +383,10 @@ app.post("/upload-file-ftp", docUploads.single("doc"), async (req, res) => {
   } catch (error) {
     console.error("Transcription failed:", error);
     removeFile(req);
-    res
-      .status(500)
-      .json({ message: "Transcription failed", error: error.toString() });
+    res.status(500).json({
+      message: "Transcription failed",
+      error: error.toString()
+    });
   }
 });
 
@@ -469,20 +397,18 @@ export function parseURL(str) {
   const url = new URL(str);
   return {
     host: url.origin,
-    path: url.pathname + url.search,
+    path: url.pathname + url.search
   };
 }
-
 function router(req) {
   const headers = req._luisaHeaders;
   const target = headers["x-forwarded-host"];
   const url = parseURL(target);
   return url.host;
 }
-
 function removeFile(req) {
   if (req.file && req.file.path) {
-    fs.unlink(req.file.path, (err) => {
+    fs.unlink(req.file.path, err => {
       if (err) {
         console.error("Failed to delete the file:", err);
       } else {
@@ -491,7 +417,6 @@ function removeFile(req) {
     });
   }
 }
-
 async function pathRewrite(path, req) {
   const headers = req._luisaHeaders;
   const target = headers["x-forwarded-host"];
@@ -511,7 +436,6 @@ async function pathRewrite(path, req) {
   }
   return url.path;
 }
-
 async function onProxyReq(proxyReq, req) {
   const secrets = req._luisaSecrets;
   if (secrets) {
@@ -526,23 +450,17 @@ async function onProxyReq(proxyReq, req) {
           const secret = secrets[secretKey];
           if (secretMatchesTarget(secret, target)) {
             console.info("onProxyReq() > Replace " + secretKey);
-            const newValue = value.replace(
-              "${secrets." + secretKey + "}",
-              secret.value
-            );
+            const newValue = value.replace("${secrets." + secretKey + "}", secret.value);
             proxyReq.setHeader(key, newValue);
           } else {
             console.log("no matches: ");
-            console.error(
-              "onProxyReq() > secret " + secretKey + " does not match"
-            );
+            console.error("onProxyReq() > secret " + secretKey + " does not match");
           }
         }
       }
     }
   }
 }
-
 export function secretMatchesTarget(secret, target) {
   if (!target) {
     console.error("secretMatchesTarget() > No target");
@@ -558,7 +476,6 @@ export function secretMatchesTarget(secret, target) {
   console.error("secretMatchesTarget() > No domain!");
   return true;
 }
-
 export function getAuthToken(key, headers, secrets) {
   const value = headers[key];
   if (!value) {
@@ -576,13 +493,11 @@ export function getAuthToken(key, headers, secrets) {
   }
   return value;
 }
-
-function handleError(error, res, _req) {
+function handleError(error, res, req) {
   console.log("ERROR");
   if (axios.isAxiosError(error)) {
     const status = error.response?.status || 500;
     let errorMessage;
-
     switch (status) {
       case 405:
         errorMessage = "Error: No budget left";
@@ -593,19 +508,21 @@ function handleError(error, res, _req) {
       default:
         errorMessage = `Error: Unexpected error with status code ${status}`;
     }
-
-    res.status(status).json({ error: errorMessage });
+    res.status(status).json({
+      error: errorMessage
+    });
   } else {
-    res.status(500).json({ error: "Error: Unexpected error occurred" });
+    res.status(500).json({
+      error: "Error: Unexpected error occurred"
+    });
   }
 }
-
-server.listen(8085, () => {
+server.listen(8088, () => {
   console.log("************************************");
   console.log("FlowRabbit - Docs");
   console.log("Version " + version);
   console.log("Listening on " + server.address().port);
   console.log("API " + apiServer);
-  console.log("API-KEY " + apiKey.length);
+  console.log("API-KEY " + process.env.API_KEY.length);
   console.log("************************************");
 });
