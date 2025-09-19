@@ -124,3 +124,15 @@ services:
       - "traefik.http.routers.apps.entrypoints=websecure"
       - "traefik.http.routers.apps.tls.certresolver=myresolver"
       - "traefik.http.services.apps.loadbalancer.server.port=8083"
+  docs:
+    restart: always
+    container_name: docs
+    image: flowrabbit/docs:latest
+    environment:
+        <<: *common-env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.docs.rule=Host(`docs-os.flowrabbit.ai`)" #update here
+      - "traefik.http.routers.docs.entrypoints=websecure"
+      - "traefik.http.routers.docs.tls.certresolver=myresolver"
+      - "traefik.http.services.docs.loadbalancer.server.port=8085"
