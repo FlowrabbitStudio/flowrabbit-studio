@@ -114,19 +114,6 @@ public class Config {
         return config.getString(CLIENT_API_KEY);
     }
 
-    public static boolean isDebug(JsonObject config) {
-        return config.getBoolean("debug");
-    }
-
-    public static S3Config getS3(JsonObject config) {
-        return new S3Config(
-            config.getString(S3_URL),
-            config.getString(S3_BUCKET),
-            config.getString(S3_ACCESS_KEY),
-            config.getString(S3_SECRET_ACCESS_KEY)
-        );
-    }
-
     public static String getJwtPassword(JsonObject config) {
         if (!config.containsKey(JWT_PASSWORD)) {
             throw new RuntimeException("No JWT password");
@@ -137,6 +124,9 @@ public class Config {
     public static String getDBEncryptionKey(JsonObject config) {
         if (!config.containsKey(DB_ENCRYPTION_KEY)) {
             throw new RuntimeException("No DB key provided");
+        }
+        if (config.getString(DB_ENCRYPTION_KEY).isEmpty()) {
+            throw new RuntimeException("DB is empty");
         }
         return config.getString(DB_ENCRYPTION_KEY);
     }
