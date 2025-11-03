@@ -14,7 +14,7 @@ Flowrabbit will spin up four servers, each needing their own subdomain. The easi
 Flowrabbit is to use the following Docker Compose file.
 
 
-The docker compose file will also spin up a Traffeik reverse proxy server to handle SSL. To make everything work, you need to 
+The docker compose file will also spin up a Traefik reverse proxy server to handle SSL. To make everything work, you need to 
 update the sub domain URLs in the beginning of the file (`FLR_<app>_HOST`). Do not forget to also update the `"traefik.http.routers.<app>.rule=Host(....)"` sections below.
 
 
