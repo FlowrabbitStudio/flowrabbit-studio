@@ -37,7 +37,7 @@ import io.vertx.ext.web.handler.CorsHandler;
 
 public class Main extends AbstractVerticle {
 
-	public static final String VERSION = "FlowRabbit@5.0.14";
+	public static final String VERSION = "FlowRabbit@5.0.15";
 
 	public static final String BUS_IMAGES_UPLOADED = "images.uploaded";
 
