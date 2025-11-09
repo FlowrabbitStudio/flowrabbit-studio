@@ -2,7 +2,7 @@
 
 ![Flowrabbit](pics/Flowrabbit_Readme.png)
 
-Flowrabbit is a moden Low-Code AI platform to build UI centric GenAI workflows. The core of our platform is our invinity canvas, 
+Flowrabbit is a modern Low-Code AI platform to build UI centric GenAI workflows. The core of our platform is our infinity canvas, 
 where you design user interfaces and workflows in one place.
 
 
