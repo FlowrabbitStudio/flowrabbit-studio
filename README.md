@@ -1,17 +1,30 @@
-# Flowrabbit
+# Flowrabbit® Studio
 
 ![Flowrabbit](pics/Flowrabbit_Readme.png)
 
-Flowrabbit is a modern Low-Code AI platform to build UI centric GenAI workflows. The core of our platform is our infinity canvas, 
-where you design user interfaces and workflows in one place.
+## 🐰 What is Flowrabbit® Studio?
+
+Flowrabbit® Studio is a modern Low-Code AI platform designed to build UI-centric GenAI workflows. At its core is an infinite canvas where you design beautiful user interfaces and complex workflows in one unified environment.
+
+Think Figma meets n8n, but specifically built for AI applications and human-in-the-loop processes.
+
+### ✨ Key Features
+
+- **🎨 User Interface Design Visual Canvas** - Design beautiful user interfaces on an infinite canvas with drag-and-drop components. Text-to-Design AI generates UIs from prompts. (We are looking for contributors to improve our AI.)
+
+- **🤖 Connect Any LLM or API** - Visually connect UI elements to OpenAI, Claude, Gemini, n8n, Make.com, and any REST API. See your entire data flow in one window conntected to the UI elements.
+
+- **🔄 Human-in-the-Loop Workflows** - Build approval dashboards and interactive forms that connect to your existing automation workflows and AI agents.
+
+- **🐳 Self-Host with Docker** - Deploy with Docker for complete control. Open-source (Apache 2.0), unlimited executions, no vendor lock-in.
 
 
-You can try out Flowrabbit at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai)
+You can try out Flowrabbit® Studio at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai) Note: This is a demo version for experimentation only. No warranties or guarantees are made. It is just for presentation and checking the software out.
 
 # Installation
 
-Flowrabbit will spin up four servers, each needing their own subdomain. The easiest way to install to install 
-Flowrabbit is to use the following Docker Compose file.
+Flowrabbit® Studio will spin up four servers, each needing their own subdomain. The easiest way to install to install 
+Flowrabbit® Studio is to use the following Docker Compose file.
 
 
 The docker compose file will also spin up a Traefik reverse proxy server to handle SSL. To make everything work, you need to 
@@ -164,8 +177,8 @@ services:
 
 ## Main Modules
 
-- studio: The flowrabbit studio (based on Quant-UX)
-- backend: The flowrabbit backend (based on Quant-UX)
+- studio: The Flowrabbit® studio (based on Quant-UX)
+- backend: The Flowrabbit® backend (based on Quant-UX)
 
 ## Helper Modules
 
