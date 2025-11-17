@@ -23,6 +23,15 @@ You can try out Flowrabbit® Studio at [https://studio-os.flowrabbit.ai/#/](http
 
 # Installation
 
+
+Create a docker-compose.yaml and copy and adapt the content listed below. Once done, just type 
+
+```sh
+docker compose up
+```
+
+to start Flowrabbit. Make sure you have installed Docker before and have a domain name.
+
 Flowrabbit® Studio will spin up four servers, each needing their own subdomain. The easiest way to install to install 
 Flowrabbit® Studio is to use the following Docker Compose file.
 
@@ -33,6 +42,8 @@ update the sub domain URLs in the beginning of the file (`FLR_<app>_HOST`). Do n
 
 Also, you need to set the `FLR_CLIENT_API_KEY`, `FLR_JWT_PASSWORD`, `FLR_DB_ENCRYPTION_KEY` and `FLR_ADMIN_PASSWORD` 
 to ensure data is stored securely. 
+
+
 
 
 ```yaml
