@@ -2,7 +2,7 @@
 
 ![Flowrabbit](pics/Flowrabbit_Readme.png)
 
-## What is Flowrabbit® Studio?
+## 🐰 What is Flowrabbit® Studio?
 
 Flowrabbit® Studio is a modern Low-Code AI platform designed to build UI-centric GenAI workflows. At its core is an infinite canvas where you design beautiful user interfaces and complex workflows in one unified environment.
 
