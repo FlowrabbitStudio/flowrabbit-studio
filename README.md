@@ -6,7 +6,7 @@ Flowrabbit® Studio is a modern Low-Code AI platform to build UI centric GenAI w
 where you design user interfaces and workflows in one place.
 
 
-You can try out Flowrabbit® Studio at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai)
+You can try out Flowrabbit® Studio at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai) Note: This is a demo version for experimentation only. No warranties or guarantees are made. It is just for presentation and checking the software out.
 
 # Installation
 
