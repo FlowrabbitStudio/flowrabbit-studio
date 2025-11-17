@@ -67,42 +67,6 @@ export default {
         ]
       },
       figmaApp: true,
-      figmaConfigHome: {
-        figmaFile: "nfCU36n8I1eMIOhE6RZGbK",// "8aw4XrD9mPfGcwrtw6LWP2",
-        figmaAccessKey: "48109-41e7ee0d-48eb-4f88-af6e-9f1bc4072dda",
-      },
-      figmaDropDown: {
-        figmaFile: "DnhqFyYhqCD9HLHwmKIsbU",
-        figmaAccessKey: "48109-41e7ee0d-48eb-4f88-af6e-9f1bc4072dda",
-      },
-      figmaMixedBorder: {
-        figmaFile: "qkxH3VGJCw1H4N6SkPMk2a",// "8aw4XrD9mPfGcwrtw6LWP2",
-        figmaAccessKey: "48109-41e7ee0d-48eb-4f88-af6e-9f1bc4072dda",
-      },
-      figmaConfigTodo: {
-        figmaFile: "5zTcZwe1mxHlR7hmOltcAk",
-        figmaAccessKey: "48109-41e7ee0d-48eb-4f88-af6e-9f1bc4072dda",
-      },      
-      figmaConfig: {
-        figmaFile: "PYuz4ne9vi23f8EuHV5Dbv",
-        figmaAccessKey: "48109-41e7ee0d-48eb-4f88-af6e-9f1bc4072dda",
-      },      
-      figmaConfigMichael: {
-        figmaFile: "uKgt9PzMeazuh8SqXJQoVs",
-        figmaAccessKey: "188835-f78a3047-5333-45c7-bdf0-4d426ebf3277",
-      },
-      figmaConfigKokos: {
-        figmaFile:"IaT7dtnwfvT8PEF6L9R2d2",
-        figmaAccessKey: "188835-f78a3047-5333-45c7-bdf0-4d426ebf3277",
-      },
-      figmaBug: {
-        figmaFile:"owrluppOzpQweDmLkkml8M",
-        figmaAccessKey: "188835-f78a3047-5333-45c7-bdf0-4d426ebf3277",
-      },
-      figmaBugAbsolute: {
-        figmaFile:"MUavpxPw8WxNamP5qtOTFn",
-        figmaAccessKey: "188835-f78a3047-5333-45c7-bdf0-4d426ebf3277",
-      },
       config: {
         components: {},
         loadFonts: true,
