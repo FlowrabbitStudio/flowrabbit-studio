@@ -1,17 +1,17 @@
-# Flowrabbit
+# Flowrabbit Studio
 
 ![Flowrabbit](pics/Flowrabbit_Readme.png)
 
-Flowrabbit is a modern Low-Code AI platform to build UI centric GenAI workflows. The core of our platform is our infinity canvas, 
+Flowrabbit Studio is a modern Low-Code AI platform to build UI centric GenAI workflows. The core of our platform is our infinity canvas, 
 where you design user interfaces and workflows in one place.
 
 
-You can try out Flowrabbit at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai)
+You can try out Flowrabbit Studio at [https://studio-os.flowrabbit.ai/#/](https://studio-os.flowrabbit.ai)
 
 # Installation
 
-Flowrabbit will spin up four servers, each needing their own subdomain. The easiest way to install to install 
-Flowrabbit is to use the following Docker Compose file.
+Flowrabbit Studio will spin up four servers, each needing their own subdomain. The easiest way to install to install 
+Flowrabbit Studio is to use the following Docker Compose file.
 
 
 The docker compose file will also spin up a Traefik reverse proxy server to handle SSL. To make everything work, you need to 
