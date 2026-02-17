@@ -1,1 +1,7 @@
 websocket
+
+# Local runtime artifacts
+mongo-data/
+app-data/
+letsencrypt/
+.env

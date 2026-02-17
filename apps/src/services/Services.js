@@ -9,14 +9,15 @@ class Services {
         this.config = {
             'default': true,
             'auth': 'qux',
-            'api': "https://api-os.flowrabbit.ai",  
+            'api': "/api",
             'user': {
                 'allowSignUp': true
             },
             'websocket': '',
-            'proxy_URL': 'https://proxy-os.flowrabbit.ai',
-            'api_URL': 'https://api-os.flowrabbit.ai',
-            'node_URL': 'https://node-os.flowrabbit.ai'
+            'proxy_URL': '',
+            'api_URL': '/api',
+            'app_URL': '/apps',
+            'node_URL': '/docs'
         }
     }
 
