@@ -82,7 +82,7 @@ export default {
       },
       domains: {
       },
-      appURL: Services.getConfig().app_URL || "apps-os.flowrabbit.ai",
+      appURL: Services.getConfig().app_URL || "/apps",
       isAppStore: false
     }
   },

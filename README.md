@@ -32,12 +32,44 @@ docker compose up
 
 to start Flowrabbit. Make sure you have installed Docker before and have a domain name.
 
-Flowrabbit® Studio will spin up four servers, each needing their own subdomain. The easiest way to install to install 
-Flowrabbit® Studio is to use the following Docker Compose file.
+Flowrabbit® Studio supports two deployment modes:
 
+- Single-domain (recommended for Elestio / one-click hosting): path-based routing on one domain
+- Legacy subdomain mode: host-based routing (`api.*`, `studio.*`, `proxy.*`, `apps.*`, `docs.*`) via override file
 
-The docker compose file will also spin up a Traefik reverse proxy server to handle SSL. To make everything work, you need to 
-update the sub domain URLs in the beginning of the file (`FLR_<app>_HOST`). Do not forget to also update the `"traefik.http.routers.<app>.rule=Host(....)"` sections below.
+Start by creating a `.env` file from `.env.example` and setting required secrets.
+
+For single-domain mode, set `FLR_PUBLIC_URL` in `docker-compose.yaml`, for example:
+
+> Note: The long compose snippet below is kept for reference and may lag behind current defaults. Use `docker-compose.yaml` in this repository as source of truth.
+
+```yaml
+FLR_PUBLIC_URL: https://flowrabbit.example.com
+```
+
+In single-domain mode this will expose:
+
+- `https://flowrabbit.example.com/` -> studio
+- `https://flowrabbit.example.com/api` -> backend
+- `https://flowrabbit.example.com/proxy` -> proxy
+- `https://flowrabbit.example.com/apps` -> apps
+- `https://flowrabbit.example.com/docs` -> docs
+
+The docker compose file also spins up Traefik for routing on port `80`.
+TLS should be terminated by your hosting platform (for example, Elestio ingress/load balancer).
+
+Use these commands:
+
+```sh
+# Single-domain mode (default)
+docker compose up -d
+
+# Local mode (forces public URL to localhost)
+docker compose -f docker-compose.yaml -f docker-compose.local.yaml up -d
+
+# Legacy host-based mode (optional compatibility mode)
+docker compose -f docker-compose.yaml -f docker-compose.legacy-hosts.yaml up -d
+```
 
 
 Also, you need to set the `FLR_CLIENT_API_KEY`, `FLR_JWT_PASSWORD`, `FLR_DB_ENCRYPTION_KEY` and `FLR_ADMIN_PASSWORD` 

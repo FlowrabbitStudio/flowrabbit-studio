@@ -1,18 +1,19 @@
 x-common-env: &common-env
+  FLR_PUBLIC_URL: ${FLR_PUBLIC_URL:-http://localhost}
   TZ: America/Chicago
   FLR_AUTH_SERVICE: qux
   FLR_USER_ALLOW_SIGNUP: "true"
   FLR_USER_ALLOWED_DOMAINS: "*"
   FLR_INTERNAL_API_URL: http://backend:8080
   FLR_INTERNAL_PROXY_URL: http://proxy:8084
-  FLR_API_URL: https://api-os.flowrabbit.ai
-  FLR_APPS_URL: https://apps-os.flowrabbit.ai
-  FLR_PROXY_URL: https://proxy-os.flowrabbit.ai
-  FLR_NODE_URL: https://node-os.flowrabbit.ai
-  FLR_HTTP_HOST: https://studio-os.flowrabbit.ai
-  FLR_CLIENT_API_KEY: Put_Some_Secret_In_Here
-  FLR_ADMIN_EMAIL: email@example.com
-  FLR_ADMIN_PASSWORD: Put_Some_Secret_In_Here
+  FLR_API_URL: ${FLR_PUBLIC_URL:-http://localhost}/api
+  FLR_APPS_URL: ${FLR_PUBLIC_URL:-http://localhost}/apps
+  FLR_PROXY_URL: ${FLR_PUBLIC_URL:-http://localhost}
+  FLR_NODE_URL: ${FLR_PUBLIC_URL:-http://localhost}/docs
+  FLR_HTTP_HOST: ${FLR_PUBLIC_URL:-http://localhost}
+  FLR_CLIENT_API_KEY: ${FLR_CLIENT_API_KEY:?Set FLR_CLIENT_API_KEY}
+  FLR_ADMIN_EMAIL: ${FLR_ADMIN_EMAIL:?Set FLR_ADMIN_EMAIL}
+  FLR_ADMIN_PASSWORD: ${FLR_ADMIN_PASSWORD:?Set FLR_ADMIN_PASSWORD}
 
 services:
   traefik:
@@ -20,48 +21,30 @@ services:
     command:
       # Providers
       - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
       - "--api.dashboard=true"
 
       # Entrypoints
       - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-
-      # Redirect all HTTP -> HTTPS
-      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-
-      # ACME / Let's Encrypt
-      - "--certificatesresolvers.myresolver.acme.email=support@flowrabbit.ai"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
-      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
-      - "--certificatesresolvers.myresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
-
-      # Request certs at startup (not just on first request)
-      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
-      - "--entrypoints.websecure.http.tls.certresolver=myresolver"
-      - "--entrypoints.websecure.http.tls.domains[0].main=docs-os.flowrabbit.ai"
 
 
     ports:
       - "80:80"
-      - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
 
   mongo:
     restart: always
     container_name: mongo
     image: mongo
     volumes:
-      - ./mongo-data:/data/db        # pth for the data to be stored and kept on your host machine is on the left side of the ":"
+      - mongo-data:/data/db
   backend:
     restart: always
     container_name: backend
     image: flowrabbit/backend:latest
     volumes:
-      - ./app-data:/app-data
+      - app-data:/app-data
     environment:
       <<: *common-env
       FLR_HTTP_PORT: 8080
@@ -78,9 +61,12 @@ services:
       - mongo
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.api.rule=Host(`api-os.flowrabbit.ai`)" # update here
-      - "traefik.http.routers.api.entrypoints=websecure"
-      - "traefik.http.routers.api.tls.certresolver=myresolver"
+      # Single-domain path-based routing
+      - "traefik.http.routers.api-path.rule=PathPrefix(`/api`)"
+      - "traefik.http.routers.api-path.entrypoints=web"
+      - "traefik.http.routers.api-path.priority=100"
+      - "traefik.http.routers.api-path.middlewares=api-strip"
+      - "traefik.http.middlewares.api-strip.stripprefix.prefixes=/api"
       - "traefik.http.services.api.loadbalancer.server.port=8080"
   studio:
     restart: always
@@ -90,9 +76,10 @@ services:
         <<: *common-env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.studio.rule=Host(`studio-os.flowrabbit.ai`)" # update here
-      - "traefik.http.routers.studio.entrypoints=websecure"
-      - "traefik.http.routers.studio.tls.certresolver=myresolver"
+      # Single-domain path-based routing (default catch-all)
+      - "traefik.http.routers.studio-path.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.studio-path.entrypoints=web"
+      - "traefik.http.routers.studio-path.priority=1"
       - "traefik.http.services.studio.loadbalancer.server.port=8082"
   proxy:
     restart: always
@@ -102,9 +89,10 @@ services:
         <<: *common-env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.proxy.rule=Host(`proxy-os.flowrabbit.ai`)" #update here
-      - "traefik.http.routers.proxy.entrypoints=websecure"
-      - "traefik.http.routers.proxy.tls.certresolver=myresolver"
+      # Single-domain path-based routing
+      - "traefik.http.routers.proxy-path.rule=PathPrefix(`/proxy`) || PathPrefix(`/stream`) || PathPrefix(`/mcp`)"
+      - "traefik.http.routers.proxy-path.entrypoints=web"
+      - "traefik.http.routers.proxy-path.priority=100"
       - "traefik.http.services.proxy.loadbalancer.server.port=8084"
   apps:
     restart: always
@@ -114,9 +102,12 @@ services:
         <<: *common-env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.apps.rule=Host(`apps-os.flowrabbit.ai`)" #update here
-      - "traefik.http.routers.apps.entrypoints=websecure"
-      - "traefik.http.routers.apps.tls.certresolver=myresolver"
+      # Single-domain path-based routing
+      - "traefik.http.routers.apps-path.rule=PathPrefix(`/apps`)"
+      - "traefik.http.routers.apps-path.entrypoints=web"
+      - "traefik.http.routers.apps-path.priority=100"
+      - "traefik.http.routers.apps-path.middlewares=apps-strip"
+      - "traefik.http.middlewares.apps-strip.stripprefix.prefixes=/apps"
       - "traefik.http.services.apps.loadbalancer.server.port=8083"
   docs:
     restart: always
@@ -126,7 +117,14 @@ services:
         <<: *common-env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.docs.rule=Host(`docs-os.flowrabbit.ai`)" #update here
-      - "traefik.http.routers.docs.entrypoints=websecure"
-      - "traefik.http.routers.docs.tls.certresolver=myresolver"
+      # Single-domain path-based routing
+      - "traefik.http.routers.docs-path.rule=PathPrefix(`/docs`)"
+      - "traefik.http.routers.docs-path.entrypoints=web"
+      - "traefik.http.routers.docs-path.priority=100"
+      - "traefik.http.routers.docs-path.middlewares=docs-strip"
+      - "traefik.http.middlewares.docs-strip.stripprefix.prefixes=/docs"
       - "traefik.http.services.docs.loadbalancer.server.port=8085"
+
+volumes:
+  mongo-data:
+  app-data:
