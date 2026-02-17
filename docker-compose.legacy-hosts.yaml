@@ -1,0 +1,30 @@
+services:
+  backend:
+    labels:
+      - "traefik.http.routers.api.rule=Host(`${FLR_API_HOST:-api-os.flowrabbit.ai}`)"
+      - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.http.routers.api.service=api"
+
+  studio:
+    labels:
+      - "traefik.http.routers.studio.rule=Host(`${FLR_STUDIO_HOST:-studio-os.flowrabbit.ai}`)"
+      - "traefik.http.routers.studio.entrypoints=web"
+      - "traefik.http.routers.studio.service=studio"
+
+  proxy:
+    labels:
+      - "traefik.http.routers.proxy.rule=Host(`${FLR_PROXY_HOST:-proxy-os.flowrabbit.ai}`)"
+      - "traefik.http.routers.proxy.entrypoints=web"
+      - "traefik.http.routers.proxy.service=proxy"
+
+  apps:
+    labels:
+      - "traefik.http.routers.apps.rule=Host(`${FLR_APPS_HOST:-apps-os.flowrabbit.ai}`)"
+      - "traefik.http.routers.apps.entrypoints=web"
+      - "traefik.http.routers.apps.service=apps"
+
+  docs:
+    labels:
+      - "traefik.http.routers.docs.rule=Host(`${FLR_DOCS_HOST:-docs-os.flowrabbit.ai}`)"
+      - "traefik.http.routers.docs.entrypoints=web"
+      - "traefik.http.routers.docs.service=docs"

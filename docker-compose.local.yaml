@@ -1,0 +1,20 @@
+services:
+  backend:
+    environment:
+      FLR_PUBLIC_URL: http://localhost
+
+  studio:
+    environment:
+      FLR_PUBLIC_URL: http://localhost
+
+  proxy:
+    environment:
+      FLR_PUBLIC_URL: http://localhost
+
+  apps:
+    environment:
+      FLR_PUBLIC_URL: http://localhost
+
+  docs:
+    environment:
+      FLR_PUBLIC_URL: http://localhost
