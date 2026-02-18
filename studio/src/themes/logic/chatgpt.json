@@ -46,8 +46,12 @@
                         "type": "DropDown",
                         "options": [
                             {
+                                "value": "gpt-4o-mini",
+                                "label": "GPT-4o Mini (Recommended)"
+                            },
+                            {
                                 "value": "gpt-3.5-turbo",
-                                "label": "ChatGPT (GTP-3.5-Turbo)"
+                                "label": "ChatGPT (GPT-3.5-Turbo) (Legacy)"
                             },
                             {
                                 "value": "gpt-4",
@@ -55,7 +59,7 @@
                             },
                             {
                                 "value": "gpt-4-1106-preview",
-                                "label": "GPT-4-Turbo"
+                                "label": "GPT-4-Turbo (1106 Preview) (Legacy)"
                             }
                         ]
                     }
@@ -63,7 +67,7 @@
             },
             "rest": {
                 "vars": {
-                    "model": "gpt-3.5-turbo"
+                    "model": "gpt-4o-mini"
                 },
                 "method": "POST",
                 "url": "https://api.openai.com/v1/chat/completions",
